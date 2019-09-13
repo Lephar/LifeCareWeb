@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Test2</title>
+  </head>
+  <body id="body" style="display: none;">
+    <script src="https://www.gstatic.com/firebasejs/5.5.1/firebase.js"></script>
+		<script>
+		  // Initialize Firebase
+		  var config = {
+		    apiKey: "AIzaSyA24Eyjeh0HipNlMBhAJRnacsFxAySHgtY",
+		    authDomain: "lifecare-55c38.firebaseapp.com",
+		    databaseURL: "https://lifecare-55c38.firebaseio.com",
+		    projectId: "lifecare-55c38",
+		    storageBucket: "lifecare-55c38.appspot.com",
+		    messagingSenderId: "340270538259"
+		  };
+		  firebase.initializeApp(config);
+		</script>
+    <script type="text/javascript">
+      firebase.auth().onAuthStateChanged(function(user)
+			{
+				if (user)
+				{
+          document.getElementById("body").style.display = "block";
+        }
+        else
+        {
+          console.log("here");
+        }
+      });
+    </script>
+    <p>Line 1</p>
+    <p>Line two</p>
+  </body>
+</html>

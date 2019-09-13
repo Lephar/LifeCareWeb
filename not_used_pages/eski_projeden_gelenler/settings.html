@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<meta name="description" content="Ayarlar">
+		<meta name="author" content="Qwerty Tasarım ve Bilgi Teknolojileri">
+		<title><?php echo $titles['settings']; ?></title>
+
+		<!-- Bootstrap core CSS -->
+		<link href="assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+		<!-- Custom fonts for this template -->
+		<link href="assets/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link href="../libs/select2/css/select2.min.css" rel="stylesheet" />
+
+		<!-- Custom fonts for this template -->
+		<link href="assets/plugins/themify/css/themify.css" rel="stylesheet" type="text/css">
+
+		<!-- Angular Tooltip Css -->
+		<link href="assets/plugins/angular-tooltip/angular-tooltips.css" rel="stylesheet">
+
+		<!-- Page level plugin CSS -->
+		<link href="css/animate.css" rel="stylesheet">
+
+		<!-- Custom styles for this template -->
+		<link href="css/glovia.css" rel="stylesheet">
+		<link href="css/glovia-responsive.css" rel="stylesheet">
+
+		<!-- Custom styles for Color -->
+		<link href="css/skins/default.css" rel="stylesheet">
+	</head>
+
+	<body class="fixed-nav sticky-footer" id="page-top">
+
+    <div id="nav-placeholder">
+
+    </div>
+
+		<div class="content-wrapper">
+			<div class="container-fluid">
+			
+				<!-- Title & Breadcrumbs-->
+				<div class="row page-titles">
+					<div class="col-md-12 align-self-center">
+						<h4 class="theme-cl">Ayarlar</h4>
+					</div>
+				</div>
+				<!-- Title & Breadcrumbs-->
+				
+				<div class="row">
+					<div class="col-md-12">
+						<div class="card">
+							<div class="row">
+								<!-- col-md-6 -->
+								<div class="col-md-6 col-12">
+							
+									<div class="form-group">
+										<div class="contact-img">
+										<input id="profile-image-upload" style="position: absolute; left: -9999px;" type="file" name="myFile" multiple="">
+											<img id="profile-pic"  src="libs/php/ImageSecure/image.php?id=".$_SESSION['user']['profile_pic']; ?> class="img-circle img-responsive" alt="">
+										</div>
+									</div>
+									
+									<div class="col-md-12">
+									
+										<div class="row">
+											<div class="col-md-6 col-12">
+												<div class="form-group">
+													<label>İsim</label>
+													<input type="text" class="form-control" value="İsim" disabled>
+												</div>
+											</div>
+											
+											<div class="col-md-6 col-12">
+												<div class="form-group">
+													<label>Soyisim</label>
+													<input type="text" class="form-control" value="Soyisim" disabled>
+												</div>
+											</div>
+										</div>
+										
+									</div>
+									
+									<div class="col-md-12">
+										<div class="form-group">
+											<label>Şifre</label>
+											<input id="password" type="text" class="form-control">
+										</div>
+									</div>
+									
+									<div class="col-md-12">
+										<div class="form-group">
+											<label>Email</label>
+											<input type="text" class="form-control" value="Email" disabled>
+										</div>
+									</div>
+									
+									<div class="col-md-12">
+										<div class="form-group">
+											<label>Telefon</label>
+											<input id="phone" type="text" class="form-control" value="Telefon">
+										</div>
+									</div>
+									
+									<div class="col-md-12">
+										<div class="form-group">
+											<label>Adres</label>
+											<input id="address" type="text" class="form-control" value="Adres">
+										</div>
+									</div>
+									
+									<div class="col-md-12">
+										<div class="form-group">
+											<label>Ülke</label>
+											
+											<select class="custom-select mb-2 form-control" id="country">
+														<?php include '../includes/countries.php'; ?>
+										    </select>
+											
+										</div>
+									</div>
+									
+									<!-- col-md-12 -->
+									<div class="col-md-12">
+									
+										<div class="row">
+											<div class="col-md-6 col-12">
+												<div class="form-group">
+													<label>Cinsiyet</label>
+													<select class="custom-select mb-2 form-control" id="genderselect">
+													    <option default></option>
+														<option value="M" <?php if($_SESSION['user']['sex'] == 'M'){echo "selected";} ?>><?php echo $settings['male']; ?></option>
+														<option value="F" <?php if($_SESSION['user']['sex'] == 'F'){echo "selected";} ?>><?php echo $settings['female']; ?></option>
+													</select>
+												</div>
+											</div>
+											
+											<div class="col-md-6 col-12">
+												<div class="form-group">
+													<label><?php echo $settings['lang']; ?></label>
+													
+													<select  onchange="languageselected()" class="custom-select mb-2 form-control" id="langselect" multiple>
+														<?php include '../includes/languages.php'; ?>												
+														</select>
+												</div>
+											</div>
+										</div>
+										
+									</div>
+									<!-- col-md-12 -->
+									
+									<!-- col-md-12 -->
+									<div class="col-md-12">
+										<div class="form-group">
+											<label>Mezun Olunan Okul</label>
+											<input type="text" class="form-control" value="Mezun Olunan Okul" disabled>
+										</div>
+									</div>
+									<!-- col-md-12 -->
+									
+									<!-- col-md-12 -->
+									<div class="col-md-12">
+										<div class="form-group">
+											<label>Mezuniyet Yılı</label>
+											<input type="text" class="form-control" value="Mezuniyet Yılı" disabled>
+										</div>
+									</div>
+									<!-- col-md-12 -->
+									
+									<!-- col-md-12 -->
+									<div class="col-md-12">
+										<div class="form-group">
+											<label>Diploma No</label>
+											<input type="text" class="form-control" value="Diploma No" disabled>
+										</div>
+									</div>
+									<!-- col-md-12 -->
+									
+									
+								</div>
+								
+								<!-- col-md-6 -->
+								<div class="col-md-6 col-12 padd-top-20">
+									
+									
+									
+									<!-- col-md-12 -->
+									<div class="col-md-12">
+									
+										<div class="row">
+											<div class="col-md-6 col-12">
+												<div class="form-group">
+													<label>Facebook</label>
+													<input id="face" type="text" class="form-control" value="Facebook">
+												</div>
+											</div>
+											
+											<div class="col-md-6 col-12">
+												<div class="form-group">
+													<label>Twitter</label>
+													<input id="twitter" type="text" class="form-control" value="Twitter">
+												</div>
+											</div>
+										</div>
+										
+									</div>
+									<!-- col-md-12 -->
+									
+									<!-- col-md-12 -->
+									<div class="col-md-12">
+									
+										<div class="row">
+											<div class="col-md-6 col-12">
+												<div class="form-group">
+													<label>Linkedin</label>
+													<input id="linkedin" type="text" class="form-control" value="Linkedin">
+												</div>
+											</div>
+											
+											<div class="col-md-6 col-12">
+												<div class="form-group">
+													<label>Instagram</label>
+													<input id="instagram" type="text" class="form-control" value="Instagram">
+												</div>
+											</div>
+										</div>
+										
+									</div>
+									
+									
+									<ul class="nav nav-tabs" id="langcontent">
+                   <li class="active"><a data-toggle="tab">Lütfen Dil Seçin</a></li>
+                                    </ul>
+
+ <div class="tab-content" id="langcontenttabs">
+  
+  
+</div>
+									
+									
+								
+									
+								</div>
+								
+							</div>
+						</div>
+					
+					
+						<center><p id="errortext" style="color:red;"><?php if($row['listing'] == 0){ echo $settings['notready']; } ?></p></center>
+						<!--  Save Button -->
+							<div class="row">
+								<div class="col-md-12">
+									<div class="text-center">
+										<div class="text-center padd-bot-20" >
+											<a class="btn outline-secondary bg-white-save" onclick="save()">Kaydet</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						
+						
+					</div>
+				</div>
+
+			</div>  
+			<!-- /.content-wrapper-->
+			
+			<!-- Footer -->
+			<footer class="sticky-footer">
+			  <div class="container">
+				<div class="text-center">
+				   <small class="font-15">Copyright © <img class="img-responsive" src="img/qwerty-01.png" alt="Logo Qwerty"></small>
+				</div>
+			  </div>
+			</footer>
+			
+			<!-- Scroll to Top Button-->  
+			<a class="scroll-to-top rounded cl-white gredient-bg" href="#page-top">
+			  <i class="ti-angle-double-up"></i>
+			</a>
+
+			<!-- Bootstrap core JavaScript-->
+			<script src="assets/plugins/jquery/jquery.min.js"></script>
+			<script src="assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+			
+			<!-- Core plugin JavaScript-->
+			<script src="assets/plugins/jquery-easing/jquery.easing.min.js"></script>
+			
+			 <!-- Slick Slider Js -->
+			<script src="assets/plugins/slick-slider/slick.js"></script>
+			
+			<!-- Slim Scroll -->
+			<script src="assets/plugins/slim-scroll/jquery.slimscroll.min.js"></script>
+			<script src="libs/select2/js/select2.min.js"></script>
+			<!-- Angular Tooltip -->
+			<script src="assets/plugins/angular-tooltip/angular.js"></script>
+			<script src="assets/plugins/angular-tooltip/angular-tooltips.js"></script>
+			<script src="assets/plugins/angular-tooltip/index.js"></script>
+			<script src="libs/antixss/javascript/Reform.js"></script>
+			<script src="libs/js/ajaxsender.js"></script>
+			<!-- Custom scripts for all pages-->
+			<script src="js/glovia.js"></script>
+			
+			<script>
+			  $('.dropdown-toggle').dropdown()
+			  </script>
+			
+	  </div>
+	  <!-- Wrapper -->
+	  
+	</body>
+</html>
+
+  <script>
+    $(function(){
+      $("#nav-placeholder").load("navbar.html");
+    });
+  </script>
+
+<script>
+
+
+function readTextFile(file,type,lang)
+{
+    var rawFile = new XMLHttpRequest();
+    rawFile.open("GET", file, true);
+    rawFile.onreadystatechange = function ()
+    {
+        if(rawFile.readyState === 4)
+        {
+            if(rawFile.status === 200 || rawFile.status == 0)
+            {
+                var allText = rawFile.responseText;
+				
+				if(allText != undefined){
+					
+					document.getElementById(type+lang).value = allText;
+					
+				}
+				
+				
+				
+            }
+        }
+    }
+    rawFile.send(null);
+}
+
+
+
+
+
+var selectedlanguages = new Array();
+
+languageselected();
+function languageselected(){
+	
+ selectedlanguages = $('#langselect').val();
+	
+	
+	if(selectedlanguages.length>0){
+	
+	document.getElementById('langcontent').innerHTML = '<li class="active"><a data-toggle="tab" href="#'+selectedlanguages[0]+'">'+$("#langselect option[value='"+selectedlanguages[0]+"']").text()+'</a></li>';
+	
+	
+ 
+ 
+
+	
+	document.getElementById('langcontenttabs').innerHTML = '<div id="'+selectedlanguages[0]+'" class="tab-pane fade in active">'+
+  	'<div class="col-md-12">'+
+										'<div class="form-group">'+
+											'<label><?php echo $settings['skills']; ?>('+selectedlanguages[0]+')</label>'+
+											'<input id="skills'+selectedlanguages[0]+'" type="text" class="form-control" placeholder="" value="">'+
+										'</div>'+
+									'</div>'+
+									
+									'<div class="col-md-12">'+
+										'<div class="form-group">'+
+											'<label><?php echo $settings['aboutme']; ?>('+selectedlanguages[0]+')</label>'+
+											'<textarea id="aboutme'+selectedlanguages[0]+'" rows="4" type="text" class="form-control" placeholder="" value=""></textarea>'+
+										'</div>'+
+									'</div>'+
+								
+									'<div class="col-md-12">'+
+										'<div class="form-group">'+
+											'<label><?php echo $settings['education']; ?>('+selectedlanguages[0]+')</label>'+
+											'<textarea id="education'+selectedlanguages[0]+'" rows="4" type="text" class="form-control" placeholder="" value=""></textarea>'+
+										'</div>'+
+									'</div>'+
+									
+									'<div class="col-md-12">'+
+										'<div class="form-group">'+
+											'<label><?php echo $settings['experience']; ?>('+selectedlanguages[0]+')</label>'+
+											'<textarea id="experience'+selectedlanguages[0]+'" rows="4" type="text" class="form-control" placeholder="" value=""></textarea>'+
+										'</div>'+
+									'</div>'+
+								
+									'<div class="col-md-12">'+
+										'<div class="form-group">'+
+											'<label><?php echo $settings['attended']; ?>('+selectedlanguages[0]+')</label>'+
+											'<textarea id="attended'+selectedlanguages[0]+'" rows="4" type="text" class="form-control" placeholder="" value=""></textarea>'+
+										'</div>'+
+									'</div>'+
+									
+  '</div>';
+	 readTextFile('<?php echo $url; ?>/usercontents/'+selectedlanguages[0]+'_skills_<?php echo $_SESSION['user']['user_id'].".txt"; ?>','skills',selectedlanguages[0]);
+	 readTextFile('<?php echo $url; ?>/usercontents/'+selectedlanguages[0]+'_education_<?php echo $_SESSION['user']['user_id'].".txt"; ?>','education',selectedlanguages[0]);
+	 readTextFile('<?php echo $url; ?>/usercontents/'+selectedlanguages[0]+'_experience_<?php echo $_SESSION['user']['user_id'].".txt"; ?>','experience',selectedlanguages[0]);
+	 readTextFile('<?php echo $url; ?>/usercontents/'+selectedlanguages[0]+'_attended_<?php echo $_SESSION['user']['user_id'].".txt"; ?>','attended',selectedlanguages[0]);
+     readTextFile('<?php echo $url; ?>/usercontents/'+selectedlanguages[0]+'_aboutme_<?php echo $_SESSION['user']['user_id'].".txt"; ?>','aboutme',selectedlanguages[0]);
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	for(var i=1 ; i<(selectedlanguages.length) ; i++){
+		
+		document.getElementById('langcontent').innerHTML += '<li><a data-toggle="tab" href="#'+selectedlanguages[i]+'">'+$("#langselect option[value='"+selectedlanguages[i]+"']").text()+'</a></li>';
+		
+		
+		
+		
+	document.getElementById('langcontenttabs').innerHTML += '<div id="'+selectedlanguages[i]+'" class="tab-pane fade">'+
+  	'<div class="col-md-12">'+
+										'<div class="form-group">'+
+											'<label><?php echo $settings['skills']; ?>('+selectedlanguages[i]+')</label>'+
+											'<input id="skills'+selectedlanguages[i]+'" type="text" class="form-control" placeholder="" value="">'+
+										'</div>'+
+									'</div>'+
+									
+									'<div class="col-md-12">'+
+										'<div class="form-group">'+
+											'<label><?php echo $settings['aboutme']; ?>('+selectedlanguages[i]+')</label>'+
+											'<textarea id="aboutme'+selectedlanguages[i]+'" rows="4" type="text" class="form-control" placeholder="" value=""></textarea>'+
+										'</div>'+
+									'</div>'+
+								
+									'<div class="col-md-12">'+
+										'<div class="form-group">'+
+											'<label><?php echo $settings['education']; ?>('+selectedlanguages[i]+')</label>'+
+											'<textarea id="education'+selectedlanguages[i]+'" rows="4" type="text" class="form-control" placeholder="" value=""></textarea>'+
+										'</div>'+
+									'</div>'+
+									
+									'<div class="col-md-12">'+
+										'<div class="form-group">'+
+											'<label><?php echo $settings['experience']; ?>('+selectedlanguages[i]+')</label>'+
+											'<textarea id="experience'+selectedlanguages[i]+'" rows="4" type="text" class="form-control" placeholder="" value=""></textarea>'+
+										'</div>'+
+									'</div>'+
+								
+									'<div class="col-md-12">'+
+										'<div class="form-group">'+
+											'<label><?php echo $settings['attended']; ?>('+selectedlanguages[i]+')</label>'+
+											'<textarea id="attended'+selectedlanguages[i]+'" rows="4" type="text" class="form-control" placeholder="" value=""></textarea>'+
+										'</div>'+
+									'</div>'+
+									
+  '</div>';
+		
+		
+	readTextFile('<?php echo $url; ?>/usercontents/'+selectedlanguages[i]+'_skills_<?php echo $_SESSION['user']['user_id'].".txt"; ?>','skills',selectedlanguages[i]);
+	readTextFile('<?php echo $url; ?>/usercontents/'+selectedlanguages[i]+'_education_<?php echo $_SESSION['user']['user_id'].".txt"; ?>','education',selectedlanguages[i]);
+	readTextFile('<?php echo $url; ?>/usercontents/'+selectedlanguages[i]+'_experience_<?php echo $_SESSION['user']['user_id'].".txt"; ?>','experience',selectedlanguages[i]);
+	readTextFile('<?php echo $url; ?>/usercontents/'+selectedlanguages[i]+'_attended_<?php echo $_SESSION['user']['user_id'].".txt"; ?>','attended',selectedlanguages[i]);
+    readTextFile('<?php echo $url; ?>/usercontents/'+selectedlanguages[i]+'_aboutme_<?php echo $_SESSION['user']['user_id'].".txt"; ?>','aboutme',selectedlanguages[i]);
+		
+	}
+	
+	
+	}else{
+		
+		document.getElementById('langcontent').innerHTML = '<li class="active"><a data-toggle="tab"><?php echo $settings['lutfendilsecin']; ?></a></li>';
+		
+		document.getElementById('langcontenttabs').innerHTML = '';
+	}
+	
+}
+
+
+
+
+
+
+$(document).ready(function() {
+    $('#langselect').select2();
+});
+
+
+
+
+function save(){
+	
+	if(selectedlanguages.length<1){
+		
+		
+		document.getElementById('errortext').innerHTML =  "<?php echo $settings['lutfendilsecin']; ?>";
+		 
+		 
+		return;
+	}
+	
+	
+	
+	
+	
+  var fd = new FormData();
+  var other ={};
+    var c=0;
+    var file_data;
+    $('input[type="file"]').each(function(){
+        file_data = $('input[type="file"]')[c].files; // for multiple files
+
+     for(var i = 0;i<file_data.length;i++){
+         fd.append("file_"+c, file_data[i]);
+     }
+    c++;
+ }); 
+ 
+    var other = {};
+	for(var i = 0; i<selectedlanguages.length;i++){
+		other[selectedlanguages[i]] = {
+		'skills':document.getElementById('skills'+selectedlanguages[i]).value,
+		'aboutme':document.getElementById('aboutme'+selectedlanguages[i]).value,
+		'education':document.getElementById('education'+selectedlanguages[i]).value,
+		'experience':document.getElementById('experience'+selectedlanguages[i]).value,
+		'attended':document.getElementById('attended'+selectedlanguages[i]).value,
+		};
+		
+	}
+	
+	other['country'] = $('#country').val();
+	other['sex']= $('#genderselect').val();
+	other['phone'] = document.getElementById('phone').value;
+	other['address'] = document.getElementById('address').value;
+	other['face']=document.getElementById('face').value;
+	other['twitter']=document.getElementById('twitter').value;
+	other['linkedin']=document.getElementById('linkedin').value;
+	other['instagram']=document.getElementById('instagram').value;
+	
+	
+	
+	 fd.append("data",JSON.stringify(other));
+	 
+	
+	 var ajaxsender = new MultipartAjaxSender("POST","<?php echo $url; ?>/ajax/settings.php",fd);
+     ajaxsender.send(function(response){
+	 
+	 response = JSON.parse(response);
+	 response = response['cevap'];
+	if(response == "listed"){
+		
+		
+		document.getElementById('errortext').innerHTML =  "<?php echo $settings['listed']; ?>";
+		
+	}else if(response == "notlisted"){
+		
+		document.getElementById('errortext').innerHTML =  "<?php echo $settings['notlisted']; ?>";
+		
+		
+		
+	}else{
+		
+		document.getElementById('errortext').innerHTML =  response;
+		
+		
+	}
+	 
+	 
+	 
+ });
+	
+}
+
+
+
+       $(function() {
+    $('#profile-pic').on('click', function() {
+        $('#profile-image-upload').click();
+    });
+});      
+
+
+	function readURL(input) {
+            
+              if (input.files && input.files[0]) {
+                var reader = new FileReader();
+            
+                reader.onload = function(e) {
+                  $('#profile-pic').attr('src', e.target.result);
+                }
+            
+                reader.readAsDataURL(input.files[0]);
+              }
+            }
+            
+            $("#profile-image-upload").change(function() {
+              readURL(this);
+            });
+            	
+				
+				
+				
+
+</script>

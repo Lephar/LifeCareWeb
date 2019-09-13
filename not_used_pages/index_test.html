@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<meta name="description" content="">
+		<meta name="author" content="">
+		<title>LifeCare - Dashboard</title>
+
+
+    <!-- update the version number as needed -->
+		<!-- include only the Firebase features as you need -->
+		<!-- initialize the SDK after all desired features are loaded -->
+    <!-- <script defer src="/__/firebase/5.4.2/firebase-app.js"></script>
+    <script defer src="/__/firebase/5.4.2/firebase-auth.js"></script>
+    <script defer src="/__/firebase/5.4.2/firebase-database.js"></script>
+    <script defer src="/__/firebase/5.4.2/firebase-messaging.js"></script>
+    <script defer src="/__/firebase/5.4.2/firebase-storage.js"></script>
+		<script defer src="/__/firebase/5.4.2/firebase-functions.js"></script>
+    <script defer src="/__/firebase/init.js"></script> -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  </head>
+
+  <body>
+    <div>
+      <button type = "button" value = "here" onclick = "ffff();"> here </button>
+      <p id = "butt">
+          here
+      </p>
+      <p id = "butt_test">
+          test
+					<br>
+      </p>
+      <p id = "butt_test2">
+          test
+      </p>
+      <p id = "butt_test3">
+          test
+      </p>
+			<p id = "butt_test4">
+          test
+      </p>
+      <button type = "button" value = "here2" onclick = "writeUserData();"> here2 </button>
+			<button type = "button" value = "here3" onclick = "callFunc();"> here3 </button>
+    </div>
+
+    <div id="deneme1">
+      abc
+    </div>
+
+    <div id="deneme2">
+      cde
+    </div>
+
+    <form autocomplete="on" method="post" onsubmit="event.preventDefault(); sendButton(this.username.value, this.email.value);">
+      <input id="user_name" type="text" name="username" placeholder="Adınız-Soyadınız" val=""/>
+      <input id="user_mail" type="email" name="email" placeholder="E-mail Adresiniz" val=""/>
+      <input type="submit" name="send" value="Gönder"/>
+    </form>
+
+		<form autocomplete="on" method="post" onsubmit="event.preventDefault(); register_user(this.name.value,  this.email.value, this.password.value, this.tcno.value, this.graduated.value, this.diplomano.value);">
+      <input id="name" type="text" placeholder="Adınız Soyadınız" val="" required/>
+      <input id="email" type="email" placeholder="E-mail Adresiniz" val="" required/>
+			<input id="password" type="password" pattern="^.{6,20}$" placeholder="Şifreniz" val="" required/>
+			<input id="confirm_password" type="password" placeholder="Şifreniz (Tekrar)" val="" required/>
+			<input id="tcno" type="text" pattern="^[1-9]{1}[0-9]{10}$" maxlength="11" placeholder="TC Kimlik Numaranız" val="" required/>
+			<input id="graduated" type="text" placeholder="Mezun Olduğunuz Üniversite" val="" required/>
+			<input id="diplomano" type="text" placeholder="Diploma Numaranız" val="" required/>
+      <input type="submit" name="send" value="Gönder"/>
+    </form>
+
+		<br>
+		<br>
+		<br>
+		#######################################################################################################################
+
+		<div>
+			<button type = "button" onclick = "generateCode();"> Danışan Kodu Oluştur</button>
+		</div>
+
+		<div id="users">
+
+		</div>
+
+		<div id="messages">
+
+		</div>
+
+		<p id="advisee_code"></p>
+
+		<form autocomplete="on" method="post" onsubmit="event.preventDefault(); send_message(this.msg.value);">
+      <input id="msg" type="text" placeholder="Message" required/>
+      <input type="submit" name="send" value="Gönder"/>
+    </form>
+
+		<script src="https://www.gstatic.com/firebasejs/5.5.1/firebase.js"></script>
+		<script>
+		  // Initialize Firebase
+		  var config = {
+		    apiKey: "AIzaSyA24Eyjeh0HipNlMBhAJRnacsFxAySHgtY",
+		    authDomain: "lifecare-55c38.firebaseapp.com",
+		    databaseURL: "https://lifecare-55c38.firebaseio.com",
+		    projectId: "lifecare-55c38",
+		    storageBucket: "lifecare-55c38.appspot.com",
+		    messagingSenderId: "340270538259"
+		  };
+		  firebase.initializeApp(config);
+		</script>
+
+    <script>
+
+			function getChildren()
+			{
+				firebase.database().ref("AppUsers/p2XeMfaAV5OLrv2TT4Fw6LuTLly2/Olcumlerim").once("value")
+				.then(function(snapshot)
+				{
+					snapshot.forEach(function(childSnapshot)
+					{
+						document.getElementById("butt").innerHTML += childSnapshot.key.toString() + "<br>";
+					});
+				});
+			};
+
+			getChildren();
+
+
+
+
+			var initial_chat_id = "";
+			var currentUser = "EHUJXhUNwVM8HdXwRRyF1Y2sBlC2";
+			function generateCode()
+			{
+				// var currentUser = firebase.auth().currentUser.uid;
+				// var currentUser = dietitian_id;
+				firebase.database().ref("Chats").push(
+				{
+					dietitian_id: currentUser,
+					advisee_id: null,
+					messages: null,
+					last_message_time: null
+				}).then(function onSuccess(res)
+				{
+					document.getElementById("advisee_code").innerHTML = res.key;
+					console.log("Push returned: ", res.key);
+					return true;
+        }).catch(function onError(err)
+				{
+					return false;
+        });
+			}
+			//
+			// function send_message(msg)
+			// {
+			// 	firebase.database().ref("Chats/" + initial_chat_id.toString() + "/messages").push(
+			// 	{
+			// 		messageText: msg,
+			// 		dietitianMessage: true
+			// 	}).then(function onSuccess(res)
+			// 	{
+			// 		var d = new Date();
+			// 		var n = d.getTime();
+			// 		var updates = {};
+			// 	  updates['/last_message_time'] = n;
+			// 		return firebase.database().ref("Chats/" + initial_chat_id.toString()).update(updates);
+      //   }).catch(function onError(err)
+			// 	{
+			// 		console.log("error: ", err);
+			// 		return false;
+      //   });
+			// }
+			//
+			// function displayUsers()
+			// {
+			// 	var ref = firebase.database().ref("WebUsers/UserInfos/" + currentUser.toString() + "/ChatIDs");
+      //   ref.once('value', function(snapshot)
+			// 	{
+			// 		snapshot.forEach(function(childSnapshot)
+			// 		{
+			// 	    var childKey = childSnapshot.key.toString();
+			// 	    var childData = childSnapshot.val().toString();
+			// 			var new_element = document.createElement("a");
+			// 			new_element.addEventListener('click', function()
+			// 			{
+			// 		    choose_an_advisee(childData);
+			// 			}, false);
+			// 			// new_element.href = "javascript:choose_an_advisee(this.innerHTML)";
+			// 			new_element.innerHTML = childKey + ": " + childData;
+			// 			document.getElementById("users").appendChild(new_element);
+			// 	  });
+      //   });
+			// }
+			//
+			// function choose_an_advisee(childData)
+			// {
+			// 	initial_chat_id = childData;
+			// 	loadMessages();
+			// };
+			//
+			// function displayMessage(the_message, from_me)
+			// {
+			// 	var new_element = document.createElement("p");
+			// 	new_element.innerHTML = the_message;
+			// 	document.getElementById("messages").appendChild(new_element);
+			// }
+			//
+			// function loadMessages()
+			// {
+			//
+			// 	// var ref = firebase.database().ref("Chats/" + initial_chat_id + "/messages");
+      //   // ref.once('value', function(snapshot)
+			// 	// {
+			// 	// 	snapshot.forEach(function(childSnapshot)
+			// 	// 	{
+			// 	//     var childData = childSnapshot.val().toString();
+			// 	// 		displayMessage(childData, true);
+			// 	//   });
+      //   // });
+			//
+			//   var callback = function(snap) {
+			//     var data = snap.val();
+			//     displayMessage(data.messageText);
+			//   };
+			//
+			//   firebase.database().ref("Chats/" + initial_chat_id + "/messages/").limitToLast(12).on('child_added', callback);
+			// }
+			//
+			// displayUsers();
+			//
+			// firebase.auth().onAuthStateChanged(function(user) {
+			//   if (user) {
+			//     // document.getElementById("butt_test4").innerHTML = JSON.stringify(user);
+			// 		var ref = firebase.database().ref("Chats").orderByChild("last_message_time");
+			// 		ref.once('value', function(snapshot)
+			// 		{
+			// 			document.getElementById("butt_test4").innerHTML += snapshot.getPriority();
+			// 			// forEach(function(childSnapshot)
+			// 			// {
+			// 			// 	document.getElementById("butt_test4").innerHTML += childSnapshot.key.toString();
+			// 			// });
+			// 		});
+			//   } else {
+			//     document.getElementById("butt_test4").innerHTML = "olmadi";
+			//   }
+			// });
+
+
+
+			// loadMessages();
+
+        // function ffff()
+        // {
+        //     document.getElementById("butt_test").innerHTML = firebase.database().ref('Dietitians/');
+        //     var ref = firebase.database().ref('Dietitians/deneme3@deneme3/name');
+        //     ref.on('value', function(snapshot){
+        //         document.getElementById("butt").innerHTML = JSON.stringify(snapshot.val());
+        //     });
+        //     var ref = firebase.database().ref("Dietitians/" + "mfrkn4@gmail" + "/name");
+        //     let founded_name = null;
+        //     ref.on('value', function(snapshot){
+        //         founded_name = JSON.stringify(snapshot.val());
+        //     });
+        //     document.getElementById("butt_test2").innerHTML = founded_name;
+        // }
+        // function writeUserData() {
+        //   document.getElementById("butt_test2").innerHTML = "passed";
+        //   firebase.database().ref('users/' + 'IRKm2IshHSpWiIKzSKOA_2').set({
+        //     name: "xyz",
+        //     email: "xyz"
+        //   });
+        // }
+        // function sendButton(user_name, user_email)
+        // {
+        //   document.getElementById("butt_test2").innerHTML = "passed";
+        //   firebase.database().ref('dietitians/' + user_email).set({
+        //     name: user_name,
+        //     email: user_email
+        //   }).then(function onSuccess(res) {
+        //     window.location.href = "";
+        //   }).catch(function onError(err) {
+				//
+        //   });
+        // }
+				// function register_user(name, email, password, tcno, graduated, diplomano)
+				// {
+				// 	var newuser = firebase.functions().httpsCallable('create_new_user');
+				// 	document.getElementById("butt_test3").innerHTML = "here1";
+				// 	newuser({new_user: {name: name, email: email, password: password, tcno: tcno, graduated: graduated, diplomano: diplomano}}).then(function(result) {
+				// 		var returned_user = JSON.stringify(result.data.text);
+				// 		//get error text and show error messages
+				// 		}).catch(function(error) {
+				// 		  //open error, get error text and show error messages, delete values
+				// 		});
+				// 	}).then(function onSuccess(res) {
+        //     //window.location.href = "";
+        //   }).catch(function onError(err) {
+				// 		//delete values
+        //   });
+				// }
+				//
+				// var password = document.getElementById("password")
+		    // var confirm_password = document.getElementById("confirm_password");
+		    // function validatePassword()
+		    // {
+		    //   confirm_password.setCustomValidity("");
+		    //   if(password.value != confirm_password.value) {
+		    //     confirm_password.setCustomValidity("Şifreler Eşleşmiyor");
+		    //     return false;
+		    //   } else {
+		    //     confirm_password.setCustomValidity("");
+		    //     return true;
+		    //   }
+		    // }
+		    // password.onchange = validatePassword;
+		    // confirm_password.onkeyup = validatePassword;
+
+				// currentUser = user;
+				// var starter_promise = new Promise(function()
+				// {
+				// 	is_first_time = true;
+				// });
+				// starter_promise.then(displayUsers());
+
+    </script>
+	</body>
+</html>

@@ -1,0 +1,1139 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<meta name="description" content="">
+		<meta name="author" content="">
+		<link rel="shortcut icon" href="danisan/assets/img/favicon.png"/>
+		<title>Diyetisyen Paneli</title>
+
+		<!-- Bootstrap core CSS -->
+		<link href="diyetisyen_paneli/assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+		<!-- Custom fonts for this template -->
+		<link href="diyetisyen_paneli/assets/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+		<!-- Custom fonts for this template -->
+		<link href="diyetisyen_paneli/assets/plugins/themify/css/themify.css" rel="stylesheet" type="text/css">
+
+		<!-- Angular Tooltip Css -->
+		<link href="diyetisyen_paneli/assets/plugins/angular-tooltip/angular-tooltips.css" rel="stylesheet">
+
+		<!-- Morris Charts CSS -->
+		<link href="diyetisyen_paneli/assets/plugins/morris.js/morris.css" rel="stylesheet">
+
+		<!-- Page level plugin CSS -->
+		<link href="diyetisyen_paneli/css/animate.css" rel="stylesheet">
+
+		<!-- Custom styles for this template -->
+		<link href="diyetisyen_paneli/css/glovia.css" rel="stylesheet">
+		<link href="diyetisyen_paneli/css/glovia-responsive.css" rel="stylesheet">
+
+		<!-- Custom styles for Color -->
+		<link href="diyetisyen_paneli/css/skins/default.css" rel="stylesheet">
+	</head>
+
+	<body class="fixed-nav sticky-footer" id="page-top" style="display: none;">
+
+		<!-- ===============================
+			Navigation Start
+		====================================-->
+		<div id="nav-placeholder">
+
+    </div>
+		<!-- =====================================================
+		                    End Navigations
+		======================================================= -->
+
+		<div class="content-wrapper">
+			<div class="container-fluid">
+
+				<!-- Title & Breadcrumbs-->
+				<div class="row page-titles">
+					<div class="col-md-12 align-self-center">
+						<h4 class="theme-cl">Gösterge Paneli</h4>
+					</div>
+				</div>
+				<!-- Title & Breadcrumbs-->
+
+				<!-- row -->
+				<div class="row">
+
+					<div class="col-md-6 col-sm-6">
+						<div class="card">
+							<div class="card-body">
+								<div class="float-right">
+									<i class="icon ti-user gredient-cl font-30"></i>
+								</div>
+								<div class="widget-detail">
+									<h4 class="mb-1" id="active_user_count"></h4>
+									<span>Aktif Kullanıcı</span>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-md-6 col-sm-6">
+						<div class="card">
+							<div class="card-body">
+								<div class="float-right">
+									<i class="icon ti-medall gredient-cl font-30"></i>
+								</div>
+								<div class="widget-detail">
+									<h4 class="mb-1" id="monthly_income">₺ </h4>
+									<span>Aylık Kazanç</span>
+								</div>
+							</div>
+						</div>
+					</div>
+
+				</div>
+				<!-- /row -->
+
+				<!-- row -->
+				<div class="row">
+
+					<!-- Order Status -->
+					<div class="col-md-12 col-sm-12">
+						<div class="card">
+							<div class="card-header">
+								<h4 class="mb-0">Danışanlarım</h4>
+							</div>
+							<div class="card-body padd-0">
+								<div id="used_for_no_advisee" class="table-responsive" style="height:425px;overflow:auto;">
+									<table class="table table-lg table-hover">
+										<thead>
+											<tr>
+												<th>İsim</th>
+												<th>Durum</th>
+												<th>Ödeme Durumu</th>
+												<th>İletişim</th>
+												<th>Son Ölçüm Tarihi</th>
+											</tr>
+										</thead>
+
+										<tbody id="advisees">
+
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+					</div>
+
+
+
+
+				</div>
+
+
+
+
+				<!-- row -->
+				<div class="row">
+
+					<!-- Area Chart -->
+					<div id="d_chart" class="col-sm-12" style="display: none;">
+						<div class="card">
+							<div class="card-header">
+								<h4 class="mb-0">Cinsiyet Dağılımı</h4>
+							</div>
+							<div class="card-body">
+								<ul class="list-inline text-center">
+                  <li>
+                    <h5>
+											<i class="fa fa-circle m-r-5" style="color:#f5a623;"></i>
+											Kadın
+										</h5>
+                  </li>
+                  <li>
+                    <h5>
+											<i class="fa fa-circle m-r-5" style="color:#2a307f;"></i>
+											Erkek
+										</h5>
+                  </li>
+              	</ul>
+								<div class="chart" id="sales-chart" style="height: 300px; position: relative;"></div>
+							</div>
+						</div>
+					</div>
+
+
+					<div id="l_chart" class="col-sm-12" style="display: none;">
+						<div class="card">
+							<div class="card-header">
+								<h4 class="mb-0">Yaş Dağılımı</h4>
+							</div>
+							<div class="card-body">
+								<div class="chart" id="line-chart" style="height: 335px;"></div>
+							</div>
+						</div>
+					</div>
+
+
+					<!-- Donut Chart -->
+					<!-- <div class="col-md-7 col-sm-12">
+						<div class="card">
+							<div class="card-header">
+								<h4 class="mb-0">Yaş Dağılımı</h4>
+							</div>
+							<div class="card-body">
+								<ul class="list-inline text-center m-t-40">
+                                    <li>
+                                        <h5><i class="fa fa-circle m-r-5 cl-purple"></i> Kadın</h5>
+                                    </li>
+                                    <li>
+                                        <h5><i class="fa fa-circle m-r-5 cl-success"></i> Erkek</h5>
+                                    </li>
+                                </ul>
+								<div class="chart" id="bar-chartmorris" style="height: 300px;"></div>
+							</div>
+						</div>
+					</div> -->
+
+				</div>
+				<!-- /.row -->
+
+				<!-- row -->
+				<!-- <div class="row"> -->
+
+					<!-- <div class="col-md-12 col-sm-12">
+						<div class="card">
+							<div class="card-header">
+								<h4 class="mb-0">Lifecare Kullanımı</h4>
+							</div>
+							<div class="card-body">
+								<div id="interactive" style="height: 300px;"></div>
+							</div>
+						</div>
+					</div>
+
+
+				</div> -->
+				<!-- /.row -->
+
+
+				<!-- row -->
+				<div class="row">
+
+					<!-- Line Chart -->
+					<div class="col-md-7 col-sm-12">
+						<div class="card">
+							<div class="card-header">
+								<h4 class="mb-0">Danışan Dağılımı</h4>
+							</div>
+							<div id="map_body" class="card-body">
+								 <div id="chart_div"></div>
+							</div>
+						</div>
+					</div>
+
+					<!-- Donut Chart -->
+					<div class="col-md-5 col-sm-12">
+						<div id="table_body" class="card">
+							<div class="card-header">
+								<h4 class="mb-0">Danışan Dağılımı</h4>
+							</div>
+							<div class="card-body padd-0" >
+								<div class="table-responsive">
+									<table class="table table-lg table-hover">
+										<thead>
+											<tr>
+												<th>Ülke</th>
+												<th>Şehir</th>
+												<th>Danışan Sayısı</th>
+											</tr>
+										</thead>
+
+										<tbody id="countries_table">
+
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+					</div>
+
+				</div>
+				<!-- /.row -->
+
+
+
+				<!-- row -->
+				<div class="row">
+					<div class="col-md-3 col-sm-6 mb-4">
+						<div id="facebook" class="social-box facebook" style="min-height:auto;">
+							<i class="fa fa-facebook"></i>
+						</div>
+					</div>
+
+					<div class="col-md-3 col-sm-6 mb-4">
+						<div id="twitter" class="social-box twitter" style="min-height:auto;">
+							<i class="fa fa-twitter"></i>
+						</div>
+					</div>
+
+					<div class="col-md-3 col-sm-6 mb-4">
+						<div id="linkedin" class="social-box linkedin" style="min-height:auto;">
+							<i class="fa fa-linkedin"></i>
+						</div>
+					</div>
+
+					<div class="col-md-3 col-sm-6 mb-4">
+						<div id="instagram" class="social-box google-plus" style="min-height:auto;">
+							<i class="fa fa-instagram"></i>
+						</div>
+					</div>
+
+				</div>
+				<!-- ./row -->
+
+			</div>
+			<!-- /.content-wrapper -->
+
+			<!-- Footer -->
+			<footer class="sticky-footer">
+			  <div class="container">
+				<div class="text-center">
+				  <small class="font-15">Copyright © <img class="img-responsive" src="diyetisyen_paneli/img/qwerty-01.png" alt="Logo Qwerty"></small>
+				</div>
+			  </div>
+			</footer>
+
+			<!-- Scroll to Top Button-->
+			<a class="scroll-to-top rounded cl-white gredient-bg-login" href="#page-top">
+			  <i class="ti-angle-double-up"></i>
+			</a>
+
+			<!-- Bootstrap core JavaScript-->
+			<script src="diyetisyen_paneli/assets/plugins/jquery/jquery.min.js"></script>
+			<script src="diyetisyen_paneli/assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+			<!-- Core plugin JavaScript-->
+			<script src="diyetisyen_paneli/assets/plugins/jquery-easing/jquery.easing.min.js"></script>
+
+			 <!-- Slick Slider Js -->
+			<script src="diyetisyen_paneli/assets/plugins/slick-slider/slick.js"></script>
+
+			<!-- Slim Scroll -->
+			<script src="diyetisyen_paneli/assets/plugins/slim-scroll/jquery.slimscroll.min.js"></script>
+
+			<!-- FLOT CHARTS -->
+			<script src="diyetisyen_paneli/assets/plugins/Flot/jquery.flot.js"></script>
+			<!-- FLOT RESIZE PLUGIN - allows the chart to redraw when the window is resized -->
+
+			<script src="diyetisyen_paneli/assets/plugins/Flot/jquery.flot.resize.js"></script>
+
+			<!-- FLOT PIE PLUGIN - also used to draw donut charts -->
+			<script src="diyetisyen_paneli/assets/plugins/Flot/jquery.flot.pie.js"></script>
+
+			<!-- FLOT CATEGORIES PLUGIN - Used to draw bar charts -->
+			<script src="diyetisyen_paneli/assets/plugins/Flot/jquery.flot.categories.js"></script>
+
+			<!-- Custom Float JavaScript -->
+			<!-- <script src="diyetisyen_paneli/js/custom/chart/float.js"></script> -->
+
+			<!-- Morris.js charts -->
+	    <script src="diyetisyen_paneli/assets/plugins/raphael/raphael.min.js"></script>
+	    <script src="diyetisyen_paneli/assets/plugins/morris.js/morris.min.js"></script>
+
+			<!-- Custom Morrisjs JavaScript -->
+	    <script src="diyetisyen_paneli/js/custom/chart/morris.js"></script>
+
+			<script src="diyetisyen_paneli/js/custom/navbar_script.js"></script>
+
+			 <!--  Google Chart JavaScript -->
+			<script type='text/javascript' src='https://www.gstatic.com/charts/loader.js'></script>
+
+			<!-- Custom Google Chart JavaScript -->
+		    <!-- <script src="diyetisyen_paneli/js/custom/chart/googlechart.js"></script> -->
+
+			<!-- Angular Tooltip -->
+			<script src="diyetisyen_paneli/assets/plugins/angular-tooltip/angular.js"></script>
+			<script src="diyetisyen_paneli/assets/plugins/angular-tooltip/angular-tooltips.js"></script>
+			<script src="diyetisyen_paneli/assets/plugins/angular-tooltip/index.js"></script>
+
+			<!-- Custom scripts for all pages-->
+			<script src="diyetisyen_paneli/js/glovia.js"></script>
+
+			<script>
+			  $('.dropdown-toggle').dropdown()
+			  </script>
+
+	  </div>
+
+		<script src="https://www.gstatic.com/firebasejs/5.5.1/firebase.js"></script>
+		<script>
+		  // Initialize Firebase
+		  var config = {
+		    apiKey: "AIzaSyA24Eyjeh0HipNlMBhAJRnacsFxAySHgtY",
+		    authDomain: "lifecare-55c38.firebaseapp.com",
+		    databaseURL: "https://lifecare-55c38.firebaseio.com",
+		    projectId: "lifecare-55c38",
+		    storageBucket: "lifecare-55c38.appspot.com",
+		    messagingSenderId: "340270538259"
+		  };
+		  firebase.initializeApp(config);
+		</script>
+		<script>
+		setTimeout(function(){
+			birthday();
+		}, 3000);
+
+			// function push_new_date()
+			// {
+			// 	updates = {};
+			// 	updates["x"] = 1;
+			// 	updates["y"] = 1;
+			// 	return firebase.database().ref("AppUsers/p2XeMfaAV5OLrv2TT4Fw6LuTLly2/Olcumlerim/2018-12-03/").update(updates);
+			// }
+			function birthday(){
+
+					n =  new Date();
+					y = n.getFullYear();
+					m = n.getMonth() + 1;
+					d = n.getDate();
+					var today_date = parseInt(d) + parseInt(m);
+					console.log(today_date);
+					var referans = firebase.database().ref("AppUsers");
+					referans.once("value")
+					.then(function(snapshot){
+						snapshot.forEach(function(childSnapshot){
+							var id = childSnapshot.key;
+							var user_date = firebase.database().ref("AppUsers/"+id+"/PersonalInfo/birth_date").once("value").then(function(snap){
+								return snap.val();
+							});
+							Promise.all([user_date]).then(function([user_date]){
+								splitDate= user_date.split(".");
+								var user_day_month =parseInt(splitDate[0])+parseInt(splitDate[1]);
+								// console.log(user_day_month);
+								if(user_day_month == today_date){
+									console.log("DOĞUM GÜNÜ");
+									// var icon = " <i class='fa fa-fw fa-birthday-cake'></i>";
+									// console.log($("#advisees tr[id='ZOWrra7DKXc63Eal1a8aYWvGhNa2']"));
+									var icon = document.createElement("i");
+									icon.classList.add("fa");
+									icon.classList.add("fa-fw");
+									icon.classList.add("fa-birthday-cake");
+									icon.setAttribute("style","font-size:15px");
+									icon.setAttribute("title","Danışanınızın Bugün Doğum Günü");
+									var row = document.getElementById(id).children[0];
+									row.appendChild(icon);
+								}
+							});
+						});
+					});
+
+			}
+			function create_advisee(photo, name, status, payment_status, phone, mail, last_measure_date, user_id)
+			{
+				var ele1 = document.createElement("img");
+				ele1.classList.add("avatar");
+				if (photo == null)
+				{
+					ele1.src = "diyetisyen_paneli/img/black_user.jpg";
+				}
+				else
+				{
+					ele1.src = photo;
+				}
+
+				var ele2 = document.createElement("a");
+				ele2.href = "danisan-profile.html?u=" + user_id;
+				ele2.appendChild(ele1);
+				ele2.innerHTML += name;
+
+				var ele3 = document.createElement("td");
+				ele3.appendChild(ele2);
+
+				var ele8 = document.createElement("div");
+				ele8.classList.add("label");
+				if (status == "active")
+				{
+					ele8.classList.add("cl-success");
+					ele8.classList.add("bg-success-light");
+					ele8.innerHTML = "Aktif";
+				}
+				else if (status == "passive")
+				{
+					ele8.classList.add("cl-danger");
+					ele8.classList.add("bg-danger-light");
+					ele8.innerHTML = "Pasif";
+				}
+				else
+				{
+					ele8.classList.add("cl-info");
+					ele8.classList.add("bg-info-light");
+					ele8.innerHTML = "-";
+				}
+
+				var ele9 = document.createElement("td");
+				ele9.appendChild(ele8);
+
+				var ele4 = document.createElement("div");
+				ele4.classList.add("label");
+				if (payment_status == "Paid")
+				{
+					ele4.classList.add("cl-success");
+					ele4.classList.add("bg-success-light");
+					ele4.innerHTML = "Ödendi";
+				}
+				else if (payment_status == "Pending")
+				{
+					ele4.classList.add("cl-warning");
+					ele4.classList.add("bg-warning-light");
+					ele4.innerHTML = "Beklemede";
+				}
+				else if (payment_status == "Cancel")
+				{
+					ele4.classList.add("cl-danger");
+					ele4.classList.add("bg-danger-light");
+					ele4.innerHTML = "İptal Edildi";
+				}
+				else
+				{
+					ele4.classList.add("cl-info");
+					ele4.classList.add("bg-info-light");
+					ele4.innerHTML = "-";
+				}
+
+				var ele5 = document.createElement("td");
+				ele5.appendChild(ele4);
+
+				var ele6 = document.createElement("td");
+				var ele6_1 = document.createElement("div");
+				ele6_1.innerHTML = phone;
+				var ele6_2 = document.createElement("div");
+				ele6_2.innerHTML = mail;
+				ele6.appendChild(ele6_1);
+				ele6.appendChild(ele6_2);
+
+				var ele7 = document.createElement("td");
+				if (last_measure_date != "-")
+				{
+					last_measure_date = last_measure_date.split("-");
+					ele7.innerHTML = last_measure_date[2] + "/" + last_measure_date[1] + "/" + last_measure_date[0];
+				}
+				else
+				{
+					ele7.innerHTML = last_measure_date;
+				}
+
+				var final_ele = document.createElement("tr");
+				final_ele.id = user_id;
+				final_ele.appendChild(ele3);
+				final_ele.appendChild(ele9);
+				final_ele.appendChild(ele5);
+				final_ele.appendChild(ele6);
+				final_ele.appendChild(ele7);
+
+				document.getElementById("advisees").appendChild(final_ele);
+			}
+
+			function first_part_of_the_page(user)
+			{
+				var ref = firebase.database().ref("WebUsers/UserInfos/" + user.uid + "/ChatIDs");
+				ref.once("value")
+				.then(function(snapshot)
+				{
+					the_advisees = [];
+					snapshot.forEach(function(childSnapshot)
+					{
+						// var name = "-";
+						// var payment_status = "-";
+						// var phone_num = "-";
+						// var email = "-";
+						// var photo_url = null;
+						// var last_measure_date = "-";
+						var user_id = childSnapshot.key.toString();
+
+						var name = firebase.database().ref("Chats/" + childSnapshot.val().toString() + "/AppUserName").once("value")
+						.then(function(snapshot2)
+						{
+							return snapshot2.val();
+						});
+
+						var payment_status = firebase.database().ref("AppUsers/" + user_id + "/PersonalInfo/payment_status").once("value")
+						.then(function(snapshot3)
+						{
+							if (snapshot3.val() != null)
+							{
+								return snapshot3.val();
+							}
+							else
+							{
+								return "-";
+							}
+						});
+
+						var phone_num = firebase.database().ref("AppUsers/" + user_id + "/PersonalInfo/phone_num").once("value")
+						.then(function(snapshot4)
+						{
+							if (snapshot4.val() != null)
+							{
+								return snapshot4.val();
+							}
+							else
+							{
+								return "-";
+							}
+						});
+
+						var email = firebase.database().ref("AppUsers/" + user_id + "/PersonalInfo/email").once("value")
+						.then(function(snapshot5)
+						{
+							if (snapshot5.val() != null)
+							{
+								return snapshot5.val();
+							}
+							else
+							{
+								return "-";
+							}
+						});
+
+						var photo_url = firebase.database().ref("AppUsers/" + user_id + "/PersonalInfo/photo_url").once("value")
+						.then(function(snapshot6)
+						{
+							return snapshot6.val();
+						});
+
+						var last_measure_date = firebase.database().ref("AppUsers/" + user_id + "/PersonalInfo/last_measure_date").once("value")
+						.then(function(snapshot7)
+						{
+							if (snapshot7.val() != null)
+							{
+								return snapshot7.val();
+							}
+							else
+							{
+								return "-";
+							}
+						});
+
+						var connection_status = firebase.database().ref("Chats/" + childSnapshot.val().toString() + "/connection_status").once("value")
+						.then(function(snapshot8)
+						{
+							if (snapshot8.val() != null)
+							{
+								return snapshot8.val();
+							}
+							else
+							{
+								return "-";
+							}
+						});
+
+						the_advisees.push(photo_url);
+						the_advisees.push(name);
+						the_advisees.push(connection_status);
+						the_advisees.push(payment_status);
+						the_advisees.push(phone_num);
+						the_advisees.push(email);
+						the_advisees.push(last_measure_date);
+						the_advisees.push(user_id);
+
+					});
+					Promise.all(the_advisees).then(function(the_advisees)
+					{
+							// [photo_url, name, connection_status, payment_status, phone_num, email, last_measure_date, user_id]
+							var advisees_count = 0;
+							for (var a=0; a<the_advisees.length; a+=8)
+							{
+								if (the_advisees[a+1] != null)
+								{
+									advisees_count += 1;
+									create_advisee(the_advisees[a], the_advisees[a+1], the_advisees[a+2], the_advisees[a+3], the_advisees[a+4], the_advisees[a+5], the_advisees[a+6], the_advisees[a+7]);
+								}
+							}
+							document.getElementById("active_user_count").innerHTML = advisees_count;
+							if (advisees_count == 0)
+							{
+								var no_advisee_text = document.createElement("div");
+								no_advisee_text.classList.add("text-center");
+								no_advisee_text.innerHTML = "Henüz hiç danışanınız bulunmamaktadır. Danışan eklemek için 'Danışanlarım' sekmesinden 'Yeni Danışan Ekle' butonunu kullanabilirsiniz.";
+								document.getElementById("used_for_no_advisee").appendChild(no_advisee_text);
+							}
+						});
+				});
+
+				ref = firebase.database().ref("WebUsers/UserInfos/" + user.uid + "/monthly_income");
+				ref.once("value")
+				.then(function(snapshot)
+				{
+					document.getElementById("monthly_income").innerHTML = "₺ " + snapshot.val();
+				});
+			}
+
+			function calculate_age(d)
+			{
+			  var today = new Date();
+			  d = d.split(".");
+			  d = d[2] + "-" + d[1] + "-" + d[0];
+			  var birthDate = new Date(d);
+			  var age = today.getFullYear() - birthDate.getFullYear();
+			  var m = today.getMonth() - birthDate.getMonth();
+			  if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate()))
+			  {
+			    age--;
+			  }
+			  return age;
+			}
+
+			function second_part_of_the_page(user)
+			{
+				var ref = firebase.database().ref("WebUsers/UserInfos/" + user.uid + "/ChatIDs");
+				ref.once("value")
+				.then(function(snapshot)
+				{
+					the_advisees_infos = [];
+					snapshot.forEach(function(childSnapshot)
+					{
+						var user_id = childSnapshot.key.toString();
+						var name = firebase.database().ref("Chats/" + childSnapshot.val().toString() + "/AppUserName").once("value")
+						.then(function(snapshot)
+						{
+							return snapshot.val();
+						});
+						var gender = firebase.database().ref("AppUsers/" + user_id + "/PersonalInfo/gender").once("value")
+						.then(function(snapshot)
+						{
+							return snapshot.val();
+						});
+						var birth_date = firebase.database().ref("AppUsers/" + user_id + "/PersonalInfo/birth_date").once("value")
+						.then(function(snapshot)
+						{
+							return snapshot.val();
+						});
+						the_advisees_infos.push(gender);
+						the_advisees_infos.push(birth_date);
+						the_advisees_infos.push(name);
+					});
+					Promise.all(the_advisees_infos)
+					.then(function(values)
+					{
+						var men_count = 0;
+						var women_count = 0;
+						var ages = {};
+						var ages_array = [];
+						for (var i = 0; i < values.length; i+=3)
+						{
+							if (values[i+2] != null)
+							{
+								if (values[i] == "Erkek")
+								{
+									men_count += 1;
+								}
+								else if (values[i] == "Kadın")
+								{
+									women_count += 1;
+								}
+								var the_age = calculate_age(values[i+1]);
+								if (ages[the_age] == null)
+								{
+									ages[the_age] = {};
+									ages[the_age]["Erkek"] = 0;
+									ages[the_age]["Kadın"] = 0;
+								}
+								ages[the_age][values[i]] += 1;
+							}
+						}
+						for (a in ages)
+						{
+							ages_array.push(a);
+							ages_array.push(ages[a]["Erkek"]);
+							ages_array.push(ages[a]["Kadın"]);
+						}
+						return [[men_count, women_count], ages_array];
+					})
+					.then(function(result)
+					{
+						var male_users = result[0][0];
+						var female_users = result[0][1];
+						var second_graph_values = result[1];
+						var chart_data = [];
+						for (var a=0; a<(second_graph_values.length); a+=3)
+						{
+							chart_data.push({period: second_graph_values[a], Erkek: second_graph_values[a+1], Kadın: second_graph_values[a+2]});
+						}
+						if ((male_users != 0 || female_users != 0) && (chart_data.length != 0))
+						{
+							document.getElementById("d_chart").classList.add("col-md-5");
+							document.getElementById("l_chart").classList.add("col-md-7");
+							document.getElementById("d_chart").style.display = "block";
+							document.getElementById("l_chart").style.display = "block";
+							$(function ()
+							{
+								"use strict";
+								Morris.Donut(
+								{
+									element: 'sales-chart',
+									resize: true,
+									colors: ["#f5a623", "#2a307f"],
+									data: [
+										{label: "Kadın", value: female_users},
+										{label: "Erkek", value: male_users}
+									],
+									hideHover: 'auto'
+								});
+								Morris.Area(
+								{
+									element: 'line-chart',
+									data: chart_data,
+									xkey: 'period',
+									ykeys: ['Erkek', 'Kadın'],
+									labels: ['Erkek', 'Kadın'],
+									pointSize: 2,
+									fillOpacity: 0,
+									pointStrokeColors:['#1cc100', '#fdc006'],
+									behaveLikeLine: true,
+									gridLineColor: '#e0e0e0',
+									lineWidth: 1,
+									hideHover: 'auto',
+									lineColors: ['#1cc100', '#fdc006'],
+									resize: true,
+									parseTime: false,
+									axes: 'x'
+									// yLabelFormat: function(y){return y != Math.round(y)?Math.round(y):y;}
+								});
+							});
+						}
+						else if ((male_users == 0 && female_users == 0) && (chart_data.length != 0))
+						{
+							document.getElementById("l_chart").classList.add("col-md-12");
+							document.getElementById("l_chart").style.display = "block";
+							$(function ()
+							{
+								"use strict";
+								Morris.Area(
+								{
+									element: 'line-chart',
+									data: chart_data,
+									xkey: 'period',
+									ykeys: ['Erkek', 'Kadın'],
+									labels: ['Erkek', 'Kadın'],
+									pointSize: 2,
+									fillOpacity: 0,
+									pointStrokeColors:['#1cc100', '#fdc006'],
+									behaveLikeLine: true,
+									gridLineColor: '#e0e0e0',
+									lineWidth: 1,
+									hideHover: 'auto',
+									lineColors: ['#1cc100', '#fdc006'],
+									resize: true,
+									parseTime: false,
+									axes: 'x'
+									// yLabelFormat: function(y){return y != Math.round(y)?Math.round(y):y;}
+								});
+							});
+						}
+						else if ((male_users != 0 || female_users != 0) && (chart_data.length == 0))
+						{
+							document.getElementById("d_chart").classList.add("col-md-12");
+							document.getElementById("d_chart").style.display = "block";
+							$(function ()
+							{
+								"use strict";
+								Morris.Donut({
+									element: 'sales-chart',
+									resize: true,
+									colors: ["#f5a623", "#2a307f"],
+									data: [
+									{label: "Kadın", value: female_users},
+									{label: "Erkek", value: male_users}
+									],
+									hideHover: 'auto'
+								});
+							});
+						}
+					});
+				});
+			}
+
+			function replace_social_media(the_link, the_element)
+			{
+				var parent = document.getElementById(the_element);
+				var new_element = document.createElement("a");
+				new_element.target = "_blank";
+				new_element.rel = "noopener noreferrer";
+				new_element.href = the_link;
+				new_element.appendChild(parent.firstElementChild);
+				parent.appendChild(new_element);
+			}
+
+			function add_countries_table(country, city, advisee)
+			{
+				var ele1 = document.createElement("td");
+				ele1.innerHTML = country;
+				var ele2 = document.createElement("td");
+				ele2.innerHTML = city;
+				var ele3 = document.createElement("td");
+				ele3.innerHTML = advisee;
+				var ele4 = document.createElement("tr");
+				ele4.appendChild(ele1);
+				ele4.appendChild(ele2);
+				ele4.appendChild(ele3);
+				document.getElementById("countries_table").appendChild(ele4);
+			}
+
+			function third_part_of_the_page(user)
+			{
+				// var main_promise = firebase.database().ref("WebUsers/UserInfos/" + user.uid + "/advisees_stat_info/birth_dates").once("value")
+				// .then(function(snapshot)
+				// {
+				// 	var chart_data = snapshot.val();
+				// 	document.getElementById("butt").innerHTML += JSON.stringify(snapshot.val());
+				// 	var a = 0;
+				// 	var final_values = [];
+				// 	for (a in chart_data)
+				// 	{
+				// 		chart_data[a]["period"] = a;
+				// 		final_values.push(chart_data[a]);
+				// 	}
+				// 	document.getElementById("butt").innerHTML += "</br>" + JSON.stringify(final_values);
+				// });
+
+				var ref = firebase.database().ref("WebUsers/UserInfos/" + user.uid + "/ChatIDs");
+				ref.once("value")
+				.then(function(snapshot)
+				{
+					countries_and_cities = [];
+					snapshot.forEach(function(childSnapshot)
+					{
+						var user_id = childSnapshot.key.toString();
+
+						var name = firebase.database().ref("Chats/" + childSnapshot.val().toString() + "/AppUserName").once("value")
+						.then(function(snapshot0)
+						{
+							return snapshot0.val();
+						});
+
+						var country = firebase.database().ref("AppUsers/" + user_id + "/PersonalInfo/country").once("value")
+						.then(function(snapshot1)
+						{
+							return snapshot1.val();
+						});
+
+						var city = firebase.database().ref("AppUsers/" + user_id + "/PersonalInfo/city").once("value")
+						.then(function(snapshot2)
+						{
+							return snapshot2.val();
+						});
+						countries_and_cities.push(country);
+						countries_and_cities.push(city);
+						countries_and_cities.push(name);
+					});
+					Promise.all(countries_and_cities).then(function(infos)
+					{
+						countries_and_cities_json = {};
+						for (var i=0; i<infos.length; i+=3)
+						{
+							if (infos[i] != null && infos[i+2] != null)
+							{
+								if (infos[i] == "Türkiye")
+								{
+									if (infos[i+1] == null)
+									{
+										if (countries_and_cities_json["Türkiye_just"] == null)
+										{
+											countries_and_cities_json["Türkiye_just"] = 1;
+										}
+										else
+										{
+											countries_and_cities_json["Türkiye_just"] += 1;
+										}
+									}
+									else
+									{
+										if (countries_and_cities_json["Türkiye"] == null)
+										{
+											countries_and_cities_json["Türkiye"] = {};
+											countries_and_cities_json["Türkiye"][infos[i+1].toString()] = 1;
+										}
+										else
+										{
+											if (countries_and_cities_json["Türkiye"][infos[i+1].toString()] == null)
+											{
+												countries_and_cities_json["Türkiye"][infos[i+1].toString()] = 1;
+											}
+											else
+											{
+												countries_and_cities_json["Türkiye"][infos[i+1].toString()] += 1;
+											}
+										}
+									}
+								}
+								else
+								{
+									if (countries_and_cities_json[infos[i]] == null)
+									{
+										countries_and_cities_json[infos[i]] = 1;
+									}
+									else
+									{
+										countries_and_cities_json[infos[i]] += 1;
+									}
+								}
+							}
+						}
+						return countries_and_cities_json;
+					}).then(function(countries_data)
+					{
+						var c = null;
+						var total_counts = [["Country", "Danışan"]];
+						var total_turkey_count = 0;
+						for (c in countries_data)
+						{
+							if (c == "Türkiye")
+							{
+								var cc = null;
+								for (cc in countries_data[c])
+								{
+									add_countries_table(c, cc, countries_data[c][cc]);
+									total_turkey_count += countries_data[c][cc];
+								}
+							}
+							else
+							{
+								if (c == "Türkiye_just")
+								{
+									add_countries_table("Türkiye", "-", countries_data[c]);
+									total_turkey_count += countries_data[c];
+								}
+								else
+								{
+									add_countries_table(c, "-", countries_data[c]);
+									total_counts.push([c, countries_data[c]]);
+								}
+							}
+						}
+						if (total_turkey_count != 0)
+						{
+							total_counts.push(["Türkiye", total_turkey_count]);
+						}
+						var map_promise = print_map(total_counts);
+						map_promise.then(function(value) {
+							var the_height = document.getElementById("map_body").parentElement.offsetHeight.toString();
+							document.getElementById("table_body").style.height = the_height + "px";
+							document.getElementById("table_body").style.overflow = "auto";
+						});
+					});
+				});
+				// var main_promise = firebase.database().ref("WebUsers/UserInfos/" + user.uid + "/advisees_stat_info/countries").once("value")
+				// .then(function(snapshot)
+				// {
+				// 	var countries_data = snapshot.val();
+				// });
+			}
+
+			function fourth_part_of_the_page(user)
+			{
+				var base_ref = firebase.database().ref("WebUsers/UserInfos/" + user.uid);
+				base_ref.child("facebook_link").once("value")
+				.then(function(snapshot)
+				{
+					if (snapshot.val() != null)
+					{
+						replace_social_media(snapshot.val(), "facebook");
+					}
+				});
+				base_ref.child("twitter_link").once("value")
+				.then(function(snapshot)
+				{
+					if (snapshot.val() != null)
+					{
+						replace_social_media(snapshot.val(), "twitter");
+					}
+				});
+				base_ref.child("linkedin_link").once("value")
+				.then(function(snapshot)
+				{
+					if (snapshot.val() != null)
+					{
+						replace_social_media(snapshot.val(), "linkedin");
+					}
+				});
+				base_ref.child("instagram_link").once("value")
+				.then(function(snapshot)
+				{
+					if (snapshot.val() != null)
+					{
+						replace_social_media(snapshot.val(), "instagram");
+					}
+				});
+			}
+
+			firebase.auth().onAuthStateChanged(function(user)
+			{
+				if (user)
+				{
+					first_part_of_the_page(user);
+					setTimeout(function(){
+						engTRK();
+	        }, 1000);
+					second_part_of_the_page(user);
+					third_part_of_the_page(user);
+					fourth_part_of_the_page(user);
+					nav_bar_part_of_the_page(user);
+					fill_message_box(user);
+					document.getElementById("page-top").style.display = "block";
+				}
+				else
+				{
+					document.location.replace("login.html");
+				}
+			});
+
+		</script>
+		<script>
+			function engTRK(){
+				document.getElementById("eng").href="diyetisyen_paneli_eng.html";
+				document.getElementById("trk").href="diyetisyen_paneli.html";
+			}
+		</script>
+		<script type="text/javascript">
+			function print_map(total_counts)
+			{
+				google.charts.load('current', {
+					'packages':['geochart'],
+					// Note: you will need to get a mapsApiKey for your project.
+					// See: https://developers.google.com/chart/interactive/docs/basic_load_libs#load-settings
+					'mapsApiKey': 'AIzaSyDt9b35Gkj8e8IBy49zCqZurkIzUdJtmFU'
+				});
+				return google.charts.setOnLoadCallback(drawAdviseeMap);
+
+				function drawAdviseeMap() {
+					var data = google.visualization.arrayToDataTable(total_counts);
+
+					var options = {
+						colorAxis: {colors: ["#f5a623", "#2a307f"]}
+					};
+
+					var chart = new google.visualization.GeoChart(document.getElementById('chart_div'));
+
+					return Promise.resolve(chart.draw(data, options));
+				}
+
+			}
+
+		</script>
+
+		<script>
+			$(function(){
+				$("#nav-placeholder").load("navbar.txt");
+			});
+
+		</script>
+	  <!-- Wrapper -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-135958309-1"></script>
+		<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+
+		gtag('config', 'UA-135958309-1');
+		</script>
+	</body>
+</html>

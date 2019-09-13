@@ -1,0 +1,887 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<meta name="description" content="">
+		<meta name="author" content="">
+		<link rel="shortcut icon" href="danisan/assets/img/favicon.png"/>
+		<title>Konuşma Sayfası</title>
+
+		<!-- Bootstrap core CSS -->
+		<link href="diyetisyen_paneli/assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+		<!-- Custom fonts for this template -->
+		<link href="diyetisyen_paneli/assets/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+		<!-- Custom fonts for this template -->
+		<link href="diyetisyen_paneli/assets/plugins/themify/css/themify.css" rel="stylesheet" type="text/css">
+
+		<!-- Angular Tooltip Css -->
+		<link href="diyetisyen_paneli/assets/plugins/angular-tooltip/angular-tooltips.css" rel="stylesheet">
+
+		<!-- Page level plugin CSS -->
+		<link href="diyetisyen_paneli/assets/plugins/datatables/dataTables.bootstrap4.css" rel="stylesheet">
+
+		<!-- Page level plugin CSS -->
+		<link href="diyetisyen_paneli/css/animate.css" rel="stylesheet">
+
+		<!-- Custom styles for this template -->
+		<link href="diyetisyen_paneli/css/glovia.css" rel="stylesheet">
+		<link href="diyetisyen_paneli/css/glovia-responsive.css" rel="stylesheet">
+
+		<!-- Custom styles for Color -->
+		<link href="diyetisyen_paneli/css/skins/default.css" rel="stylesheet">
+	</head>
+
+	<body class="fixed-nav sticky-footer" id="page-top" style="display: none;">
+
+		<div id="nav-placeholder">
+
+    </div>
+
+		<div class="content-wrapper">
+			<div class="container-fluid">
+
+				<!-- Title & Breadcrumbs-->
+				<div class="row page-titles">
+					<div class="col-md-12 align-self-center">
+						<h4 class="theme-cl">Mesajlar</h4>
+					</div>
+				</div>
+				<!-- Title & Breadcrumbs-->
+
+				<!-- chat-wappers-->
+				<div class="chat-wappers">
+					<div class="app">
+						<div class="row app-one">
+							<div class="col-md-12 side">
+
+								<!-- ========= Side One =========== -->
+								<div class="side-one" id="side_one">
+									<div class="row heading bg-light">
+										<div class="col-sm-9 col-9 heading-avatar">
+											<div class="heading-avatar-icon">
+											  <img id="dietitian_photo" src="">
+											</div>
+										  </div>
+
+										<!-- <div class="col-sm-3 col-3 heading-compose text-right">
+											<i class="fa fa-comments-o fa-2x" aria-hidden="true" onclick="change_to_other_side(1);"></i>
+										</div> -->
+									</div>
+
+									<div class="row searchBox">
+										<div class="col-sm-12 searchBox-inner bg-white">
+											<div class="form-group has-feedback">
+											  <input id="searchText" type="text" class="form-control" name="searchText" placeholder="Ara">
+											  <span class="glyphicon glyphicon-search form-control-feedback"></span>
+											</div>
+										</div>
+									</div>
+
+									<div class="sideBar" id="user_list">
+
+
+									</div>
+								</div>
+								<!-- ========= End Side One =========== -->
+
+								<div class="side-two" style="max-height:662px;" id="side_two">
+
+									<div class="row newMessage-heading theme-bg">
+										 <div class="row newMessage-main">
+											<div class="col-sm-2 col-2 newMessage-back">
+											  <i class="fa fa-arrow-left" id="go_back_arrow" aria-hidden="true" onclick="change_to_other_side(2);"></i>
+											</div>
+											<div class="col-sm-9 col-9 newMessage-title" id="talking_advisee">
+
+											</div>
+											<div class="col-sm-1 col-1 newMessage-back">
+												<!-- <label class="toggler toggler-danger">
+													<input id="photo_upload" type="file">
+													<i class="fa fa-picture-o" aria-hidden="true"></i>
+												</label> -->
+											</div>
+										</div>
+									</div>
+
+									<div class="message" id="conversation">
+										<ul class="chat-list padd-20" id="messages">
+
+										</ul>
+									</div>
+
+									<div class="row reply bg-light">
+
+										<div class="col-sm-10 col-xs-10 reply-main">
+										  <textarea class="form-control" rows="1" id="comment" placeholder="Mesajını Buraya Yaz" required></textarea>
+										</div>
+
+										<div class="col-sm-2 col-xs-2 reply-send">
+										  <i class="fa fa-send fa-2x" style="margin-left: 15%;" aria-hidden="true" id="click_to_send"></i>
+											<label class="toggler toggler-danger" style="margin-left:15%; color: #677897;">
+												<input id="photo_upload" type="file">
+												<i class="fa fa-picture-o" aria-hidden="true"></i>
+											</label>
+										</div>
+
+									</div>
+								</div>
+
+							</div>
+							<!-- Col-md-4 -->
+
+
+							<!-- col-md-8 -->
+
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+			<!-- /.container-fluid-->
+
+			<footer class="sticky-footer">
+			  <div class="container">
+				<div class="text-center">
+				  <small class="font-15">Copyright © <img class="img-responsive" src="diyetisyen_paneli/img/qwerty-01.png" alt="Logo Qwerty"></small>
+				</div>
+			  </div>
+			</footer>
+
+			<!-- Scroll to Top Button-->
+			<a class="scroll-to-top rounded cl-white gredient-bg" href="#page-top">
+			  <i class="ti-angle-double-up"></i>
+			</a>
+
+			<div class="modal modal-box-1 fade" id="modal-1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel1" aria-hidden="true">
+				<div class="modal-dialog" style="max-width: 700px;">
+					<div class="modal-content" id="myModalLabel1">
+						<div class="modal-header theme-bg">
+							Fotoğraf
+							<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+						</div>
+						<div class="modal-body">
+							<img id="to_click_image" src="" class="img-responsive">
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="modal modal-box-1 fade" id="modal-2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel2" aria-hidden="true">
+				<div class="modal-dialog" style="max-width: 700px;">
+					<div class="modal-content" id="myModalLabel2">
+						<div class="modal-header theme-bg">
+							Hata
+							<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+						</div>
+						<div id="modal_text" class="modal-body text-center">
+
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Bootstrap core JavaScript-->
+			<script src="diyetisyen_paneli/assets/plugins/jquery/jquery.min.js"></script>
+			<script src="diyetisyen_paneli/assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+			<!-- Core plugin JavaScript-->
+			<script src="diyetisyen_paneli/assets/plugins/jquery-easing/jquery.easing.min.js"></script>
+
+			 <!-- Slick Slider Js -->
+			<script src="diyetisyen_paneli/assets/plugins/slick-slider/slick.js"></script>
+
+			<!-- Slim Scroll -->
+			<script src="diyetisyen_paneli/assets/plugins/slim-scroll/jquery.slimscroll.min.js"></script>
+
+			<!-- Angular Tooltip -->
+			<script src="diyetisyen_paneli/assets/plugins/angular-tooltip/angular.js"></script>
+			<script src="diyetisyen_paneli/assets/plugins/angular-tooltip/angular-tooltips.js"></script>
+			<script src="diyetisyen_paneli/assets/plugins/angular-tooltip/index.js"></script>
+
+			<!-- Custom scripts for all pages-->
+			<script src="diyetisyen_paneli/js/glovia.js"></script>
+
+			<script src="diyetisyen_paneli/js/custom/navbar_script.js"></script>
+
+			<script src="https://www.gstatic.com/firebasejs/5.5.1/firebase.js"></script>
+			<script>
+				// Initialize Firebase
+				var config = {
+					apiKey: "AIzaSyA24Eyjeh0HipNlMBhAJRnacsFxAySHgtY",
+					authDomain: "lifecare-55c38.firebaseapp.com",
+					databaseURL: "https://lifecare-55c38.firebaseio.com",
+					projectId: "lifecare-55c38",
+					storageBucket: "lifecare-55c38.appspot.com",
+					messagingSenderId: "340270538259"
+				};
+				firebase.initializeApp(config);
+			</script>
+
+			<script>
+			$('.dropdown-toggle').dropdown()
+			</script>
+
+			<script>
+        $(function(){
+          $("#nav-placeholder").load("navbar.txt");
+        });
+      </script>
+
+			<script type="text/javascript">
+
+				var currentUser;
+				var initial_chat_id = "";
+
+				function put_a_user_to_list(user_name, last_message_time, chat_id, last_message_time_timestamp, unread_messages, user_photo, will_click_it)
+				{
+					var old_element = document.getElementById(chat_id.toString());
+					if (old_element != null)
+					{
+						old_element.parentElement.removeChild(old_element);
+					}
+					var ele1 = document.createElement("img");
+					ele1.classList.add("avatar");
+					ele1.classList.add("avatar-lg");
+					if (user_photo != null)
+					{
+						ele1.src = user_photo;
+					}
+					else
+					{
+						ele1.src = "diyetisyen_paneli/img/black_user.jpg";
+					}
+					ele1.addEventListener('click', function()
+					{
+						change_to_other_side(1, chat_id);
+					}, false);
+					if (will_click_it == true)
+					{
+						ele1.addEventListener('load', function()
+						{
+							ele1.click();
+						});
+					}
+
+					var ele2 = document.createElement("a");
+					ele2.appendChild(ele1);
+
+					var ele3 = document.createElement("a");
+					ele3.innerHTML = user_name;
+
+					var ele4 = document.createElement("span");
+					ele4.classList.add("time-meta");
+					ele4.setAttribute("style","color:white");
+					ele4.classList.add("pull-right");
+					if (last_message_time != null)
+					{
+						ele4.innerHTML = last_message_time;
+					}
+					else
+					{
+						ele4.innerHTML = "-";
+					}
+
+
+					var ele5 = document.createElement("h6");
+					ele5.style = "margin-top:14px;";
+					ele5.appendChild(ele3);
+					if (unread_messages != 0)
+					{
+						var ele4_1 = document.createElement("span");
+						ele4_1.classList.add("badge");
+						ele4_1.classList.add("bg-danger");
+						ele4_1.classList.add("badge-pill");
+						ele4_1.innerHTML = unread_messages;
+						ele5.appendChild(ele4_1);
+					}
+					ele5.appendChild(ele4);
+
+					var ele6 = document.createElement("div");
+					ele6.classList.add("media-body");
+					ele6.addEventListener('click', function()
+					{
+						change_to_other_side(1, chat_id);
+					}, false);
+					ele6.appendChild(ele5);
+
+					var ele7 = document.createElement("div");
+					ele7.classList.add("media");
+					ele7.classList.add("media-single");
+					ele7.appendChild(ele2);
+					ele7.appendChild(ele6);
+
+					var ele8 = document.createElement("div");
+					ele8.classList.add("ground-list");
+					ele8.classList.add("ground-list-hove");
+					ele8.classList.add("bb-1");
+					if (last_message_time_timestamp != null)
+					{
+						ele8.id = last_message_time_timestamp;
+					}
+					else
+					{
+						ele8.id = 0;
+					}
+					ele8.appendChild(ele7);
+
+					var ele9 = document.createElement("div");
+					ele9.classList.add("box");
+					ele9.classList.add("sideBar-body");
+					ele9.id = chat_id;
+					ele9.appendChild(ele8);
+
+
+					var to_add = document.getElementById("user_list");
+					var child_to_add_before = null;
+					for (var i=0; i < to_add.children.length; i++)
+					{
+						if (to_add.children[i].children[0].id < last_message_time_timestamp)
+						{
+							child_to_add_before = to_add.children[i];
+							break;
+						}
+					}
+					if (child_to_add_before == null)
+					{
+						to_add.appendChild(ele9);
+					}
+					else
+					{
+						to_add.insertBefore(ele9, child_to_add_before);
+					}
+				}
+
+				function send_message(chat_id)
+				{
+					// var msg_area = document.getElementById("comment");
+					// msg_area.setAttribute("onfocus=", "this.value = this.value;");
+					var msg = document.getElementById("comment").value;
+					document.getElementById("comment").value = "";
+					if (msg != null && msg != "" && msg != "\n")
+					{
+						if (msg.slice(0, 1) == "\n")
+						{
+							msg = msg.slice(1);
+						}
+						var date_for_push = new Date();
+						firebase.database().ref("Chats/" + chat_id + "/messages").push(
+						{
+							messageText: msg,
+							dietitianMessage: true,
+							messageTime: date_for_push.getTime()
+						}).then(function onSuccess(res)
+						{
+							firebase.database().ref("Chats/" + chat_id + "/advisee_unreaded_messages").once('value').then(function(snapshot)
+							{
+								var d = new Date();
+								var n = d.getTime();
+								var updates = {};
+								updates['/last_message_time'] = n;
+								updates['/advisee_unreaded_messages'] = parseInt(snapshot.val()) + 1;
+								return firebase.database().ref("Chats/" + chat_id).update(updates);
+							});
+						}).catch(function onError(err)
+						{
+							return false;
+						});
+					}
+				}
+
+				$(function() {
+			    $("#comment").keypress(function (e) {
+		        if(e.which == 13) {
+							document.getElementById("click_to_send").click();
+		        }
+			    });
+				});
+
+				function displayUsers(to_click_user)
+				{
+					var ref = firebase.database().ref("WebUsers/UserInfos/" + currentUser.uid.toString() + "/ChatIDs");
+					ref.once('value')
+					.then(function(snapshot)
+					{
+						snapshot.forEach(function(childSnapshot)
+						{
+							var childKey = childSnapshot.key.toString();
+
+							var childData = childSnapshot.val().toString();
+
+							var user_name = firebase.database().ref("Chats/" + childData + "/AppUserName").once('value').then(function(snapshot)
+							{
+								return snapshot.val();
+							});
+
+							var user_photo = firebase.database().ref("AppUsers/" + childKey + "/PersonalInfo/photo_url").once("value").then(function(snapshot)
+							{
+								return snapshot.val();
+							});
+
+							Promise.all([childKey, user_name, user_photo]).then(function([childKey, user_name, user_photo])
+							{
+								if (user_name != null)
+								{
+									firebase.database().ref("Chats/" + childData + "/DietitianUnreadedMessages").on('value', function(snapshot)
+									{
+										var dietitian_unread_messages = snapshot.val();
+										firebase.database().ref("Chats/" + childData + "/last_message_time").off();
+										firebase.database().ref("Chats/" + childData + "/last_message_time").on('value', function(snapshot)
+										{
+											var last_message_time = snapshot.val();
+											var d = new Date(last_message_time);
+											var minutes = d.getMinutes();
+											if (minutes<10)
+											{
+												minutes = "0" + minutes.toString();
+											}
+											d = d.getHours() + ":" + minutes + " - " + d.getDate() + "." + (d.getMonth()+1) + "." + d.getFullYear();
+											console.log("here");
+											if (childKey == to_click_user)
+											{
+												to_click_user = null;
+												put_a_user_to_list(user_name, d, childData, last_message_time, dietitian_unread_messages, user_photo, true);
+											}
+											else
+											{
+												put_a_user_to_list(user_name, d, childData, last_message_time, dietitian_unread_messages, user_photo, false);
+											}
+										});
+									});
+								}
+							});
+
+
+							// var childKey = childSnapshot.key.toString();
+							// var childData = childSnapshot.val().toString();
+							// var ref2 = firebase.database().ref("Chats/" + childData + "/AppUserName");
+							// ref2.once('value').then(function(snapshot)
+							// {
+							// 	var user_name = snapshot.val();
+							// 	var ref5 = firebase.database().ref("AppUsers/" + childKey + "/PersonalInfo/photo_url")
+							// 	ref5.once("value").then(function(snapshot)
+							// 	{
+							// 		var user_photo = snapshot.val();
+							// 		var ref3 = firebase.database().ref("Chats/" + childData + "/last_message_time");
+							// 		ref3.on('value', function(snapshot)
+							// 		{
+							// 			var last_message_time = snapshot.val();
+							// 			if (last_message_time != null)
+							// 			{
+							// 				var d = new Date(last_message_time);
+							// 				var minutes = d.getMinutes();
+							// 				if (minutes<10)
+							// 				{
+							// 					minutes = "0" + minutes.toString();
+							// 				}
+							// 				d = d.getHours() + ":" + minutes + " - " + d.getDate() + "." + (d.getMonth()+1) + "." + d.getFullYear();
+							// 				var ref4 = firebase.database().ref("Chats/" + childData + "/DietitianUnreadedMessages");
+							// 				ref4.once('value').then(function(snapshot)
+							// 				{
+							// 					if (childKey == to_click_user)
+							// 					{
+							// 						to_click_user = null;
+							// 						put_a_user_to_list(user_name, d, childData, last_message_time, snapshot.val(), user_photo, true);
+							// 					}
+							// 					else
+							// 					{
+							// 						put_a_user_to_list(user_name, d, childData, last_message_time, snapshot.val(), user_photo, false);
+							// 					}
+							// 				});
+							// 			}
+							// 		});
+							// 	});
+							// });
+
+						});
+					});
+				}
+
+				function displayMessage(the_message, from_me, photo_message, user_name, the_time)
+				{
+					// <li>
+					// 	<div class="chat-content">
+					// 		<h5 class="mrg-bot-5">Bianca Doe</h5>
+					// 		<div class="chating-box cl-white bg-light" style="background-color:#f5a623 !important;">It’s Great opportunity to work.
+					// 			<div class="time-meta">10:57 am</div>
+					// 		</div>
+					// 	</div>
+					// </li>
+					// <!--chat Row -->
+					//
+					// <li class="reverse">
+					// 	<div class="chat-content">
+					// 		<h5 class="mrg-bot-5">Steave Doe</h5>
+					// 		<div class="chating-box cl-white bg-primary" style="background-color:#2a307f !important;">It’s Great opportunity to work.</div>
+					// 		<div class="time-meta">10:57 am</div>
+					// 	</div>
+					//
+					// </li>
+					var ele1 = document.createElement("h5");
+					ele1.classList.add("mrg-bot-5");
+					ele1.innerHTML = user_name;
+
+					var ele3 = document.createElement("div");
+					ele3.classList.add("time-meta");
+					// ele3.setAttribute("style","color:white");
+					ele3.innerHTML = the_time;
+
+					var ele2 = document.createElement("div");
+					ele2.classList.add("chating-box");
+					ele2.style.color = "#ffffff";
+					if (from_me == true)
+					{
+						ele2.classList.add("bg-primary");
+						// arka plan rengi
+						ele2.setAttribute('style', 'background-color:#2a307f !important;width:500px;word-wrap:break-word;' );
+					}
+					else
+					{
+						ele2.classList.add("bg-light");
+						// Arka plan rengi
+						ele2.setAttribute('style', 'background-color:#f5a623 !important;width:500px;word-wrap:break-word;color:white;color:white !important');
+					}
+					if (the_message != null && photo_message == null)
+					{
+						ele2.innerHTML = the_message;
+					}
+					else if (the_message != null && photo_message != null)
+					{
+						var ele2_1 = document.createElement("a");
+						ele2_1.onclick = function(event)
+						{
+							document.getElementById("to_click_image").src = photo_message;
+						}
+						ele2_1.href = "#modal-1";
+						ele2_1.setAttribute('data-toggle', 'modal');
+						ele2_1.setAttribute('data-target', "#modal-1");
+						var ele2_1_1 = document.createElement("img");
+						ele2_1_1.classList.add("img-responsive");
+						ele2_1_1.style.width = "250px";
+						ele2_1_1.style.height = "150px";
+						ele2_1_1.src = photo_message;
+						ele2_1.appendChild(ele2_1_1);
+						var ele2_2 = document.createElement("div");
+						ele2_2.innerHTML = the_message;
+						ele2.appendChild(ele2_1);
+						ele2.appendChild(ele2_2);
+					}
+					else if (the_message == null && photo_message != null)
+					{
+						var ele2_1 = document.createElement("a");
+						ele2_1.onclick = function(event)
+						{
+							document.getElementById("to_click_image").src = photo_message;
+						}
+						ele2_1.href = "#modal-1";
+						ele2_1.setAttribute('data-toggle', 'modal');
+						ele2_1.setAttribute('data-target', "#modal-1");
+						var ele2_1_1 = document.createElement("img");
+						ele2_1_1.classList.add("img-responsive");
+						ele2_1_1.style.width = "250px";
+						ele2_1_1.style.height = "150px";
+						ele2_1_1.src = photo_message;
+						ele2_1.appendChild(ele2_1_1);
+						ele2.appendChild(ele2_1);
+						if (from_me == true)
+						{
+							ele2.style.float = "right";
+						}
+						else
+						{
+							ele2.style.float = "left";
+						}
+						ele2.setAttribute('max-width', "250px");
+					}
+					ele2.appendChild(ele3);
+
+					var ele4 = document.createElement("div");
+					ele4.classList.add("chat-content");
+					ele4.setAttribute("style","width:500px");
+					ele4.appendChild(ele1);
+					ele4.appendChild(ele2);
+
+					var ele5 = document.createElement("li")
+					ele5.appendChild(ele4);
+
+					if (from_me == true)
+					{
+						ele5.classList.add("reverse");
+					}
+
+					document.getElementById("messages").appendChild(ele5);
+					scroll_to_last();
+				}
+
+				function scroll_to_last()
+				{
+					var chat_part = document.getElementById("conversation");
+					chat_part.scrollTo(0,chat_part.scrollHeight);
+				}
+
+				function change_to_other_side(side, chat_id)
+				{
+					if (side == 1)
+					{
+						loadMessages(chat_id);
+						document.getElementById("side_two").style.left = "0%";
+						// scroll_to_last();
+					}
+					else if (side == 2)
+					{
+						document.getElementById("side_two").style.left = "-100%";
+						// firebase.database().ref("Chats/" + chat_id + "/messages/").off('child_added');
+						firebase.database().ref("Chats/" + chat_id + "/messages/").off();
+						firebase.database().ref("Chats/" + chat_id).off();
+
+						var new_user_list = document.createElement("div");
+						new_user_list.classList.add("sideBar");
+						new_user_list.id = "user_list";
+						var user_list = document.getElementById("user_list");
+						var user_list_parent = user_list.parentElement;
+						user_list_parent.replaceChild(new_user_list, user_list);
+
+						var updates = {};
+						updates['/DietitianUnreadedMessages'] = 0;
+						firebase.database().ref("Chats/" + chat_id).update(updates);
+
+						displayUsers(null);
+					}
+				}
+
+				function loadMessages(chat_id)
+				{
+
+					// var ref = firebase.database().ref("Chats/" + initial_chat_id + "/messages");
+					// ref.once('value', function(snapshot)
+					// {
+					// 	snapshot.forEach(function(childSnapshot)
+					// 	{
+					//     var childData = childSnapshot.val().toString();
+					// 		displayMessage(childData, true);
+					//   });
+					// });
+
+					var updates = {};
+					updates['/DietitianUnreadedMessages'] = 0;
+					firebase.database().ref("Chats/" + chat_id).update(updates);
+
+					var new_messages = document.createElement("ul");
+					new_messages.classList.add("chat-list");
+					new_messages.classList.add("padd-20");
+					new_messages.id = "messages";
+
+					var conversation = document.getElementById("conversation");
+					var messages = document.getElementById("messages");
+					conversation.replaceChild(new_messages, messages);
+
+					var new_go_back_arrow = document.createElement("i");
+					new_go_back_arrow.classList.add("fa");
+					new_go_back_arrow.classList.add("fa-arrow-left");
+					new_go_back_arrow.id = "go_back_arrow";
+					new_go_back_arrow.setAttribute("aria-hidden", "true");
+					new_go_back_arrow.addEventListener('click', function()
+					{
+						change_to_other_side(2, chat_id);
+					}, false);
+
+					var go_back_arrow = document.getElementById("go_back_arrow");
+					var arrow_parent = go_back_arrow.parentElement;
+					arrow_parent.replaceChild(new_go_back_arrow, go_back_arrow);
+
+					var new_send_button = document.createElement("i");
+					new_send_button.classList.add("fa");
+					new_send_button.classList.add("fa-send");
+					new_send_button.classList.add("fa-2x");
+					new_send_button.id = "click_to_send";
+					new_send_button.style.marginLeft = "15%";
+					new_send_button.setAttribute("aria-hidden", "true");
+					new_send_button.addEventListener('click', function()
+					{
+						send_message(chat_id);
+						notification(chat_id);
+					}, false);
+
+					var send_button = document.getElementById("click_to_send");
+					var send_button_parent = send_button.parentElement;
+					send_button_parent.replaceChild(new_send_button, send_button);
+
+					var uploaded_photo_button =
+					document.getElementById("photo_upload").onchange = function(event)
+					{
+						var uploaded_file = document.getElementById("photo_upload").files[0];
+						if (uploaded_file.type == "image/jpeg" || uploaded_file.type == "image/png")
+						{
+							var metadata = {
+								contentType: 'image/jpeg'
+							};
+							var date_for_push = new Date();
+							var storageRef = firebase.storage().ref("chat_photos/" + chat_id + "/" + date_for_push.getTime());
+							storageRef.put(uploaded_file, metadata).then(function()
+							{
+								storageRef.getDownloadURL().then(function(url)
+								{
+									firebase.database().ref("Chats/" + chat_id + "/messages").push(
+										{
+											photoUrl: url,
+											dietitianMessage: true,
+											messageTime: date_for_push.getTime()
+										}).then(function onSuccess(res)
+										{
+											firebase.database().ref("Chats/" + chat_id + "/advisee_unreaded_messages").once('value').then(function(snapshot)
+											{
+												var d = new Date();
+												var n = d.getTime();
+												var updates = {};
+												updates['/last_message_time'] = n;
+												updates['/advisee_unreaded_messages'] = parseInt(snapshot.val()) + 1;
+												return firebase.database().ref("Chats/" + chat_id).update(updates);
+											});
+										}).catch(function onError(err)
+										{
+											document.getElementById("modal_text").innerHTML = "Bilinmeyen bir hatadan dolayı dosyanızı şu an gönderemedik.<br>Lütfen daha sonra tekrar deneyiniz.";
+											$('#modal-2').modal('show');
+										});
+									}).catch(function onError(err)
+									{
+										document.getElementById("modal_text").innerHTML = "Bilinmeyen bir hatadan dolayı dosyanızı şu an gönderemedik.<br>Lütfen daha sonra tekrar deneyiniz.";
+										$('#modal-2').modal('show');
+									});
+								}).catch(function onError(err)
+								{
+									document.getElementById("modal_text").innerHTML = "Bilinmeyen bir hatadan dolayı dosyanızı şu an gönderemedik.<br>Lütfen daha sonra tekrar deneyiniz.";
+									$('#modal-2').modal('show');
+								});
+						}
+						else
+						{
+							document.getElementById("modal_text").innerHTML = "Sadece .jpeg, .jpg ve .png uzantılı dosyaları gönderebilirsiniz.";
+							$('#modal-2').modal('show');
+						}
+					}
+
+					var ref = firebase.database().ref("Chats/" + chat_id + "/AppUserName");
+					ref.once('value').then(function(snapshot)
+					{
+						user_name = snapshot.val();
+						document.getElementById("talking_advisee").innerHTML = user_name;
+						var callback = function(snap) {
+							var data = snap.val();
+							var d = new Date(data.messageTime);
+							var minutes = d.getMinutes();
+							if (minutes<10)
+							{
+								minutes = "0" + minutes.toString();
+							}
+							d = d.getHours() + ":" + minutes;
+							if (data.dietitianMessage == true)
+							{
+								displayMessage(data.messageText, data.dietitianMessage, data.photoUrl, currentUser.displayName, d);
+							}
+							else
+							{
+								displayMessage(data.messageText, data.dietitianMessage, data.photoUrl, user_name, d);
+							}
+						};
+
+						firebase.database().ref("Chats/" + chat_id + "/messages/").on('child_added', callback);
+					});
+				}
+
+				firebase.auth().onAuthStateChanged(function(user)
+				{
+					if (user)
+					{
+						nav_bar_part_of_the_page(user);
+						fill_message_box(user);
+						setTimeout(function(){
+	            engTRK();
+	          }, 2000);
+						currentUser = user;
+						if (user.photoURL != null)
+						{
+							document.getElementById("dietitian_photo").src = user.photoURL;
+						}
+						else
+						{
+							document.getElementById("dietitian_photo").src = "diyetisyen_paneli/img/black_user.jpg";
+						}
+						var urlParams = new URLSearchParams(window.location.search);
+						var u = urlParams.get('u');
+						if (u != null)
+						{
+							displayUsers(u);
+						}
+						else
+						{
+							displayUsers(null);
+						}
+						document.getElementById("page-top").style.display = "block";
+					}
+					else
+					{
+						document.location.replace("login.html?to=chatting.html");;
+					}
+				});
+			function notification(chat_id){
+				var user_name = firebase.auth().currentUser.displayName;
+				firebase.database().ref("Chats/" + chat_id.toString() + "/AppUserID").once("value").then(function(snapshot){
+					var fcm_token = firebase.database().ref("AppUsers/" + snapshot.val() + "/PersonalInfo/fcm_token").once("value")
+					.then(function(snap2){
+						return snap2.val();
+					});
+					Promise.all([fcm_token,user_name]).then(function([fcm_token,user_name])
+					{
+						$.ajax({
+							type: 'POST',
+							url: 'https://fcm.googleapis.com/fcm/send',
+							headers:{
+								Authorization : 'key=AIzaSyB3sKthl4c_2U_o1CNURBTZsXZBgQ-9oKE'
+							},
+							contentType: 'application/json',
+							dataType: 'json',
+							data: JSON.stringify({
+								"to":fcm_token,
+								"data":{
+									"title" : "SELAMUN ALEYKÜM",
+									"body": user_name,
+									"type":"Message"
+								}
+							}),
+							success : function(response){
+								console.log("Success", snapshot.val());
+							},
+							error: function(error){
+
+							}
+						});
+					});
+				});
+
+			}
+
+
+
+			</script>
+			<!-- Wrapper -->
+			<script async src="https://www.googletagmanager.com/gtag/js?id=UA-135958309-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-135958309-1');
+</script>
+<script>
+	function engTRK(){
+		document.getElementById("eng").href="chatting_eng.html";
+		document.getElementById("trk").href="chatting.html";
+	}
+</script>
+	</body>
+</html>

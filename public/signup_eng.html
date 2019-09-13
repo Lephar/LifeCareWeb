@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<meta name="description" content="">
+		<meta name="author" content="Qwerty Tasarım ve Bilgi Teknolojileri">
+		<link rel="shortcut icon" href="danisan/assets/img/favicon.png"/>
+		<title>Registration Page</title>
+
+		<!-- Bootstrap core CSS -->
+		<link href="diyetisyen_paneli/assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+		<!-- Custom fonts for this template -->
+		<link href="diyetisyen_paneli/assets/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+		<!-- Custom fonts for this template -->
+		<link href="diyetisyen_paneli/assets/plugins/themify/css/themify.css" rel="stylesheet" type="text/css">
+
+		<!-- Angular Tooltip Css -->
+		<link href="diyetisyen_paneli/assets/plugins/angular-tooltip/angular-tooltips.css" rel="stylesheet">
+
+		<!-- Page level plugin CSS -->
+		<link href="diyetisyen_paneli/assets/plugins/datatables/dataTables.bootstrap4.css" rel="stylesheet">
+
+		<!-- Page level plugin CSS -->
+		<link href="diyetisyen_paneli/css/animate.css" rel="stylesheet">
+
+		<!-- Custom styles for this template -->
+		<link href="diyetisyen_paneli/css/glovia.css" rel="stylesheet">
+		<link href="diyetisyen_paneli/css/glovia-responsive.css" rel="stylesheet">
+
+		<!-- Custom styles for Color -->
+		<link href="diyetisyen_paneli/css/skins/default.css" rel="stylesheet">
+
+		<!-- update the version number as needed -->
+    <script defer src="/__/firebase/5.4.2/firebase-app.js"></script>
+    <!-- include only the Firebase features as you need -->
+    <script defer src="/__/firebase/5.4.2/firebase-auth.js"></script>
+    <script defer src="/__/firebase/5.4.2/firebase-database.js"></script>
+    <script defer src="/__/firebase/5.4.2/firebase-messaging.js"></script>
+    <script defer src="/__/firebase/5.4.2/firebase-storage.js"></script>
+		<script defer src="/__/firebase/5.4.2/firebase-functions.js"></script>
+    <!-- initialize the SDK after all desired features are loaded -->
+    <script defer src="/__/firebase/init.js"></script>
+
+	</head>
+
+	<body>
+		<div class="container-fluid">
+			<div class="row">
+				<div class="hidden-xs hidden-sm col-lg-6 col-md-6 gredient-bg-con">
+					<div class="clearfix">
+						<div class="logo-title-container text-center">
+							<img class="img-responsive" src="diyetisyen_paneli/img/logo-01.png" alt="Logo LifeCare">
+
+						</div> <!-- .logo-title-container -->
+						<div class="copy animated fadeIn text-center" id="copy-text">
+								<p class="cl-qwerty">Copyright © <img class="img-responsive" src="diyetisyen_paneli/img/qwerty-01.png" alt="Logo Qwerty"></p>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-12 col-sm-12 col-md-6 col-lg-6 login-sidebar animated fadeInRightBig">
+
+					<div class="login-container animated fadeInRightBig" style="top: 0px;">
+						<h3 class="text-center text-upper">Register</h3>
+						<center><p id="register_error" style="color:red;"></p></center>
+
+							<form class="form-horizontal" autocomplete="on" method="post" onsubmit="reportValidity(); event.preventDefault(); register_user(this.name.value, this.surname.value, this.email.value, this.password.value, this.tcno.value, this.graduated.value, this.diplomano.value);">
+
+							<div class="form-group">
+								<input class="form-control" id="name" type="text" placeholder="İsim" value="" maxlength="100" required/>
+								<i class="fa fa-user"></i>
+							</div>
+
+							<div class="form-group">
+								<input class="form-control" id="surname" type="text" placeholder="Soyisim" value="" maxlength="100" required/>
+								<i class="fa fa-user"></i>
+							</div>
+
+							<div class="form-group">
+								<input class="form-control" id="email" type="email" placeholder="Email" value="" maxlength="50" required/>
+								<i class="fa fa-user"></i>
+							</div>
+
+							<div class="form-group help">
+								<input class="form-control" id="password" type="password" pattern="(?=.*\d)(?=.*[A-z]).{8,}" placeholder="Şifre" value="" maxlength="50" required/>
+								<i class="fa fa-lock"></i>
+								<a href="javascript:showPassword();" class="pass-view fa fa-eye-slash" id="show_password"></a>
+								<small class="text-muted">
+		              (Your password must be at least 8 characters long and contain at least one letter and at least one digit.)
+		            </small>
+							</div>
+
+							<div class="form-group help">
+								<input class="form-control" id="confirm_password" type="password" placeholder="Şifre (Tekrar)" value="" maxlength="50" required/>
+								<i class="fa fa-lock"></i>
+								<small class="text-muted" id="notmatched" style="display:none;">
+		              Passwords do not match.
+		            </small>
+							</div>
+
+							<div class="form-group">
+								<input class="form-control" id="tcno" type="text" pattern="^[1-9]{1}[0-9]{10}$" maxlength="11" placeholder="TC Kimlik No" value="" required/>
+								<i class="fa fa-flag"></i>
+							</div>
+
+							<div class="form-group">
+								<input class="form-control" id="graduated" type="text" placeholder="Mezun Olunan Okul" value="" maxlength="50" required/>
+								<i class="fa fa-university"></i>
+							</div>
+
+							<div class="form-group">
+								<input class="form-control" id="diplomano" type="text" placeholder="Diploma Numarası" value="" maxlength="30" required/>
+								<i class="fa fa-certificate"></i>
+							</div>
+
+
+							<div class="form-group">
+								<div class="flexbox align-items-center">
+									<input type="submit" name="send" class="btn gredient-bg-login" id="register_button" value="Kayıt Ol"></input>
+									<div class="text-center">
+										<a href="login.html">
+											Already a Member?
+										</a>
+									</div>
+								</div>
+							</div>
+
+						</form>
+					</div>
+					<!-- .login-container -->
+
+				</div> <!-- .login-sidebar -->
+			</div> <!-- .row -->
+		</div>
+
+
+		<!-- Bootstrap core JavaScript-->
+		<script src="diyetisyen_paneli/assets/plugins/jquery/jquery.min.js"></script>
+		<script src="diyetisyen_paneli/assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+		<!-- Core plugin JavaScript-->
+		<script src="diyetisyen_paneli/assets/plugins/jquery-easing/jquery.easing.min.js"></script>
+
+		 <!-- Slick Slider Js -->
+		<script src="diyetisyen_paneli/assets/plugins/slick-slider/slick.js"></script>
+
+		<!-- Slim Scroll -->
+		<script src="diyetisyen_paneli/assets/plugins/slim-scroll/jquery.slimscroll.min.js"></script>
+
+		<!-- Angular Tooltip -->
+		<script src="diyetisyen_paneli/assets/plugins/angular-tooltip/angular.js"></script>
+		<script src="diyetisyen_paneli/assets/plugins/angular-tooltip/angular-tooltips.js"></script>
+		<script src="diyetisyen_paneli/assets/plugins/angular-tooltip/index.js"></script>
+		<!-- Custom scripts for all pages-->
+		<script src="diyetisyen_paneli/js/glovia.js"></script>
+
+		<script>
+		  $('.dropdown-toggle').dropdown()
+		</script>
+
+		<script>
+
+		var password = document.getElementById("password");
+		var confirm_password = document.getElementById("confirm_password");
+		function validatePassword()
+		{
+			password.reportValidity();
+			document.getElementById("notmatched").style.display = "none";
+			if(password.value != confirm_password.value) {
+				confirm_password.setCustomValidity("Passwords do not match.");
+				document.getElementById("notmatched").style.display = "block";
+				return false;
+			} else {
+				confirm_password.setCustomValidity("");
+				return true;
+			}
+		};
+		password.onkeyup = validatePassword;
+		confirm_password.onkeyup = validatePassword;
+		function register_user(name, surname, email, password, tcno, graduated, diplomano)
+		{
+			firebase.auth().createUserWithEmailAndPassword(email,password)
+			.then(function(user)
+			{
+				firebase.auth().signOut().then(function()
+			  {
+					var newuser = firebase.functions().httpsCallable('create_new_user');
+					newuser({new_user: {name: name + " " + surname, email: email, tcno: tcno, graduated: graduated, diplomano: diplomano}})
+					.then(function(result)
+					{
+						var returned = result.data.text;
+						if (returned == "successful")
+						{
+							// var user_ = firebase.auth().currentUser;
+							// document.getElementById("register_error").innerHTML = JSON.stringify(user.user);
+							user.user.sendEmailVerification().then(function()
+							{
+								var register_error = document.getElementById("register_error");
+								register_error.style.color = "green";
+								register_error.innerHTML = "You have successfully registered to our dietitian system. \n Email an email to confirm your email. Please confirm your email address to be able to login.";
+								document.getElementById("name").value = "";
+								document.getElementById("surname").value = "";
+								document.getElementById("email").value = "";
+								document.getElementById("password").value = "";
+								document.getElementById("confirm_password").value = "";
+								document.getElementById("tcno").value = "";
+								document.getElementById("graduated").value = "";
+								document.getElementById("diplomano").value = "";
+							})
+							.catch(function onError(err)
+							{
+								document.getElementById("register_error").innerHTML = "You have successfully registered to the system, but we cannot send you an email to confirm. \n Please contact our webmaster.";
+								document.getElementById("password").value = "";
+								document.getElementById("confirm_password").value = "";
+							});
+						}
+						else
+						{
+							document.getElementById("register_error").innerHTML = "An unknown error has occurred. Please try again.";
+							document.getElementById("password").value = "";
+							document.getElementById("confirm_password").value = "";
+						}
+					})
+					.catch(function onError(err)
+					{
+						document.getElementById("register_error").innerHTML = "An unknown error has occurred. Please try again." + err.toString();
+						document.getElementById("password").value = "";
+						document.getElementById("confirm_password").value = "";
+					});
+				})
+				.catch(function onError(err)
+				{
+					document.getElementById("register_error").innerHTML = "An unknown error has occurred. Please try again." + err.toString();
+					document.getElementById("password").value = "";
+					document.getElementById("confirm_password").value = "";
+				});
+			})
+			.catch(function onError(err)
+			{
+				if (err.toString() == "Error: The email address is already in use by another account.")
+				{
+					document.getElementById("register_error").innerHTML = "This email address contains another user.";
+					document.getElementById("email").value = "";
+					document.getElementById("password").value = "";
+					document.getElementById("confirm_password").value = "";
+				}
+			});
+
+		}
+
+		function showPassword()
+		{
+			var e1 = document.getElementById("password");
+			var e2 = document.getElementById("show_password");
+			var e3 = document.getElementById("confirm_password");
+			if (e1.type == "password" && e3.type == "password")
+			{
+				e2.className = "pass-view fa fa-eye";
+				e1.type = "text";
+				e3.type = "text";
+			}
+			else
+			{
+				e2.className = "pass-view fa fa-eye-slash";
+				e1.type = "password";
+				e3.type = "password";
+			}
+		}
+
+		</script>
+
+	</body>
+
+</html>

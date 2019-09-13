@@ -1,0 +1,1016 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<style>
+		.loader {
+			position: fixed;
+			left: 0px;
+			top: 0px;
+			width: 100%;
+			height: 100%;
+			z-index: 9999;
+			background: url('diyetisyen_paneli/img/load.gif') 50% 50% no-repeat rgb(249,249,249);
+		}
+		</style>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<meta name="description" content="">
+		<meta name="author" content="">
+		<link rel="shortcut icon" href="danisan/assets/img/favicon.png"/>
+		<title>Nutrition Plan Archive</title>
+
+		<!-- Bootstrap core CSS -->
+		<link href="diyetisyen_paneli/assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+		<!-- Custom fonts for this template -->
+		<link href="diyetisyen_paneli/assets/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+		<!-- Custom fonts for this template -->
+		<link href="diyetisyen_paneli/assets/plugins/themify/css/themify.css" rel="stylesheet" type="text/css">
+
+		<!-- Angular Tooltip Css -->
+		<link href="diyetisyen_paneli/assets/plugins/angular-tooltip/angular-tooltips.css" rel="stylesheet">
+
+		<!-- Morris Charts CSS -->
+		<link href="diyetisyen_paneli/assets/plugins/morris.js/morris.css" rel="stylesheet">
+
+		<!-- Page level plugin CSS -->
+		<link href="diyetisyen_paneli/css/animate.css" rel="stylesheet">
+
+		<!-- Custom styles for this template -->
+		<link href="diyetisyen_paneli/css/glovia.css" rel="stylesheet">
+		<link href="diyetisyen_paneli/css/glovia-responsive.css" rel="stylesheet">
+
+		<!-- Custom styles for Color -->
+		<link href="diyetisyen_paneli/css/skins/default.css" rel="stylesheet">
+	</head>
+
+	<body class="fixed-nav sticky-footer" id="page-top" style="display: block;">
+		<div class="loader">
+			<div class="loader2"></div>
+		</div>
+		<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+		<script>
+		function removeLoader(){
+			console.log("asfa");
+				$( ".loader" ).fadeOut(3000, function() {
+					// fadeOut complete. Remove the loading div
+					$( ".loader2" ).remove(); //makes page more lightweight
+				});
+		}
+
+		</script>
+		<!-- ===============================
+			Navigation Start
+		====================================-->
+		<div id="nav-placeholder">
+
+    </div>
+		<!-- =====================================================
+		                    End Navigations
+		======================================================= -->
+
+		<div class="content-wrapper">
+			<div class="container-fluid">
+
+				<!-- Title & Breadcrumbs-->
+				<div class="row page-titles">
+					<div class="col-md-9 align-self-center">
+						<h4 class="theme-cl">Nutrition Plan Archive</h4>
+					</div>
+					<div class="col-sm-3 align-self-center">
+						<a href="#" onclick="prepare();" class="btn cl-white gredient-bg outline-secondary bg-white-save" style="float: right; color: white !important;" id="diyettakip-button">
+							<i class="fa fa-fw fa-archive" style="font-size:15px"></i>&nbsp&nbspPreparing Program</a>
+					</div>
+				</div>
+				<!-- Title & Breadcrumbs-->
+
+				<!-- row -->
+
+				<!-- /row -->
+
+				<!-- row -->
+				<div class="container-fluid" id = "gunGen">
+					<div class="row">
+
+						<!-- Order Status -->
+						<div class="col-md-12">
+							<div class="card">
+
+								<div class="card-body padd-0">
+									<div id="used_for_no_advisee" class="table-responsive" style="height:620px;overflow:auto;">
+										<table id="archive_table"class="table table-lg table-hover">
+											<thead>
+												<tr>
+													<th style="text-align:center">Program Name</th>
+													<th style="text-align:center">Status</th>
+													<th style="text-align:center">Number of Days</th>
+													<th style="text-align:center">Calorie Amount</th>
+													<th style="text-align:center">Created Date</th>
+													<th style="text-align:center"></th>
+												</tr>
+											</thead>
+
+											<tbody id="programs">
+
+											</tbody>
+										</table>
+									</div>
+								</div>
+							</div>
+						</div>
+
+
+
+
+					</div>
+					<div style="display:none" id="program_hazırla" class="col-md-12">
+						<div class="row">
+
+
+							<div id = "out" class="col-md-8">
+								<!-- soldaki card başlangıcı -->
+
+
+
+									<div style="height:602px;overflow:scroll;"class="card padd-15">
+										<div class="panel-group accordion-stylist" id="accordion" role="tablist" aria-multiselectable="true">
+
+											<div id="diyet_check" class="diyet-checkboxes">
+
+												<div class="row">
+
+													<div class="col-md-4">
+														<div class="form-group">
+															<div class="flexbox align-items-center">
+																<table class="custom-checkbox1">
+																	<tr>
+																		<td>
+																			<input type="radio" id="checkbox1" name="options[]" value="1" checked onclick="checkGunluk();">
+																			<label id ="label1" for="checkbox1">Daily Program
+																			</label>
+																		</td>
+																		<td>
+																			<div class="dropdown">
+																				<button onclick="myFunction();"style="font-size:11px;letter-spacing:0.5px"class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Number of Days</button>
+																					<div id="menu" class="dropdown-menu" style="max-height:150px; overflow:auto;">
+																						<a class="dropdown-item" onclick="number_of_day(this);">1</a>
+																						<a class="dropdown-item" onclick="number_of_day(this);">2</a>
+																						<a class="dropdown-item" onclick="number_of_day(this);">3</a>
+																						<a class="dropdown-item" onclick="number_of_day(this);">4</a>
+																						<a class="dropdown-item" onclick="number_of_day(this);">5</a>
+																						<a class="dropdown-item" onclick="number_of_day(this);">6</a>
+																						<a class="dropdown-item" onclick="number_of_day(this);">7</a>
+																						<a class="dropdown-item" onclick="number_of_day(this);">8</a>
+																						<a class="dropdown-item" onclick="number_of_day(this);">9</a>
+																						<a class="dropdown-item" onclick="number_of_day(this);">10</a>
+																						<a class="dropdown-item" onclick="number_of_day(this);">11</a>
+																						<a class="dropdown-item" onclick="number_of_day(this);">12</a>
+																						<a class="dropdown-item" onclick="number_of_day(this);">13</a>
+																						<a class="dropdown-item" onclick="number_of_day(this);">14</a>
+																						<a class="dropdown-item" onclick="number_of_day(this);">15</a>
+																						<a class="dropdown-item" onclick="number_of_day(this);">16</a>
+																						<a class="dropdown-item" onclick="number_of_day(this);">17</a>
+																						<a class="dropdown-item" onclick="number_of_day(this);">18</a>
+																						<a class="dropdown-item" onclick="number_of_day(this);">19</a>
+																						<a class="dropdown-item" onclick="number_of_day(this);">20</a>
+																						<a class="dropdown-item" onclick="number_of_day(this);">21</a>
+																						<a class="dropdown-item" onclick="number_of_day(this);">22</a>
+																						<a class="dropdown-item" onclick="number_of_day(this);">23</a>
+																						<a class="dropdown-item" onclick="number_of_day(this);">24</a>
+																						<a class="dropdown-item" onclick="number_of_day(this);">25</a>
+																						<a class="dropdown-item" onclick="number_of_day(this);">26</a>
+																						<a class="dropdown-item" onclick="number_of_day(this);">27</a>
+																						<a class="dropdown-item" onclick="number_of_day(this);">28</a>
+																						<a class="dropdown-item" onclick="number_of_day(this);">29</a>
+																						<a class="dropdown-item" onclick="number_of_day(this);">30</a>
+																						<a class="dropdown-item" onclick="number_of_day(this);">31</a>
+																					</div>
+																			</div>
+																		</td>
+																	</tr>
+																</table>
+															</div>
+														</div>
+													</div>
+													<script type="text/javascript">
+													window.onclick = function(event) {
+														if (!event.target.matches('#dropdownMenuButton')) {
+															var dropdowns = document.getElementsByClassName("dropdown-menu");
+															var i;
+															for (i = 0; i < dropdowns.length; i++) {
+																var openDropdown = dropdowns[i];
+																if (openDropdown.classList.contains('show')) {
+																	openDropdown.classList.remove('show');
+																}
+															}
+														}
+													}
+													</script>
+
+													<div class="col-md-4">
+														<div class="form-group">
+															<div class="flexbox align-items-center">
+																<span class="custom-checkbox2">
+																<input type="radio" id="checkbox2" name="options[]" value="2" onclick="checkGenel();">
+																<label id="general" for="checkbox2">General Program</label>
+																</span>
+															</div>
+														</div>
+													</div>
+													<div class="col-md-4">
+														<div>
+															<div>
+																<span>
+																<label id="programNm" style="color:#612e82;font-weight:bold"></label>
+																</span>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+
+											<div id="newW"style="display:none">
+												<table id="table">
+													<tr>
+														<th style="color:#2d2e82;font-weight:bold;text-align:center;">Meals</th>
+														<th style="color:#2d2e82;font-weight:bold;text-align:center;"></th>
+														<th style="color:#2d2e82;font-weight:bold;text-align:center;">My Foods</th>
+														<th style="color:#2d2e82;font-weight:bold;text-align:center;"></th>
+														<th style="color:#2d2e82;font-weight:bold;text-align:center;">Protein</th>
+														<th style="color:#2d2e82;font-weight:bold;text-align:center;">Fat</th>
+														<th style="color:#2d2e82;font-weight:bold;text-align:center;">Carbonhydrate</th>
+														<th style="color:#2d2e82;font-weight:bold;text-align:center;">Calory</th>
+													</tr>
+													<label style="color:orange;font-weight:bold">General Program</label>
+													<tr id="table1000">
+														<td style="border:none;width:200px">
+															<label id="label10">Breakfast</label>
+														</td>
+														<td style="border:none;text-align:center;">
+															<i id="spn222" class="fa fa-fw fa-plus" onclick="newBox(this.id);"></i>
+														</td>
+														<td style="border:none;">
+															<input disabled="true" id="inpt11" oninput="dragFood(this.id);" type="text">
+														</td>
+														<td style="border:none;">
+															<span id="inpt11" onclick="clearTextDefault(this.id);" class="fa fa-fw fa-trash"></span>
+														</td>
+														<td style="width:100px;border:none;">
+															<span style="margin-right:30px" id="span1" class="badge badge-pill badge-warning">0,0</span>
+														</td>
+														<td style="width:100px;border:none;">
+															<span id="span2" style="margin-right:30px" class="badge badge-pill badge-success">0,0</span>
+														</td>
+														<td style="width:120px;border:none;">
+															<span id="span3" style="margin-right:30px" class="badge badge-pill badge-danger">0,0</span>
+														</td>
+														<td style="width:100px;border:none;">
+															<span id="span4" style="margin-right:30px" class="badge badge-pill badge-primary">0,0</span>
+														</td>
+													</tr>
+													<tr id="table1001">
+														<td style="border:none;width:200px">
+															<label id="label20">1.Snacks</label>
+														</td>
+														<td style="border:none;text-align:center;">
+															<i id="spn333" class="fa fa-fw fa-plus" onclick="newBox(this.id);"></i>
+														</td>
+														<td style="border:none;">
+															<input disabled="true" id="inpt12" oninput="dragFood(this.id);" type="text">
+														</td>
+														<td style="border:none;">
+															<span id="inpt12" onclick="clearTextDefault(this.id);" class="fa fa-fw fa-trash"></span>
+														</td>
+														<td style="width:100px;border:none;">
+															<span style="margin-right:30px" id="span11" class="badge badge-pill badge-warning">0,0</span>
+														</td>
+														<td style="width:100px;border:none;">
+															<span id="span12" style="margin-right:30px" class="badge badge-pill badge-success">0,0</span>
+														</td>
+														<td style="width:120px;border:none;">
+															<span id="span13" style="margin-right:30px" class="badge badge-pill badge-danger">0,0</span>
+														</td>
+														<td style="width:100px;border:none;">
+															<span id="span14" style="margin-right:30px" class="badge badge-pill badge-primary">0,0</span>
+														</td>
+													</tr>
+													<tr id="table1002">
+														<td style="border:none;width:200px">
+															<label id="label30">Lunch</label>
+														</td>
+														<td style="border:none;text-align:center;">
+															<i id="spn444" class="fa fa-fw fa-plus" onclick="newBox(this.id);"></i>
+														</td>
+														<td style="border:none;">
+															<input disabled="true" id="inpt13" oninput="dragFood(this.id);" type="text">
+														</td>
+														<td style="border:none;">
+															<span id="inpt13" onclick="clearTextDefault(this.id);" class="fa fa-fw fa-trash"></span>
+														</td>
+														<td style="width:100px;border:none;">
+															<span style="margin-right:30px" id="span21" class="badge badge-pill badge-warning">0,0</span>
+														</td>
+														<td style="width:100px;border:none;">
+															<span id="span22" style="margin-right:30px" class="badge badge-pill badge-success">0,0</span>
+														</td>
+														<td style="width:120px;border:none;">
+															<span id="span23" style="margin-right:30px" class="badge badge-pill badge-danger">0,0</span>
+														</td>
+														<td style="width:100px;border:none;">
+															<span id="span24" style="margin-right:30px" class="badge badge-pill badge-primary">0,0</span>
+														</td>
+													</tr>
+													<tr id="table1003">
+														<td style="border:none;width:200px">
+															<label id="label40">2.Snacks</label>
+														</td>
+														<td style="border:none;text-align:center;">
+															<i id="spn555" class="fa fa-fw fa-plus" onclick="newBox(this.id);"></i>
+														</td>
+														<td style="border:none;">
+															<input disabled="true" id="inpt14" oninput="dragFood(this.id);" type="text">
+														</td>
+														<td style="border:none;">
+															<span id="inpt14" onclick="clearTextDefault(this.id);" class="fa fa-fw fa-trash"></span>
+														</td>
+														<td style="width:100px;border:none;">
+															<span style="margin-right:30px" id="span31" class="badge badge-pill badge-warning">0,0</span>
+														</td>
+														<td style="width:100px;border:none;">
+															<span id="span32" style="margin-right:30px" class="badge badge-pill badge-success">0,0</span>
+														</td>
+														<td style="width:120px;border:none;">
+															<span id="span33" style="margin-right:30px" class="badge badge-pill badge-danger">0,0</span>
+														</td>
+														<td style="width:100px;border:none;">
+															<span id="span34" style="margin-right:30px" class="badge badge-pill badge-primary">0,0</span>
+														</td>
+													</tr>
+													<tr id="table1004">
+														<td style="border:none;width:200px">
+															<label id="label50">Dinner</label>
+														</td>
+														<td style="border:none;text-align:center;">
+															<i id="spn666" class="fa fa-fw fa-plus" onclick="newBox(this.id);"></i>
+														</td>
+														<td style="border:none;">
+															<input disabled="true" id="inpt15" oninput="dragFood(this.id);" type="text">
+														</td>
+														<td style="border:none;">
+															<span id="inpt15" onclick="clearTextDefault(this.id);" class="fa fa-fw fa-trash"></span>
+														</td>
+														<td style="width:100px;border:none;">
+															<span style="margin-right:30px" id="span41" class="badge badge-pill badge-warning">0,0</span>
+														</td>
+														<td style="width:100px;border:none;">
+															<span id="span42" style="margin-right:30px" class="badge badge-pill badge-success">0,0</span>
+														</td>
+														<td style="width:120px;border:none;">
+															<span id="span43" style="margin-right:30px" class="badge badge-pill badge-danger">0,0</span>
+														</td>
+														<td style="width:100px;border:none;">
+															<span id="span44" style="margin-right:30px" class="badge badge-pill badge-primary">0,0</span>
+														</td>
+													</tr>
+													<tr id="table1005">
+														<td style="border:none;width:200px">
+															<label id="label60">3.Snacks</label>
+														</td>
+														<td style="border:none;text-align:center;">
+															<i id="spn777" class="fa fa-fw fa-plus" onclick="newBox(this.id);"></i>
+														</td>
+														<td style="border:none;">
+															<input disabled="true" id="inpt16" oninput="dragFood(this.id);" type="text">
+														</td>
+														<td style="border:none;">
+															<span id="inpt16" onclick="clearTextDefault(this.id);" class="fa fa-fw fa-trash"></span>
+														</td>
+														<td style="width:100px;border:none;">
+															<span style="margin-right:30px" id="span51" class="badge badge-pill badge-warning">0,0</span>
+														</td>
+														<td style="width:100px;border:none;">
+															<span id="span52" style="margin-right:30px" class="badge badge-pill badge-success">0,0</span>
+														</td>
+														<td style="width:120px;border:none;">
+															<span id="span53" style="margin-right:30px" class="badge badge-pill badge-danger">0,0</span>
+														</td>
+														<td style="width:100px;border:none;">
+															<span id="span54" style="margin-right:30px" class="badge badge-pill badge-primary">0,0</span>
+														</td>
+													</tr>
+													<tr id="table1006">
+														<td style="border:none;width:200px">
+															<label id="label70">Alternative</label>
+														</td>
+														<td style="border:none;text-align:center;">
+															<i id="spn888" class="fa fa-fw fa-plus" onclick="newBox(this.id);"></i>
+														</td>
+														<td style="border:none;">
+															<input disabled="true" id="inpt17" oninput="dragFood(this.id);" type="text">
+														</td>
+														<td style="border:none;">
+															<span id="inpt17" onclick="clearTextDefault(this.id);" class="fa fa-fw fa-trash"></span>
+														</td>
+														<td style="width:100px;border:none;">
+															<span style="margin-right:30px" id="span61" class="badge badge-pill badge-warning">0,0</span>
+														</td>
+														<td style="width:100px;border:none;">
+															<span id="span62" style="margin-right:30px" class="badge badge-pill badge-success">0,0</span>
+														</td>
+														<td style="width:120px;border:none;">
+															<span id="span63" style="margin-right:30px" class="badge badge-pill badge-danger">0,0</span>
+														</td>
+														<td style="width:100px;border:none;">
+															<span id="span64" style="margin-right:30px" class="badge badge-pill badge-primary">0,0</span>
+														</td>
+													</tr>
+													<tr id="table1007">
+														<td style="border:none;width:200px">
+														</td>
+														<td style="border:none;text-align:center;">
+														</td>
+														<td style="border:none;">
+															<label id="label80">TOTAL</label>
+														</td>
+														<td style="border:none;">
+														</td>
+														<td style="width:100px;border:none;">
+															<span style="margin-right:30px" id="span71" class="badge badge-pill badge-info">0,0</span>
+														</td>
+														<td style="width:100px;border:none;">
+															<span id="span72" style="margin-right:30px" class="badge badge-pill badge-info">0,0</span>
+														</td>
+														<td style="width:120px;border:none;">
+															<span id="span73" style="margin-right:30px" class="badge badge-pill badge-info">0,0</span>
+														</td>
+														<td style="width:100px;border:none;">
+															<span id="span74" style="margin-right:30px" class="badge badge-pill badge-info">0,0</span>
+														</td>
+													</tr>
+												</table>
+											</div>
+
+
+											<div id="empty">
+												<table id="tableE0">
+													<tr>
+														<th style="color:#2d2e82;font-weight:bold;text-align:center;">Meals</th>
+														<th style="color:#2d2e82;font-weight:bold;text-align:center;"></th>
+														<th style="color:#2d2e82;font-weight:bold;text-align:center;">My foods</th>
+														<th style="color:#2d2e82;font-weight:bold;text-align:center;"></th>
+														<th style="color:#2d2e82;font-weight:bold;text-align:center;">Protein</th>
+														<th style="color:#2d2e82;font-weight:bold;text-align:center;">Fat</th>
+														<th style="color:#2d2e82;font-weight:bold;text-align:center;">Carbonhydrate</th>
+														<th style="color:#2d2e82;font-weight:bold;text-align:center;">Calory</th>
+													</tr>
+													<tr id="tablee1">
+														<td style="border:none;width:200px">
+															<label id="label10">Breakfast</label>
+														</td>
+														<td style="border:none;text-align:center;">
+															<i id="spn2" class="fa fa-fw fa-plus" onclick="newBox(this.id);"></i>
+														</td>
+														<td style="border:none;">
+															<input disabled="true" id="inpt10" oninput="dragFood(this.id);" type="text">
+														</td>
+														<td style="border:none;">
+															<span id="inpt10" onclick="clearTextDefault(this.id);" class="fa fa-fw fa-trash"></span>
+														</td>
+														<td style="width:100px;border:none;">
+															<span style="margin-right:30px" id="span1" class="badge badge-pill badge-warning">0,0</span>
+														</td>
+														<td style="width:100px;border:none;">
+															<span id="span2" style="margin-right:30px" class="badge badge-pill badge-success">0,0</span>
+														</td>
+														<td style="width:120px;border:none;">
+															<span id="span3" style="margin-right:30px" class="badge badge-pill badge-danger">0,0</span>
+														</td>
+														<td style="width:100px;border:none;">
+															<span id="span4" style="margin-right:30px" class="badge badge-pill badge-primary">0,0</span>
+														</td>
+													</tr>
+													<tr id="tablee2">
+														<td style="border:ncol-md-4one;width:200px">
+															<label id="label20">1.Snacks</label>
+														</td>
+														<td style="border:none;text-align:center;">
+															<i id="spn3" class="fa fa-fw fa-plus" onclick="newBox(this.id);"></i>
+														</td>
+														<td style="border:none;">
+															<input disabled="true" id="inpt20" oninput="dragFood(this.id);" type="text">
+														</td>
+														<td style="border:none;">
+															<span id="inpt20" onclick="clearTextDefault(this.id);" class="fa fa-fw fa-trash"></span>
+														</td>
+														<td style="width:100px;border:none;">
+															<span style="margin-right:30px" id="span1" class="badge badge-pill badge-warning">0,0</span>
+														</td>
+														<td style="width:100px;border:none;">
+															<span id="span2" style="margin-right:30px" class="badge badge-pill badge-success">0,0</span>
+														</td>
+														<td style="width:120px;border:none;">
+															<span id="span3" style="margin-right:30px" class="badge badge-pill badge-danger">0,0</span>
+														</td>
+														<td style="width:100px;border:none;">
+															<span id="span4" style="margin-right:30px" class="badge badge-pill badge-primary">0,0</span>
+														</td>
+													</tr>
+													<tr id="tablee3">
+														<td style="border:none;width:200px">
+															<label id="label30">Lunch</label>
+														</td>
+														<td style="border:none;text-align:center;">
+															<i id="spn4" class="fa fa-fw fa-plus" onclick="newBox(this.id);"></i>
+														</td>
+														<td style="border:none;">
+															<input disabled="true" id="inpt30" oninput="dragFood(this.id);" type="text">
+														</td>
+														<td style="border:none;">
+															<span id="inpt30" onclick="clearTextDefault(this.id);" class="fa fa-fw fa-trash"></span>
+														</td>
+														<td style="width:100px;border:none;">
+															<span style="margin-right:30px" id="span1" class="badge badge-pill badge-warning">0,0</span>
+														</td>
+														<td style="width:100px;border:none;">
+															<span id="span2" style="margin-right:30px" class="badge badge-pill badge-success">0,0</span>
+														</td>
+														<td style="width:120px;border:none;">
+															<span id="span3" style="margin-right:30px" class="badge badge-pill badge-danger">0,0</span>
+														</td>
+														<td style="width:100px;border:none;">
+															<span id="span4" style="margin-right:30px" class="badge badge-pill badge-primary">0,0</span>
+														</td>
+													</tr>
+													<tr id="tablee4">
+														<td style="border:none;width:200px">
+															<label id="label40">2.Snacks</label>
+														</td>
+														<td style="border:none;text-align:center;">
+															<i id="spn5" class="fa fa-fw fa-plus" onclick="newBox(this.id);"></i>
+														</td>
+														<td style="border:none;">
+															<input disabled="true" id="inpt40" oninput="dragFood(this.id);" type="text">
+														</td>
+														<td style="border:none;">
+															<span id="inpt40" onclick="clearTextDefault(this.id);" class="fa fa-fw fa-trash"></span>
+														</td>
+														<td style="width:100px;border:none;">
+															<span style="margin-right:30px" id="span1" class="badge badge-pill badge-warning">0,0</span>
+														</td>
+														<td style="width:100px;border:none;">
+															<span id="span2" style="margin-right:30px" class="badge badge-pill badge-success">0,0</span>
+														</td>
+														<td style="width:120px;border:none;">
+															<span id="span3" style="margin-right:30px" class="badge badge-pill badge-danger">0,0</span>
+														</td>
+														<td style="width:100px;border:none;">
+															<span id="span4" style="margin-right:30px" class="badge badge-pill badge-primary">0,0</span>
+														</td>
+													</tr>
+													<tr id="tablee5">
+														<td style="border:none;width:200px">
+															<label id="label50">Dinner</label>
+														</td>
+														<td style="border:none;text-align:center;">
+															<i id="spn6" class="fa fa-fw fa-plus" onclick="newBox(this.id);"></i>
+														</td>
+														<td style="border:none;">
+															<input disabled="true" id="inpt50" oninput="dragFood(this.id);" type="text">
+														</td>
+														<td style="border:none;">
+															<span id="inpt50" onclick="clearTextDefault(this.id);" class="fa fa-fw fa-trash"></span>
+														</td>
+														<td style="width:100px;border:none;">
+															<span style="margin-right:30px" id="span1" class="badge badge-pill badge-warning">0,0</span>
+														</td>
+														<td style="width:100px;border:none;">
+															<span id="span2" style="margin-right:30px" class="badge badge-pill badge-success">0,0</span>
+														</td>
+														<td style="width:120px;border:none;">
+															<span id="span3" style="margin-right:30px" class="badge badge-pill badge-danger">0,0</span>
+														</td>
+														<td style="width:100px;border:none;">
+															<span id="span4" style="margin-right:30px" class="badge badge-pill badge-primary">0,0</span>
+														</td>
+													</tr>
+													<tr id="tablee6">
+														<td style="border:none;width:200px">
+															<label id="label60">3.Snacks</label>
+														</td>
+														<td style="border:none;text-align:center;">
+															<i id="spn7" class="fa fa-fw fa-plus" onclick="newBox(this.id);"></i>
+														</td>
+														<td style="border:none;">
+															<input disabled="true" id="inpt60" oninput="dragFood(this.id);" type="text">
+														</td>
+														<td style="border:none;">
+															<span id="inpt60" onclick="clearTextDefault(this.id);" class="fa fa-fw fa-trash"></span>
+														</td>
+														<td style="width:100px;border:none;">
+															<span style="margin-right:30px" id="span1" class="badge badge-pill badge-warning">0,0</span>
+														</td>
+														<td style="width:100px;border:none;">
+															<span id="span2" style="margin-right:30px" class="badge badge-pill badge-success">0,0</span>
+														</td>
+														<td style="width:120px;border:none;">
+															<span id="span3" style="margin-right:30px" class="badge badge-pill badge-danger">0,0</span>
+														</td>
+														<td style="width:100px;border:none;">
+															<span id="span4" style="margin-right:30px" class="badge badge-pill badge-primary">0,0</span>
+														</td>
+													</tr>
+													<tr id="tablee7">
+														<td style="border:none;width:200px">
+															<label id="label70">Alternative</label>
+														</td>
+														<td style="border:none;text-align:center;">
+															<i id="spn8" class="fa fa-fw fa-plus" onclick="newBox(this.id);"></i>
+														</td>
+														<td style="border:none;">
+															<input disabled="true" id="inpt70" oninput="dragFood(this.id);" type="text">
+														</td>
+														<td style="border:none;">
+															<span id="inpt70" onclick="clearTextDefault(this.id);" class="fa fa-fw fa-trash"></span>
+														</td>
+														<td style="width:100px;border:none;">
+															<span style="margin-right:30px" id="span1" class="badge badge-pill badge-warning">0,0</span>
+														</td>
+														<td style="width:100px;border:none;">
+															<span id="span2" style="margin-right:30px" class="badge badge-pill badge-success">0,0</span>
+														</td>
+														<td style="width:120px;border:none;">
+															<span id="span3" style="margin-right:30px" class="badge badge-pill badge-danger">0,0</span>
+														</td>
+														<td style="width:100px;border:none;">
+															<span id="span4" style="margin-right:30px" class="badge badge-pill badge-primary">0,0</span>
+														</td>
+													</tr>
+													<tr id="tablee8">
+														<td style="border:none;width:200px">
+														</td>
+														<td style="border:none;text-align:center;">
+														</td>
+														<td style="border:none;text-align:center">
+															<label id="label80">TOTAL</label>
+														</td>
+														<td style="border:none;">
+														</td>
+														<td style="width:100px;border:none;">
+															<span style="margin-right:30px" id="span1" class="badge badge-pill badge-info">0,0</span>
+														</td>
+														<td style="width:100px;border:none;">
+															<span id="span2" style="margin-right:30px" class="badge badge-pill badge-info">0,0</span>
+														</td>
+														<td style="width:120px;border:none;">
+															<span id="span3" style="margin-right:30px" class="badge badge-pill badge-info">0,0</span>
+														</td>
+														<td style="width:100px;border:none;">
+															<span id="span4" style="margin-right:30px" class="badge badge-pill badge-info">0,0</span>
+														</td>
+													</tr>
+												</table>
+											</div>
+
+										</div>
+
+									</div>
+									<div id="addSend" class="row">
+										<div class="col-md-12">
+											<div class="text-right">
+												<div class="text-right padd-bot-10">
+													<pre><a class="btn btn-outline-primary btn-rounded" onclick="saveDataArsiv(this.id);" id="diyettakip-sendbutton"><font face="Montserrat">Add My Archive</font></a>   </pre>
+													<!-- notificationProgram() eklenecek -->
+												</div>
+											</div>
+										</div>
+									</div>
+
+
+
+
+									<!--  Diyet Gönder and Kaydet Button -->
+								<!-- soldaki kart bişi -->
+
+							</div>
+							<div class="col-md-4">
+								<!-- sağdaki liste  -->
+
+										<div style="height:602px;overflow:scroll;"class="card padd-15">
+											<div class="panel-group accordion-stylist" id="accordion" role="tablist" aria-multiselectable="true">
+												<table id = "list_food">
+													<td class="selected" style="border:none;">
+														<button selected="true" class="btn btn-sm btn-secondary selected"  onclick="showFoodList();" style="border:none;width:120px;font-size:10px"><b>Food List</b></button>
+													</td>
+													<td style="border:none;">
+														<button id="showArc" onclick="showArchive();"class="btn btn-sm btn-secondary" style="border:none;width:120px;font-size:10px" ng-click="recipe.label_type = 'USA'" ng-class="{'btn-secondary' : recipe.label_type == 'USA', 'btn-outline-secondary' : recipe.label_type != 'USA'}"><b>Nutrition Archive</b></button>
+													</td>
+													<td style="border:none;">
+														<button id="showFood" onclick="showMyFood();"class="btn btn-sm btn-secondary" style="border:none;width:120px;font-size:10px" ng-click="recipe.label_type = 'USA'" ng-class="{'btn-secondary' : recipe.label_type == 'USA', 'btn-outline-secondary' : recipe.label_type != 'USA'}"><b>My Foods</b></button>
+													</td>
+												</table>
+
+
+
+											</div>
+											<!-- burayı doldurup css'den konumu ayarlıcam -->
+											<!-- sıkıntı var bunu konuştuktan sonra bak bir daha düzgün kafayla modal olayını anlatacaksın nutrio daki search işlemini hatırla -->
+											<!-- <div class="panel-group accordion-stylist" id="Arsiv">
+
+											</div> -->
+											<div id="BesLis"class="col-md-11">
+												<table style="border:none">
+													<tr style="border:none">
+														<td style="border:none"><input style="width:340px" type="text" id="searchInput" class="form-control ng-dirty ng-touched ng-empty ng-invalid ng-invalid-required" ng-model="office.food.params.criteria" placeholder="Search Food" required="" onkeyup="searchFood();"></td>
+													</tr>
+												</table>
+												<div class="row">
+													<ul id="myUL">
+
+													</ul>
+
+												</div>
+											</div>
+											<div id="BesList" class="col-md-11">
+												<input style="width:340px" type="text" id="searchInput2" class="form-control ng-dirty ng-touched ng-empty ng-invalid ng-invalid-required" ng-model="office.food.params.criteria" placeholder="Search Program" required="" onkeyup="searchArchive();">
+												<div class="panel-group accordion-stylist" id="Arsiv">
+
+												</div>
+											</div>
+											<div id="MyBesList" class="col-md-11">
+												<table style="border:none">
+													<tr style="border:none">
+														<td style="border:none"><input style="width:340px" type="text" id="searchInput3" class="form-control ng-dirty ng-touched ng-empty ng-invalid ng-invalid-required" ng-model="office.food.params.criteria" placeholder="Search Food" required="" onkeyup="searchMyFood();"></td>
+														<td style="border:none">
+															<!-- <i id="addFood" class="fa fa-fw fa-plus" onclick="modal();" type="button" title="Besinimi Oluştur" style="font-size:20px"></i> -->
+															<a href="#modal-1" title="Create Food"style="font-size:20px" data-toggle="modal" data-target="#modal-1" class="fa fa-fw fa-plus" style="color: white !important;">
+
+														</a></td>
+													</tr>
+												</table>
+													<div class="panel-group accordion-stylist" id="myFood">
+
+												</div>
+											</div>
+
+											<!-- draggable işlemi tüm textboxlar doluyor -->
+											<!-- <script type="text/javascript">
+												document.addEventListener('dragstart',function(event){
+													event.dataTransfer.setData('Text',"-"+event.target.innerHTML+"\r\n  ");
+												});
+											</script> -->
+											<!-- <script>
+											$( function() {
+												$( "#myUL" ).sortable({
+													revert: true
+												});
+												$( "#inpt10" ).draggable({
+													connectToSortable: "#sortable",
+													helper: "clone",
+													revert: "invalid"
+												});
+												$( "ul, li" ).disableSelection();
+											} );
+											</script> -->
+
+										</div>
+
+									</div>
+							</div>
+							<!-- <script type="text/javascript">
+							$("input:checkbox").on('click', function() {
+								// in the handler, 'this' refers to the box clicked on
+								// checkboxların kodunu buraya yazacaz
+								var box = $(this);
+								if (box.is(":checked")) {
+									// the name of the box is retrieved using the .attr() method
+									// as it is assumed and expected to be immutable
+									var group = "input:checkbox[name='" + box.attr("name") + "']";
+									// the checked state of the group/box on the other hand will change
+									// and the current value is retrieved using .prop() method
+									$(group).prop("checked", false);
+									box.prop("checked", true);
+								} else {
+									box.prop("checked", false);
+								}
+							});
+							</script> -->
+
+
+						</div>
+
+
+
+
+			</div>
+
+
+			</div>
+			<!-- /.content-wrapper -->
+
+			<!-- Footer -->
+			<footer class="sticky-footer">
+			  <div class="container">
+				<div class="text-center">
+				  <small class="font-15">Copyright © <img class="img-responsive" src="diyetisyen_paneli/img/qwerty-01.png" alt="Logo Qwerty"></small>
+				</div>
+			  </div>
+			</footer>
+
+			<!-- Scroll to Top Button-->
+			<a class="scroll-to-top rounded cl-white gredient-bg-login" href="#page-top">
+			  <i class="ti-angle-double-up"></i>
+			</a>
+			<div class="modal modal-box-1 fade" id="modal-1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel1" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+				<div class="modal-dialog">
+					<div class="modal-content" id="myModalLabel1">
+						<div class="modal-header theme-bg">
+							<b>Create Food</b>
+							<button id="modal_close" type="button" onclick="closeModal();" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+						</div>
+						<div class="modal-body">
+							<table id="food_table">
+										<tr>
+											<td style="border:none;">
+												 <b>Food Name:</b>
+											</td>
+											 <td style="border:none;">
+												 <input type="text">
+											 </td>
+										</tr>
+										 <tr>
+											 <td style="border:none;">
+												 <b>Food Amount:</b>
+											 </td>
+												<td style="border:none;">
+													<input type="text">
+												</td>
+										</tr>
+										<tr>
+											<td style="border:none;">
+												 <b>Protein Value:</b>
+											</td>
+											 <td style="border:none;">
+												 <input type="text">
+											 </td>
+									 </tr>
+									 <tr>
+										 <td style="border:none;">
+											 <b>Carbonhydrate Value:</b>
+										 </td>
+											<td style="border:none;">
+												<input type="text">
+											</td>
+									</tr>
+									<tr>
+										<td style="border:none;">
+											 <b>Fat Value:</b>
+										</td>
+										 <td style="border:none;">
+											 <input type="text">
+										 </td>
+								 </tr>
+								 <tr>
+									 <td style="border:none;">
+										 <b>Calory Value:</b>
+									 </td>
+										<td style="border:none;">
+											<input type="text">
+										</td>
+								</tr>
+
+						</table>
+						<br>
+							<div class="text-center padd-bot-20">
+								<button class="btn outline-secondary bg-white-save" onclick="modalSaveFood();">Save</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Bootstrap core JavaScript-->
+			<script src="diyetisyen_paneli/assets/plugins/jquery/jquery.min.js"></script>
+			<script src="diyetisyen_paneli/assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+			<!-- Core plugin JavaScript-->
+			<script src="diyetisyen_paneli/assets/plugins/jquery-easing/jquery.easing.min.js"></script>
+
+			 <!-- Slick Slider Js -->
+			<script src="diyetisyen_paneli/assets/plugins/slick-slider/slick.js"></script>
+
+			<!-- Slim Scroll -->
+			<script src="diyetisyen_paneli/assets/plugins/slim-scroll/jquery.slimscroll.min.js"></script>
+
+			<!-- FLOT CHARTS -->
+			<script src="diyetisyen_paneli/assets/plugins/Flot/jquery.flot.js"></script>
+			<!-- FLOT RESIZE PLUGIN - allows the chart to redraw when the window is resized -->
+
+			<script src="diyetisyen_paneli/assets/plugins/Flot/jquery.flot.resize.js"></script>
+
+			<!-- FLOT PIE PLUGIN - also used to draw donut charts -->
+			<script src="diyetisyen_paneli/assets/plugins/Flot/jquery.flot.pie.js"></script>
+
+			<!-- FLOT CATEGORIES PLUGIN - Used to draw bar charts -->
+			<script src="diyetisyen_paneli/assets/plugins/Flot/jquery.flot.categories.js"></script>
+
+			<!-- Custom Float JavaScript -->
+			<!-- <script src="diyetisyen_paneli/js/custom/chart/float.js"></script> -->
+
+			<!-- Morris.js charts -->
+	    <script src="diyetisyen_paneli/assets/plugins/raphael/raphael.min.js"></script>
+	    <script src="diyetisyen_paneli/assets/plugins/morris.js/morris.min.js"></script>
+
+			<!-- Custom Morrisjs JavaScript -->
+	    <script src="diyetisyen_paneli/js/custom/chart/morris.js"></script>
+
+			<script src="diyetisyen_paneli/js/custom/navbar_script.js"></script>
+
+			 <!--  Google Chart JavaScript -->
+			<script type='text/javascript' src='https://www.gstatic.com/charts/loader.js'></script>
+
+			<!-- Custom Google Chart JavaScript -->
+		    <!-- <script src="diyetisyen_paneli/js/custom/chart/googlechart.js"></script> -->
+
+			<!-- Angular Tooltip -->
+			<script src="diyetisyen_paneli/assets/plugins/angular-tooltip/angular.js"></script>
+			<script src="diyetisyen_paneli/assets/plugins/angular-tooltip/angular-tooltips.js"></script>
+			<script src="diyetisyen_paneli/assets/plugins/angular-tooltip/index.js"></script>
+
+			<!-- Custom scripts for all pages-->
+			<script src="diyetisyen_paneli/js/glovia.js"></script>
+
+			<script>
+			  $('.dropdown-toggle').dropdown()
+			  </script>
+
+	  </div>
+
+		<script src="https://www.gstatic.com/firebasejs/5.5.1/firebase.js"></script>
+
+		<script>
+		  // Initialize Firebase
+		  var config = {                                          // BAĞLANTILARI KURUYORUZ sütunlara verileri çekeceğimiz bağlantılar
+		    apiKey: "AIzaSyA24Eyjeh0HipNlMBhAJRnacsFxAySHgtY",
+		    authDomain: "lifecare-55c38.firebaseapp.com",
+		    databaseURL: "https://lifecare-55c38.firebaseio.com",
+		    projectId: "lifecare-55c38",
+		    storageBucket: "lifecare-55c38.appspot.com",
+		    messagingSenderId: "340270538259"
+		  };
+		  firebase.initializeApp(config);
+		</script>
+    <script>
+      $(function(){
+        $("#nav-placeholder").load("navbar_eng.txt");
+      });
+    </script>
+		<script>
+			firebase.auth().onAuthStateChanged(function(user)
+			{
+
+
+				if (user)
+				{
+					nav_bar_part_of_the_page(user);  //navbar'ı düzenleyen script
+					fill_message_box(user);  //sağ üstteki message iconu'nu dolduruyor
+          setTimeout(function(){
+            engTRK();
+          }, 2000);
+					document.getElementById("page-top").style.display = "block";  //açılırken sekron olayı
+					removeLoader();
+					showPrograms();
+					localStroage();
+					setTimeout(function(){
+						 sortTable();
+					}, 2000);
+
+				}
+				else
+				{
+					document.location.replace("login.html");
+				}
+			});
+
+		</script>
+		<script type="text/javascript" src="arsivim_eng.js">
+
+		</script>
+	  <!-- Wrapper -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-135958309-1"></script>
+	<script>
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+
+	gtag('config', 'UA-135958309-1');
+	</script>
+  <script>
+  	function engTRK(){
+  		document.getElementById("eng").href="arsivim_eng.html";
+  		document.getElementById("trk").href="arsivim.html";
+  	}
+  </script>
+	</body>
+</html>

@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<meta name="description" content="">
+		<meta name="author" content="Qwerty Tasarım ve Bilgi Teknolojileri">
+		<link rel="shortcut icon" href="danisan/assets/img/favicon.png"/>
+		<title>Login</title>
+
+		<!-- Bootstrap core CSS -->
+		<link href="diyetisyen_paneli/assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+		<!-- Custom fonts for this template -->
+		<link href="diyetisyen_paneli/assets/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+		<!-- Custom fonts for this template -->
+		<link href="diyetisyen_paneli/assets/plugins/themify/css/themify.css" rel="stylesheet" type="text/css">
+
+		<!-- Angular Tooltip Css -->
+		<link href="diyetisyen_paneli/assets/plugins/angular-tooltip/angular-tooltips.css" rel="stylesheet">
+
+		<!-- Page level plugin CSS -->
+		<link href="diyetisyen_paneli/assets/plugins/datatables/dataTables.bootstrap4.css" rel="stylesheet">
+
+		<!-- Page level plugin CSS -->
+		<link href="diyetisyen_paneli/css/animate.css" rel="stylesheet">
+
+		<!-- Custom styles for this template -->
+		<link href="diyetisyen_paneli/css/glovia.css" rel="stylesheet">
+		<link href="diyetisyen_paneli/css/glovia-responsive.css" rel="stylesheet">
+
+		<!-- Custom styles for Color -->
+		<link href="diyetisyen_paneli/css/skins/default.css" rel="stylesheet">
+
+	</head>
+
+	<body>
+		<div class="container-fluid">
+			<div class="row">
+				<div class="hidden-xs hidden-sm col-lg-6 col-md-6 gredient-bg-con">
+					<div class="clearfix">
+						<div class="logo-title-container text-center">
+							<img class="img-responsive" src="diyetisyen_paneli/img/logo-01.png" alt="Logo LifeCare">
+						</div>
+						<div class="copy animated fadeIn text-center" id="copy-text">
+							<p class="cl-qwerty">Copyright © <img class="img-responsive" src="diyetisyen_paneli/img/qwerty-01.png" alt="Logo Qwerty"></p>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-12 col-sm-12 col-md-6 col-lg-6 login-sidebar animated fadeInRightBig">
+					<div>
+							<ul  style="text-align:right;font-size:1.8em;line-height:2.618">
+									<li class="menu-icon-box">
+										<a href="" id="eng" style="font-size:0.8em;"><strong style="position: absolute;right: 40px;">EN |</strong>
+											<span style="color:#2D2E82">
+											</span>
+										</a>
+										<a href="" id="trk" style="font-size:0.8em;">
+											<strong style="position: absolute;right: 10px;">TR</strong>
+										</a>
+										<div id="menu-handle"></div>
+								</li>
+							</ul>
+						</div>
+					<div class="login-container animated fadeInRightBig" style="margin-top:20%;">
+						<h3 class="text-center text-upper">Login</h3>
+						<center><p style="color:red;" id="login_error"></p></center>
+						<form class="form-horizontal" autocomplete="on" method="post" onsubmit="event.preventDefault(); login_user(this.email.value, this.password.value);">
+
+							<div class="form-group">
+								<input type="email" class="form-control" id="email" placeholder="Email" required></input>
+								<i class="fa fa-user"></i>
+							</div>
+
+							<div class="form-group help">
+								<input type="password" class="form-control" id="password" placeholder="Password" required></input>
+								<i class="fa fa-lock"></i>
+								<a href="javascript:showPassword();" class="pass-view fa fa-eye-slash" id="show_password"></a>
+							</div>
+
+							<div class="form-group">
+								<div class="flexbox align-items-center">
+									<input type="submit" class="btn gredient-bg-login" value="Login"/>
+									<!-- <input type="button" class="btn gredient-bg-login" value="Şifremi Unuttum"/> -->
+									<div class="text-right">
+										<a href="#modal-1" data-toggle="modal" data-target="#modal-1">I forgot my password</a>
+									</div>
+								</div>
+								<div class="text-right mt-1">
+									<a href="signup.html">Not a Member?</a>
+								</div>
+							</div>
+							<!-- <div class="form-group">
+								<div class="flexbox align-items-center">
+									<span class="custom-checkbox">
+										<input type="checkbox" id="remember" name="options[]" value="1">
+										<label for="checkbox1">Beni Hatırla</label>
+									</span>
+									<input type="button" onclick="window.location.href='signup.html'" class="btn gredient-bg-login" value="Kayıt Ol"></button>
+								</div>
+							</div> -->
+
+
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="modal modal-box-1 fade" id="modal-1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel1" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content" id="myModalLabel1">
+					<div class="modal-header theme-bg">
+						I forgot my password
+						<button type="button" onclick="closeModal();" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+					</div>
+					<div class="modal-body">
+						<div class="text-center">
+							To reset your account password, please enter your email address.
+						</div>
+						</br>
+						<div id="info_text" class="text-center" style="display: none;"></div>
+						<form method="post" autocomplete="on" onsubmit="event.preventDefault(); reset_password(this.reset_password_email.value);">
+							<div class="row">
+								<div class="col-md-12">
+									<div class="form-group">
+										<input id="reset_password_email" type="email" class="form-control" placeholder="Email Adresiniz" required/>
+									</div>
+								</div>
+								<div class="col-lg-12 text-center">
+									<input type="submit" class="btn outline-secondary bg-white-save" value="Şifremi Sıfırla"/>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Bootstrap core JavaScript-->
+		<script src="diyetisyen_paneli/assets/plugins/jquery/jquery.min.js"></script>
+		<script src="diyetisyen_paneli/assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+		<!-- Core plugin JavaScript-->
+		<script src="diyetisyen_paneli/assets/plugins/jquery-easing/jquery.easing.min.js"></script>
+
+		 <!-- Slick Slider Js -->
+		<script src="diyetisyen_paneli/assets/plugins/slick-slider/slick.js"></script>
+
+		<!-- Slim Scroll -->
+		<script src="diyetisyen_paneli/assets/plugins/slim-scroll/jquery.slimscroll.min.js"></script>
+
+		<!-- Angular Tooltip -->
+		<script src="diyetisyen_paneli/assets/plugins/angular-tooltip/angular.js"></script>
+		<script src="diyetisyen_paneli/assets/plugins/angular-tooltip/angular-tooltips.js"></script>
+		<script src="diyetisyen_paneli/assets/plugins/angular-tooltip/index.js"></script>
+		<!-- Custom scripts for all pages-->
+		<script src="diyetisyen_paneli/js/glovia.js"></script>
+
+		<script>
+		  $('.dropdown-toggle').dropdown()
+		</script>
+
+		<script src="https://www.gstatic.com/firebasejs/5.5.1/firebase.js"></script>
+		<script>
+		  // Initialize Firebase
+		  var config = {
+		    apiKey: "AIzaSyA24Eyjeh0HipNlMBhAJRnacsFxAySHgtY",
+		    authDomain: "lifecare-55c38.firebaseapp.com",
+		    databaseURL: "https://lifecare-55c38.firebaseio.com",
+		    projectId: "lifecare-55c38",
+		    storageBucket: "lifecare-55c38.appspot.com",
+		    messagingSenderId: "340270538259"
+		  };
+		  firebase.initializeApp(config);
+		</script>
+		<script>
+		setTimeout(function(){
+			engTRK();
+		}, 1000);
+		</script>
+		<script>
+			/*start_initial();
+
+			function start_initial()
+			{
+				var user = firebase.auth().currentUser;
+				if (user!=null)
+				{
+					document.location.replace("index.html");
+				}
+			}*/
+
+			function reset_password(email)
+			{
+				firebase.auth().sendPasswordResetEmail(email).then(function()
+				{
+				  document.getElementById("info_text").innerHTML = "You can use the link we send to your  '" + email + "' email address to reset your account password.";
+					document.getElementById("info_text").style.color = "green";
+					document.getElementById("info_text").style.display = "block";
+					document.getElementById("reset_password_email").value = "";
+				}).catch(function(error)
+				{
+					if (error.code == "auth/user-not-found")
+					{
+						document.getElementById("info_text").innerHTML = "'" + email + "'email address is not a member of our system. Please enter a valid email address.";
+						document.getElementById("info_text").style.color = "red";
+						document.getElementById("info_text").style.display = "block";
+						document.getElementById("reset_password_email").value = "";
+					}
+				});
+			}
+
+			function closeModal()
+			{
+				document.getElementById("info_text").style.display = "none";
+				document.getElementById("info_text").innerHTML = "";
+			}
+
+			var urlParams = new URLSearchParams(window.location.search);
+			var to_redirect = urlParams.get('to');
+			if (to_redirect == null)
+			{
+				to_redirect = "diyetisyen_paneli_eng.html";
+			}
+			firebase.auth().onAuthStateChanged(function(user)
+			{
+				if (user)
+				{
+					document.location.replace(to_redirect);
+				}
+			});
+
+			function login_user(email, password)
+			// loading
+			{
+				var the_function = firebase.functions().httpsCallable('check_user_to_login');
+				the_function({data: {email: email}}).then(function(result)
+				{
+					var returned = result.data.text;
+					if (returned == "ok")
+					{
+						firebase.auth().signInWithEmailAndPassword(email, password)
+						.then(function(userRecord)
+						{
+							document.location.replace(to_redirect);
+						})
+						.catch(function(error)
+						{
+							document.getElementById("password").value = "";
+							var login_error = document.getElementById("login_error");
+							if (error.code == "auth/user-not-found")
+							{
+								document.getElementById("email").value = "";
+								login_error.innerHTML = "Such a user is not currently in the system.";
+							}
+							else if (error.code == "auth/wrong-password")
+							{
+								login_error.innerHTML = "You entered your password incorrectly.";
+							}
+							else
+							{
+								document.getElementById("email").value = "";
+								var login_error = document.getElementById("login_error");
+								login_error.innerHTML = "An unknown error occurred while logging in. <br> Please try again.";
+							}
+						});
+					}
+					else if (returned == "not_admin_verified")
+					{
+						document.getElementById("password").value = "";
+						var login_error = document.getElementById("login_error");
+						login_error.innerHTML = "Before you can login, our webmasters must approve your account.<br>Your account is currently disapproved and you will receive an email when it is approved.";
+					}
+					else if (returned == "not_user_verified")
+					{
+						document.getElementById("password").value = "";
+						var login_error = document.getElementById("login_error");
+						login_error.innerHTML = "Please confirm your email address before you can login.";
+					}
+					else if (returned == "not_dietitian")
+					{
+						document.getElementById("password").value = "";
+						document.getElementById("email").value = "";
+						var login_error = document.getElementById("login_error");
+						login_error.innerHTML = "Your account is not an account from a dietitian.<br>The dietitian panel can only be accessed with a dietitian account.";
+					}
+					else if (returned == "not_a_user")
+					{
+						document.getElementById("password").value = "";
+						document.getElementById("email").value = "";
+						var login_error = document.getElementById("login_error");
+						login_error.innerHTML = "Such a user is not currently in the system.";
+					}
+					else
+					{
+						document.getElementById("email").value = "";
+						document.getElementById("password").value = "";
+						var login_error = document.getElementById("login_error");
+						login_error.innerHTML = "An unknown error occurred while logging in. \n Please try again later.";
+					}
+				})
+				.catch(function(error)
+				{
+					document.getElementById("email").value = "";
+					document.getElementById("password").value = "";
+					var login_error = document.getElementById("login_error");
+					login_error.innerHTML = "An unknown error occurred while logging in. \n Please try again later.";
+				});
+
+				// firebase.auth().signInWithEmailAndPassword(email, password)
+				// .then(function(userRecord)
+				// {
+				// 	var user = userRecord.user;
+				// 	if (user.emailVerified == true)
+				// 	{
+				// 		firebase.database().ref("/WebUsers/UserInfos/" + user.uid + "/isActive").once('value').then(function(snapshot)
+				// 		{
+				// 		  if (snapshot.val() == true)
+				// 			{
+				// 				document.location.replace(to_redirect);
+				// 			}
+				// 			else
+				// 			{
+				// 				firebase.auth().signOut().then(function()
+				// 				{
+				// 					document.getElementById("password").value = "";
+				// 					var login_error = document.getElementById("login_error");
+				// 					login_error.innerHTML = "Giriş yapabilmeniz için öncelikle site yöneticilerimizin sizin hesabınızı onaylaması gerekmektedir.\nHesabınız şu an onaylanmadı ve onaylandığında size email gönderilecektir.";
+				// 				}, function(error)
+				// 				{
+				//
+				// 				});
+				// 			}
+				// 		})
+				// 		.catch(function()
+				// 		{
+				// 			firebase.auth().signOut().then(function()
+				// 			{
+				// 				document.getElementById("email").value = "";
+				// 				document.getElementById("password").value = "";
+				// 				var login_error = document.getElementById("login_error");
+				// 				login_error.innerHTML = "Giriş yaparken bilinmeyen bir hata oluştu.\nLütfen tekrar deneyiniz.";
+				// 			}, function(error)
+				// 			{
+				//
+				// 			});
+				// 		});
+				// 	}
+				// 	else
+				// 	{
+				// 		firebase.auth().signOut().then(function()
+				// 		{
+				// 			document.getElementById("password").value = "";
+				// 			var login_error = document.getElementById("login_error");
+				// 			login_error.innerHTML = "Giriş yapabilmeniz için lütfen öncelikle email adresinizi onaylayınız.";
+				// 		}, function(error)
+				// 		{
+				//
+				// 		});
+				// 	}
+				// })
+				// .catch(function(error)
+				// {
+				// 	document.getElementById("password").value = "";
+				// 	var login_error = document.getElementById("login_error");
+				// 	if (error.code == "auth/user-not-found")
+				// 	{
+				// 		document.getElementById("email").value = "";
+				// 		login_error.innerHTML = "Böyle bir kullanıcı şu an sistemde bulunmamaktadır.";
+				// 	}
+				// 	else if (error.code == "auth/wrong-password")
+				// 	{
+				// 		login_error.innerHTML = "Şifrenizi yanlış girdiniz.";
+				// 	}
+				// 	else
+				// 	{
+				// 		document.getElementById("email").value = "";
+				// 		var login_error = document.getElementById("login_error");
+				// 		login_error.innerHTML = "Giriş yaparken bilinmeyen bir hata oluştu.\nLütfen tekrar deneyiniz.";
+				// 	}
+				// });
+			}
+
+			function showPassword()
+			{
+				var e1 = document.getElementById("password");
+				var e2 = document.getElementById("show_password");
+				if (e1.type == "password")
+				{
+					e2.className = "pass-view fa fa-eye";
+					e1.type = "text";
+				}
+				else
+				{
+					e2.className = "pass-view fa fa-eye-slash";
+					e1.type = "password";
+				}
+			}
+
+		</script>
+
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-135958309-1"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+
+gtag('config', 'UA-135958309-1');
+</script>
+<script>
+	function engTRK(){
+		document.getElementById("eng").href="login_eng.html";
+		document.getElementById("trk").href="login.html";
+	}
+</script>
+	</body>
+
+</html>

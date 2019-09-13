@@ -1,0 +1,250 @@
+<nav class="navbar navbar-expand-lg bb-1 navbar-light bg-white fixed-top" id="mainNav">
+
+	<header class="header-logo bg-white bb-1 br-1">
+		<a class="ml-5 gredient-cl navbar-brand" href="diyetisyen_paneli.html">
+			<img class="img-responsive" src="diyetisyen_paneli/img/lifecare-01.png" alt="Logo LifeCare">
+		</a>
+	</header>
+
+	<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+	  <span class="ti-align-left"></span>
+	</button>
+
+	<div class="collapse navbar-collapse" id="navbarResponsive">
+		<div class="navbar-side">
+			<ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
+				<div class="nav-item" data-toggle="tooltip" data-placement="right">
+					<div class="media-border gredient-bg"></div>
+			    <div class="media">
+				    <img id="user_photo_1" class="avatar avatar-lg" src="" alt="..."/>
+						<div class="media-body">
+							<p class="user-nick-text">
+                <strong id="user_name_1"></strong>
+							</p>
+							<!-- <span class="heading-online cl-success">
+								<i class="fa fa-circle"></i>
+								Çevrimiçi
+							</span> -->
+				    </div>
+			    </div>
+			  </div>
+			  <li class="nav-item" data-toggle="tooltip" data-placement="right">
+			    <a class="nav-link" href="diyetisyen_paneli.html">
+				    <i class="ti i-cl-1 ti-dashboard"></i>
+				    <span class="nav-link-text">Gösterge Paneli</span>
+			    </a>
+			  </li>
+			  <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Danisanlar">
+			    <a class="nav-link" href="danisanlar.html">
+				    <i class="ti i-cl-8 ti-pie-chart"></i>
+				    <span class="nav-link-text">Danışanlarım</span>
+			    </a>
+			  </li>
+			  <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Projects">
+			    <a class="nav-link" href="chatting.html">
+				    <i class="ti i-cl-3 ti-comment-alt"></i>
+				    <span class="nav-link-text">Mesajlar</span>
+			    </a>
+			  </li>
+			  <!-- <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Projects">
+			    <a class="nav-link" href="profile-page.html">
+				    <i class="ti i-cl-1 ti-user"></i>
+				    <span class="nav-link-text">Profilim</span>
+			    </a>
+			  </li> -->
+			  <!-- <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Invoice">
+			    <a class="nav-link" href="takvimim.html">
+				    <i class="ti i-cl-4 ti-calendar"></i>
+				    <span class="nav-link-text">Takvim</span>
+			    </a>
+			  </li> -->
+			  <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Projects">
+			    <a class="nav-link" href="arsivim.html">
+				    <i class="ti i-cl-2 ti-money"></i>
+				    <span class="nav-link-text">Beslenme Programı Arsivim</span>
+			    </a>
+			  </li>
+			  <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Projects">
+			    <a class="nav-link" href="settings.html">
+				    <i class="ti i-cl-12 ti-settings"></i>
+				    <span class="nav-link-text">Ayarlar</span>
+			    </a>
+			  </li>
+			  <!-- <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Invoice">
+			    <a class="nav-link" href="help.html">
+				    <i class="ti i-cl-5 ti ti-desktop"></i>
+				    <span class="nav-link-text">Yardım - Destek</span>
+			    </a>
+			  </li> -->
+		  </ul>
+    </div>
+	  <ul class="navbar-nav ml-left">
+		  <li class="nav-item">
+		    <form class="form-inline my-2 my-lg-0 mr-lg-2" onsubmit="event.preventDefault(); search_button(this.search_input.value);">
+			    <div class="input-group">
+				    <span class="input-group-btn">
+					    <button class="btn btn-primary" type="button">
+					      <i class="ti-search"></i>
+					    </button>
+				    </span>
+			      <input id="search_input" class="form-control" type="text" placeholder="Ara">
+			    </div>
+		    </form>
+		  </li>
+	  </ul>
+	  <ul class="navbar-nav ml-auto">
+		  <li class="nav-item dropdown">
+			  <a class="nav-link dropdown-toggle mr-lg-3 a-topbar__nav a-nav" id="messagesDropdown" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				  <i class="gredient-cl ti-email"></i>
+				  <span id="new_messages_count_header" class="a-nav__link-badge a-badge a-badge--pink">0</span>
+				  <span class="hidden-lg hidden-md mrg-l-10">Yeni Kullanıcı Mesajı</span>
+			  </a>
+			  <div class="dropdown-menu animated flipInX" aria-labelledby="messagesDropdown">
+				  <div class="dropdown-header text-center pink-bg">
+					  <span id="new_messages_count" class="a-dropdown__header-title">0 Yeni</span>
+					  <span class="a-dropdown__header-subtitle">Kullanıcı Mesajı</span>
+				  </div>
+				  <div class="ground-list ground-list-hove" id="message-box">
+
+				  </div>
+				  <a class="dropdown-item view-all" href="chatting.html">Bütün Mesajları Görüntüle</a>
+			  </div>
+		  </li>
+
+		  <!-- <li class="nav-item dropdown">
+			  <a class="nav-link dropdown-toggle mr-lg-3 a-topbar__nav a-nav" id="alertsDropdown" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				  <i class="gredient-cl ti-bell"></i>
+				  <span class="a-nav__link-badge a-badge a-badge--accent a-animate-blink">6</span>
+				  <span class="hidden-lg hidden-md mrg-l-10">New Notification</span>
+			  </a>
+  			<div class="dropdown-menu animated flipInX" aria-labelledby="alertsDropdown">
+				  <div class="dropdown-header text-center accent-bg">
+					  <span class="a-dropdown__header-title">6 New</span>
+					  <span class="a-dropdown__header-subtitle">User Notifications</span>
+				  </div>
+				  <div class="ground-list ground-list-hove" id="notification-box">
+					  <div class="ground ground-single-list">
+						  <a href="#">
+							  <div class="btn-circle-40 btn-success">
+							    <i class="ti-calendar"></i>
+							  </div>
+						  </a>
+						  <div class="ground-content">
+							  <h6>
+							    <a href="#">Maryam Amiri</a>
+							  </h6>
+							  <small class="text-fade">Check New Admin Dashboard..</small>
+							  <span class="small">Just Now</span>
+						  </div>
+					  </div>
+					  <div class="ground ground-single-list">
+						  <a href="#">
+							  <div class="btn-circle-40 btn-danger">
+							    <i class="ti-calendar"></i>
+							  </div>
+						  </a>
+						  <div class="ground-content">
+							  <h6>
+							    <a href="#">Maryam Amiri</a>
+							  </h6>
+							  <small class="text-fade">You can Customize..</small>
+							  <span class="small">02 Min Ago</span>
+						  </div>
+					  </div>
+					  <div class="ground ground-single-list">
+						  <a href="#">
+							  <div class="btn-circle-40 btn-info">
+							    <i class="ti-calendar"></i>
+							  </div>
+						  </a>
+						  <div class="ground-content">
+							  <h6>
+							    <a href="#">Maryam Amiri</a>
+							  </h6>
+							  <small class="text-fade">Need Responsive Business Tem...</small>
+							  <span class="small">10 Min Ago</span>
+						  </div>
+					  </div>
+					  <div class="ground ground-single-list">
+						  <a href="#">
+							  <div class="btn-circle-40 btn-warning">
+							    <i class="ti-calendar"></i>
+							  </div>
+						  </a>
+						  <div class="ground-content">
+							  <h6>
+							    <a href="#">Maryam Amiri</a>
+							  </h6>
+							  <small class="text-fade">Next Meeting on Tuesday..</small>
+							  <span class="small">15 Min Ago</span>
+						  </div>
+					  </div>
+					  <div class="ground ground-single-list">
+						  <a href="#">
+							  <div class="btn-circle-40 btn-purple">
+							    <i class="ti-calendar"></i>
+							  </div>
+						  </a>
+						  <div class="ground-content">
+							  <h6>
+							    <a href="#">Maryam Amiri</a>
+							  </h6>
+							  <small class="text-fade">You can Change Your Pass..</small>
+							  <span class="small">18 Min Ago</span>
+						  </div>
+					  </div>
+				  </div>
+				  <a class="dropdown-item view-all" href="#">View all Notifications</a>
+			  </div>
+		  </li> -->
+
+		  <li class="nav-item dropdown">
+			  <a class="nav-link dropdown-toggle mr-lg-0 user-img a-topbar__nav a-nav" id="userDropdown" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				  <img id="user_photo_2" src="" alt="user-img" width="36" height="32" class="img-circle">
+				  <b id="user_name_2" class="f-size-17"></b>
+			  </a>
+			  <ul class="dropdown-menu dropdown-user animated flipInX" aria-labelledby="userDropdown">
+				  <li class="dropdown-header green-bg">
+					  <div class="header-user-pic">
+						  <img id="user_photo_3" src="" alt="user-img" width="36" class="img-circle">
+					  </div>
+					  <div class="header-user-det">
+						  <span id="user_name_3" class="a-dropdown__header-title"></span>
+						  <span class="a-dropdown__header-subtitle">Diyetisyen</span>
+					  </div>
+				  </li>
+				  <!-- <li>
+				    <a class="dropdown-item" href="profile-page.html">
+				      <i class="ti-user"></i>
+				      Profilim
+				    </a>
+				  </li>
+				  <li>
+				    <a class="dropdown-item" href="#">
+				      <i class="ti-wallet"></i>
+				      My Balance(Ödemeler)
+				    </a>
+				  </li>
+				  <li>
+				    <a class="dropdown-item" href="chatting.html">
+				      <i class="ti-email"></i>
+				      Inbox(Mesajlar)
+				    </a>
+				  </li> -->
+				  <li>
+				    <a class="dropdown-item" href="settings.html">
+				      <i class="ti-settings"></i>
+				      Ayarlar
+				    </a>
+				  </li>
+				  <li>
+				    <a class="dropdown-item" href="javascript:log_out();">
+				      <i class="fa fa-power-off"></i>
+				      Çıkış Yap
+				    </a>
+				  </li>
+			  </ul>
+		  </li>
+	  </ul>
+	</div>
+</nav>

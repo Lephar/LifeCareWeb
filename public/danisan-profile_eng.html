@@ -1,0 +1,1464 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<meta name="description" content="">
+		<meta name="author" content="">
+		<link rel="shortcut icon" href="danisan/assets/img/favicon.png"/>
+		<title>Advisee Profile Page</title>
+
+		<!-- Bootstrap core CSS -->
+		<link href="diyetisyen_paneli/assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+		<!-- Custom fonts for this template -->
+		<link href="diyetisyen_paneli/assets/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+		<!-- Custom fonts for this template -->
+		<link href="diyetisyen_paneli/assets/plugins/themify/css/themify.css" rel="stylesheet" type="text/css">
+
+		<!-- Angular Tooltip Css -->
+		<link href="diyetisyen_paneli/assets/plugins/angular-tooltip/angular-tooltips.css" rel="stylesheet">
+
+		<!-- Morris Charts CSS -->
+		<link href="diyetisyen_paneli/assets/plugins/morris.js/morris.css" rel="stylesheet">
+
+		<!-- Page level plugin CSS -->
+		<link href="diyetisyen_paneli/css/animate.css" rel="stylesheet">
+
+		<!-- Custom styles for this template -->
+		<link href="diyetisyen_paneli/css/glovia.css" rel="stylesheet">
+		<link href="diyetisyen_paneli/css/glovia-responsive.css" rel="stylesheet">
+
+		<!-- Custom styles for Color -->
+		<link href="diyetisyen_paneli/css/skins/default.css" rel="stylesheet">
+	</head>
+
+	<body class="fixed-nav sticky-footer" id="page-top" style="display: none;">
+
+		<div id="nav-placeholder">
+
+    </div>
+
+
+		<div class="content-wrapper">
+			<div class="container-fluid">
+
+				<!-- Title & Breadcrumbs-->
+				<div class="row page-titles">
+					<div class="col-sm-9 align-self-center">
+						<h4 class="theme-cl">Advisee Profile</h4>
+					</div>
+					<div class="col-sm-3 align-self-center">
+						<a href="diyetisyen_paneli_eng.html" id="url_takip" class="btn cl-white gredient-bg outline-secondary bg-white-save" style="float: right; color: white !important;" id="diyettakip-button"><i class="fa fa-fw fa-cutlery" style="font-size:15px"></i>&nbsp&nbspPrepare a Nutrition Plan</a>
+					</div>
+				</div>
+				<!-- Title & Breadcrumbs-->
+
+				<!-- row -->
+				<div class="row">
+					<div class="col-md-3">
+
+					  <!-- Single Contact List -->
+					<div class="row">
+					<div id="user_card" class="col-md-12 mb-4">
+						<!-- <div class="contact-box">
+
+							<div class="contact-img">
+								<img src="https://sunlimetech.com/portfolio/boot4menu/assets/imgs/team/img_02.png" class="img-circle img-responsive" alt="">
+							</div>
+
+							<div class="contact-caption">
+								<h4>Daniel Duke</h4>
+								<span>danieldwike@hotmail.com</span>
+							</div>
+
+							<div class="contact-action">
+								<i class="fa fa-calendar-check-o" aria-hidden="true"></i> 07-12-2018
+							</div>
+
+							<div class="contact-action">
+								<i class="fa fa-map-marker" aria-hidden="true"></i> Ankara
+							</div>
+
+
+
+						</div> -->
+					</div>
+					</div>
+
+	        <div class="row">
+					  <div class="col-md-12 mt-1">
+					  <!-- About Me Box -->
+					  	<div class="card">
+								<div class="card-header">
+						  		<h4 class="box-title">About</h4>
+								</div>
+						<!-- /.box-header -->
+								<div class="card-body" id="card-about">
+								  <strong>
+										<i class="fa fa-mars-stroke margin-r-5"></i>
+										Gender
+									</strong>
+									<br>
+									<span id="advisee_gender"></span>
+
+									<hr>
+
+									<strong>
+										<i class="fa fa-clock-o margin-r-5"></i>
+										Date of Birth
+									</strong>
+									<br>
+									<span id="advisee_birth_date"></span>
+
+								  <hr>
+
+									<strong>
+										<i class="fa fa-arrows-v margin-r-5"></i>
+										Height
+									</strong>
+									<br>
+									<span id="advisee_height"></span>
+
+								  <hr>
+
+									<strong>
+										<i class="fa fa-phone margin-r-5"></i>
+										Telephone
+									</strong>
+									<br>
+									<span id="advisee_phone"></span>
+
+						   <!-- <strong><i class="fa fa-heartbeat margin-r-5"></i> Düzenli yaptığınız fiziksel aktivite </strong><br><span>Fitness</span><br/>
+
+
+
+						   <strong>Sıklığı </strong><br><span><i class="fa fa-circle" aria-hidden="true"></i> <i class="fa fa-circle-o" aria-hidden="true"></i> <i class="fa fa-circle-o" aria-hidden="true"></i></span>
+
+						   <hr>
+
+						   <strong><i class="fa fa-exclamation-triangle margin-r-5"></i> Sigara Kullanım </strong><br><span>Yok</span>
+
+						   <hr>
+
+						   <strong><i class="fa fa-book margin-r-5"></i> Mesleği </strong><br><span>Reviews</span>
+
+						   <hr>
+
+						   <strong><i class="fa fa-map-marker margin-r-5"></i> Location </strong><br><span>Reviews</span> -->
+
+								</div>
+						<!-- /.card-body -->
+					  	</div>
+					  <!-- /.card -->
+					  </div>
+				  </div>
+
+				  <!-- <div class="row">
+					  <div class="col-md-12">
+
+					    <div class="card">
+						<div class="card-header">
+						  <h4 class="box-title">Vücut Kitle Endeksi</h4>
+						</div>
+
+
+					     <div class="col-md-12 mb-4">
+
+
+						 <div class="col-md-12" style="margin-top: 2em;">
+
+							<div class="row">
+							<span class="endeks-numara-1">12</span><span class="endeks-numara-2">19</span><span class="endeks-numara-3">25</span><span class="endeks-numara-4">40</span>
+							<div class="col-md-4" style="background-color: #43387A; height: 26px;">
+								<div class="card-body" id="vucut-olculeri">Zayıf
+
+								</div>
+
+							</div>
+
+							<div class="col-md-4" style="background-color: #EF7C09; height: 26px;">
+
+								<div class="card-body" id="vucut-olculeri">Normal
+
+								</div>
+
+							</div>
+							<div class="col-md-4" style="background-color: #43387A; height: 26px;">
+								<div class="card-body" id="vucut-olculeri">Kilolu
+
+								</div>
+
+							</div>
+
+							<i class="fa fa-sort-asc" aria-hidden="true" style="position: absolute; top: 2em; left: 50%; font-size: 15px; color: #43387A;"></i>
+
+							</div>
+
+						 </div>
+
+
+						 <div class="col-md-12" style="margin-top: 2em;">
+
+							<div class="row">
+
+							  <div class="endeks-icon"></div>
+
+							</div>
+
+						 </div>
+
+
+							<div class="card-body" id="kitle-endeks">
+
+								<h1>20,3</h1>
+								<hr/>
+
+							 <span><strong>Son Güncelleme</strong></span><br>
+							 <span>22.12.2022</span><br>
+							 <span>08.07</span>
+
+							</div>
+
+
+
+                         </div>
+
+
+						 <div class="col-md-12 mb-4">
+
+						  <div class="chart" id="line-chart-2" style="height: 200px;"></div>
+                         </div>
+
+
+					  </div>
+
+					  </div>
+				  </div> -->
+
+				  <div class="row">
+						<div class="col-md-12 mt-1">
+							<div class="card" style="height: 550px;">
+								<div class="card-header">
+								  <h4 class="box-title">
+										Body Measures
+										<br/>
+										<span class="kan-tarih">
+											<i class="fa fa-calendar-check-o" aria-hidden="true">
+											</i>
+											<select id="body_measure_dates" onchange="change_date_body(this.value);">
+											</select>
+										</span>
+									</h4>
+								</div>
+								<div class="card-body">
+									<div class="col-md-12 mb-4" id="body-image-div" style="padding-top: 15px;">
+										<div class="card-body-image">
+											<span id="body_measurements_1" class="card-image-text-1">-</span>
+											<span id="body_measurements_2" class="card-image-text-2">-</span>
+											<span id="body_measurements_3" class="card-image-text-3">-</span>
+											<span id="body_measurements_4" class="card-image-text-4">-</span>
+											<span id="body_measurements_5" class="card-image-text-5">-</span>
+											<span id="body_measurements_6" class="card-image-text-6">-</span>
+										</div>
+									</div>
+								</div>
+							</div>
+					  </div>
+				  </div>
+					</div>
+					<!-- /.col-md-3 -->
+
+
+					<div class="col-md-9">
+
+					<!-- Donut Chart -->
+					<div class="row">
+					<div class="col-md-4 col-sm-12">
+						<div class="card" style="padding: 20px; height: 640px;">
+							<div class="card-header" style="border: none;">
+								<h4 class="mb-0">Health Information</h4>
+							</div>
+							<div class="card-body padd-0" style="height: 338px; overflow: auto;">
+								<div class="table-responsive">
+									<table class="table table-lg table-hover">
+										<tbody>
+
+											<tr>
+												<td>
+													<strong>Your diagnosed disease :</strong>
+													<div id="row1_1" style="margin-top:9px;">
+														not entered
+													</div>
+												</td>
+											</tr>
+
+											<tr>
+												<td>
+													<strong>Chronic illness in your first degree relative :</strong>
+													<div id="row1_2" style="margin-top:9px;">
+														not entered
+													</div>
+												</td>
+											</tr>
+
+											<tr>
+												<td>
+													<strong>Medicines you use regular :</strong>
+													<div id="row1_3" style="margin-top:9px;">
+														not entered
+													</div>
+												</td>
+											</tr>
+
+											<tr>
+												<td>
+													<strong>Your operation :</strong>
+													<div id="row1_4" style="margin-top:9px;">
+														not entered
+													</div>
+												</td>
+											</tr>
+
+											<tr>
+												<td>
+													<strong>Food allergy (s) :</strong>
+													<div id="row1_5" style="margin-top:9px;">
+														not entered
+													</div>
+												</td>
+											</tr>
+
+											<tr>
+												<td>
+													<strong>Using food / herbal support :</strong>
+													<div id="row1_6" style="margin-top:9px;">
+														not entered
+													</div>
+												</td>
+											</tr>
+
+											<tr>
+												<td>
+													<strong>Food intolerance :</strong>
+													<div id="row1_7" style="margin-top:9px;">
+														not entered
+													</div>
+												</td>
+											</tr>
+
+											<tr>
+												<td>
+													<strong>Smoking :</strong>
+													<div id="row1_8" style="margin-top:9px;">
+														not entered
+													</div>
+												</td>
+											</tr>
+
+											<tr>
+												<td>
+													<strong>Alcohol Consumption :</strong>
+													<div id="row1_9" style="margin-top:9px;">
+														not entered
+													</div>
+												</td>
+											</tr>
+
+											<tr>
+												<td>
+													<strong>Use of sugar in drinks :</strong>
+													<div id="row1_10" style="margin-top:9px;">
+														not entered
+													</div>
+												</td>
+											</tr>
+
+											<tr>
+												<td>
+													<strong>Targeted Weight :</strong>
+													<div id="row1_11" style="margin-top:9px;">
+														not entered
+													</div>
+												</td>
+											</tr>
+
+											<tr>
+												<td>
+													<strong>Activity Level :</strong>
+													<div id="row1_12" style="margin-top:9px;">
+														not entered
+													</div>
+												</td>
+											</tr>
+
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- Donut Chart -->
+
+					<div class="col-md-4 col-sm-12">
+						<div class="card" style="padding: 20px; height: 640px;">
+							<div class="card-header" style="border: none;">
+								<h4 class="mb-0">Meal Information</h4>
+							</div>
+							<div class="card-body padd-0" style="height: 338px; overflow: auto;">
+								<div class="table-responsive">
+									<table class="table table-lg table-hover">
+										<tbody>
+											<tr>
+												<td>
+													<strong>Meal Layout :</strong>
+													<div id="row2_1" style="margin-top:9px;">
+														not entered
+													</div>
+												</td>
+											</tr>
+
+											<tr>
+												<td>
+													<strong>Daily water consumption :</strong>
+													<div id="row2_2" style="margin-top:9px;">
+														not entered
+													</div>
+												</td>
+											</tr>
+
+											<tr>
+												<td>
+													<strong>Skipped meal :</strong>
+													<div id="row2_3" style="margin-top:9px;">
+														not entered
+													</div>
+												</td>
+											</tr>
+
+											<tr>
+												<td>
+													<strong>The habit of snacks :</strong>
+													<div id="row2_4" style="margin-top:9px;">
+														not entered
+													</div>
+												</td>
+											</tr>
+
+											<tr>
+												<td>
+													<strong>Snack habit :</strong>
+													<div id="row2_5" style="margin-top:9px;">
+														not entered
+													</div>
+												</td>
+											</tr>
+
+											<tr>
+												<td>
+													<strong>The habit of eating out :</strong>
+													<div id="row2_6" style="margin-top:9px;">
+														not entered
+													</div>
+												</td>
+											</tr>
+
+											<tr>
+												<td>
+													<strong>Night-eating habit :</strong>
+													<div id="row2_7" style="margin-top:9px;">
+														not entered
+													</div>
+												</td>
+											</tr>
+
+											<tr>
+												<td>
+													<strong>Breakfast time:</strong>
+													<div id="row2_8" style="margin-top:9px;">
+														not entered
+													</div>
+												</td>
+											</tr>
+
+											<tr>
+												<td>
+													<strong>Lunch time :</strong>
+													<div id="row2_9" style="margin-top:9px;">
+														not entered
+													</div>
+												</td>
+											</tr>
+
+											<tr>
+												<td>
+													<strong>Dinner time :</strong>
+													<div id="row2_10" style="margin-top:9px;">
+														not entered
+													</div>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-md-4 col-sm-12">
+						<div class="card" style="padding: 20px; height: 640px;">
+							<div class="card-header" style="border: none;">
+								<h4 class="mb-0">
+									Blood Results
+									<br/>
+									<span class="kan-tarih">
+										<i class="fa fa-calendar-check-o" aria-hidden="true">
+										</i>
+										<select id="blood_measure_dates" onchange="change_date_blood(this.value);">
+										</select>
+									</span>
+								</h4>
+							</div>
+							<div class="card-body padd-0" style="height: 338px; overflow: auto;">
+								<div class="table-responsive">
+									<table class="table table-lg table-hover" id="kan-tablo">
+										<tbody>
+
+											<tr>
+												<td>
+													<strong>Hunger Blood Sugar :</strong>
+													<div id="row3_1" style="margin-top:9px;">
+														not entered
+													</div>
+												</td>
+											</tr>
+
+											<tr>
+												<td>
+													<strong>Insulin :</strong>
+													<div id="row3_2" style="margin-top:9px;">
+														not entered
+													</div>
+												</td>
+											</tr>
+
+											<tr>
+												<td>
+													<strong>TSH :</strong>
+													<div id="row3_3" style="margin-top:9px;">
+														not entered
+													</div>
+												</td>
+											</tr>
+
+											<tr>
+												<td>
+													<strong>Vitamin D :</strong>
+													<div id="row3_4" style="margin-top:9px;">
+														not entered
+													</div>
+												</td>
+											</tr>
+
+											<tr>
+												<td>
+													<strong>AST-ALT :</strong>
+													<div id="row3_5" style="margin-top:9px;">
+														not entered
+													</div>
+												</td>
+											</tr>
+
+											<tr>
+												<td>
+													<strong>Blood Fats :</strong>
+													<div id="row3_6" style="margin-top:9px;">
+														not entered
+													</div>
+												</td>
+											</tr>
+
+											<tr>
+												<td>
+													<strong>Zinc :</strong>
+													<div id="row3_7" style="margin-top:9px;">
+														not entered
+													</div>
+												</td>
+											</tr>
+
+											<tr>
+												<td>
+													<strong>T3-T4 :</strong>
+													<div id="row3_8" style="margin-top:9px;">
+														not entered
+													</div>
+												</td>
+											</tr>
+
+											<tr>
+												<td>
+													<strong>Ferritin :</strong>
+													<div id="row3_9" style="margin-top:9px;">
+														not entered
+													</div>
+												</td>
+											</tr>
+
+											<tr>
+												<td>
+													<strong>B12 :</strong>
+													<div id="row3_10" style="margin-top:9px;">
+														not entered
+													</div>
+												</td>
+											</tr>
+
+											<tr>
+												<td>
+													<strong>Homo-IR :</strong>
+													<div id="row3_11" style="margin-top:9px;">
+														not entered
+													</div>
+												</td>
+											</tr>
+
+											<tr>
+												<td>
+													<strong>Leptin :</strong>
+													<div id="row3_12" style="margin-top:9px;">
+														not entered
+													</div>
+												</td>
+											</tr>
+
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+					</div>
+					</div>
+
+					<!-- Bar Chart -->
+					<div id="fat_chart_parent" class="row" style="display: none;">
+						<div class="col-md-12 col-sm-12">
+							<div class="card">
+								<div class="card-header">
+									<h4 class="mb-0">Fat Rate (%)</h4>
+								</div>
+								<div class="card-body">
+									 <div class="chart" id="fat_chart" style="height: 200px;"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div id="muscle_chart_parent" class="row" style="display: none;">
+						<div class="col-md-12 col-sm-12">
+							<div class="card">
+								<div class="card-header">
+									<h4 class="mb-0">Muscle Rate (%)</h4>
+								</div>
+								<div class="card-body">
+									 <div class="chart" id="muscle_chart" style="height: 200px;"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div id="water_chart_parent" class="row" style="display: none;">
+						<div class="col-md-12 col-sm-12">
+							<div class="card">
+								<div class="card-header">
+									<h4 class="mb-0">Water Rate (%)</h4>
+								</div>
+								<div class="card-body">
+									 <div class="chart" id="water_chart" style="height: 200px;"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div id="weight_chart_parent" class="row" style="display: none;">
+						<div class="col-md-12 col-sm-12">
+							<div class="card">
+								<div class="card-header">
+									<h4 class="mb-0">Body Weight </h4>
+								</div>
+								<div class="card-body">
+									 <div class="chart" id="weight_chart" style="height: 200px;"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div id="body_mass_chart_parent" class="row" style="display: none;">
+						<div class="col-md-12 col-sm-12">
+							<div class="card">
+								<div class="card-header">
+									<h4 class="mb-0">Body Mass Index - BKI </h4>
+								</div>
+								<div class="card-body">
+									 <div class="chart" id="body_mass_chart" style="height: 200px;"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div id="m_rate_chart_parent" class="row" style="display: none;">
+						<div class="col-md-12 col-sm-12">
+							<div class="card">
+								<div class="card-header">
+									<h4 class="mb-0">Basal Metabolic Rate (kcal)</h4>
+								</div>
+								<div class="card-body">
+									 <div class="chart" id="m_rate_chart" style="height: 200px;"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div id="m_age_chart_parent" class="row" style="display: none;">
+						<div class="col-md-12 col-sm-12">
+							<div class="card">
+								<div class="card-header">
+									<h4 class="mb-0">Age of Metabolism (Year)</h4>
+								</div>
+								<div class="card-body">
+									 <div class="chart" id="m_age_chart" style="height: 200px;"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- <div class="row">
+						<div class="col-md-12">
+							<div class="text-center">
+								<div class="text-center padd-bot-20">
+									<a href="under_construction.html" class="btn outline-secondary bg-white-save" id="diyettakip-button">Diyet Takip</a>
+								</div>
+							</div>
+						</div>
+					</div> -->
+
+					</div>
+
+
+
+				</div>
+				<!-- /row -->
+			</div>
+		</div>
+			<!-- /.content-wrapper-->
+
+			<!-- Footer -->
+			<footer class="sticky-footer">
+			  <div class="container">
+				<div class="text-center">
+				  <small class="font-15">Copyright © <img class="img-responsive" src="diyetisyen_paneli/img/qwerty-01.png" alt="Logo Qwerty"></small>
+				</div>
+			  </div>
+			</footer>
+
+			<!-- Scroll to Top Button-->
+			<a class="scroll-to-top rounded cl-white gredient-bg" href="#page-top">
+			  <i class="ti-angle-double-up"></i>
+			</a>
+
+			<!-- Bootstrap core JavaScript-->
+			<script src="diyetisyen_paneli/assets/plugins/jquery/jquery.min.js"></script>
+			<script src="diyetisyen_paneli/assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+			<!-- Core plugin JavaScript-->
+			<script src="diyetisyen_paneli/assets/plugins/jquery-easing/jquery.easing.min.js"></script>
+
+			 <!-- Slick Slider Js -->
+			<script src="diyetisyen_paneli/assets/plugins/slick-slider/slick.js"></script>
+
+			<!-- Slim Scroll -->
+			<script src="diyetisyen_paneli/assets/plugins/slim-scroll/jquery.slimscroll.min.js"></script>
+
+			<!-- Angular Tooltip -->
+			<script src="diyetisyen_paneli/assets/plugins/angular-tooltip/angular.js"></script>
+			<script src="diyetisyen_paneli/assets/plugins/angular-tooltip/angular-tooltips.js"></script>
+			<script src="diyetisyen_paneli/assets/plugins/angular-tooltip/index.js"></script>
+
+			<!-- Morris.js charts -->
+		    <script src="diyetisyen_paneli/assets/plugins/raphael/raphael.min.js"></script>
+		    <script src="diyetisyen_paneli/assets/plugins/morris.js/morris.min.js"></script>
+
+			<!-- Custom Morrisjs JavaScript -->
+		    <!-- <script src="diyetisyen_paneli/js/custom/chart/morris-2.js"></script> -->
+
+			<!-- Custom Morrisjs JavaScript -->
+		    <!-- <script src="diyetisyen_paneli/js/custom/chart/morris-3.js"></script> -->
+
+			<!-- Custom scripts for all pages-->
+			<script src="diyetisyen_paneli/js/glovia.js"></script>
+
+			<script>
+			  $('.dropdown-toggle').dropdown()
+			</script>
+
+	<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+
+	<!-- <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+        var data = new google.visualization.DataTable();
+        data.addColumn('number', 'x');
+        data.addColumn('number', 'values');
+        data.addColumn({id:'i0', type:'number', role:'interval'});
+        data.addColumn({id:'i1', type:'number', role:'interval'});
+        data.addColumn({id:'i2', type:'number', role:'interval'});
+        data.addColumn({id:'i2', type:'number', role:'interval'});
+        data.addColumn({id:'i2', type:'number', role:'interval'});
+        data.addColumn({id:'i2', type:'number', role:'interval'});
+
+        data.addRows([
+            [1, 100, 90, 110, 85, 96, 104, 120],
+            [2, 120, 95, 130, 90, 113, 124, 140],
+            [3, 130, 105, 140, 100, 117, 133, 139],
+            [4, 90, 85, 95, 85, 88, 92, 95],
+            [5, 70, 74, 63, 67, 69, 70, 72],
+            [6, 30, 39, 22, 21, 28, 34, 40],
+            [7, 80, 77, 83, 70, 77, 85, 90],
+            [8, 100, 90, 110, 85, 95, 102, 110]]);
+
+        // The intervals data as narrow lines (useful for showing raw source data)
+        var options_lines = {
+            title: 'Line intervals, default',
+            curveType: 'function',
+            lineWidth: 4,
+            intervals: { 'style':'line' },
+            legend: 'none'
+        };
+
+        var chart_lines = new google.visualization.LineChart(document.getElementById('chart_lines'));
+        chart_lines.draw(data, options_lines);
+      }
+    </script> -->
+
+
+
+   <!-- <script>
+      window.onload = function () {
+
+      var chart = new CanvasJS.Chart("chartContainer", {
+	      animationEnabled: true,
+	      theme: "light2",
+	      title:{
+		      text: "Simple Line Chart"
+	      },
+	      axisY:{
+		      includeZero: false
+	      },
+	      data: [{
+		      type: "line",
+		      dataPoints: [
+			      { y: 450 },
+			      { y: 414},
+			      { y: 520, indexLabel: "highest",markerColor: "red", markerType: "triangle" },
+			      { y: 460 },
+			      { y: 450 },
+			      { y: 500 },
+			      { y: 480 },
+			      { y: 480 },
+			      { y: 410 , indexLabel: "lowest",markerColor: "DarkSlateGrey", markerType: "cross" },
+			      { y: 500 },
+			      { y: 480 },
+			      { y: 510 }
+		      ]
+	      }]
+      });
+      chart.render();
+
+      }
+    </script> -->
+
+		<script src="diyetisyen_paneli/js/custom/navbar_script.js"></script>
+
+		<script src="https://www.gstatic.com/firebasejs/5.5.1/firebase.js"></script>
+		<script>
+			// Initialize Firebase
+			var config = {
+				apiKey: "AIzaSyA24Eyjeh0HipNlMBhAJRnacsFxAySHgtY",
+				authDomain: "lifecare-55c38.firebaseapp.com",
+				databaseURL: "https://lifecare-55c38.firebaseio.com",
+				projectId: "lifecare-55c38",
+				storageBucket: "lifecare-55c38.appspot.com",
+				messagingSenderId: "340270538259"
+			};
+			firebase.initializeApp(config);
+		</script>
+
+    <script>
+      $(function(){
+        $("#nav-placeholder").load("navbar_eng.txt");
+      });
+    </script>
+
+		<script type="text/javascript">
+
+			var blood_measurements = null;
+			var body_measurements = null;
+
+			function user_card(advisee_user_id)
+			{
+				var user_photo = firebase.database().ref("AppUsers/" + advisee_user_id + "/PersonalInfo/photo_url").once("value")
+				.then(function(snapshot)
+				{
+					return snapshot.val();
+				});
+				var user_name = firebase.database().ref("AppUsers/" + advisee_user_id + "/PersonalInfo/name").once("value")
+				.then(function(snapshot)
+				{
+					return snapshot.val();
+				});
+				var user_mail = firebase.database().ref("AppUsers/" + advisee_user_id + "/PersonalInfo/email").once("value")
+				.then(function(snapshot)
+				{
+					return snapshot.val();
+				});
+				var user_last_measure_time = firebase.database().ref("AppUsers/" + advisee_user_id + "/PersonalInfo/last_measure_date").once("value")
+				.then(function(snapshot)
+				{
+					return snapshot.val();
+				});
+				var user_city = firebase.database().ref("AppUsers/" + advisee_user_id + "/PersonalInfo/city").once("value")
+				.then(function(snapshot)
+				{
+					return snapshot.val();
+				});
+				var user_country = firebase.database().ref("AppUsers/" + advisee_user_id + "/PersonalInfo/country").once("value")
+				.then(function(snapshot)
+				{
+					return snapshot.val();
+				});
+				Promise.all([user_photo, user_name, user_mail, user_last_measure_time, user_city, user_country]).then(function([user_photo, user_name, user_mail, user_last_measure_time, user_city, user_country])
+				{
+					var ele1 = document.createElement("div");
+					ele1.classList.add("contact-img");
+					var ele1_1 = document.createElement("img");
+					ele1_1.classList.add("img-circle");
+					ele1_1.classList.add("img-responsive");
+					if (user_photo == null)
+					{
+						ele1_1.src = "diyetisyen_paneli/img/black_user.jpg";
+					}
+					else
+					{
+						ele1_1.src = user_photo;
+					}
+					ele1_1.style.width = "76px";
+					ele1_1.style.height = "76px";
+					ele1.appendChild(ele1_1);
+
+					var ele2 = document.createElement("div");
+					ele2.classList.add("contact-caption");
+					var ele2_1 = document.createElement("h4");
+					if (user_name != null)
+					{
+						ele2_1.innerHTML = user_name;
+					}
+					else
+					{
+						ele2_1.innerHTML = "-";
+					}
+					var ele2_2 = document.createElement("span");
+					if (user_mail != null)
+					{
+						ele2_2.innerHTML = user_mail;
+					}
+					else
+					{
+						ele2_2.innerHTML = "-";
+					}
+					ele2.appendChild(ele2_1);
+					ele2.appendChild(ele2_2);
+
+					var ele3 = document.createElement("div");
+					ele3.classList.add("contact-action");
+					var ele3_1 = document.createElement("i");
+					ele3_1.classList.add("fa");
+					ele3_1.classList.add("fa-calendar-check-o");
+					ele3_1.setAttribute("aria-hidden", "true");
+					ele3.appendChild(ele3_1);
+					if (user_last_measure_time != null)
+					{
+						user_last_measure_time = user_last_measure_time.split("-");
+						ele3.innerHTML += user_last_measure_time[2] + "-" + user_last_measure_time[1] + "-" + user_last_measure_time[0];
+					}
+					else
+					{
+						ele3.innerHTML += "-";
+					}
+
+					var ele4 = document.createElement("div");
+					ele4.classList.add("contact-action");
+					var ele4_1 = document.createElement("i");
+					ele4_1.classList.add("fa");
+					ele4_1.classList.add("fa-map-marker");
+					ele4_1.setAttribute("aria-hidden", "true");
+					ele4.appendChild(ele4_1);
+					if (user_country != null)
+					{
+						if (user_city != null)
+						{
+							ele4.innerHTML += user_city + "/" + user_country;
+						}
+						else
+						{
+							ele4.innerHTML += user_country;
+						}
+					}
+					else
+					{
+						ele4.innerHTML += "-";
+					}
+
+					var ele0 = document.createElement("div");
+					ele0.classList.add("contact-box");
+					ele0.appendChild(ele1);
+					ele0.appendChild(ele2);
+					ele0.appendChild(ele3);
+					ele0.appendChild(ele4);
+
+					document.getElementById("user_card").appendChild(ele0);
+				});
+			}
+
+			function about(advisee_user_id)
+			{
+				var user_gender = firebase.database().ref("AppUsers/" + advisee_user_id + "/PersonalInfo/gender").once("value")
+				.then(function(snapshot)
+				{
+					return snapshot.val();
+				});
+				var user_birth_date = firebase.database().ref("AppUsers/" + advisee_user_id + "/PersonalInfo/birth_date").once("value")
+				.then(function(snapshot)
+				{
+					return snapshot.val();
+				});
+				var user_height = firebase.database().ref("AppUsers/" + advisee_user_id + "/PersonalInfo/height").once("value")
+				.then(function(snapshot)
+				{
+					return snapshot.val();
+				});
+				var user_phone_num = firebase.database().ref("AppUsers/" + advisee_user_id + "/PersonalInfo/phone_num").once("value")
+				.then(function(snapshot)
+				{
+					return snapshot.val();
+				});
+				Promise.all([user_gender, user_birth_date, user_height, user_phone_num])
+				.then(function([user_gender, user_birth_date, user_height, user_phone_num])
+				{
+					document.getElementById("advisee_gender").innerHTML = user_gender;
+					document.getElementById("advisee_birth_date").innerHTML = user_birth_date;
+					document.getElementById("advisee_height").innerHTML = user_height;
+					document.getElementById("advisee_phone").innerHTML = user_phone_num;
+				})
+			}
+
+			function health_info(advisee_user_id)
+			{
+				firebase.database().ref("AppUsers/" + advisee_user_id + "/ProfilimSaglik").once("value")
+				.then(function(snapshot)
+				{
+					var rows = snapshot.val();
+					for (var i=1; i < 13; i++)
+					{
+						var value = rows["ProfilimSaglikRow" + i.toString()];
+						if (value != null)
+						{
+							document.getElementById("row1_" + i.toString()).innerHTML = value;
+							if (value.length == 0)
+							{
+								document.getElementById("row1_" + i.toString()).innerHTML = "Yok";
+							}
+						}
+					}
+				});
+			}
+
+			function meal_info(advisee_user_id)
+			{
+				firebase.database().ref("AppUsers/" + advisee_user_id + "/ProfilimOgun").once("value")
+				.then(function(snapshot)
+				{
+					var rows = snapshot.val();
+					for (var i=1; i < 11; i++)
+					{
+						var value = rows["ProfilimOgunRow" + i.toString()];
+						if (value != null)
+						{
+							document.getElementById("row2_" + i.toString()).innerHTML = value;
+							if (value.length == 0)
+							{
+								document.getElementById("row2_" + i.toString()).innerHTML = "Yok";
+							}
+						}
+					}
+				});
+			}
+
+			function blood_measure_info(advisee_user_id)
+			{
+				firebase.database().ref("AppUsers/" + advisee_user_id + "/KanSonuclari").once("value")
+				.then(function(snapshot)
+				{
+					blood_measurements = snapshot.val();
+					var m = null;
+					for (m in blood_measurements)
+					{
+						var new_option = document.createElement("option");
+						new_option.value = m;
+						new_option.innerHTML = m;
+						document.getElementById("blood_measure_dates").appendChild(new_option);
+					}
+					if (m != null)
+					{
+						document.getElementById("blood_measure_dates").selectedIndex = Object.keys(blood_measurements).length-1;
+						change_date_blood(m);
+					}
+				});
+			}
+
+			function body_measure_info(advisee_user_id)
+			{
+				firebase.database().ref("AppUsers/" + advisee_user_id + "/Olcu").once("value")
+				.then(function(snapshot)
+				{
+					body_measurements = snapshot.val();
+					var m = null;
+					for (m in body_measurements)
+					{
+						var new_option = document.createElement("option");
+						new_option.value = m;
+						new_option.innerHTML = m;
+						document.getElementById("body_measure_dates").appendChild(new_option);
+					}
+					if (m != null)
+					{
+						document.getElementById("body_measure_dates").selectedIndex = Object.keys(body_measurements).length-1;
+						change_date_body(m);
+					}
+				});
+			}
+
+			function change_date_blood(the_date)
+			{
+				for (var i=1; i < 13; i++)
+				{
+					var value = blood_measurements[the_date]["kan_row" + i.toString()];
+					if (value != null)
+					{
+						document.getElementById("row3_" + i.toString()).innerHTML = value;
+					}
+				}
+			}
+
+			function change_date_body(the_date)
+			{
+				for (var i=1; i < 7; i++)
+				{
+					var value = body_measurements[the_date]["olcuRow" + i.toString()];
+					if (value != null)
+					{
+						document.getElementById("body_measurements_" + i.toString()).innerHTML = value;
+					}
+				}
+			}
+
+			function get_chart_data(advisee_user_id)
+			{
+				var collect_chart_data = firebase.database().ref("AppUsers/" + advisee_user_id + "/Olcumlerim").once("value")
+				.then(function(snapshot)
+				{
+					var fat_infos = [];
+					var muscle_infos = [];
+					var water_infos = [];
+					var weight_infos = [];
+					var body_mass_index = [];
+					var m_rate = [];
+					var m_age = [];
+					var measures = snapshot.val();
+					for (m in measures)
+					{
+						the_date = m.split("-");
+						the_date = the_date[2] + "-" + the_date[1] + "-" + the_date[0];
+						var fat = measures[m]["yag_orani"];
+						if (fat != null)
+						{
+							fat_infos.push({date: the_date, fat: fat});
+						}
+						var muscle = measures[m]["kas_orani"];
+						if (muscle != null)
+						{
+							muscle_infos.push({date: the_date, muscle: muscle});
+						}
+						var water = measures[m]["su_orani"];
+						if (water != null)
+						{
+							water_infos.push({date: the_date, water: water});
+						}
+						var weight = measures[m]["vucut_agirligi"];
+						if (weight != null)
+						{
+							weight_infos.push({date: the_date, weight: weight});
+						}
+						var body_mass = measures[m]["beden_kutle_endeksi"];
+						if (body_mass != null)
+						{
+							body_mass_index.push({date: the_date, body_mass: body_mass});
+						}
+						var rate = measures[m]["bazal_metabolizma_hizi"];
+						if (rate != null)
+						{
+							m_rate.push({date: the_date, rate: rate});
+						}
+						var age = measures[m]["metabolizma_yasi"];
+						if (age != null)
+						{
+							m_age.push({date: the_date, age: age});
+						}
+					}
+					return {fat_infos: fat_infos, muscle_infos: muscle_infos, water_infos: water_infos, weight_infos: weight_infos, body_mass_index: body_mass_index, m_rate: m_rate, m_age: m_age};
+				});
+				Promise.resolve(collect_chart_data)
+				.then(function(values)
+				{
+					if (values["fat_infos"].length != 0)
+					{
+						document.getElementById("fat_chart_parent").style.display = "block";
+						"use strict";
+						Morris.Area(
+						{
+							element: 'fat_chart',
+							data: values["fat_infos"],
+							xkey: 'date',
+							ykeys: ['fat'],
+							labels: ['Yağ Oranı(%)'],
+							pointSize: 2,
+							fillOpacity: 0,
+							pointStrokeColors:['#FF8C00'],
+							behaveLikeLine: true,
+							gridLineColor: '#e0e0e0',
+							lineWidth: 1,
+							hideHover: 'auto',
+							lineColors: ['#FF8C00'],
+							resize: true,
+							parseTime: false
+						});
+					}
+
+					if (values["muscle_infos"].length != 0)
+					{
+						document.getElementById("muscle_chart_parent").style.display = "block";
+						"use strict";
+						Morris.Area(
+						{
+							element: 'muscle_chart',
+							data: values["muscle_infos"],
+							xkey: 'date',
+							ykeys: ['muscle'],
+							labels: ['Kas Oranı(%)'],
+							pointSize: 2,
+							fillOpacity: 0,
+							pointStrokeColors:['#32CD32'],
+							behaveLikeLine: true,
+							gridLineColor: '#e0e0e0',
+							lineWidth: 1,
+							hideHover: 'auto',
+							lineColors: ['#32CD32'],
+							resize: true,
+							parseTime: false
+						});
+					}
+
+					if (values["water_infos"].length != 0)
+					{
+						document.getElementById("water_chart_parent").style.display = "block";
+						"use strict";
+						Morris.Area(
+						{
+							element: 'water_chart',
+							data: values["water_infos"],
+							xkey: 'date',
+							ykeys: ['water'],
+							labels: ['Su Oranı(%)'],
+							pointSize: 2,
+							fillOpacity: 0,
+							pointStrokeColors:['#00CED1'],
+							behaveLikeLine: true,
+							gridLineColor: '#e0e0e0',
+							lineWidth: 1,
+							hideHover: 'auto',
+							lineColors: ['#00CED1'],
+							resize: true,
+							parseTime: false
+						});
+					}
+
+					if (values["weight_infos"].length != 0)
+					{
+						document.getElementById("weight_chart_parent").style.display = "block";
+						"use strict";
+						Morris.Area(
+						{
+							element: 'weight_chart',
+							data: values["weight_infos"],
+							xkey: 'date',
+							ykeys: ['weight'],
+							labels: ['Vücut Ağırlığı(kg)'],
+							pointSize: 2,
+							fillOpacity: 0,
+							pointStrokeColors:['#FF0000'],
+							behaveLikeLine: true,
+							gridLineColor: '#e0e0e0',
+							lineWidth: 1,
+							hideHover: 'auto',
+							lineColors: ['#FF0000'],
+							resize: true,
+							parseTime: false
+						});
+					}
+
+					if (values["body_mass_index"].length != 0)
+					{
+						document.getElementById("body_mass_chart_parent").style.display = "block";
+						"use strict";
+						Morris.Area(
+						{
+							element: 'body_mass_chart',
+							data: values["body_mass_index"],
+							xkey: 'date',
+							ykeys: ['body_mass'],
+							labels: ['Beden Kütle İndeksi(kg/m<sup>2</sup>)'],
+							pointSize: 2,
+							fillOpacity: 0,
+							pointStrokeColors:['#F4A460'],
+							behaveLikeLine: true,
+							gridLineColor: '#e0e0e0',
+							lineWidth: 1,
+							hideHover: 'auto',
+							lineColors: ['#F4A460'],
+							resize: true,
+							parseTime: false
+						});
+					}
+
+					if (values["m_rate"].length != 0)
+					{
+						document.getElementById("m_rate_chart_parent").style.display = "block";
+						"use strict";
+						Morris.Area(
+						{
+							element: 'm_rate_chart',
+							data: values["m_rate"],
+							xkey: 'date',
+							ykeys: ['rate'],
+							labels: ['Bazal Metabolizma Hızı(kcal)'],
+							pointSize: 2,
+							fillOpacity: 0,
+							pointStrokeColors:['#7B68EE'],
+							behaveLikeLine: true,
+							gridLineColor: '#e0e0e0',
+							lineWidth: 1,
+							hideHover: 'auto',
+							lineColors: ['#7B68EE'],
+							resize: true,
+							parseTime: false
+						});
+					}
+
+					if (values["m_age"].length != 0)
+					{
+						document.getElementById("m_age_chart_parent").style.display = "block";
+						"use strict";
+						Morris.Area(
+						{
+							element: 'm_age_chart',
+							data: values["m_age"],
+							xkey: 'date',
+							ykeys: ['age'],
+							labels: ['Metabolizma Yaşı(Yıl)'],
+							pointSize: 2,
+							fillOpacity: 0,
+							pointStrokeColors:['#FF00FF'],
+							behaveLikeLine: true,
+							gridLineColor: '#e0e0e0',
+							lineWidth: 1,
+							hideHover: 'auto',
+							lineColors: ['#FF00FF'],
+							resize: true,
+							parseTime: false
+						});
+					}
+				});
+
+			}
+
+			firebase.auth().onAuthStateChanged(function(user)
+			{
+				if (user)
+				{
+					nav_bar_part_of_the_page(user);
+					fill_message_box(user);
+					setTimeout(function(){
+						engTRK();
+	        }, 2000);
+					var urlParams = new URLSearchParams(window.location.search);
+					var u = urlParams.get('u');
+					if (u == null)
+					{
+						document.location.replace("danisanlar_eng.html");
+					}
+					else
+					{
+						firebase.database().ref("AppUsers/" + u).once("value")
+						.then(function(snapshot)
+						{
+							if (snapshot.val() != null)
+							{
+								document.getElementById("page-top").style.display = "block";
+								user_card(u);
+								about(u);
+								health_info(u);
+								meal_info(u);
+								blood_measure_info(u);
+								body_measure_info(u);
+								get_chart_data(u);
+							}
+							else
+							{
+								document.location.replace("404.html");
+							}
+						});
+					}
+				}
+				else
+				{
+					document.location.replace("login_eng.html?to=danisan-profile_eng.html" + window.location.search);
+				}
+			});
+
+		</script>
+		<script>
+			function engTRK(){
+				var urlParams = new URLSearchParams(window.location.search);
+				var u = urlParams.get('u');
+				document.getElementById("eng").href="danisan-profile_eng.html?u="+u;
+				document.getElementById("trk").href="danisan-profile.html?u="+u;
+				document.getElementById("url_takip").href="diyet_takip_eng.html?u="+u;
+			}
+		</script>
+	</body>
+</html>

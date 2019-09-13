@@ -1,0 +1,829 @@
+<?php
+include '../config.php';
+include '../includes/auth.php';
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<meta name="description" content="">
+		<meta name="author" content="">
+		<title>LifeCare - Dashboard</title>
+
+        <!-- update the version number as needed -->
+        <script defer src="/__/firebase/5.4.2/firebase-app.js"></script>
+        <!-- include only the Firebase features as you need -->
+        <script defer src="/__/firebase/5.4.2/firebase-auth.js"></script>
+        <script defer src="/__/firebase/5.4.2/firebase-database.js"></script>
+        <script defer src="/__/firebase/5.4.2/firebase-messaging.js"></script>
+        <script defer src="/__/firebase/5.4.2/firebase-storage.js"></script>
+        <!-- initialize the SDK after all desired features are loaded -->
+        <script defer src="/__/firebase/init.js"></script>
+
+        <!-- Bootstrap core CSS -->
+        <link href="assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- Custom fonts for this template -->
+        <link href="assets/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+        <!-- Custom fonts for this template -->
+        <link href="assets/plugins/themify/css/themify.css" rel="stylesheet" type="text/css">
+
+        <!-- Angular Tooltip Css -->
+        <link href="assets/plugins/angular-tooltip/angular-tooltips.css" rel="stylesheet">
+
+        <!-- Morris Charts CSS -->
+        <link href="assets/plugins/morris.js/morris.css" rel="stylesheet">
+
+        <!-- Page level plugin CSS -->
+        <link href="css/animate.css" rel="stylesheet">
+
+        <!-- Custom styles for this template -->
+        <link href="css/glovia.css" rel="stylesheet">
+        <link href="css/glovia-responsive.css" rel="stylesheet">
+
+        <!-- Custom styles for Color -->
+        <link href="css/skins/default.css" rel="stylesheet">
+	</head>
+
+	<body class="fixed-nav sticky-footer" id="page-top">
+	
+		<!-- ===============================
+			Navigation Start
+		====================================-->
+		<nav class="navbar navbar-expand-lg bb-1 navbar-light bg-white fixed-top" id="mainNav">
+			
+			<!-- Start Header -->
+			<header class="header-logo bg-white bb-1 br-1">
+				<a class="nav-link text-center mr-lg-3 hidden-xs" id="sidenavToggler"><i class="ti-align-left"></i></a>
+				<a class="gredient-cl navbar-brand" href="index.html"> <img class="img-responsive" src="img/lifecare-01.png" alt="Logo LifeCare"></a>
+			</header>
+			<!-- End Header -->
+			
+			<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+			  <span class="ti-align-left"></span>
+			</button>
+			
+			
+			
+			<div class="collapse navbar-collapse" id="navbarResponsive">
+				 
+				<!-- =============== Start Side Menu ============== -->
+				<div class="navbar-side">
+				  <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
+				  
+				   
+					<!-- Start projects -->
+					<div class="nav-item" data-toggle="tooltip" data-placement="right" title="Projects">
+					<div class="media-border gredient-bg"></div>
+					 <div class="media">
+								<img class="avatar avatar-lg" src="https://sunlimetech.com/portfolio/boot4menu/assets/imgs/team/img_02.png" alt="...">
+								<div class="media-body">
+									<p class="user-nick-text">
+										<strong>Denial Webar</strong>
+										
+									</p>
+									 <span class="heading-online cl-success"><i class="fa fa-circle"></i> Online</span>
+								</div>
+					</div>
+					</div>
+					<!-- End Projects -->
+					<!-- Start projects -->
+					<li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashbord">
+					  <a class="nav-link" href="index.html">
+						<i class="ti i-cl-1 ti-dashboard"></i>
+						<span class="nav-link-text">Gösterge Paneli</span>
+					  </a>
+					</li>
+					<!-- End Projects -->
+					
+					<!-- Start projects -->
+					<li class="nav-item" data-toggle="tooltip" data-placement="right" title="Danisanlar">
+					  <a class="nav-link" href="danisanlar.html">
+						<i class="ti i-cl-8 ti-pie-chart"></i>
+						<span class="nav-link-text">Danışanlarım</span>
+					  </a>
+					</li>
+					<!-- End Projects -->
+					
+					<!-- Start projects -->
+					<li class="nav-item" data-toggle="tooltip" data-placement="right" title="Projects">
+					  <a class="nav-link" href="chatting.html">
+						<i class="ti i-cl-3 ti-comment-alt"></i>
+						<span class="nav-link-text">Mesajlar</span>
+					  </a>
+					</li>
+					<!-- End Projects -->
+					
+					<!-- Start projects -->
+					<li class="nav-item" data-toggle="tooltip" data-placement="right" title="Projects">
+					  <a class="nav-link" href="profile-page.html">
+						<i class="ti i-cl-1 ti-user"></i>
+						<span class="nav-link-text">Profilim</span>
+					  </a>
+					</li>
+					<!-- End Projects -->
+					
+					<!-- Start invoice -->
+					<li class="nav-item" data-toggle="tooltip" data-placement="right" title="Invoice">
+					  <a class="nav-link" href="takvimim.html">
+						<i class="ti i-cl-4 ti-calendar"></i>
+						<span class="nav-link-text">Takvim</span>
+					  </a>
+					</li>
+					<!-- End Invoice -->
+					
+					<!-- Start projects -->
+					<li class="nav-item" data-toggle="tooltip" data-placement="right" title="Projects">
+					  <a class="nav-link" href="#">
+						<i class="ti i-cl-2 ti-money"></i>
+						<span class="nav-link-text">Ödemeler</span>
+					  </a>
+					</li>
+					<!-- End Projects -->
+					
+					<!-- Start projects -->
+					<li class="nav-item" data-toggle="tooltip" data-placement="right" title="Projects">
+					  <a class="nav-link" href="settings.html">
+						<i class="ti i-cl-12 ti-settings"></i>
+						<span class="nav-link-text">Ayarlar</span>
+					  </a>
+					</li>
+					<!-- End Projects -->
+					
+					<!-- Start invoice -->
+					<li class="nav-item" data-toggle="tooltip" data-placement="right" title="Invoice">
+					  <a class="nav-link" href="help.html">
+						<i class="ti i-cl-5 ti ti-desktop"></i>
+						<span class="nav-link-text">Yardım - Destek</span>
+					  </a>
+					</li>
+					<!-- End Invoice -->
+					
+					
+					<!-- End Help & Support -->
+				  </ul>
+			  </div>
+			 <!-- =============== End Side Menu ============== -->
+			  
+			  <!-- =============== Search Bar ============== -->
+			  <ul class="navbar-nav ml-left">
+				<li class="nav-item">
+				  <form class="form-inline my-2 my-lg-0 mr-lg-2">
+					<div class="input-group">
+						<span class="input-group-btn">
+							<button class="btn btn-primary" type="button">
+							  <i class="ti-search"></i>
+							</button>
+						</span>
+					  <input class="form-control" type="text" placeholder="Ara">
+					</div>
+				  </form>
+				</li>
+			  </ul>
+			  <!-- =============== End Search Bar ============== -->
+			  
+			  <!-- =============== Header Rightside Menu ============== -->
+			  <ul class="navbar-nav ml-auto">
+			  
+				<!-- Messages -->
+				<li class="nav-item dropdown">
+					 <a class="nav-link dropdown-toggle mr-lg-3 a-topbar__nav a-nav" id="messagesDropdown" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						<i class="gredient-cl ti-email"></i>
+						<span class="a-nav__link-badge a-badge a-badge--pink">3</span>
+						<span class="hidden-lg hidden-md mrg-l-10">New Notification</span>
+					 </a>
+					 <div class="dropdown-menu animated flipInX" aria-labelledby="messagesDropdown">
+						<div class="dropdown-header text-center pink-bg">
+							<span class="a-dropdown__header-title">3 New</span>
+							<span class="a-dropdown__header-subtitle">User Messages</span>
+						</div>
+						<div class="ground-list ground-list-hove" id="message-box">
+							<div class="ground ground-single-list">
+								<a href="#">
+									<img class="ground-avatar" src="http://via.placeholder.com/180x180" alt="...">
+									<span class="profile-status bg-online pull-right"></span>
+								</a>
+
+								<div class="ground-content">
+									<h6><a href="#">Maryam Amiri</a></h6>
+									<small class="text-fade">Co-Founder</small>
+								</div>
+
+								<div class="ground-right">
+									<span class="small">Online</span>
+								</div>
+							</div>
+							
+							<div class="ground ground-single-list">
+								<a href="#">
+									<img class="ground-avatar" src="http://via.placeholder.com/180x180" alt="...">
+									<span class="profile-status bg-offline pull-right"></span>
+								</a>
+
+								<div class="ground-content">
+									<h6><a href="#">Maryam Amiri</a></h6>
+									<small class="text-fade">Co-Founder</small>
+								</div>
+
+								<div class="ground-right">
+									<span class="small">10 Min Ago</span>
+								</div>
+							</div>
+							
+							<div class="ground ground-single-list">
+								<a href="#">
+									<img class="ground-avatar" src="http://via.placeholder.com/180x180" alt="...">
+									<span class="profile-status bg-working pull-right"></span>
+								</a>
+
+								<div class="ground-content">
+									<h6><a href="#">Maryam Amiri</a></h6>
+									<small class="text-fade">Co-Founder</small>
+								</div>
+
+								<div class="ground-right">
+									<span class="small">20 Min Ago</span>
+								</div>
+							</div>
+							
+							<div class="ground ground-single-list">
+								<a href="#">
+									<img class="ground-avatar" src="http://via.placeholder.com/180x180" alt="...">
+									<span class="profile-status bg-busy pull-right"></span>
+								</a>
+
+								<div class="ground-content">
+									<h6><a href="#">Maryam Amiri</a></h6>
+									<small class="text-fade">Co-Founder</small>
+								</div>
+
+								<div class="ground-right">
+									<span class="small">18 Min Ago</span>
+								</div>
+							</div>
+							
+							<div class="ground ground-single-list">
+								<a href="#">
+									<img class="ground-avatar" src="http://via.placeholder.com/180x180" alt="...">
+									<span class="profile-status bg-online pull-right"></span>
+								</a>
+
+								<div class="ground-content">
+									<h6><a href="#">Maryam Amiri</a></h6>
+									<small class="text-fade">Co-Founder</small>
+								</div>
+
+								<div class="ground-right">
+									<span class="small">Online</span>
+								</div>
+							</div>
+						</div>
+						 <a class="dropdown-item view-all" href="#">View all Messages</a>
+					</div>
+				</li>
+				<!-- End Messages -->
+				
+				<!-- Notification -->
+				<li class="nav-item dropdown">
+				
+					<a class="nav-link dropdown-toggle mr-lg-3 a-topbar__nav a-nav" id="alertsDropdown" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						<i class="gredient-cl ti-bell"></i>
+						<span class="a-nav__link-badge a-badge a-badge--accent a-animate-blink">6</span>
+						<span class="hidden-lg hidden-md mrg-l-10">New Notification</span>
+					</a>
+					  
+					<div class="dropdown-menu animated flipInX" aria-labelledby="alertsDropdown">
+						<div class="dropdown-header text-center accent-bg">
+							<span class="a-dropdown__header-title">6 New</span>
+							<span class="a-dropdown__header-subtitle">User Notifications</span>
+						</div>
+						
+						<div class="ground-list ground-list-hove" id="notification-box">
+							<div class="ground ground-single-list">
+								<a href="#">
+									<div class="btn-circle-40 btn-success"><i class="ti-calendar"></i></div>
+								</a>
+
+								<div class="ground-content">
+									<h6><a href="#">Maryam Amiri</a></h6>
+									<small class="text-fade">Check New Admin Dashboard..</small>
+									<span class="small">Just Now</span>
+								</div>
+							</div>
+								
+							<div class="ground ground-single-list">
+								<a href="#">
+									<div class="btn-circle-40 btn-danger"><i class="ti-calendar"></i></div>
+								</a>
+
+								<div class="ground-content">
+									<h6><a href="#">Maryam Amiri</a></h6>
+									<small class="text-fade">You can Customize..</small>
+									<span class="small">02 Min Ago</span>
+								</div>
+							</div>
+								
+							<div class="ground ground-single-list">
+								<a href="#">
+									<div class="btn-circle-40 btn-info"><i class="ti-calendar"></i></div>
+								</a>
+
+								<div class="ground-content">
+									<h6><a href="#">Maryam Amiri</a></h6>
+									<small class="text-fade">Need Responsive Business Tem...</small>
+									<span class="small">10 Min Ago</span>
+								</div>
+							</div>
+								
+							<div class="ground ground-single-list">
+								<a href="#">
+									<div class="btn-circle-40 btn-warning"><i class="ti-calendar"></i></div>
+								</a>
+
+								<div class="ground-content">
+									<h6><a href="#">Maryam Amiri</a></h6>
+									<small class="text-fade">Next Meeting on Tuesday..</small>
+									<span class="small">15 Min Ago</span>
+								</div>
+							</div>
+								
+							<div class="ground ground-single-list">
+								<a href="#">
+									<div class="btn-circle-40 btn-purple"><i class="ti-calendar"></i></div>
+								</a>
+
+								<div class="ground-content">
+									<h6><a href="#">Maryam Amiri</a></h6>
+									<small class="text-fade">You can Change Your Pass..</small>
+									<span class="small">18 Min Ago</span>
+								</div>
+							</div>
+						</div>
+						<a class="dropdown-item view-all" href="#">View all Notifications</a>
+					</div>
+				</li>
+				<!-- End Notification -->
+				
+				<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle mr-lg-0 user-img a-topbar__nav a-nav" id="userDropdown" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						<img src="http://via.placeholder.com/180x180" alt="user-img" width="36" class="img-circle">
+						<b class="f-size-17">Daniel</b>
+					</a>
+				  
+					<ul class="dropdown-menu dropdown-user animated flipInX" aria-labelledby="userDropdown">
+						<li class="dropdown-header green-bg">
+							<div class="header-user-pic">
+								<img src="http://via.placeholder.com/180x180" alt="user-img" width="36" class="img-circle">
+							</div>
+							<div class="header-user-det">
+								<span class="a-dropdown__header-title">Daniel Dilver</span>
+								<span class="a-dropdown__header-subtitle">UI / UX Expert</span>
+							</div>
+						</li>
+						<li><a class="dropdown-item" href="#"><i class="ti-user"></i> My Profile</a></li>
+						<li><a class="dropdown-item" href="#"><i class="ti-wallet"></i> My Balance</a></li>
+						<li><a class="dropdown-item" href="#"><i class="ti-email"></i> Inbox</a></li>
+						<li><a class="dropdown-item" href="#"><i class="ti-settings"></i> Account Setting</a></li>
+						<li><a class="dropdown-item" href="#"><i class="fa fa-power-off"></i> Logout</a></li>
+					</ul>
+				</li>
+			  </ul>
+			  <!-- =============== End Header Rightside Menu ============== -->
+			</div>
+		</nav>
+		<!-- =====================================================
+		                    End Navigations
+		======================================================= -->
+	  
+		<div class="content-wrapper">
+			<div class="container-fluid">
+			
+				<!-- Title & Breadcrumbs-->
+				<div class="row page-titles">
+					<div class="col-md-12 align-self-center">
+						<h4 class="theme-cl">Gösterge Paneli</h4>
+					</div>
+				</div>
+				<!-- Title & Breadcrumbs-->
+				
+				<!-- row -->
+				<div class="row">
+					
+					<div class="col-md-3 col-sm-6">
+						<div class="card">
+							<div class="card-body">
+								<div class="float-right">
+									<i class="icon ti-user gredient-cl font-30"></i>
+								</div>
+								<div class="widget-detail">
+									<h4 class="mb-1">372</h4>
+									<span>Aktif Kullanıcı</span>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					<div class="col-md-3 col-sm-6">
+						<div class="card">
+							<div class="card-body">
+								<div class="float-right">
+									<i class="ti-shopping-cart-full gredient-cl font-30"></i>
+								</div>
+								<div class="widget-detail">
+									<h4 class="mb-1">158</h4>
+									<span>Ziyaretçiler</span>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					<div class="col-md-3 col-sm-6">
+						<div class="card">
+							<div class="card-body">
+								<div class="float-right">
+									<i class="icon ti-medall gredient-cl font-30"></i>
+								</div>
+								<div class="widget-detail">
+									<h4 class="mb-1">$ 2,874</h4>
+									<span>Aylık Kazanç</span>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					<div class="col-md-3 col-sm-6">
+						<div class="card">
+							<div class="card-body">
+								<div class="float-right">
+									<i class="icon ti-briefcase gredient-cl font-30"></i>
+								</div>
+								<div class="widget-detail">
+									<h4 class="mb-1">% 66</h4>
+									<span>Başarı</span>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+				</div>
+				<!-- /row -->
+				
+				
+				<!-- row -->
+				<div class="row">
+				
+					<!-- Order Status -->
+					<div class="col-md-12 col-sm-12">
+						<div class="card">
+							<div class="card-header">
+								<h4 class="mb-0">Danışanlarım</h4>
+							</div>
+							<div class="card-body padd-0">
+								<div class="table-responsive">
+									<table class="table table-lg table-hover">
+										<thead>
+											<tr>
+												<th>İsim</th>
+												<th>Durum</th>
+												<th>İletişim</th>
+												<th>Son Ölçüm Tarihi</th>
+											</tr>
+										</thead>
+										
+										<tbody>
+											<tr>
+												<td><a href="#"><img src="http://via.placeholder.com/180x180" class="avatar" alt="Avatar">Livka Lice</a></td>
+												<td><div class="label cl-success bg-success-light">Paid</div></td>                
+												<td>+90 555 555 55 55 <br> dhdhh@gmail.com</td>
+												<td>04/10/2013</td>  
+											</tr>
+											
+											<tr>
+												<td><a href="#"><img src="http://via.placeholder.com/180x180" class="avatar" alt="Avatar">Likez Perfume</a></td>
+												<td><div class="label cl-warning bg-warning-light">Pending</div></td>							
+												<td>+90 555 555 55 55 <br> dhdhh@gmail.com</td>
+												<td>05/08/2014</td> 
+											</tr>
+											
+											<tr>
+												<td><a href="#"><img src="http://via.placeholder.com/180x180" class="avatar" alt="Avatar">Tiver Perfume</a></td>
+												<td><div class="label cl-danger bg-danger-light">Cancel</div></td>  
+												<td>+90 555 555 55 55 <br> dhdhh@gmail.com</td>
+												<td>11/05/2015</td>                                          
+											</tr>
+											
+											<tr>
+												<td><a href="#"><img src="http://via.placeholder.com/180x180" class="avatar" alt="Avatar">White Blix Bag</a></td>
+												<td><div class="label cl-success bg-success-light">Paid</div></td>
+												<td>+90 555 555 55 55 <br> dhdhh@gmail.com</td>
+												<td>06/09/2016</td>
+											</tr>
+											
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					
+					
+					
+				</div>
+				
+				
+	
+				
+				<!-- row -->
+				<div class="row">
+				
+					<!-- Area Chart -->
+					<div class="col-md-5 col-sm-12">
+						<div class="card">
+							<div class="card-header">
+								<h4 class="mb-0">Cinsiyet Dağılımı</h4>
+							</div>
+							<div class="card-body">
+								<ul class="list-inline text-center">
+                                    <li>
+                                        <h5><i class="fa fa-circle m-r-5 cl-primary"></i> Kadın</h5>
+                                    </li>
+                                    <li>
+                                        <h5><i class="fa fa-circle m-r-5 cl-success"></i> Erkek</h5>
+                                    </li>
+                                </ul>
+								<div class="chart" id="sales-chart" style="height: 300px; position: relative;"></div>
+								
+							</div>
+						</div>
+					</div>
+					
+					<!-- Donut Chart -->
+					<div class="col-md-7 col-sm-12">
+						<div class="card">
+							<div class="card-header">
+								<h4 class="mb-0">Yaş Dağılımı</h4>
+							</div>
+							<div class="card-body">
+								<ul class="list-inline text-center m-t-40">
+                                    <li>
+                                        <h5><i class="fa fa-circle m-r-5 cl-purple"></i> Kadın</h5>
+                                    </li>
+                                    <li>
+                                        <h5><i class="fa fa-circle m-r-5 cl-success"></i> Erkek</h5>
+                                    </li>
+                                </ul>
+								<div class="chart" id="bar-chartmorris" style="height: 300px;"></div>
+							</div>
+						</div>
+					</div>
+					
+				</div>
+				<!-- /.row -->
+				
+				<!-- row -->
+				<div class="row">
+				
+					<!-- Line Chart -->
+					<div class="col-md-12 col-sm-12">
+						<div class="card">
+							<div class="card-header">
+								<h4 class="mb-0">Lifecare Kullanımı</h4>
+							</div>
+							<div class="card-body">
+								<div id="interactive" style="height: 300px;"></div>
+							</div>
+						</div>
+					</div>
+					
+					
+				</div>
+				<!-- /.row -->
+				
+				
+				<!-- row -->
+				<div class="row">
+				
+					<!-- Line Chart -->
+					<div class="col-md-7 col-sm-12">
+						<div class="card">
+							<div class="card-header">
+								<h4 class="mb-0">Cihaz Kullanımı</h4>
+							</div>
+							<div class="card-body">
+								 <div id="chart_div" style="height: 300px;"></div>
+							</div>
+						</div>
+					</div>
+					
+					<!-- Donut Chart -->
+					<div class="col-md-5 col-sm-12">
+						<div class="card">
+							<div class="card-header">
+								<h4 class="mb-0">Cihaz Kullanımı</h4>
+							</div>
+							<div class="card-body padd-0" style="height: 338px;">
+								<div class="table-responsive">
+									<table class="table table-lg table-hover">
+										<thead>
+											<tr>
+												<th>Country</th>
+												<th>City</th>
+												<th>Count</th>
+											</tr>
+										</thead>
+										
+										<tbody>
+											<tr>
+												<td>Türkiye</td>
+												<td>Çorum</td>                
+												<td>7</td>
+											</tr>
+											
+											<tr>
+												<td>Türkiye</td>
+												<td>Çankırı</td>							
+												<td>20</td>
+											</tr>
+											
+											<tr>
+												<td>Türkiye</td>
+												<td>Yozgat</td>  
+												<td>90</td>                                     
+											</tr>
+											
+											<tr>
+												<td>Türkiye</td>
+												<td>Eskişehir</td>
+												<td>3</td>
+											</tr>
+											
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+				</div>
+				<!-- /.row -->
+				
+				
+				
+				<!-- row -->
+				<div class="row">
+					<div class="col-md-3 col-sm-6 mb-4">
+						<div class="social-box facebook">
+							<i class="fa fa-facebook"></i>
+							<ul>
+							  <li>
+								<strong>89k</strong>
+								<span>friends</span>
+							  </li>
+							  <li>
+								<strong>459</strong>
+								<span>feeds</span>
+							  </li>
+							</ul>
+						</div>
+					</div>
+					
+					<div class="col-md-3 col-sm-6 mb-4">
+						<div class="social-box twitter">
+							<i class="fa fa-twitter"></i>
+							<ul>
+							  <li>
+								<strong>973k</strong>
+								<span>followers</span>
+							  </li>
+							  <li>
+								<strong>1.792</strong>
+								<span>tweets</span>
+							  </li>
+							</ul>
+						</div>
+					</div>
+					
+					<div class="col-md-3 col-sm-6 mb-4">
+						<div class="social-box linkedin">
+							<i class="fa fa-linkedin"></i>
+							<ul>
+							  <li>
+								<strong>500+</strong>
+								<span>contacts</span>
+							  </li>
+							  <li>
+								<strong>292</strong>
+								<span>feeds</span>
+							  </li>
+							</ul>
+						</div>
+					</div>
+					
+					<div class="col-md-3 col-sm-6 mb-4">
+						<div class="social-box google-plus">
+							<i class="fa fa-instagram"></i>
+							<ul>
+							  <li>
+								<strong>894</strong>
+								<span>followers</span>
+							  </li>
+							  <li>
+								<strong>92</strong>
+								<span>circles</span>
+							  </li>
+							</ul>
+						</div>
+					</div>
+					
+				</div>
+				<!-- ./row -->
+				
+				
+				
+				
+				
+				
+				
+				
+
+			</div>  
+			<!-- /.content-wrapper -->
+			
+			<!-- Footer -->
+			<footer class="sticky-footer">
+			  <div class="container">
+				<div class="text-center">
+				  <small class="font-15">Copyright © <img class="img-responsive" src="img/qwerty-01.png" alt="Logo Qwerty"></small>
+				</div>
+			  </div>
+			</footer>
+			
+			<!-- Scroll to Top Button-->  
+			<a class="scroll-to-top rounded cl-white gredient-bg-login" href="#page-top">
+			  <i class="ti-angle-double-up"></i>
+			</a>
+
+			<!-- Bootstrap core JavaScript-->
+			<script src="assets/plugins/jquery/jquery.min.js"></script>
+			<script src="assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+			
+			<!-- Core plugin JavaScript-->
+			<script src="assets/plugins/jquery-easing/jquery.easing.min.js"></script>
+			
+			 <!-- Slick Slider Js -->
+			<script src="assets/plugins/slick-slider/slick.js"></script>
+			
+			<!-- Slim Scroll -->
+			<script src="assets/plugins/slim-scroll/jquery.slimscroll.min.js"></script>
+			
+			<!-- FLOT CHARTS -->
+			<script src="assets/plugins/Flot/jquery.flot.js"></script>
+			<!-- FLOT RESIZE PLUGIN - allows the chart to redraw when the window is resized -->
+			
+			<script src="assets/plugins/Flot/jquery.flot.resize.js"></script>
+			
+			<!-- FLOT PIE PLUGIN - also used to draw donut charts -->
+			<script src="assets/plugins/Flot/jquery.flot.pie.js"></script>
+			
+			<!-- FLOT CATEGORIES PLUGIN - Used to draw bar charts -->
+			<script src="assets/plugins/Flot/jquery.flot.categories.js"></script>
+			
+			<!-- Custom Float JavaScript -->
+			<script src="js/custom/chart/float.js"></script>
+			
+			<!-- Morris.js charts -->
+		    <script src="assets/plugins/raphael/raphael.min.js"></script>
+		    <script src="assets/plugins/morris.js/morris.min.js"></script>
+			
+			<!-- Custom Morrisjs JavaScript -->
+		    <script src="js/custom/chart/morris.js"></script>
+			
+			 <!--  Google Chart JavaScript -->
+			<script type='text/javascript' src='https://www.gstatic.com/charts/loader.js'></script>
+			
+			<!-- Custom Google Chart JavaScript -->
+		    <script src="js/custom/chart/googlechart.js"></script>
+			
+			<!-- Angular Tooltip -->
+			<script src="assets/plugins/angular-tooltip/angular.js"></script>
+			<script src="assets/plugins/angular-tooltip/angular-tooltips.js"></script>
+			<script src="assets/plugins/angular-tooltip/index.js"></script>
+			
+			<!-- Custom scripts for all pages-->
+			<script src="js/glovia.js"></script>
+			
+			<script>
+			  $('.dropdown-toggle').dropdown()
+			  </script>
+			
+	  </div>
+	  <!-- Wrapper -->
+	  
+	</body>
+</html>
+

@@ -1,0 +1,2499 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+    @import url(diyetisyen_paneli/img/load.gif);
+  .loader {
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    background: url('diyetisyen_paneli/img/load.gif') 50% 50% no-repeat rgb(249,249,249);
+  }
+
+
+   .social ul li{
+    list-style:none;
+    padding-left:12px;
+    color:white;
+  }
+  li a{
+   text-decoration:none;
+  }
+  .social ul{
+    display:inline-flex;
+    padding-left: 60px;
+  }
+  body{
+  font-family: 'Droid Sans', sans-serif;
+  background: rgba(170,179,86,1);
+  background: -moz-linear-gradient(left, rgba(170,179,86,1) 0%, rgba(134,145,28,0.91) 60%, rgba(124,136,12,0.91) 77%);
+  background: -webkit-gradient(left top, right top, color-stop(0%, rgba(170,179,86,1)), color-stop(60%, rgba(134,145,28,0.91)), color-stop(77%, rgba(124,136,12,0.91)));
+  background: -webkit-linear-gradient(left, rgba(170,179,86,1) 0%, rgba(134,145,28,0.91) 60%, rgba(124,136,12,0.91) 77%);
+  background: -o-linear-gradient(left, rgba(170,179,86,1) 0%, rgba(134,145,28,0.91) 60%, rgba(124,136,12,0.91) 77%);
+  background: -ms-linear-gradient(left, rgba(170,179,86,1) 0%, rgba(134,145,28,0.91) 60%, rgba(124,136,12,0.91) 77%);
+  background: linear-gradient(to right, rgba(170,179,86,1) 0%, rgba(134,145,28,0.91) 60%, rgba(124,136,12,0.91) 77%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#aab356', endColorstr='#7c880c', GradientType=1 );
+
+  }
+  .box{
+    width:45%;
+  background: rgba(226,226,226,1);
+  background: -moz-linear-gradient(left, rgba(226,226,226,1) 0%, rgba(219,219,219,1) 10%, rgba(209,209,209,1) 98%, rgba(254,254,254,1) 100%);
+  background: -webkit-gradient(left top, right top, color-stop(0%, rgba(226,226,226,1)), color-stop(10%, rgba(219,219,219,1)), color-stop(98%, rgba(209,209,209,1)), color-stop(100%, rgba(254,254,254,1)));
+  background: -webkit-linear-gradient(left, rgba(226,226,226,1) 0%, rgba(219,219,219,1) 10%, rgba(209,209,209,1) 98%, rgba(254,254,254,1) 100%);
+  background: -o-linear-gradient(left, rgba(226,226,226,1) 0%, rgba(219,219,219,1) 10%, rgba(209,209,209,1) 98%, rgba(254,254,254,1) 100%);
+  background: -ms-linear-gradient(left, rgba(226,226,226,1) 0%, rgba(219,219,219,1) 10%, rgba(209,209,209,1) 98%, rgba(254,254,254,1) 100%);
+  background: linear-gradient(to right, rgba(226,226,226,1) 0%, rgba(219,219,219,1) 10%, rgba(209,209,209,1) 98%, rgba(254,254,254,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e2e2e2', endColorstr='#fefefe', GradientType=1 );
+
+  }
+  /* p{
+    padding:40px;
+  } */
+  .outer-box{
+    margin-top:60px;
+    margin-left:450px;
+  }
+    .badge badge-pill badge-danger{
+      align:center;
+    }
+    td {border: 1px #DDD solid; padding: 5px; cursor: pointer;}
+
+.selected {
+  background-color: #2d2e82;
+  color: #FFF;
+}
+    .clearable{
+background: #fff url(data:image/gif;base64,R0lGODlhBwAHAIAAAP///5KSkiH5BAAAAAAALAAAAAAHAAcAAAIMTICmsGrIXnLxuDMLADs=) no-repeat right -10px center;
+border: 1px solid #999;
+padding: 3px 18px 3px 4px;
+border-radius: 3px;
+transition: background 0.4s;
+}
+.clearable.x  { background-position: right 5px center; }
+.clearable.onX{ cursor: pointer; }
+.clearable::-ms-clear {display: none; width:0; height:0;}
+/*
+.se-pre-con {
+position: fixed;
+left: 0px;
+top: 0px;
+width: 100%;
+height: 100%;
+z-index: 9999;
+background: url(/home/lifecare/Desktop/5.gif) center no-repeat #fff;
+} */
+    </style>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="danisan/assets/img/favicon.png"/>     <!-- linkin yanındaki simge -->
+    <title>Diet Tracking</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="diyetisyen_paneli/assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">		<!--opsiyonel -->
+
+    <!-- Custom fonts for this template -->
+    <link href="diyetisyen_paneli/assets/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">		<!-- mutlaka olacak -->
+
+    <!-- Custom fonts for this template -->
+    <link href="diyetisyen_paneli/assets/plugins/themify/css/themify.css" rel="stylesheet" type="text/css">
+    <!-- ne olduğunu bilmiyoz ama duracak aşşa yukarıdakiler -->
+    <!-- Angular Tooltip Css -->
+    <link href="diyetisyen_paneli/assets/plugins/angular-tooltip/angular-tooltips.css" rel="stylesheet">
+
+    <!-- Morris Charts CSS -->
+    <!-- <link href="diyetisyen_paneli/assets/plugins/morris.js/morris.css" rel="stylesheet"> -->
+    <!-- chart kullanırsak ekliyoz -->
+
+    <!-- Page level plugin CSS -->
+    <link href="diyetisyen_paneli/css/animate.css" rel="stylesheet">  <!-- duracak -->
+
+    <!-- Custom styles for this template -->
+    <link href="diyetisyen_paneli/css/glovia.css" rel="stylesheet">
+    <!-- KESİN DURACAKLAR ALTLI ÜSTLÜ -->
+    <link href="diyetisyen_paneli/css/glovia-responsive.css" rel="stylesheet">
+
+    <!-- Custom styles for Color -->
+    <link href="diyetisyen_paneli/css/skins/default.css" rel="stylesheet">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script type="text/javascript" src="/home/lifecare/Desktop/html2canvas.js"></script>
+
+<!-- <script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.2/modernizr.js"></script> -->
+
+
+  </head>
+
+
+  <body class="fixed-nav sticky-footer" id="page-top" style="display: none;">
+    <div class="loader">
+      <div class="loader2"></div>
+    </div>
+
+
+    <div id="nav-placeholder">  <!-- navbar buraya ekleniyor, şu an boş aşağıdaki jquery komutu ekliyor -->
+
+    </div>
+    <script>
+    function removeLoader(){
+      console.log("asfa");
+        $( ".loader" ).fadeOut(3000, function() {
+          // fadeOut complete. Remove the loading div
+          $( ".loader2" ).remove(); //makes page more lightweight
+        });
+    }
+
+    </script>
+
+    <div class="content-wrapper">
+
+
+      <div class="container-fluid">
+        <!-- Title & Breadcrumbs-->
+        <div class="row page-titles">
+          <div class="col-md-12 align-self-center">
+            <h4 id="baslık" class="theme-cl"></h4>
+          </div>
+        </div>
+        <!-- Title & Breadcrumbs-->
+
+        <!-- row -->
+        <div class="row">
+
+          <!-- /.col-md-3 -->
+
+
+          <div class="col-md-12">
+
+
+
+
+            <div class="row">
+              <div class="col-md-8">
+
+                <div id='wrap'>
+
+                  <div id='calendar'></div>
+
+                  <div style='clear:both'></div>
+
+                </div>
+
+              </div>
+
+              <div class="col-md-4">
+                <div class="card" id="takvim-card-d">
+                  <div class="card-body">
+                    <div style="height:632px;overflow:scroll;">
+                      <table class="table table-bordered" id="diyet-tablo"><h4><b>Advisee Nutrition Plan</b></h4>
+
+                        <tbody id="dan_bes_pro">
+
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          <!-- /.row -->
+          <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+          </div>
+            <div class="col-md-12">
+
+            </div>
+        </div>
+      </div>
+      <!-- aşağıdaki div takvimden belirli bir alan seçildikten sonra gelecek -->
+        <div class="container-fluid" id = "gunGen">
+          <div class="row">
+
+              <div id = "out" class="col-md-8">
+                <!-- soldaki card başlangıcı -->
+
+
+
+                  <div style="height:602px;overflow:scroll;"class="card padd-15">
+                    <div class="panel-group accordion-stylist" id="accordion" role="tablist" aria-multiselectable="true">
+
+                      <div id="diyet_check" class="diyet-checkboxes">
+
+                        <div class="row">
+
+                          <div class="col-md-4">
+                            <div class="form-group">
+                              <div class="flexbox align-items-center">
+                                <span class="custom-checkbox1">
+                                <input type="radio" id="checkbox1" name="options[]" value="1" checked onclick="checkGunluk();">
+                                <label id ="label1" for="checkbox1">Daily Program</label>
+                                </span>
+                              </div>
+                            </div>
+                          </div>
+
+
+                          <div class="col-md-4">
+                            <div class="form-group">
+                              <div class="flexbox align-items-center">
+                                <span class="custom-checkbox2">
+                                <input type="radio" id="checkbox2" name="options[]" value="2" onclick="checkGenel();">
+                                <label id="general" for="checkbox2">General Program</label>
+                                </span>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-md-4">
+                            <div>
+                              <div>
+                                <span>
+                                <label id="programNm" style="color:#612e82;font-weight:bold"></label>
+                                </span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div id="newW">
+
+                      </div>
+
+                      <div id="accordionN">
+
+                      </div>
+                      <div id="empty">
+
+                      </div>
+                      <!-- <ul id="sortable">
+                        <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 1</li>
+                        <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 2</li>
+                        <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 3</li>
+                        <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 4</li>
+                        <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 5</li>
+                        <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 6</li>
+                        <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 7</li>
+                      </ul> -->
+
+                    </div>
+
+                  </div>
+
+
+
+                  <!--  Diyet Gönder and Kaydet Button -->
+                    <div id="addSend" class="row">
+                      <div class="col-md-12">
+                        <div class="text-right">
+                          <div class="text-right padd-bot-10">
+                            <pre><a class="btn btn-outline-primary btn-rounded" onclick="saveDataArsiv(this.id);" id="diyettakip-sendbutton"><font face="Montserrat">Add Archive</font></a>   <a class="btn btn-outline-primary btn-rounded" id="diyettakip-savebutton" onclick="saveProgramForAppUser(this.id);"><font face="Montserrat">Save and Send to My Advisee</font></a></pre>
+                            <!-- notificationProgram() eklenecek -->
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div id="addSendGeneral" class="row">
+                      <div class="col-md-12">
+                        <div class="text-right">
+                          <div class="text-right padd-bot-10">
+                            <pre><a class="btn btn-outline-primary btn-rounded" onclick="updateGeneralProgram();" id="diyettakip-sendbutton">Update and Submit Program</a>   <a class="btn btn-outline-primary btn-rounded" id="diyettakip-savebutton" onclick="saveUpdatedGeneralProgramArsiv();">Add Program to Archive</a></pre>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div id="addSendDaily" class="row">
+                      <div class="col-md-12">
+                        <div class="text-right">
+                          <div class="text-right padd-bot-10">
+                            <pre><a class="btn btn-outline-primary btn-rounded" onclick="updateDayProgram();" id="diyettakip-sendbutton">Update and Submit Program</a>   <a class="btn btn-outline-primary btn-rounded" id="diyettakip-savebutton" onclick="saveUpdatedDayProgramArsiv();">Add Program to Archive</a></pre>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                <!-- soldaki kart bişi -->
+              </div>
+              <script type="text/javascript">
+              $("input:checkbox").on('click', function() {
+                // in the handler, 'this' refers to the box clicked on
+                // checkboxların kodunu buraya yazacaz
+                var box = $(this);
+                if (box.is(":checked")) {
+                  // the name of the box is retrieved using the .attr() method
+                  // as it is assumed and expected to be immutable
+                  var group = "input:checkbox[name='" + box.attr("name") + "']";
+                  // the checked state of the group/box on the other hand will change
+                  // and the current value is retrieved using .prop() method
+                  $(group).prop("checked", false);
+                  box.prop("checked", true);
+                } else {
+                  box.prop("checked", false);
+                }
+              });
+              </script>
+              <div class="col-md-4">
+                <!-- sağdaki liste  -->
+
+                    <div style="height:602px;overflow:scroll;"class="card padd-15">
+                      <div class="panel-group accordion-stylist" id="accordion" role="tablist" aria-multiselectable="true">
+                        <table id = "list_food">
+                          <td class="selected" style="border:none;">
+                            <button selected="true" class="btn btn-sm btn-secondary selected"  onclick="showFoodList();" style="border:none;width:120px;font-size:10px"><b>Food List</b></button>
+                          </td>
+                          <td style="border:none;">
+                            <button id="showArc" onclick="showArchive();"class="btn btn-sm btn-secondary" style="border:none;width:120px;font-size:10px" ng-click="recipe.label_type = 'USA'" ng-class="{'btn-secondary' : recipe.label_type == 'USA', 'btn-outline-secondary' : recipe.label_type != 'USA'}"><b>Nutrition Archive</b></button>
+                          </td>
+                          <td style="border:none;">
+                            <button id="showFood" onclick="showMyFood();"class="btn btn-sm btn-secondary" style="border:none;width:120px;font-size:10px" ng-click="recipe.label_type = 'USA'" ng-class="{'btn-secondary' : recipe.label_type == 'USA', 'btn-outline-secondary' : recipe.label_type != 'USA'}"><b>Foods</b></button>
+                          </td>
+                        </table>
+
+
+
+                      </div>
+                      <!-- burayı doldurup css'den konumu ayarlıcam -->
+                      <!-- sıkıntı var bunu konuştuktan sonra bak bir daha düzgün kafayla modal olayını anlatacaksın nutrio daki search işlemini hatırla -->
+                      <!-- <div class="panel-group accordion-stylist" id="Arsiv">
+
+                      </div> -->
+                      <div id="BesLis"class="col-md-11">
+                        <table style="border:none">
+                          <tr style="border:none">
+                            <td style="border:none"><input style="width:340px" type="text" id="searchInput" class="form-control ng-dirty ng-touched ng-empty ng-invalid ng-invalid-required" ng-model="office.food.params.criteria" placeholder="Search Food" required="" onkeyup="searchFood();"></td>
+                          </tr>
+                        </table>
+                        <div class="row">
+                          <ul id="myUL">
+
+                          </ul>
+
+                        </div>
+                      </div>
+                      <div id="BesList" class="col-md-11">
+                        <input style="width:340px" type="text" id="searchInput2" class="form-control ng-dirty ng-touched ng-empty ng-invalid ng-invalid-required" ng-model="office.food.params.criteria" placeholder="Search Program" required="" onkeyup="searchArchive();">
+                        <div class="panel-group accordion-stylist" id="Arsiv">
+
+                        </div>
+                      </div>
+                      <div id="MyBesList" class="col-md-11">
+                        <table style="border:none">
+                          <tr style="border:none">
+                            <td style="border:none"><input style="width:340px" type="text" id="searchInput3" class="form-control ng-dirty ng-touched ng-empty ng-invalid ng-invalid-required" ng-model="office.food.params.criteria" placeholder="Search Food" required="" onkeyup="searchMyFood();"></td>
+                            <td style="border:none">
+                              <!-- <i id="addFood" class="fa fa-fw fa-plus" onclick="modal();" type="button" title="Besinimi Oluştur" style="font-size:20px"></i> -->
+                              <a href="#modal-1" title="Besinimi Oluştur"style="font-size:20px" data-toggle="modal" data-target="#modal-1" class="fa fa-fw fa-plus" style="color: white !important;">
+
+                            </a></td>
+                          </tr>
+                        </table>
+                          <div class="panel-group accordion-stylist" id="myFood">
+
+                        </div>
+                      </div>
+
+                      <!-- draggable işlemi tüm textboxlar doluyor -->
+                      <!-- <script type="text/javascript">
+                        document.addEventListener('dragstart',function(event){
+                          event.dataTransfer.setData('Text',"-"+event.target.innerHTML+"\r\n  ");
+                        });
+                      </script> -->
+                      <!-- <script>
+                      $( function() {
+                        $( "#myUL" ).sortable({
+                          revert: true
+                        });
+                        $( "#inpt10" ).draggable({
+                          connectToSortable: "#sortable",
+                          helper: "clone",
+                          revert: "invalid"
+                        });
+                        $( "ul, li" ).disableSelection();
+                      } );
+                      </script> -->
+
+                    </div>
+
+                  </div>
+
+            </div>
+
+
+
+
+      </div>
+
+      <footer class="sticky-footer">
+        <div class="container">
+        <div class="text-center">
+          <small class="font-15">Copyright © <img class="img-responsive" src="diyetisyen_paneli/img/qwerty-01.png" alt="Logo Qwerty"></small>
+        </div>
+        </div>
+      </footer>
+
+
+      <!-- Scroll to Top Button-->
+      <a class="scroll-to-top rounded cl-white gredient-bg-login" href="#page-top">
+        <i class="ti-angle-double-up"></i>
+      </a>
+      <div class="modal modal-box-1 fade" id="modal-1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel1" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+        <div class="modal-dialog">
+          <div class="modal-content" id="myModalLabel1">
+            <div class="modal-header theme-bg">
+              <b>Create Food</b>
+              <button id="modal_close" type="button" onclick="closeModal();" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            </div>
+            <div class="modal-body">
+              <table id="food_table">
+                    <tr>
+                      <td style="border:none;">
+                         <b>Food Name:</b>
+                      </td>
+                       <td style="border:none;">
+                         <input type="text">
+                       </td>
+                    </tr>
+                     <tr>
+                       <td style="border:none;">
+                         <b>Food Amount:</b>
+                       </td>
+                        <td style="border:none;">
+                          <input type="text">
+                        </td>
+                    </tr>
+                    <tr>
+                      <td style="border:none;">
+                         <b>Protein Value:</b>
+                      </td>
+                       <td style="border:none;">
+                         <input type="text">
+                       </td>
+                   </tr>
+                   <tr>
+                     <td style="border:none;">
+                       <b>Carbohydrate Value:</b>
+                     </td>
+                      <td style="border:none;">
+                        <input type="text">
+                      </td>
+                  </tr>
+                  <tr>
+                    <td style="border:none;">
+                       <b>Fat Value:</b>
+                    </td>
+                     <td style="border:none;">
+                       <input type="text">
+                     </td>
+                 </tr>
+                 <tr>
+                   <td style="border:none;">
+                     <b>Calory Value:</b>
+                   </td>
+                    <td style="border:none;">
+                      <input type="text">
+                    </td>
+                </tr>
+
+            </table>
+            <br>
+              <div class="text-center padd-bot-20">
+                <button class="btn outline-secondary bg-white-save" onclick="modalSaveFood();">Kaydet</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Bootstrap core JavaScript-->
+      <script src="diyetisyen_paneli/assets/plugins/jquery/jquery.min.js"></script>
+      <script src="diyetisyen_paneli/assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+      <!-- Core plugin JavaScript-->
+      <script src="diyetisyen_paneli/assets/plugins/jquery-easing/jquery.easing.min.js"></script>
+
+       <!-- Slick Slider Js -->
+      <script src="diyetisyen_paneli/assets/plugins/slick-slider/slick.js"></script>
+
+      <!-- Slim Scroll -->
+      <script src="diyetisyen_paneli/assets/plugins/slim-scroll/jquery.slimscroll.min.js"></script>
+      <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+      <!-- FLOT CHARTS -->
+      <script src="diyetisyen_paneli/assets/plugins/Flot/jquery.flot.js"></script>
+      <!-- FLOT RESIZE PLUGIN - allows the chart to redraw when the window is resized -->
+
+      <script src="diyetisyen_paneli/assets/plugins/Flot/jquery.flot.resize.js"></script>
+
+      <!-- FLOT PIE PLUGIN - also used to draw donut charts -->
+      <script src="diyetisyen_paneli/assets/plugins/Flot/jquery.flot.pie.js"></script>
+
+      <!-- FLOT CATEGORIES PLUGIN - Used to draw bar charts -->
+      <script src="diyetisyen_paneli/assets/plugins/Flot/jquery.flot.categories.js"></script>
+
+      <!-- Custom Float JavaScript -->
+      <!-- <script src="diyetisyen_paneli/js/custom/chart/float.js"></script> -->
+
+      <!-- Morris.js charts -->
+      <!-- <script src="diyetisyen_paneli/assets/plugins/raphael/raphael.min.js"></script> -->
+      <!-- chart duruma göre eklenip çıkarılacak -->
+      <!-- <script src="diyetisyen_paneli/assets/plugins/morris.js/morris.min.js"></script> -->
+
+      <!-- Custom Morrisjs JavaScript -->
+      <!-- <script src="diyetisyen_paneli/js/custom/chart/morris.js"></script> -->
+      <!-- kaldırılabilir opsiyonel -->
+
+      <script src="diyetisyen_paneli/js/custom/navbar_script.js"></script>
+      <!-- kesin duracak -->
+
+       <!--  Google Chart JavaScript -->
+      <script type='text/javascript' src='https://www.gstatic.com/charts/loader.js'></script>  <!-- diyetisyen panelindeki harita için bizde kullanılmıcak -->
+
+      <!-- Custom Google Chart JavaScript -->
+        <!-- <script src="diyetisyen_paneli/js/custom/chart/googlechart.js"></script> -->
+
+      <!-- Angular Tooltip -->
+      <script src="diyetisyen_paneli/assets/plugins/angular-tooltip/angular.js"></script>
+      <script src="diyetisyen_paneli/assets/plugins/angular-tooltip/angular-tooltips.js"></script>
+      <script src="diyetisyen_paneli/assets/plugins/angular-tooltip/index.js"></script>
+
+      <!-- Custom scripts for all pages-->
+      <script src="diyetisyen_paneli/js/glovia.js"></script>  <!-- kesin duracak -->
+      <!-- Custom Calendar -->
+      <script src="diyetisyen_paneli/js/calendar.js"></script>
+
+      <script>
+        $('.dropdown-toggle').dropdown()
+      </script>
+    </div>
+    <script src="https://www.gstatic.com/firebasejs/5.5.1/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyA24Eyjeh0HipNlMBhAJRnacsFxAySHgtY",
+        authDomain: "lifecare-55c38.firebaseapp.com",
+        databaseURL: "https://lifecare-55c38.firebaseio.com",
+        projectId: "lifecare-55c38",
+        storageBucket: "lifecare-55c38.appspot.com",
+        messagingSenderId: "340270538259"
+      };
+      firebase.initializeApp(config);
+    </script>
+    <script>
+    $(function(){
+      $("#nav-placeholder").load("navbar_eng.txt"); //navbar'ın html'i burada
+    });
+    </script>
+    <script>
+      firebase.auth().onAuthStateChanged(function(user)
+      {
+
+
+        if (user)
+        {
+          nav_bar_part_of_the_page(user);  //navbar'ı düzenleyen script
+          fill_message_box(user);  //sağ üstteki message iconu'nu dolduruyor
+          document.getElementById("page-top").style.display = "block";  //açılırken sekron olayı
+          setTimeout(function(){
+						engTRK();
+	        }, 1000);
+          removeLoader();
+          print_data();
+          // showFood_List();
+          localStroage();
+          titleName();
+        }
+        else
+        {
+          document.location.replace("login.html");
+        }
+      });
+
+    </script>
+
+    <script type="text/javascript">
+      $("#gunGen").hide();
+    </script>
+    <script src='/home/lifecare/Desktop/lang/es.js'></script>
+    <script>
+
+      $(document).ready(function() {
+
+        var date = new Date();
+        var d = date.getDate();
+        var m = date.getMonth()+1;
+        var y = date.getFullYear();
+
+
+        var calendar =  $('#calendar').fullCalendar({
+          // monthNames: ['Ocak','Şubat','Mart','Nisan','Mayıs','Haziran','Temmuz','Ağustos','Eylül','Ekim','Kasım','Aralık'],
+          //  monthNamesShort: ['Ocak','Şubat','Mart','Nisan','Mayıs','Haziran','Temmuz','Ağustos','Eylül','Ekim','Kasım','Aralık'],
+           // dayNames: ['Pazar','Pazartesi','Salı','Çarşamba','Perşembe','Cuma','Cumartesi'],
+           // dayNamesShort: ['Pazar','Pazartesi','Salı','Çarşamba','Perşembe','Cuma','Cumartesi'],
+           editable:true,
+           buttonText: {
+                   today:    'Bugün',
+                   month:    '',
+                   week:     'Hafta',
+                   day:      'Gün',
+                   list:     'Liste',
+                   listMonth: 'Aylık Liste',
+                   listYear: 'Yıllık Liste',
+                   listWeek: 'Haftalık Liste',
+                   listDay: 'Günlük Liste'
+          },
+          header: {
+            left: 'title',
+            // center: 'month',
+            right: 'prev,next'
+          },
+          // editable: true,
+          firstDay: 1, //  1(Monday) this can be changed to 0(Sunday) for the USA system
+          selectable: true,
+          // selectOverlap: false,
+          defaultView: 'month',
+
+          axisFormat: 'h:mm',
+          columnFormat: {
+                        month: 'ddd',    // Mon
+                        // week: 'ddd d', // Mon 7
+                        // day: 'dddd M/d',  // Monday 9/7
+                        agendaDay: 'dddd d'
+                        },
+                        titleFormat: {
+                            month: 'MMMM yyyy', // September 2009
+                            // week: "MMMM yyyy", // September 2009
+                            day: 'MMMM yyyy'                  // Tuesday, Sep 8, 2009
+                        },
+          allDaySlot: false,
+          selectHelper: true,
+
+          // buraya girdiğimiz ismi sağdaki tabloya firebaseden çekecez
+ //          selectOverlap: function (event) {
+ //   if (event.title === $('#productDd option:selected').text()) {
+ //     alert("You may not add a duplicate product.");
+ //     return false;
+ //   }
+ //   return true;
+ // },
+
+          select: function calenderFunc(start, end, allDay) {
+//               swal({
+//   title: "An input!",
+//   text: "Write something interesting:",
+//   type: "input",
+//   showCancelButton: true,
+//   closeOnConfirm: false,
+//   inputPlaceholder: "Write something"
+// }, function (inputValue) {
+//   if (inputValue === false) return false;
+//   if (inputValue === "") {
+//     swal.showInputError("You need to write something!");
+//     return false
+//   }
+//   swal("Nice!", "You wrote: " + inputValue, "success");
+// });
+
+            var titleE = prompt('Give Your Nutrition Plan a Name for Your Advisee.');
+            // calendar.fullCalendar({
+            //
+            //   editable: false,
+            //
+            // });
+
+            if(titleE){
+              calendar.fullCalendar('renderEvent',
+                {
+                  title: titleE,
+                  start: start,
+                  end: end,                        // bu kısımda seçili geliyor!!
+                  allDay: allDay,
+                },
+                true // make the event "stick"
+              );
+            }
+            if (titleE!=""&& titleE!=null) {
+              $("#diyet-tablo tr").removeClass("selected");
+              // $(".fc-axis").hide();
+              // $('#accordion div').html('');
+              $("#gunGen").show();
+              // $("#addSend").show();
+              // $("#accordionN").show();
+              // $("#diyet_check").show();
+              $('#accordion div').show();
+              // $("#accordion div:last-child").remove();
+              $("#addSend").show();
+              $("#addSendGeneral").hide();
+              $("#BesList").hide();
+              $("#MyBesList").hide();
+              $("#addSendDaily").hide();
+              $("#hazırProgram").remove();
+              $(".tarih").remove();
+              // $("#accordion").children().filter(":not(#accordionN)").remove();
+              alert("Your registration is complete.");
+              var startMnth = start.getMonth()+1;
+              var endMnth = end.getMonth()+1;
+              // beslenme programı paneline bu girdiyi yazacaz aynı zamanda genel günlük paneli açılacak
+              var tableDanBesPro=document.getElementById("dan_bes_pro");
+              var tr=document.createElement("tr");
+              tr.id="newProgram";
+              tr.classList.add("selected");
+              var td=document.createElement("td");
+              td.setAttribute("id","progName");
+              td.setAttribute("onclick","newProgram(this.id);");
+              var b = document.createElement("B");
+              b.style.fontSize="15px";
+              b.innerHTML=titleE;
+              td.appendChild(b);
+              // var br=document.createElement("br");
+              var td22=document.createElement("td");
+              var span22 = document.createElement("span");
+              span22.id = titleE;
+              span22.style.fontSize="10px";
+              span22.innerText=start.getFullYear()+"-"+startMnth+"-"+start.getDate()+" - "+end.getFullYear()+"-"+endMnth+"-"+end.getDate();
+              td22.appendChild(span22);
+              var td19= document.createElement("td");
+              var td19_span = document.createElement("span");
+              td19_span.id="delete";
+              td19_span.classList.add("fa");
+              td19_span.classList.add("fa-fw");
+              td19_span.classList.add("fa-trash");
+              td19_span.style.fontSize="17px";
+              td19_span.setAttribute("onclick","deleteWrongProgram(this.id);");
+              td19.appendChild(td19_span);
+              tr.appendChild(td);
+              tr.appendChild(td22);
+              tr.appendChild(td19);
+              // tr.appendChild(br);
+              tableDanBesPro.appendChild(tr);
+              var tableProGun = document.getElementById("accordionN");
+              var form= document.createElement("form");
+              form.setAttribute("id","formGun");
+              document.getElementById("programNm").innerHTML=titleE+" <label style='color:black'><b>Nutrition Plan</b></label>";
+              var row;
+              if(end.getDate()<start.getDate()){
+                var ayKacCekti = new Date(start.getFullYear(),start.getMonth(),start.getDate()).getDate()+1;
+                row = end.getDate()-start.getDate()+ayKacCekti;
+                console.log(row);
+              }else if(end.getDate()>=start.getDate()){
+                row = end.getDate()-start.getDate();
+              }
+              // var row = end.getDate()-start.getDate();
+              for(var i=0;i<=row;i++){
+                var label = document.createElement("label");
+                var day = start.getDate()+i;
+                var month=startMnth;
+                var year = start.getFullYear();
+                label.innerHTML=i+1+". DAY ("+day+"-"+month+"-"+year+")";
+                label.setAttribute("style","color:orange;font-weight:bold");
+                form.appendChild(label);
+                var tableGun = document.createElement("table");
+                tableGun.id="tableE"+i;
+                var tr1 = document.createElement("tr");
+                var th1 = document.createElement("th");
+                th1.setAttribute("style","color:#2d2e82;font-weight:bold;text-align:center;");
+                th1.innerHTML="Meals";
+                tr1.appendChild(th1);
+                var th1_1 = document.createElement("th");
+                th1_1.setAttribute("style","color:#2d2e82;font-weight:bold;text-align:center;");
+                th1_1.innerHTML="";
+                tr1.appendChild(th1_1);
+                var th2 = document.createElement("th");
+                th2.setAttribute("style","color:#2d2e82;font-weight:bold;text-align:center;");
+                th2.innerHTML="Nutrients";
+                tr1.appendChild(th2);
+                var th2_1 = document.createElement("th");
+                th2_1.setAttribute("style","color:#2d2e82;font-weight:bold;text-align:center;");
+                th2_1.innerHTML="";
+                tr1.appendChild(th2_1);
+                var th3 = document.createElement("th");
+                th3.setAttribute("style","color:#2d2e82;font-weight:bold;text-align:center;");
+                th3.innerHTML="Protein";
+                tr1.appendChild(th3);
+                var th4 = document.createElement("th");
+                th4.setAttribute("style","color:#2d2e82;font-weight:bold;text-align:center;");
+                th4.innerHTML="Fat";
+                tr1.appendChild(th4);
+                var th5 = document.createElement("th");
+                th5.setAttribute("style","color:#2d2e82;font-weight:bold;text-align:center;");
+                th5.innerHTML="Carbohydrate";
+                tr1.appendChild(th5);
+                var th6 = document.createElement("th");
+                th6.setAttribute("style","color:#2d2e82;font-weight:bold;text-align:center;");
+                th6.innerHTML="Calory";
+                tr1.appendChild(th6);
+                var label1 = document.createElement("label");
+                var i_1 = document.createElement("i");
+                i_1.id="spn"+((8*i)+2);
+                i_1.classList.add("fa");
+                i_1.classList.add("fa-fw");
+                i_1.classList.add("fa-plus");
+                i_1.setAttribute("onclick","newBox(this.id);");
+                label1.id="label1"+i;
+                label1.innerHTML="Breakfast";
+                var tr2 = document.createElement("tr");
+                tr2.id="table"+((8*i)+1);
+                var tr2_td1 = document.createElement("td");
+                tr2_td1.setAttribute("style","border:none;width:200px");
+                var tr2_td1_1 = document.createElement("td");
+                tr2_td1_1.setAttribute("style","border:none;text-align:center;");
+                tr2_td1.appendChild(label1);
+                tr2_td1_1.appendChild(i_1);
+                var input1 = document.createElement("INPUT");
+                // var input1_1 = document.createElement("INPUT");
+                // var input1_2 = document.createElement("INPUT");
+                // var input1_3 = document.createElement("INPUT");
+                // input1.setAttribute("ondrop","drop(event)");
+                // input1.setAttribute("ondragover","allowDrop(event)");
+                input1.setAttribute("type","text");
+                input1.setAttribute("disabled","true");
+                var spn1 = document.createElement("span");
+                spn1.id="inpt1"+i;
+                spn1.setAttribute("onclick","clearTextDefault(this.id);");
+                spn1.classList.add("fa");
+                spn1.classList.add("fa-fw");
+                spn1.classList.add("fa-trash");
+                // input1_1.setAttribute("type","text");
+                // var spn2 = document.createElement("span");
+                // spn2.setAttribute("onclick","clearTextDefault(this.id);");
+                // spn2.id="inpt"+(1+i+parseInt(10));
+                // spn2.classList.add("fa");
+                // spn2.classList.add("fa-fw");
+                // spn2.classList.add("fa-trash");
+                // input1_2.setAttribute("type","text");
+                // var spn3 = document.createElement("span");
+                // spn3.setAttribute("onclick","clearTextDefault(this.id);");
+                // spn3.id="inpt"+(1+i+parseInt(11));
+                // spn3.classList.add("fa");
+                // spn3.classList.add("fa-fw");
+                // spn3.classList.add("fa-trash");
+                // input1_3.setAttribute("type","text");
+                // var spn4 = document.createElement("span");
+                // spn4.setAttribute("onclick","clearTextDefault(this.id);");
+                // spn4.id="inpt"+(1+i+parseInt(12));
+                // spn4.classList.add("fa");
+                // spn4.classList.add("fa-fw");
+                // spn4.classList.add("fa-trash");
+                input1.setAttribute("id","inpt1"+i);
+                // input1_1.setAttribute("id","inpt"+(1+i+parseInt(10)));
+                // input1_2.setAttribute("id","inpt"+(1+i+parseInt(11)));
+                // input1_3.setAttribute("id","inpt"+(1+i+parseInt(12))); // input1.setAttribute("id", i.toString() + "_inpt1");
+                input1.setAttribute("oninput","dragFood(this.id);");
+                // input1_1.setAttribute("oninput","dragFood(this.id);");
+                // input1_2.setAttribute("oninput","dragFood(this.id);");
+                // input1_3.setAttribute("oninput","dragFood(this.id);");
+                // input1.setAttribute("ondrop","drop(event);");
+                // input1.setAttribute("ondragover","allowDrop(event);");
+                // input1.classList.add("clearable");
+                var tr2_td2 = document.createElement("td");
+                tr2_td2.setAttribute("style","border:none;");
+                var tr2_td2_1 = document.createElement("td");
+                tr2_td2_1.setAttribute("style","border:none;");
+                tr2_td2.appendChild(input1);
+                tr2_td2_1.appendChild(spn1);
+                // tr2_td2.appendChild(input1_1);
+                // tr2_td2.appendChild(spn2);
+                // tr2_td2.appendChild(input1_2);
+                // tr2_td2.appendChild(spn3);
+                // tr2_td2.appendChild(input1_3);
+                // tr2_td2.appendChild(spn4);
+                var tr2_td3= document.createElement("td");
+                tr2_td3.setAttribute("style","width:100px;border:none;");
+                var tr2_td3_span1 = document.createElement("span");
+                tr2_td3_span1.setAttribute("style","margin-right:30px");
+                tr2_td3_span1.id="span1";
+                tr2_td3_span1.classList.add("badge");
+                tr2_td3_span1.classList.add("badge-pill");
+                tr2_td3_span1.classList.add("badge-warning");
+                tr2_td3_span1.innerHTML="0,0";
+                tr2_td3.appendChild(tr2_td3_span1);
+                var tr2_td4= document.createElement("td");
+                tr2_td4.setAttribute("style","width:100px;border:none;");
+                var tr2_td4_span2 = document.createElement("span");
+                tr2_td4_span2.setAttribute("style","margin-right:30px");
+                tr2_td4_span2.id="span2";
+                tr2_td4_span2.classList.add("badge");
+                tr2_td4_span2.classList.add("badge-pill");
+                tr2_td4_span2.classList.add("badge-success");
+                tr2_td4_span2.innerHTML="0,0";
+                tr2_td4.appendChild(tr2_td4_span2);
+                var tr2_td5= document.createElement("td");
+                tr2_td5.setAttribute("style","width:120px;border:none;");
+                var tr2_td5_span3 = document.createElement("span");
+                tr2_td5_span3.setAttribute("style","margin-right:30px");
+                tr2_td5_span3.id="span3";
+                tr2_td5_span3.classList.add("badge");
+                tr2_td5_span3.classList.add("badge-pill");
+                tr2_td5_span3.classList.add("badge-danger");
+                tr2_td5_span3.innerHTML="0,0";
+                tr2_td5.appendChild(tr2_td5_span3);
+                var tr2_td6= document.createElement("td");
+                tr2_td6.setAttribute("style","width:100px;border:none;");
+                var tr2_td6_span4= document.createElement("span");
+                tr2_td6_span4.setAttribute("style","margin-right:30px");
+                tr2_td6_span4.id="span4";
+                tr2_td6_span4.classList.add("badge");
+                tr2_td6_span4.classList.add("badge-pill");
+                tr2_td6_span4.classList.add("badge-primary");
+                tr2_td6_span4.innerHTML="0,0";
+                tr2_td6.appendChild(tr2_td6_span4);
+                tr2.appendChild(tr2_td1);
+                tr2.appendChild(tr2_td1_1);
+                tr2.appendChild(tr2_td2);
+                tr2.appendChild(tr2_td2_1);
+                tr2.appendChild(tr2_td3);
+                tr2.appendChild(tr2_td4);
+                tr2.appendChild(tr2_td5);
+                tr2.appendChild(tr2_td6);
+                var label2 = document.createElement("label");
+                label2.id="label2"+i
+                var i_2 = document.createElement("i");
+                i_2.id="spn"+((8*i)+3);
+                i_2.classList.add("fa");
+                i_2.classList.add("fa-fw");
+                i_2.classList.add("fa-plus");
+                i_2.setAttribute("onclick","newBox(this.id);");
+                label2.innerHTML="1. Snacks";
+                var tr3 = document.createElement("tr");
+                tr3.id="table"+((8*i)+2);
+                var tr3_td1_1 = document.createElement("td");
+                tr3_td1_1.setAttribute("style","border:none;text-align:center;");
+                var tr3_td1 = document.createElement("td");
+                tr3_td1.setAttribute("style","border:none;width:200px");
+                tr3_td1.setAttribute("value","2");
+                tr3_td1.appendChild(label2);
+                tr3_td1_1.appendChild(i_2);
+                var input2 = document.createElement("INPUT");
+                // input2.setAttribute("type","text");
+                input2.setAttribute("id","inpt2"+i);
+                input2.setAttribute("type","text");
+                input2.setAttribute("disabled","true");
+                input2.setAttribute("oninput","dragFood(this.id);");
+                var spn2 = document.createElement("span");
+                spn2.id="inpt2"+i;
+                spn2.setAttribute("onclick","clearTextDefault(this.id);");
+                spn2.classList.add("fa");
+                spn2.classList.add("fa-fw");
+                spn2.classList.add("fa-trash");
+                // input2.classList.add("clearable");
+                var tr3_td2 = document.createElement("td");
+                tr3_td2.setAttribute("style","border:none;");
+                tr3_td2.setAttribute("value","2");
+                var tr3_td2_1 = document.createElement("td");
+                tr3_td2_1.setAttribute("style","border:none;");
+                tr3_td2.appendChild(input2);
+                tr3_td2_1.appendChild(spn2);
+                var tr3_td3= document.createElement("td");
+                tr3_td3.setAttribute("style","border:none;");
+                var tr3_td3_span1 = document.createElement("span");
+                tr3_td3_span1.setAttribute("style","margin-right:30px");
+                tr3_td3_span1.id="span1"+i;
+                tr3_td3_span1.classList.add("badge");
+                tr3_td3_span1.classList.add("badge-pill");
+                tr3_td3_span1.classList.add("badge-warning");
+                tr3_td3_span1.innerHTML="0,0";
+                tr3_td3.appendChild(tr3_td3_span1);
+                var tr3_td4= document.createElement("td");
+                tr3_td4.setAttribute("style","border:none;");
+                var tr3_td4_span2 = document.createElement("span");
+                tr3_td4_span2.setAttribute("style","margin-right:30px");
+                tr3_td4_span2.id="span2"+i;
+                tr3_td4_span2.classList.add("badge");
+                tr3_td4_span2.classList.add("badge-pill");
+                tr3_td4_span2.classList.add("badge-success");
+                tr3_td4_span2.innerHTML="0,0";
+                tr3_td4.appendChild(tr3_td4_span2);
+                var tr3_td5= document.createElement("td");
+                tr3_td5.setAttribute("style","border:none;");
+                var tr3_td5_span3 = document.createElement("span");
+                tr3_td5_span3.setAttribute("style","margin-right:30px");
+                tr3_td5_span3.id="span3"+i;
+                tr3_td5_span3.classList.add("badge");
+                tr3_td5_span3.classList.add("badge-pill");
+                tr3_td5_span3.classList.add("badge-danger");
+                tr3_td5_span3.innerHTML="0,0";
+                tr3_td5.appendChild(tr3_td5_span3);
+                var tr3_td6= document.createElement("td");
+                tr3_td6.setAttribute("style","border:none;");
+                var tr3_td6_span4= document.createElement("span");
+                tr3_td6_span4.setAttribute("style","margin-right:30px");
+                tr3_td6_span4.id="span4"+i;
+                tr3_td6_span4.classList.add("badge");
+                tr3_td6_span4.classList.add("badge-pill");
+                tr3_td6_span4.classList.add("badge-primary");
+                tr3_td6_span4.innerHTML="0,0";
+                tr3_td6.appendChild(tr3_td6_span4);
+                tr3.appendChild(tr3_td1);
+                tr3.appendChild(tr3_td1_1);
+                tr3.appendChild(tr3_td2);
+                tr3.appendChild(tr3_td2_1);
+                tr3.appendChild(tr3_td3);
+                tr3.appendChild(tr3_td4);
+                tr3.appendChild(tr3_td5);
+                tr3.appendChild(tr3_td6);
+                var label3 = document.createElement("label");
+                var i_3 = document.createElement("i");
+                i_3.id="spn"+((8*i)+4);
+                i_3.classList.add("fa");
+                i_3.classList.add("fa-fw");
+                i_3.classList.add("fa-plus");
+                i_3.setAttribute("onclick","newBox(this.id);");
+                label3.id="label3"+i
+                label3.innerHTML="Lunch";
+                var tr4 = document.createElement("tr");
+                tr4.id="table"+((8*i)+3);
+                var tr4_td1_1 = document.createElement("td");
+                tr4_td1_1.setAttribute("style","border:none;text-align:center;");
+                var tr4_td1 = document.createElement("td");
+                tr4_td1.setAttribute("style","border:none;width:200px");
+                tr4_td1.setAttribute("value","3");
+                tr4_td1.appendChild(label3);
+                tr4_td1_1.appendChild(i_3);
+                var input3 = document.createElement("INPUT");
+                input3.setAttribute("disabled","true");
+                input3.setAttribute("type","text");
+                var spn3 = document.createElement("span");
+                spn3.id="inpt3"+i;
+                spn3.setAttribute("onclick","clearTextDefault(this.id);");
+                spn3.classList.add("fa");
+                spn3.classList.add("fa-fw");
+                spn3.classList.add("fa-trash");
+                // input3.setAttribute("type","text");
+                input3.setAttribute("id","inpt3"+i);
+                input3.setAttribute("oninput","dragFood(this.id);");
+                // input3.classList.add("clearable");
+                var tr4_td2 = document.createElement("td");
+                tr4_td2.setAttribute("style","border:none;");
+                tr4_td2.setAttribute("value","3");
+                var tr4_td2_1 = document.createElement("td");
+                tr4_td2_1.setAttribute("style","border:none;");
+                tr4_td2.appendChild(input3);
+                tr4_td2_1.appendChild(spn3);
+                var tr4_td3= document.createElement("td");
+                tr4_td3.setAttribute("style","border:none;");
+                var tr4_td3_span1 = document.createElement("span");
+                tr4_td3_span1.setAttribute("style","margin-right:30px");
+                tr4_td3_span1.id="span1"+i;
+                tr4_td3_span1.classList.add("badge");
+                tr4_td3_span1.classList.add("badge-pill");
+                tr4_td3_span1.classList.add("badge-warning");
+                tr4_td3_span1.innerHTML="0,0";
+                tr4_td3.appendChild(tr4_td3_span1);
+                var tr4_td4= document.createElement("td");
+                tr4_td4.setAttribute("style","border:none;");
+                var tr4_td4_span2 = document.createElement("span");
+                tr4_td4_span2.setAttribute("style","margin-right:30px");
+                tr4_td4_span2.id="span2"+i;
+                tr4_td4_span2.classList.add("badge");
+                tr4_td4_span2.classList.add("badge-pill");
+                tr4_td4_span2.classList.add("badge-success");
+                tr4_td4_span2.innerHTML="0,0";
+                tr4_td4.appendChild(tr4_td4_span2);
+                var tr4_td5= document.createElement("td");
+                tr4_td5.setAttribute("style","border:none;");
+                var tr4_td5_span3 = document.createElement("span");
+                tr4_td5_span3.setAttribute("style","margin-right:30px");
+                tr4_td5_span3.id="span3"+i;
+                tr4_td5_span3.classList.add("badge");
+                tr4_td5_span3.classList.add("badge-pill");
+                tr4_td5_span3.classList.add("badge-danger");
+                tr4_td5_span3.innerHTML="0,0";
+                tr4_td5.appendChild(tr4_td5_span3);
+                var tr4_td6= document.createElement("td");
+                tr4_td6.setAttribute("style","border:none;");
+                var tr4_td6_span4= document.createElement("span");
+                tr4_td6_span4.setAttribute("style","margin-right:30px");
+                tr4_td6_span4.id="span4"+i;
+                tr4_td6_span4.classList.add("badge");
+                tr4_td6_span4.classList.add("badge-pill");
+                tr4_td6_span4.classList.add("badge-primary");
+                tr4_td6_span4.innerHTML="0,0";
+                tr4_td6.appendChild(tr4_td6_span4);
+                tr4.appendChild(tr4_td1);
+                tr4.appendChild(tr4_td1_1);
+                tr4.appendChild(tr4_td2);
+                tr4.appendChild(tr4_td2_1);
+                tr4.appendChild(tr4_td3);
+                tr4.appendChild(tr4_td4);
+                tr4.appendChild(tr4_td5);
+                tr4.appendChild(tr4_td6);
+                var label4 = document.createElement("label");
+                var i_4 = document.createElement("i");
+                i_4.id="spn"+((8*i)+5);
+                i_4.classList.add("fa");
+                i_4.classList.add("fa-fw");
+                i_4.classList.add("fa-plus");
+                i_4.setAttribute("onclick","newBox(this.id);");
+                label4.id="label4"+i
+                label4.innerHTML="2. Snacks";
+                var tr5 = document.createElement("tr");
+                tr5.id="table"+((8*i)+4);
+                var tr5_td1_1 = document.createElement("td");
+                tr5_td1_1.setAttribute("style","border:none;text-align:center;");
+                var tr5_td1 = document.createElement("td");
+                tr5_td1.setAttribute("style","border:none;width:200px");
+                tr5_td1.setAttribute("value","4");
+                tr5_td1.appendChild(label4);
+                tr5_td1_1.appendChild(i_4);
+                var input4 = document.createElement("INPUT");
+                input4.setAttribute("disabled","true");
+                input4.setAttribute("type","text");
+                var spn4 = document.createElement("span");
+                spn4.id="inpt4"+i;
+                spn4.setAttribute("onclick","clearTextDefault(this.id);");
+                spn4.classList.add("fa");
+                spn4.classList.add("fa-fw");
+                spn4.classList.add("fa-trash");
+                // input4.setAttribute("type","text");
+                input4.setAttribute("id","inpt4"+i);
+                input4.setAttribute("oninput","dragFood(this.id);");
+                // input4.classList.add("clearable");
+                var tr5_td2 = document.createElement("td");
+                tr5_td2.setAttribute("style","border:none;");
+                var tr5_td2_1 = document.createElement("td");
+                tr5_td2_1.setAttribute("style","border:none;");
+                tr5_td2.appendChild(input4);
+                tr5_td2_1.appendChild(spn4);
+                var tr5_td3= document.createElement("td");
+                tr5_td3.setAttribute("style","border:none;");
+                var tr5_td3_span1 = document.createElement("span");
+                tr5_td3_span1.setAttribute("style","margin-right:30px");
+                tr5_td3_span1.id="span1"+i;
+                tr5_td3_span1.classList.add("badge");
+                tr5_td3_span1.classList.add("badge-pill");
+                tr5_td3_span1.classList.add("badge-warning");
+                tr5_td3_span1.innerHTML="0,0";
+                tr5_td3.appendChild(tr5_td3_span1);
+                var tr5_td4= document.createElement("td");
+                tr5_td4.setAttribute("style","border:none;");
+                var tr5_td4_span2 = document.createElement("span");
+                tr5_td4_span2.setAttribute("style","margin-right:30px");
+                tr5_td4_span2.id="span2"+i;
+                tr5_td4_span2.classList.add("badge");
+                tr5_td4_span2.classList.add("badge-pill");
+                tr5_td4_span2.classList.add("badge-success");
+                tr5_td4_span2.innerHTML="0,0";
+                tr5_td4.appendChild(tr5_td4_span2);
+                var tr5_td5= document.createElement("td");
+                tr5_td5.setAttribute("style","border:none;");
+                var tr5_td5_span3 = document.createElement("span");
+                tr5_td5_span3.setAttribute("style","margin-right:30px");
+                tr5_td5_span3.id="span3"+i;
+                tr5_td5_span3.classList.add("badge");
+                tr5_td5_span3.classList.add("badge-pill");
+                tr5_td5_span3.classList.add("badge-danger");
+                tr5_td5_span3.innerHTML="0,0";
+                tr5_td5.appendChild(tr5_td5_span3);
+                var tr5_td6= document.createElement("td");
+                tr5_td6.setAttribute("style","border:none;");
+                var tr5_td6_span4= document.createElement("span");
+                tr5_td6_span4.setAttribute("style","margin-right:30px");
+                tr5_td6_span4.id="span4"+i;
+                tr5_td6_span4.classList.add("badge");
+                tr5_td6_span4.classList.add("badge-pill");
+                tr5_td6_span4.classList.add("badge-primary");
+                tr5_td6_span4.innerHTML="0,0";
+                tr5_td6.appendChild(tr5_td6_span4);
+                tr5.appendChild(tr5_td1);
+                tr5.appendChild(tr5_td1_1);
+                tr5.appendChild(tr5_td2);
+                tr5.appendChild(tr5_td2_1);
+                tr5.appendChild(tr5_td3);
+                tr5.appendChild(tr5_td4);
+                tr5.appendChild(tr5_td5);
+                tr5.appendChild(tr5_td6);
+                var label5 = document.createElement("label");
+                var i_5 = document.createElement("i");
+                i_5.id="spn"+((8*i)+6);
+                i_5.classList.add("fa");
+                i_5.classList.add("fa-fw");
+                i_5.classList.add("fa-plus");
+                i_5.setAttribute("onclick","newBox(this.id);");
+                label5.id="label5"+i
+                label5.innerHTML="Dinner";
+                var tr6 = document.createElement("tr");
+                tr6.id="table"+((8*i)+5);
+                var tr6_td1_1 = document.createElement("td");
+                tr6_td1_1.setAttribute("style","border:none;text-align:center;");
+                var tr6_td1 = document.createElement("td");
+                tr6_td1.setAttribute("style","border:none;width:200px");
+                tr6_td1.appendChild(label5);
+                tr6_td1_1.appendChild(i_5);
+                var input5 = document.createElement("INPUT");
+                input5.setAttribute("disabled","true");
+                var spn5 = document.createElement("span");
+                spn5.id="inpt5"+i;
+                spn5.setAttribute("onclick","clearTextDefault(this.id);");
+                spn5.classList.add("fa");
+                spn5.classList.add("fa-fw");
+                spn5.classList.add("fa-trash");
+                // input5.setAttribute("type","text");
+                input5.setAttribute("id","inpt5"+i);
+                input5.setAttribute("type","text");
+                input5.setAttribute("oninput","dragFood(this.id);");
+                // input5.classList.add("clearable");
+                var tr6_td2 = document.createElement("td");
+                tr6_td2.setAttribute("style","border:none;");
+                var tr6_td2_1 = document.createElement("td");
+                tr6_td2_1.setAttribute("style","border:none;");
+                tr6_td2.appendChild(input5);
+                tr6_td2_1.appendChild(spn5);
+                var tr6_td3= document.createElement("td");
+                tr6_td3.setAttribute("style","border:none;");
+                var tr6_td3_span1 = document.createElement("span");
+                tr6_td3_span1.setAttribute("style","margin-right:30px");
+                tr6_td3_span1.id="span1"+i;
+                tr6_td3_span1.classList.add("badge");
+                tr6_td3_span1.classList.add("badge-pill");
+                tr6_td3_span1.classList.add("badge-warning");
+                tr6_td3_span1.innerHTML="0,0";
+                tr6_td3.appendChild(tr6_td3_span1);
+                var tr6_td4= document.createElement("td");
+                tr6_td4.setAttribute("style","border:none;");
+                var tr6_td4_span2 = document.createElement("span");
+                tr6_td4_span2.setAttribute("style","margin-right:30px");
+                tr6_td4_span2.id="span2"+i;
+                tr6_td4_span2.classList.add("badge");
+                tr6_td4_span2.classList.add("badge-pill");
+                tr6_td4_span2.classList.add("badge-success");
+                tr6_td4_span2.innerHTML="0,0";
+                tr6_td4.appendChild(tr6_td4_span2);
+                var tr6_td5= document.createElement("td");
+                tr6_td5.setAttribute("style","border:none;");
+                var tr6_td5_span3 = document.createElement("span");
+                tr6_td5_span3.setAttribute("style","margin-right:30px");
+                tr6_td5_span3.id="span3"+i;
+                tr6_td5_span3.classList.add("badge");
+                tr6_td5_span3.classList.add("badge-pill");
+                tr6_td5_span3.classList.add("badge-danger");
+                tr6_td5_span3.innerHTML="0,0";
+                tr6_td5.appendChild(tr6_td5_span3);
+                var tr6_td6= document.createElement("td");
+                tr6_td6.setAttribute("style","border:none;");
+                var tr6_td6_span4= document.createElement("span");
+                tr6_td6_span4.setAttribute("style","margin-right:30px");
+                tr6_td6_span4.id="span4"+i;
+                tr6_td6_span4.classList.add("badge");
+                tr6_td6_span4.classList.add("badge-pill");
+                tr6_td6_span4.classList.add("badge-primary");
+                tr6_td6_span4.innerHTML="0,0";
+                tr6_td6.appendChild(tr6_td6_span4);
+                tr6.appendChild(tr6_td1);
+                tr6.appendChild(tr6_td1_1);
+                tr6.appendChild(tr6_td2);
+                tr6.appendChild(tr6_td2_1);
+                tr6.appendChild(tr6_td3);
+                tr6.appendChild(tr6_td4);
+                tr6.appendChild(tr6_td5);
+                tr6.appendChild(tr6_td6);
+                var label6 = document.createElement("label");
+                var i_6 = document.createElement("i");
+                i_6.id="spn"+((8*i)+7);
+                i_6.classList.add("fa");
+                i_6.classList.add("fa-fw");
+                i_6.classList.add("fa-plus");
+                i_6.setAttribute("onclick","newBox(this.id);");
+                label6.id="label6"+i
+                label6.innerHTML="3. Snacks";
+                var tr7 = document.createElement("tr");
+                tr7.id="table"+((8*i)+6);
+                var tr7_td1_1 = document.createElement("td");
+                tr7_td1_1.setAttribute("style","border:none;text-align:center;");
+                var tr7_td1 = document.createElement("td");
+                tr7_td1.setAttribute("style","border:none;width:200px");
+                tr7_td1.appendChild(label6);
+                tr7_td1_1.appendChild(i_6);
+                var input6 = document.createElement("INPUT");
+                input6.setAttribute("disabled","true");
+                input6.setAttribute("type","text");
+                var spn6 = document.createElement("span");
+                spn6.id="inpt6"+i;
+                spn6.setAttribute("onclick","clearTextDefault(this.id);");
+                spn6.classList.add("fa");
+                spn6.classList.add("fa-fw");
+                spn6.classList.add("fa-trash");
+                // input6.setAttribute("type","text");
+                input6.setAttribute("id","inpt6"+i);
+                input6.setAttribute("oninput","dragFood(this.id);");
+                // input6.classList.add("clearable");
+                var tr7_td2 = document.createElement("td");
+                tr7_td2.setAttribute("style","border:none;");
+                var tr7_td2_1 = document.createElement("td");
+                tr7_td2_1.setAttribute("style","border:none;");
+                tr7_td2.appendChild(input6);
+                tr7_td2_1.appendChild(spn6);
+                var tr7_td3= document.createElement("td");
+                tr7_td3.setAttribute("style","border:none;");
+                var tr7_td3_span1 = document.createElement("span");
+                tr7_td3_span1.setAttribute("style","margin-right:30px");
+                tr7_td3_span1.id="span1"+i;
+                tr7_td3_span1.classList.add("badge");
+                tr7_td3_span1.classList.add("badge-pill");
+                tr7_td3_span1.classList.add("badge-warning");
+                tr7_td3_span1.innerHTML="0,0";
+                tr7_td3.appendChild(tr7_td3_span1);
+                var tr7_td4= document.createElement("td");
+                tr7_td4.setAttribute("style","border:none;");
+                var tr7_td4_span2 = document.createElement("span");
+                tr7_td4_span2.setAttribute("style","margin-right:30px");
+                tr7_td4_span2.id="span2"+i;
+                tr7_td4_span2.classList.add("badge");
+                tr7_td4_span2.classList.add("badge-pill");
+                tr7_td4_span2.classList.add("badge-success");
+                tr7_td4_span2.innerHTML="0,0";
+                tr7_td4.appendChild(tr7_td4_span2);
+                var tr7_td5= document.createElement("td");
+                tr7_td5.setAttribute("style","border:none;");
+                var tr7_td5_span3 = document.createElement("span");
+                tr7_td5_span3.setAttribute("style","margin-right:30px");
+                tr7_td5_span3.id="span3"+i;
+                tr7_td5_span3.classList.add("badge");
+                tr7_td5_span3.classList.add("badge-pill");
+                tr7_td5_span3.classList.add("badge-danger");
+                tr7_td5_span3.innerHTML="0,0";
+                tr7_td5.appendChild(tr7_td5_span3);
+                var tr7_td6= document.createElement("td");
+                tr7_td6.setAttribute("style","border:none;");
+                var tr7_td6_span4= document.createElement("span");
+                tr7_td6_span4.setAttribute("style","margin-right:30px");
+                tr7_td6_span4.id="span4"+i;
+                tr7_td6_span4.classList.add("badge");
+                tr7_td6_span4.classList.add("badge-pill");
+                tr7_td6_span4.classList.add("badge-primary");
+                tr7_td6_span4.innerHTML="0,0";
+                tr7_td6.appendChild(tr7_td6_span4);
+                tr7.appendChild(tr7_td1);
+                tr7.appendChild(tr7_td1_1);
+                tr7.appendChild(tr7_td2);
+                tr7.appendChild(tr7_td2_1);
+                tr7.appendChild(tr7_td3);
+                tr7.appendChild(tr7_td4);
+                tr7.appendChild(tr7_td5);
+                tr7.appendChild(tr7_td6);
+                var label7 = document.createElement("label");
+                var i_7 = document.createElement("i");
+                i_7.id="spn"+((8*i)+8);
+                i_7.classList.add("fa");
+                i_7.classList.add("fa-fw");
+                i_7.classList.add("fa-plus");
+                i_7.setAttribute("onclick","newBox(this.id);");
+                label7.id="label7"+i
+                label7.innerHTML="Alternative";
+                var tr8 = document.createElement("tr");
+                tr8.id="table"+((8*i)+7);
+                var tr8_td1_1 = document.createElement("td");
+                tr8_td1_1.setAttribute("style","border:none;text-align:center;");
+                var tr8_td1 = document.createElement("td");
+                tr8_td1.setAttribute("style","border:none;width:200px");
+                tr8_td1.appendChild(label7);
+                tr8_td1_1.appendChild(i_7);
+                var input7 = document.createElement("INPUT");
+                input7.setAttribute("disabled","true");
+                input7.setAttribute("type","text");
+                var spn7 = document.createElement("span");
+                spn7.id="inpt7"+i;
+                spn7.setAttribute("onclick","clearTextDefault(this.id);");
+                spn7.classList.add("fa");
+                spn7.classList.add("fa-fw");
+                spn7.classList.add("fa-trash");
+                // input7.setAttribute("type","text");
+                input7.setAttribute("id","inpt7"+i);
+                input7.setAttribute("oninput","dragFood(this.id);");
+                // input7.classList.add("clearable");
+                var tr8_td2 = document.createElement("td");
+                tr8_td2.setAttribute("style","border:none;");
+                var tr8_td2_1 = document.createElement("td");
+                tr8_td2_1.setAttribute("style","border:none;");
+                tr8_td2.appendChild(input7);
+                tr8_td2_1.appendChild(spn7);
+                var tr8_td3= document.createElement("td");
+                tr8_td3.setAttribute("style","border:none;");
+                var tr8_td3_span1 = document.createElement("span");
+                tr8_td3_span1.setAttribute("style","margin-right:30px");
+                tr8_td3_span1.id="span1"+i;
+                tr8_td3_span1.classList.add("badge");
+                tr8_td3_span1.classList.add("badge-pill");
+                tr8_td3_span1.classList.add("badge-warning");
+                tr8_td3_span1.innerHTML="0,0";
+                tr8_td3.appendChild(tr8_td3_span1);
+                var tr8_td4= document.createElement("td");
+                tr8_td4.setAttribute("style","border:none;");
+                var tr8_td4_span2 = document.createElement("span");
+                tr8_td4_span2.setAttribute("style","margin-right:30px");
+                tr8_td4_span2.id="span2"+i;
+                tr8_td4_span2.classList.add("badge");
+                tr8_td4_span2.classList.add("badge-pill");
+                tr8_td4_span2.classList.add("badge-success");
+                tr8_td4_span2.innerHTML="0,0";
+                tr8_td4.appendChild(tr8_td4_span2);
+                var tr8_td5= document.createElement("td");
+                tr8_td5.setAttribute("style","border:none;");
+                var tr8_td5_span3 = document.createElement("span");
+                tr8_td5_span3.setAttribute("style","margin-right:30px");
+                tr8_td5_span3.id="span3"+i;
+                tr8_td5_span3.classList.add("badge");
+                tr8_td5_span3.classList.add("badge-pill");
+                tr8_td5_span3.classList.add("badge-danger");
+                tr8_td5_span3.innerHTML="0,0";
+                tr8_td5.appendChild(tr8_td5_span3);
+                var tr8_td6= document.createElement("td");
+                tr8_td6.setAttribute("style","border:none;");
+                var tr8_td6_span4= document.createElement("span");
+                tr8_td6_span4.setAttribute("style","margin-right:30px");
+                tr8_td6_span4.id="span4"+i;
+                tr8_td6_span4.classList.add("badge");
+                tr8_td6_span4.classList.add("badge-pill");
+                tr8_td6_span4.classList.add("badge-primary");
+                tr8_td6_span4.innerHTML="0,0";
+                tr8_td6.appendChild(tr8_td6_span4);
+                tr8.appendChild(tr8_td1);
+                tr8.appendChild(tr8_td1_1);
+                tr8.appendChild(tr8_td2);
+                tr8.appendChild(tr8_td2_1);
+                tr8.appendChild(tr8_td3);
+                tr8.appendChild(tr8_td4);
+                tr8.appendChild(tr8_td5);
+                tr8.appendChild(tr8_td6);
+                var tr9 =document.createElement("tr");
+                tr9.id="table"+((8*i)+8);
+                var tr8_td1_1 = document.createElement("td");
+                tr8_td1_1.setAttribute("style","border:none;text-align:center;");
+                var tr9_td1 = document.createElement("td");
+                tr9_td1.setAttribute("style","border:none;width:200px");
+                tr9_td1.innerHTML="";
+                var tr9_td2 = document.createElement("td");
+                tr9_td2.setAttribute("style","height:70px;border:none;text-align:center");
+                var b = document.createElement("B");
+                b.innerHTML="  TOTAL";
+                tr9_td2.appendChild(b);
+                var tr9_td3 = document.createElement("td");
+                tr9_td3.setAttribute("style","border:none;");
+                var tr9_td2_1 = document.createElement("td");
+                tr9_td2_1.setAttribute("style","border:none;");
+                var tr9_td3_span1 = document.createElement("span");
+                tr9_td3_span1.setAttribute("style","margin-right:30px");
+                tr9_td3_span1.classList.add("badge");
+                tr9_td3_span1.classList.add("badge-pill");
+                tr9_td3_span1.classList.add("badge-info");
+                tr9_td3_span1.id="span1"+i;
+                tr9_td3_span1.innerHTML="0,0";
+                tr9_td3.appendChild(tr9_td3_span1);
+                var tr9_td4 = document.createElement("td");
+                tr9_td4.setAttribute("style","border:none;");
+                var tr9_td4_span1 = document.createElement("span");
+                tr9_td4_span1.setAttribute("style","margin-right:30px");
+                tr9_td4_span1.classList.add("badge");
+                tr9_td4_span1.classList.add("badge-pill");
+                tr9_td4_span1.classList.add("badge-info");
+                tr9_td4_span1.id="span2"+i;
+                tr9_td4_span1.innerHTML="0,0";
+                tr9_td4.appendChild(tr9_td4_span1);
+                var tr9_td5 = document.createElement("td");
+                tr9_td5.setAttribute("style","border:none;");
+                var tr9_td5_span1 = document.createElement("span");
+                tr9_td5_span1.setAttribute("style","margin-right:30px");
+                tr9_td5_span1.classList.add("badge");
+                tr9_td5_span1.classList.add("badge-pill");
+                tr9_td5_span1.classList.add("badge-info");
+                tr9_td5_span1.id="span3"+i;
+                tr9_td5_span1.innerHTML="0,0";
+                tr9_td5.appendChild(tr9_td5_span1);
+                var tr9_td6 = document.createElement("td");
+                tr9_td6.setAttribute("style","border:none;");
+                var tr9_td6_span1 = document.createElement("span");
+                tr9_td6_span1.setAttribute("style","margin-right:30px");
+                tr9_td6_span1.classList.add("badge");
+                tr9_td6_span1.classList.add("badge-pill");
+                tr9_td6_span1.classList.add("badge-info");
+                tr9_td6_span1.id="span4"+i;
+                tr9_td6_span1.innerHTML="0,0";
+                tr9_td6.appendChild(tr9_td6_span1);
+                tr9.appendChild(tr9_td1);
+                tr9.appendChild(tr8_td1_1);
+                tr9.appendChild(tr9_td2);
+                tr9.appendChild(tr9_td2_1);
+                tr9.appendChild(tr9_td3);
+                tr9.appendChild(tr9_td4);
+                tr9.appendChild(tr9_td5);
+                tr9.appendChild(tr9_td6);
+                var br = document.createElement("br");
+                tableGun.appendChild(tr1);
+                tableGun.appendChild(tr2);
+                tableGun.appendChild(tr3);
+                tableGun.appendChild(tr4);
+                tableGun.appendChild(tr5);
+                tableGun.appendChild(tr6);
+                tableGun.appendChild(tr7);
+                tableGun.appendChild(tr8);
+                tableGun.appendChild(tr9);
+                form.appendChild(tableGun);
+                form.appendChild(br);
+
+
+
+              }
+              tableProGun.appendChild(form);
+
+              swal("You can prepare Nutrition plan !", "", "success");
+              // danışan beslenme programı paneline kayıt yapıyoruz...
+              // kaç tane label olduğunu bulduk günlükteki gün sayısını belirlemek için burda x 8in katları oluyor hep oyüzden 8 e bölmeyi düşünmüştüm. amelelik...
+              $("#calendar").fullCalendar("unselect");
+            }
+
+            else if(titleE==""){
+              var title2=prompt('İsim giriniz');
+              if(title2==""){
+                swal("Failed", "Choose Again", "error");
+              }else{
+                swal("Succesfully", "You can prepare Nutrition plan !", "success");
+              }
+            }
+            else if(titleE==null){
+              swal("Failed", "Tekrar Seçim Yapınız", "error");
+            }
+            scrollingElement = (document.scrollingElement || document.body)
+            $(scrollingElement).animate({
+               scrollTop: document.body.scrollHeight
+            }, 500);
+          },
+          droppable: true, // this allows things to be dropped onto the calendar !!!
+
+
+          // selectOverlap: false,
+          drop: function(date, allDay) { // this function is called when something is dropped
+
+              // retrieve the dropped element's stored Event Object
+            var originalEventObject = $(this).data('eventObject');
+
+            // we need to copy it, so that multiple events don't have a reference to the same object
+            var copiedEventObject = $.extend({}, originalEventObject);
+
+              // assign it the date that was reported
+            copiedEventObject.start = date;
+            copiedEventObject.allDay = allDay;
+
+            // render the event on the calendar
+            // the last `true` argument determines if the event "sticks" (http://arshaw.com/fullcalendar/docs/event_rendering/renderEvent/)
+            $('#calendar').fullCalendar('renderEvent', copiedEventObject, true);
+
+            // is the "remove after drop" checkbox checked?
+            if ($('#drop-remove').is(':checked')) {
+              // if so, remove the element from the "Draggable Events" list
+              $(this).remove();
+            }
+
+          },
+
+
+        });
+
+      });
+
+    </script>
+    <script type="text/javascript">
+
+
+      var first=true;
+      function checkGenel(){
+        if(document.getElementById("checkbox2").checked==true){     //genel kutusuna tıklandığında yapılacak işlemler
+          if(first==true){
+            $("#accordionN").hide();
+            $("#newW").empty();
+            // document.getElementById("formGun").innerHTML="";
+            var tableProGen = document.getElementById("newW");
+            var formGen = document.createElement("form");
+            var kalın = document.createElement("b");
+            var labelGen = document.createElement("label");
+            labelGen.innerHTML="GENERAL PROGRAM";
+            labelGen.setAttribute("style","color:#ffa500;font-weight:bold");
+            var br11= document.createElement("br");
+            var tableGen = document.createElement("table");
+            tableGen.id="table";
+            var tr = document.createElement("tr");
+            var th1 = document.createElement("th");
+            th1.setAttribute("style","color:#2d2e82;font-weight:bold;text-align:center;");
+            th1.innerHTML="Meals";
+            var th1_1 = document.createElement("th");
+            th1_1.setAttribute("style","color:#2d2e82;font-weight:bold;text-align:center;");
+            th1_1.innerHTML="";
+            // tr1.appendChild(th1_1);
+            var th2 = document.createElement("th");
+            th2.setAttribute("style","color:#2d2e82;font-weight:bold;text-align:center;");
+            th2.innerHTML="Nutrients";
+            var th2_1 = document.createElement("th");
+            th2_1.setAttribute("style","color:#2d2e82;font-weight:bold;text-align:center;");
+            th2_1.innerHTML="";
+            var th3 = document.createElement("th");
+            th3.setAttribute("style","color:#2d2e82;font-weight:bold;text-align:center;");
+            th3.innerHTML="Protein";
+            var th4 = document.createElement("th");
+            th4.setAttribute("style","color:#2d2e82;font-weight:bold;text-align:center;");
+            th4.innerHTML="Fat";
+            var th5 = document.createElement("th");
+            th5.setAttribute("style","color:#2d2e82;font-weight:bold;text-align:center;");
+            th5.innerHTML="Carbohydrate";
+            var th6 = document.createElement("th");
+            th6.setAttribute("style","color:#2d2e82;font-weight:bold;text-align:center;");
+            th6.innerHTML="Calory";
+            var label11 = document.createElement("label");
+            var i_11 = document.createElement("i");
+            i_11.id="spn11";
+            i_11.classList.add("fa");
+            i_11.classList.add("fa-fw");
+            i_11.classList.add("fa-plus");
+            i_11.setAttribute("onclick","newBox(this.id);");
+            label11.id="label11";
+            label11.innerHTML="Breakfast";
+            var tr2 = document.createElement("tr");
+            tr2.id="table1000";
+            var tr2_td1= document.createElement("td");
+            tr2_td1.setAttribute("style","border:none;width:200px");
+            var tr2_td1_1 = document.createElement("td");
+            tr2_td1_1.setAttribute("style","border:none;");
+            tr2_td1.appendChild(label11);
+            tr2_td1_1.appendChild(i_11);
+            var input11 = document.createElement("INPUT");
+            input11.setAttribute("disabled","true");
+            var spn11 = document.createElement("span");
+            spn11.id="inpt11";
+            spn11.setAttribute("onclick","clearTextDefault(this.id);");
+            spn11.classList.add("fa");
+            spn11.classList.add("fa-fw");
+            spn11.classList.add("fa-trash");
+            input11.setAttribute("type","text");
+            input11.setAttribute("id","inpt11");
+            input11.setAttribute("oninput","dragFood(this.id);");
+            // input11.classList.add("clearable");
+            var tr2_td2=document.createElement("td");
+            tr2_td2.setAttribute("style","border:none;");
+            var tr2_td2_1 = document.createElement("td");
+            tr2_td2_1.setAttribute("style","border:none;");
+            tr2_td2.appendChild(input11);
+            tr2_td2_1.appendChild(spn11);
+            var tr2_td3= document.createElement("td");
+            tr2_td3.setAttribute("style","width:100px;border:none");
+            var tr2_span1 = document.createElement("span");
+            tr2_span1.setAttribute("style","margin-right:30px");
+            tr2_span1.id="span1";
+            tr2_span1.classList.add("badge");
+            tr2_span1.classList.add("badge-pill");
+            tr2_span1.classList.add("badge-warning");
+            tr2_span1.innerHTML="0,0";
+            tr2_td3.appendChild(tr2_span1);
+            var tr2_td4= document.createElement("td");
+            tr2_td4.setAttribute("style","width:100px;border:none");
+            var tr2_span2 = document.createElement("span");
+            tr2_span2.setAttribute("style","margin-right:30px");
+            tr2_span2.id="span2";
+            tr2_span2.classList.add("badge");
+            tr2_span2.classList.add("badge-pill");
+            tr2_span2.classList.add("badge-success");
+            tr2_span2.innerHTML="0,0";
+            tr2_td4.appendChild(tr2_span2);
+            var tr2_td5= document.createElement("td");
+            tr2_td5.setAttribute("style","width:120px;border:none");
+            var tr2_span3 = document.createElement("span");
+            tr2_span3.setAttribute("style","margin-right:30px");
+            tr2_span3.id="span3";
+            tr2_span3.classList.add("badge");
+            tr2_span3.classList.add("badge-pill");
+            tr2_span3.classList.add("badge-danger");
+            tr2_span3.innerHTML="0,0";
+            tr2_td5.appendChild(tr2_span3);
+            var tr2_td6= document.createElement("td");
+            tr2_td6.setAttribute("style","width:100px;border:none");
+            var tr2_span4= document.createElement("span");
+            tr2_span4.setAttribute("style","margin-right:30px");
+            tr2_span4.id="span4";
+            tr2_span4.classList.add("badge");
+            tr2_span4.classList.add("badge-pill");
+            tr2_span4.classList.add("badge-primary");
+            tr2_span4.innerHTML="0,0";
+            tr2_td6.appendChild(tr2_span4);
+            var br12= document.createElement("br");
+            var label12 = document.createElement("label");
+            var i_12 = document.createElement("i");
+            i_12.id="spn12";
+            i_12.classList.add("fa");
+            i_12.classList.add("fa-fw");
+            i_12.classList.add("fa-plus");
+            i_12.setAttribute("onclick","newBox(this.id);");
+            label12.id="label12";
+            label12.innerHTML="1. Snacks";
+            var tr3 = document.createElement("tr");
+            tr3.id="table1001";
+            var tr3_td1 = document.createElement("td");
+            tr3_td1.setAttribute("style","border:none;width:200px");
+            var tr3_td1_1 = document.createElement("td");
+            tr3_td1_1.setAttribute("style","border:none;");
+            tr3_td1.appendChild(label12);
+            tr3_td1_1.appendChild(i_12);
+            var input12 = document.createElement("INPUT");
+            var spn12 = document.createElement("span");
+            spn12.id="inpt12";
+            spn12.setAttribute("onclick","clearTextDefault(this.id);");
+            spn12.classList.add("fa");
+            spn12.classList.add("fa-fw");
+            spn12.classList.add("fa-trash");
+            input12.setAttribute("type","text");
+            input12.setAttribute("id","inpt12");
+            input12.setAttribute("disabled","true");
+            input12.setAttribute("oninput","dragFood(this.id);");
+            // input12.classList.add("clearable");
+            var tr3_td2=document.createElement("td");
+            tr3_td2.setAttribute("style","border:none;");
+            var tr3_td2_1 = document.createElement("td");
+            tr3_td2_1.setAttribute("style","border:none;");
+            tr3_td2.appendChild(input12);
+            tr3_td2_1.appendChild(spn12);
+            var tr3_td3= document.createElement("td");
+            tr3_td3.setAttribute("style","border:none;");
+            var tr3_span1 = document.createElement("span");
+            tr3_span1.setAttribute("style","margin-right:30px");
+            tr3_span1.id="span11";
+            tr3_span1.classList.add("badge");
+            tr3_span1.classList.add("badge-pill");
+            tr3_span1.classList.add("badge-warning");
+            tr3_span1.innerHTML="0,0";
+            tr3_td3.appendChild(tr3_span1);
+            var tr3_td4= document.createElement("td");
+            tr3_td4.setAttribute("style","border:none;");
+            var tr3_span2 = document.createElement("span");
+            tr3_span2.setAttribute("style","margin-right:30px");
+            tr3_span2.id="span12";
+            tr3_span2.classList.add("badge");
+            tr3_span2.classList.add("badge-pill");
+            tr3_span2.classList.add("badge-success");
+            tr3_span2.innerHTML="0,0";
+            tr3_td4.appendChild(tr3_span2);
+            var tr3_td5= document.createElement("td");
+            tr3_td5.setAttribute("style","border:none;");
+            var tr3_span3 = document.createElement("span");
+            tr3_span3.setAttribute("style","margin-right:30px");
+            tr3_span3.id="span13";
+            tr3_span3.classList.add("badge");
+            tr3_span3.classList.add("badge-pill");
+            tr3_span3.classList.add("badge-danger");
+            tr3_span3.innerHTML="0,0";
+            tr3_td5.appendChild(tr3_span3);
+            var tr3_td6= document.createElement("td");
+            tr3_td6.setAttribute("style","border:none;");
+            var tr3_span4 = document.createElement("span");
+            tr3_span4.setAttribute("style","margin-right:30px");
+            tr3_span4.id="span14";
+            tr3_span4.classList.add("badge");
+            tr3_span4.classList.add("badge-pill");
+            tr3_span4.classList.add("badge-primary");
+            tr3_span4.innerHTML="0,0";
+            tr3_td6.appendChild(tr3_span4);
+            var br13= document.createElement("br");
+            var label13 = document.createElement("label");
+            var i_13 = document.createElement("i");
+            i_13.id="spn13";
+            i_13.classList.add("fa");
+            i_13.classList.add("fa-fw");
+            i_13.classList.add("fa-plus");
+            i_13.setAttribute("onclick","newBox(this.id);");
+            label13.id="label13";
+            label13.innerHTML="Lunch";
+            var tr4 = document.createElement("tr");
+            tr4.id="table1002";
+            var tr4_td1 = document.createElement("td");
+            tr4_td1.setAttribute("style","border:none;width:200px");
+            var tr4_td1_1 = document.createElement("td");
+            tr4_td1_1.setAttribute("style","border:none;");
+            tr4_td1.appendChild(label13);
+            tr4_td1_1.appendChild(i_13);
+            var input13 = document.createElement("INPUT");
+            input13.setAttribute("disabled","true");
+            var spn13 = document.createElement("span");
+            spn13.id="inpt13";
+            spn13.setAttribute("onclick","clearTextDefault(this.id);");
+            spn13.classList.add("fa");
+            spn13.classList.add("fa-fw");
+            spn13.classList.add("fa-trash");
+            input13.setAttribute("type","text");
+            input13.setAttribute("id","inpt13");
+            input13.setAttribute("oninput","dragFood(this.id);");
+            // input13.classList.add("clearable");
+            var tr4_td2=document.createElement("td");
+            tr4_td2.setAttribute("style","border:none;");
+            var tr4_td2_1 = document.createElement("td");
+            tr4_td2_1.setAttribute("style","border:none;");
+            tr4_td2.appendChild(input13);
+            tr4_td2_1.appendChild(spn13);
+            var tr4_td3= document.createElement("td");
+            tr4_td3.setAttribute("style","border:none;");
+            var tr4_span1 = document.createElement("span");
+            tr4_span1.setAttribute("style","margin-right:30px");
+            tr4_span1.id="span21";
+            tr4_span1.classList.add("badge");
+            tr4_span1.classList.add("badge-pill");
+            tr4_span1.classList.add("badge-warning");
+            tr4_span1.innerHTML="0,0";
+            tr4_td3.appendChild(tr4_span1);
+            var tr4_td4= document.createElement("td");
+            tr4_td4.setAttribute("style","border:none;");
+            var tr4_span2 = document.createElement("span");
+            tr4_span2.setAttribute("style","margin-right:30px");
+            tr4_span2.id="span22";
+            tr4_span2.classList.add("badge");
+            tr4_span2.classList.add("badge-pill");
+            tr4_span2.classList.add("badge-success");
+            tr4_span2.innerHTML="0,0";
+            tr4_td4.appendChild(tr4_span2);
+            var tr4_td5= document.createElement("td");
+            tr4_td5.setAttribute("style","border:none;");
+            var tr4_span3 = document.createElement("span");
+            tr4_span3.setAttribute("style","margin-right:30px");
+            tr4_span3.id="span23";
+            tr4_span3.classList.add("badge");
+            tr4_span3.classList.add("badge-pill");
+            tr4_span3.classList.add("badge-danger");
+            tr4_span3.innerHTML="0,0";
+            tr4_td5.appendChild(tr4_span3);
+            var tr4_td6= document.createElement("td");
+            tr4_td6.setAttribute("style","border:none;");
+            var tr4_span4 = document.createElement("span");
+            tr4_span4.setAttribute("style","margin-right:30px");
+            tr4_span4.id="span24";
+            tr4_span4.classList.add("badge");
+            tr4_span4.classList.add("badge-pill");
+            tr4_span4.classList.add("badge-primary");
+            tr4_span4.innerHTML="0,0";
+            tr4_td6.appendChild(tr4_span4);
+            var br14= document.createElement("br");
+            var label14 = document.createElement("label");
+            var i_14 = document.createElement("i");
+            i_14.id="spn14";
+            i_14.classList.add("fa");
+            i_14.classList.add("fa-fw");
+            i_14.classList.add("fa-plus");
+            i_14.setAttribute("onclick","newBox(this.id);");
+            label14.id="label14";
+            label14.innerHTML="2. Snacks";
+            var tr5 = document.createElement("tr");
+            tr5.id="table1003";
+            var tr5_td1 = document.createElement("td");
+            tr5_td1.setAttribute("style","border:none;width:200px");
+            var tr5_td1_1 = document.createElement("td");
+            tr5_td1_1.setAttribute("style","border:none;");
+            tr5_td1.appendChild(label14);
+            tr5_td1_1.appendChild(i_14);
+            var input14 = document.createElement("INPUT");
+            input14.setAttribute("disabled","true");
+            var spn14 = document.createElement("span");
+            spn14.id="inpt14";
+            spn14.setAttribute("onclick","clearTextDefault(this.id);");
+            spn14.classList.add("fa");
+            spn14.classList.add("fa-fw");
+            spn14.classList.add("fa-trash");
+            input14.setAttribute("type","text");
+            input14.setAttribute("id","inpt14");
+            input14.setAttribute("oninput","dragFood(this.id);");
+            // input14.classList.add("clearable");
+            var tr5_td2 = document.createElement("td");
+            tr5_td2.setAttribute("style","border:none;");
+            var tr5_td2_1 = document.createElement("td");
+            tr5_td2_1.setAttribute("style","border:none;");
+            tr5_td2.appendChild(input14);
+            tr5_td2_1.appendChild(spn14);
+            var tr5_td3= document.createElement("td");
+            tr5_td3.setAttribute("style","border:none;");
+            var tr5_span1 = document.createElement("span");
+            tr5_span1.setAttribute("style","margin-right:30px");
+            tr5_span1.id="span31";
+            tr5_span1.classList.add("badge");
+            tr5_span1.classList.add("badge-pill");
+            tr5_span1.classList.add("badge-warning");
+            tr5_span1.innerHTML="0,0";
+            tr5_td3.appendChild(tr5_span1);
+            var tr5_td4= document.createElement("td");
+            tr5_td4.setAttribute("style","border:none;");
+            var tr5_span2 = document.createElement("span");
+            tr5_span2.setAttribute("style","margin-right:30px");
+            tr5_span2.id="span32";
+            tr5_span2.classList.add("badge");
+            tr5_span2.classList.add("badge-pill");
+            tr5_span2.classList.add("badge-success");
+            tr5_span2.innerHTML="0,0";
+            tr5_td4.appendChild(tr5_span2);
+            var tr5_td5= document.createElement("td");
+            tr5_td5.setAttribute("style","border:none;");
+            var tr5_span3 = document.createElement("span");
+            tr5_span3.setAttribute("style","margin-right:30px");
+            tr5_span3.id="span33";
+            tr5_span3.classList.add("badge");
+            tr5_span3.classList.add("badge-pill");
+            tr5_span3.classList.add("badge-danger");
+            tr5_span3.innerHTML="0,0";
+            tr5_td5.appendChild(tr5_span3);
+            var tr5_td6= document.createElement("td");
+            tr5_td6.setAttribute("style","border:none;");
+            var tr5_span4 = document.createElement("span");
+            tr5_span4.setAttribute("style","margin-right:30px");
+            tr5_span4.id="span34";
+            tr5_span4.classList.add("badge");
+            tr5_span4.classList.add("badge-pill");
+            tr5_span4.classList.add("badge-primary");
+            tr5_span4.innerHTML="0,0";
+            tr5_td6.appendChild(tr5_span4);
+            var br15= document.createElement("br");
+            var label15 = document.createElement("label");
+            var i_15 = document.createElement("i");
+            i_15.id="spn15";
+            i_15.classList.add("fa");
+            i_15.classList.add("fa-fw");
+            i_15.classList.add("fa-plus");
+            i_15.setAttribute("onclick","newBox(this.id);");
+            label15.id="label15";
+            label15.innerHTML="Dinner";
+            var tr6= document.createElement("tr");
+            tr6.id="table1004";
+            var tr6_td1=document.createElement("td");
+            tr6_td1.setAttribute("style","border:none;width:200px");
+            var tr6_td1_1 = document.createElement("td");
+            tr6_td1_1.setAttribute("style","border:none;");
+            tr6_td1.appendChild(label15);
+            tr6_td1_1.appendChild(i_15);
+            var input15 = document.createElement("INPUT");
+            input15.setAttribute("disabled","true");
+            var spn15 = document.createElement("span");
+            spn15.id="inpt15";
+            spn15.setAttribute("onclick","clearTextDefault(this.id);");
+            spn15.classList.add("fa");
+            spn15.classList.add("fa-fw");
+            spn15.classList.add("fa-trash");
+            input15.setAttribute("type","text");
+            input15.setAttribute("id","inpt15");
+            input15.setAttribute("oninput","dragFood(this.id);");
+            // input15.classList.add("clearable");
+            var tr6_td2= document.createElement("td");
+            tr6_td2.setAttribute("style","border:none;");
+            var tr6_td2_1 = document.createElement("td");
+            tr6_td2_1.setAttribute("style","border:none;");
+            tr6_td2.appendChild(input15);
+            tr6_td2_1.appendChild(spn15);
+            var tr6_td3= document.createElement("td");
+            tr6_td3.setAttribute("style","border:none;");
+            var tr6_span1 = document.createElement("span");
+            tr6_span1.setAttribute("style","margin-right:30px");
+            tr6_span1.id="span41";
+            tr6_span1.classList.add("badge");
+            tr6_span1.classList.add("badge-pill");
+            tr6_span1.classList.add("badge-warning");
+            tr6_span1.innerHTML="0,0";
+            tr6_td3.appendChild(tr6_span1);
+            var tr6_td4= document.createElement("td");
+            tr6_td4.setAttribute("style","border:none;");
+            var tr6_span2 = document.createElement("span");
+            tr6_span2.setAttribute("style","margin-right:30px");
+            tr6_span2.id="span42";
+            tr6_span2.classList.add("badge");
+            tr6_span2.classList.add("badge-pill");
+            tr6_span2.classList.add("badge-success");
+            tr6_span2.innerHTML="0,0";
+            tr6_td4.appendChild(tr6_span2);
+            var tr6_td5= document.createElement("td");
+            tr6_td5.setAttribute("style","border:none;");
+            var tr6_span3 = document.createElement("span");
+            tr6_span3.setAttribute("style","margin-right:30px");
+            tr6_span3.id="span43";
+            tr6_span3.classList.add("badge");
+            tr6_span3.classList.add("badge-pill");
+            tr6_span3.classList.add("badge-danger");
+            tr6_span3.innerHTML="0,0";
+            tr6_td5.appendChild(tr6_span3);
+            var tr6_td6= document.createElement("td");
+            tr6_td6.setAttribute("style","border:none;");
+            var tr6_span4 = document.createElement("span");
+            tr6_span4.setAttribute("style","margin-right:30px");
+            tr6_span4.id="span44";
+            tr6_span4.classList.add("badge");
+            tr6_span4.classList.add("badge-pill");
+            tr6_span4.classList.add("badge-primary");
+            tr6_span4.innerHTML="0,0";
+            tr6_td6.appendChild(tr6_span4);
+            var br16= document.createElement("br");
+            var label16 = document.createElement("label");
+            var i_16 = document.createElement("i");
+            i_16.id="spn16";
+            i_16.classList.add("fa");
+            i_16.classList.add("fa-fw");
+            i_16.classList.add("fa-plus");
+            i_16.setAttribute("onclick","newBox(this.id);");
+            label16.id="label16";
+            label16.innerHTML="3. Snacks";
+            var tr7 = document.createElement("tr");
+            tr7.id="table1005";
+            var tr7_td1= document.createElement("td");
+            tr7_td1.setAttribute("style","border:none;width:200px");
+            var tr7_td1_1 = document.createElement("td");
+            tr7_td1_1.setAttribute("style","border:none;");
+            tr7_td1.appendChild(label16);
+            tr7_td1_1.appendChild(i_16);
+            var input16 = document.createElement("INPUT");
+            input16.setAttribute("disabled","true");
+            var spn16 = document.createElement("span");
+            spn16.id="inpt16";
+            spn16.setAttribute("onclick","clearTextDefault(this.id);");
+            spn16.classList.add("fa");
+            spn16.classList.add("fa-fw");
+            spn16.classList.add("fa-trash");
+            input16.setAttribute("type","text");
+            input16.setAttribute("id","inpt16");
+            input16.setAttribute("oninput","dragFood(this.id);");
+            // input16.classList.add("clearable");
+            var tr7_td2= document.createElement("td");
+            tr7_td2.setAttribute("style","border:none;");
+            var tr7_td2_1 = document.createElement("td");
+            tr7_td2_1.setAttribute("style","border:none;");
+            tr7_td2.appendChild(input16);
+            tr7_td2_1.appendChild(spn16);
+            var tr7_td3= document.createElement("td");
+            tr7_td3.setAttribute("style","border:none;");
+            var tr7_span1 = document.createElement("span");
+            tr7_span1.setAttribute("style","margin-right:30px");
+            tr7_span1.id="span51";
+            tr7_span1.classList.add("badge");
+            tr7_span1.classList.add("badge-pill");
+            tr7_span1.classList.add("badge-warning");
+            tr7_span1.innerHTML="0,0";
+            tr7_td3.appendChild(tr7_span1);
+            var tr7_td4= document.createElement("td");
+            tr7_td4.setAttribute("style","border:none;");
+            var tr7_span2 = document.createElement("span");
+            tr7_span2.setAttribute("style","margin-right:30px");
+            tr7_span2.id="span52";
+            tr7_span2.classList.add("badge");
+            tr7_span2.classList.add("badge-pill");
+            tr7_span2.classList.add("badge-success");
+            tr7_span2.innerHTML="0,0";
+            tr7_td4.appendChild(tr7_span2);
+            var tr7_td5= document.createElement("td");
+            tr7_td5.setAttribute("style","border:none;");
+            var tr7_span3 = document.createElement("span");
+            tr7_span3.setAttribute("style","margin-right:30px");
+            tr7_span3.id="span53";
+            tr7_span3.classList.add("badge");
+            tr7_span3.classList.add("badge-pill");
+            tr7_span3.classList.add("badge-danger");
+            tr7_span3.innerHTML="0,0";
+            tr7_td5.appendChild(tr7_span3);
+            var tr7_td6= document.createElement("td");
+            tr7_td6.setAttribute("style","border:none;");
+            var tr7_span4 = document.createElement("span");
+            tr7_span4.setAttribute("style","margin-right:30px");
+            tr7_span4.id="span54";
+            tr7_span4.classList.add("badge");
+            tr7_span4.classList.add("badge-pill");
+            tr7_span4.classList.add("badge-primary");
+            tr7_span4.innerHTML="0,0";
+            tr7_td6.appendChild(tr7_span4);
+            var br17= document.createElement("br");
+            var label17 = document.createElement("label");
+            var i_17 = document.createElement("i");
+            i_17.id="spn17";
+            i_17.classList.add("fa");
+            i_17.classList.add("fa-fw");
+            i_17.classList.add("fa-plus");
+            i_17.setAttribute("onclick","newBox(this.id);");
+            label17.id="label17";
+            label17.innerHTML="Alternative";
+            var tr8 = document.createElement("tr");
+            tr8.id="table1006";
+            var tr8_td1= document.createElement("td");
+            tr8_td1.setAttribute("style","border:none;width:200px");
+            var tr8_td1_1 = document.createElement("td");
+            tr8_td1_1.setAttribute("style","border:none;");
+            tr8_td1.appendChild(label17);
+            tr8_td1_1.appendChild(i_17);
+            var input17 = document.createElement("INPUT");
+            input17.setAttribute("disabled","true");
+            var spn17 = document.createElement("span");
+            spn17.id="inpt17";
+            spn17.setAttribute("onclick","clearTextDefault(this.id);");
+            spn17.classList.add("fa");
+            spn17.classList.add("fa-fw");
+            spn17.classList.add("fa-trash");
+            input17.setAttribute("type","text");
+            input17.setAttribute("id","inpt17");
+            input17.setAttribute("oninput","dragFood(this.id);");
+            // input17.classList.add("clearable");
+            var tr8_td2= document.createElement("td");
+            tr8_td2.setAttribute("style","border:none;");
+            var tr8_td2_1 = document.createElement("td");
+            tr8_td2_1.setAttribute("style","border:none;");
+            tr8_td2.appendChild(input17);
+            tr8_td2_1.appendChild(spn17);
+            var tr8_td3= document.createElement("td");
+            tr8_td3.setAttribute("style","border:none;");
+            var tr8_span1 = document.createElement("span");
+            tr8_span1.setAttribute("style","margin-right:30px");
+            tr8_span1.id="span61";
+            tr8_span1.classList.add("badge");
+            tr8_span1.classList.add("badge-pill");
+            tr8_span1.classList.add("badge-warning");
+            tr8_span1.innerHTML="0,0";
+            tr8_td3.appendChild(tr8_span1);
+            var tr8_td4= document.createElement("td");
+            tr8_td4.setAttribute("style","border:none;");
+            var tr8_span2 = document.createElement("span");
+            tr8_span2.setAttribute("style","margin-right:30px");
+            tr8_span2.id="span62";
+            tr8_span2.classList.add("badge");
+            tr8_span2.classList.add("badge-pill");
+            tr8_span2.classList.add("badge-success");
+            tr8_span2.innerHTML="0,0";
+            tr8_td4.appendChild(tr8_span2);
+            var tr8_td5= document.createElement("td");
+            tr8_td5.setAttribute("style","border:none;");
+            var tr8_span3 = document.createElement("span");
+            tr8_span3.setAttribute("style","margin-right:30px");
+            tr8_span3.id="span63";
+            tr8_span3.classList.add("badge");
+            tr8_span3.classList.add("badge-pill");
+            tr8_span3.classList.add("badge-danger");
+            tr8_span3.innerHTML="0,0";
+            tr8_td5.appendChild(tr8_span3);
+            var tr8_td6= document.createElement("td");
+            tr8_td6.setAttribute("style","border:none;");
+            var tr8_span4 = document.createElement("span");
+            tr8_span4.setAttribute("style","margin-right:30px");
+            tr8_span4.id="span64";
+            tr8_span4.classList.add("badge");
+            tr8_span4.classList.add("badge-pill");
+            tr8_span4.classList.add("badge-primary");
+            tr8_span4.innerHTML="0,0";
+            tr8_td6.appendChild(tr8_span4);
+            var tr9 =document.createElement("tr");
+            tr9.id="table1007";
+            var tr9_td1 = document.createElement("td");
+            tr9_td1.setAttribute("style","border:none;width:200px");
+            tr9_td1.innerHTML="";
+            var tr9_td1_1 = document.createElement("td");
+            tr9_td1_1.setAttribute("style","border:none;");
+            var tr9_td2 = document.createElement("td");
+            tr9_td2.setAttribute("style","height:70px;border:none;text-align:center");
+            var b = document.createElement("B");
+            b.innerHTML="  TOTAL";
+            tr9_td2.appendChild(b);
+            var tr9_td2_1 = document.createElement("td");
+            tr9_td2_1.setAttribute("style","border:none;");
+            var tr9_td3 = document.createElement("td");
+            tr9_td3.setAttribute("style","border:none;");
+            var tr9_td3_span1 = document.createElement("span");
+            tr9_td3_span1.setAttribute("style","margin-right:30px");
+            tr9_td3_span1.classList.add("badge");
+            tr9_td3_span1.classList.add("badge-pill");
+            tr9_td3_span1.classList.add("badge-info");
+            tr9_td3_span1.id="span71";
+            tr9_td3_span1.innerHTML="0,0";
+            tr9_td3.appendChild(tr9_td3_span1);
+            var tr9_td4 = document.createElement("td");
+            tr9_td4.setAttribute("style","border:none;");
+            var tr9_td4_span1 = document.createElement("span");
+            tr9_td4_span1.setAttribute("style","margin-right:30px");
+            tr9_td4_span1.classList.add("badge");
+            tr9_td4_span1.classList.add("badge-pill");
+            tr9_td4_span1.classList.add("badge-info");
+            tr9_td4_span1.id="span72";
+            tr9_td4_span1.innerHTML="0,0";
+            tr9_td4.appendChild(tr9_td4_span1);
+            var tr9_td5 = document.createElement("td");
+            tr9_td5.setAttribute("style","border:none;");
+            var tr9_td5_span1 = document.createElement("span");
+            tr9_td5_span1.setAttribute("style","margin-right:30px");
+            tr9_td5_span1.classList.add("badge");
+            tr9_td5_span1.classList.add("badge-pill");
+            tr9_td5_span1.classList.add("badge-info");
+            tr9_td5_span1.id="span73";
+            tr9_td5_span1.innerHTML="0,0";
+            tr9_td5.appendChild(tr9_td5_span1);
+            var tr9_td6 = document.createElement("td");
+            tr9_td6.setAttribute("style","border:none;");
+            var tr9_td6_span1 = document.createElement("span");
+            tr9_td6_span1.setAttribute("style","margin-right:30px");
+            tr9_td6_span1.classList.add("badge");
+            tr9_td6_span1.classList.add("badge-pill");
+            tr9_td6_span1.classList.add("badge-info");
+            tr9_td6_span1.id="span74";
+            tr9_td6_span1.innerHTML="0,0";
+            tr9_td6.appendChild(tr9_td6_span1);
+            tr.appendChild(th1);
+            tr.appendChild(th1_1);
+            tr.appendChild(th2);
+            tr.appendChild(th2_1);
+            tr.appendChild(th3);
+            tr.appendChild(th4);
+            tr.appendChild(th5);
+            tr.appendChild(th6);
+            tr2.appendChild(tr2_td1);
+            tr2.appendChild(tr2_td1_1);
+            tr2.appendChild(tr2_td2);
+            tr2.appendChild(tr2_td2_1);
+            tr2.appendChild(tr2_td3);
+            tr2.appendChild(tr2_td4);
+            tr2.appendChild(tr2_td5);
+            tr2.appendChild(tr2_td6);
+            tr3.appendChild(tr3_td1);
+            tr3.appendChild(tr3_td1_1);
+            tr3.appendChild(tr3_td2);
+            tr3.appendChild(tr3_td2_1);
+            tr3.appendChild(tr3_td3);
+            tr3.appendChild(tr3_td4);
+            tr3.appendChild(tr3_td5);
+            tr3.appendChild(tr3_td6);
+            tr4.appendChild(tr4_td1);
+            tr4.appendChild(tr4_td1_1);
+            tr4.appendChild(tr4_td2);
+            tr4.appendChild(tr4_td2_1);
+            tr4.appendChild(tr4_td3);
+            tr4.appendChild(tr4_td4);
+            tr4.appendChild(tr4_td5);
+            tr4.appendChild(tr4_td6);
+            tr5.appendChild(tr5_td1);
+            tr5.appendChild(tr5_td1_1);
+            tr5.appendChild(tr5_td2);
+            tr5.appendChild(tr5_td2_1);
+            tr5.appendChild(tr5_td3);
+            tr5.appendChild(tr5_td4);
+            tr5.appendChild(tr5_td5);
+            tr5.appendChild(tr5_td6);
+            tr6.appendChild(tr6_td1);
+            tr6.appendChild(tr6_td1_1);
+            tr6.appendChild(tr6_td2);
+            tr6.appendChild(tr6_td2_1);
+            tr6.appendChild(tr6_td3);
+            tr6.appendChild(tr6_td4);
+            tr6.appendChild(tr6_td5);
+            tr6.appendChild(tr6_td6);
+            tr7.appendChild(tr7_td1);
+            tr7.appendChild(tr7_td1_1);
+            tr7.appendChild(tr7_td2);
+            tr7.appendChild(tr7_td2_1);
+            tr7.appendChild(tr7_td3);
+            tr7.appendChild(tr7_td4);
+            tr7.appendChild(tr7_td5);
+            tr7.appendChild(tr7_td6);
+            tr8.appendChild(tr8_td1);
+            tr8.appendChild(tr8_td1_1);
+            tr8.appendChild(tr8_td2);
+            tr8.appendChild(tr8_td2_1);
+            tr8.appendChild(tr8_td3);
+            tr8.appendChild(tr8_td4);
+            tr8.appendChild(tr8_td5);
+            tr8.appendChild(tr8_td6);
+            tr9.appendChild(tr9_td1);
+            tr9.appendChild(tr9_td1_1);
+            tr9.appendChild(tr9_td2);
+            tr9.appendChild(tr9_td2_1);
+            tr9.appendChild(tr9_td3);
+            tr9.appendChild(tr9_td4);
+            tr9.appendChild(tr9_td5);
+            tr9.appendChild(tr9_td6);
+            tableGen.appendChild(tr);
+            tableGen.appendChild(tr2);
+            tableGen.appendChild(tr3);
+            tableGen.appendChild(tr4);
+            tableGen.appendChild(tr5);
+            tableGen.appendChild(tr6);
+            tableGen.appendChild(tr7);
+            tableGen.appendChild(tr8);
+            tableGen.appendChild(tr9);
+            kalın.appendChild(labelGen);
+            formGen.appendChild(kalın);
+            formGen.appendChild(tableGen);
+            tableProGen.appendChild(formGen);
+            first=false;
+          }
+          else{
+            return;
+          }
+        }
+      }
+      function checkGunluk(){
+        if(document.getElementById("checkbox1").checked==true){
+          first=true;
+          $("#accordionN").show();
+          $("#newW").empty();
+
+        }
+      }
+
+      function print_data()
+      {
+        var uid = firebase.auth().currentUser.uid;
+        var urlParams = new URLSearchParams(window.location.search);
+        var advisee_user_id = urlParams.get('u');
+        var ref = firebase.database().ref("WebUsers/UserInfos/" + uid + "/Programlar/" + advisee_user_id + "/Genel");
+        ref.once("value").then(function(snapshot)
+        {
+          program_infos = [];
+          snapshot.forEach(function(childSnapshot)
+          {
+            var program_name = childSnapshot.key.toString();
+
+            var date = firebase.database().ref("WebUsers/UserInfos/" + uid + "/Programlar/" + advisee_user_id + "/Genel/" + program_name + "/date").once("value")
+            .then(function(snapshot2)
+            {
+              return snapshot2.val();
+            });
+            program_infos.push(program_name);
+            program_infos.push(date);
+            program_infos.push("Genel");
+          });
+          Promise.all(program_infos).then(function(program_infos)
+          {
+            var ref = firebase.database().ref("WebUsers/UserInfos/" + uid + "/Programlar/" + advisee_user_id + "/Günlük");
+            ref.once("value").then(function(snapshot)
+            {
+              program_infos_2 = [];
+              snapshot.forEach(function(childSnapshot)
+              {
+                var program_name = childSnapshot.key.toString();
+
+                var date = firebase.database().ref("WebUsers/UserInfos/" + uid + "/Programlar/" + advisee_user_id + "/Günlük/" + program_name + "/date").once("value")
+                .then(function(snapshot2)
+                {
+                  return snapshot2.val();
+                });
+                program_infos_2.push(program_name);
+                program_infos_2.push(date);
+                program_infos_2.push("Gunluk");
+              });
+              Promise.all(program_infos_2).then(function(program_infos_2)
+              {
+                // program_infos += program_infos_2;
+                program_infos = program_infos.concat(program_infos_2);
+                program_infos_with_dates = [];
+                for (var a=0; a<program_infos.length; a+=3)
+                {
+                  var t_stamp = program_infos[a+1].split(" - ")[1].substring(1).split("-");
+                  program_infos_with_dates.push([(new Date(t_stamp[1] + " " + t_stamp[2] + " " + t_stamp[0])).getTime(), program_infos[a], program_infos[a+1], program_infos[a+2]]);
+                }
+                program_infos_with_dates.sort();
+                program_infos_with_dates.reverse();
+                // console.log(program_infos_with_dates);
+                for (var a=0; a<program_infos_with_dates.length; a++)
+                {
+                  // console.log(program_infos_with_dates[a][2].split(" - ")[1]);
+                  // console.log(program_infos_with_dates[a][2].split(" - ")[0]);
+                  // console.log((new Date("2 22 2019")));
+                  t_start = program_infos_with_dates[a][2].split(" - ");
+                  t_end = t_start[1].split("-");
+                  t_start = t_start[0].split("-");
+                  t_start = (new Date(t_start[1] + " " + t_start[2] + " " + t_start[0]));
+                  t_end = (new Date(t_end[1] + " " + t_end[2] + " " + t_end[0]));
+                  var myEvent = {id: program_infos_with_dates[a][2], title: program_infos_with_dates[a][1], allDay: true, start: t_start, end: t_end};
+                  $('#calendar').fullCalendar('renderEvent', myEvent, true);
+                  if (program_infos_with_dates[a][3] == "Gunluk")
+                  {
+                    var base_ele = document.getElementById("dan_bes_pro");
+                    var ele1 = document.createElement("tr");
+                    ele1.classList.add("progNamee"+a);
+                    var ele1_1 = document.createElement("td");
+                    var b = document.createElement("B");
+                    b.style.fontSize="12px";
+                    ele1_1.id = "progNamee"+a;
+                    ele1_1.setAttribute("onclick","showDayProgram(this.id);");
+                    b.innerHTML = program_infos_with_dates[a][1];
+                    var br= document.createElement("br");
+                    var td = document.createElement("td");
+                    var ele1_2 = document.createElement("span");
+                    ele1_2.style.fontSize="11px";
+                    var ele2_1 = document.createElement("td");
+                    var ele2_2 = document.createElement("span");
+                    ele2_2.id=ele1_1.id;
+                    ele2_2.classList.add("fa");
+                    ele2_2.classList.add("fa-fw");
+                    ele2_2.classList.add("fa-trash");
+                    ele2_2.setAttribute("onclick","deleteProgramDay(this.id);");
+                    ele2_2.style.fontSize="17px";
+                    ele1_1.appendChild(b);
+                    ele1_1.appendChild(br);
+                    ele1_2.id = program_infos_with_dates[a][1];
+                    ele1_2.innerHTML = program_infos_with_dates[a][2];
+                    ele1.appendChild(ele1_1);
+                    td.appendChild(ele1_2);
+                    ele2_1.appendChild(ele2_2);
+                    ele1.appendChild(td);
+                    ele1.appendChild(ele2_1);
+                    base_ele.appendChild(ele1);
+
+                  }
+                  else if (program_infos_with_dates[a][3] == "Genel")
+                  {
+                    var base_ele = document.getElementById("dan_bes_pro");
+                    var ele1 = document.createElement("tr");
+                    ele1.classList.add("progName"+a);
+                    var ele1_1 = document.createElement("td");
+                    var b = document.createElement("B");
+                    b.style.fontSize="12px";
+                    ele1_1.id = "progName"+a;
+                    ele1_1.setAttribute("onclick","showGeneralProgram(this.id);");
+                    b.innerHTML = program_infos_with_dates[a][1];
+                    var br= document.createElement("br");
+                    var td = document.createElement("td");
+                    var ele1_2 = document.createElement("span");
+                    ele1_2.style.fontSize="11px";
+                    var ele2_1 = document.createElement("td");
+                    var ele2_2 = document.createElement("span");
+                    ele2_2.id=ele1_1.id;
+                    ele2_2.classList.add("fa");
+                    ele2_2.classList.add("fa-fw");
+                    ele2_2.classList.add("fa-trash");
+                    ele2_2.setAttribute("onclick","deleteProgramGeneral(this.id);");
+                    ele2_2.style.fontSize="17px";
+                    ele1_1.appendChild(b);
+                    ele1_1.appendChild(br);
+                    ele1_2.id = program_infos_with_dates[a][1];
+                    ele1_2.innerHTML = program_infos_with_dates[a][2];
+                    ele1.appendChild(ele1_1);
+                    td.appendChild(ele1_2);
+                    ele2_1.appendChild(ele2_2);
+                    ele1.appendChild(td);
+                    ele1.appendChild(ele2_1);
+                    base_ele.appendChild(ele1);
+                  }
+                }
+              });
+            });
+          });
+        });
+      }
+
+        // $(document).on('input', '.clearable', function(){
+        //     $(this)[tog(this.value)]('x');
+        // }).on('mousemove', '.x', function( e ){
+        //     $(this)[tog(this.offsetWidth-18 < e.clientX-this.getBoundingClientRect().left)]('onX');
+        // }).on('touchstart click', '.onX', function( ev ){
+        //     ev.preventDefault();
+        //     $(this).removeClass('x onX').val('').change();
+        // });
+
+
+    </script>
+      <script type="text/javascript" src="diyet_takipJS_eng.js">
+
+    </script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-135958309-1"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+
+gtag('config', 'UA-135958309-1');
+</script>
+<script>
+	function engTRK(){
+    var urlParams = new URLSearchParams(window.location.search);
+    var advisee_user_id = urlParams.get('u');
+		document.getElementById("eng").href="danisanlar_eng.html?u="+advisee_user_id;
+		document.getElementById("trk").href="diyet_takip.html?u="+advisee_user_id;
+	}
+</script>
+  </body>
+</html>

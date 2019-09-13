@@ -1,0 +1,917 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<meta name="description" content="Ayarlar">
+		<meta name="author" content="Qwerty Tasarım ve Bilgi Teknolojileri">
+		<link rel="shortcut icon" href="danisan/assets/img/favicon.png"/>
+		<title>Settings</title>
+
+		<!-- Bootstrap core CSS -->
+		<link href="diyetisyen_paneli/assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+		<!-- Custom fonts for this template -->
+		<link href="diyetisyen_paneli/assets/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <link href="diyetisyen_paneli/assets/plugins/select2/css/select2.min.css" rel="stylesheet" type="text/css">
+
+		<!-- Custom fonts for this template -->
+		<link href="diyetisyen_paneli/assets/plugins/themify/css/themify.css" rel="stylesheet" type="text/css">
+
+		<!-- Angular Tooltip Css -->
+		<link href="diyetisyen_paneli/assets/plugins/angular-tooltip/angular-tooltips.css" rel="stylesheet">
+
+		<!-- Page level plugin CSS -->
+		<link href="diyetisyen_paneli/css/animate.css" rel="stylesheet">
+
+		<!-- Custom styles for this template -->
+		<link href="diyetisyen_paneli/css/glovia.css" rel="stylesheet">
+		<link href="diyetisyen_paneli/css/glovia-responsive.css" rel="stylesheet">
+
+		<!-- Custom styles for Color -->
+		<link href="diyetisyen_paneli/css/skins/default.css" rel="stylesheet">
+	</head>
+
+	<body class="fixed-nav sticky-footer" id="page-top" style="display: none;">
+
+    <div id="nav-placeholder">
+
+    </div>
+
+		<div class="content-wrapper">
+			<div class="container-fluid">
+
+				<!-- Title & Breadcrumbs-->
+				<div class="row page-titles">
+					<div class="col-md-12 align-self-center">
+						<h4 class="theme-cl">Settings</h4>
+					</div>
+				</div>
+				<!-- Title & Breadcrumbs-->
+
+				<div class="row">
+					<div class="col-md-12">
+						<div class="card">
+							<div class="row">
+
+								<div class="col-md-6 col-12">
+
+									<div class="contact-box">
+										<div class="flexbox ml-4">
+											<label class="toggler toggler-danger">
+												<input id="photo_upload" type="file">
+												<i class="fa fa-cloud-upload" style="color: #2a307f;"></i>
+											</label>
+										</div>
+										<div class="contact-img">
+											<img id="user_photo" src="" class="img-circle img-responsive" alt="">
+										</div>
+										<div class="contact-caption">
+											<h4 id="user_name">-</h4>
+											<span id="user_mail">-</span>
+										</div>
+										<div id="address_city_country" class="contact-action">
+											<i class="fa fa-map-marker" aria-hidden="true"></i>
+											-
+										</div>
+										<div id="telephone" class="contact-action">
+											<i class="fa fa-phone" aria-hidden="true"></i>
+											-
+										</div>
+										<div id="birth_date" class="contact-action">
+											<i class="fa fa-birthday-cake" aria-hidden="true"></i>
+											-
+										</div>
+										<div id="gender" class="contact-action">
+											<i class="fa fa-intersex" aria-hidden="true"></i>
+											-
+										</div>
+										<div id="graduation" class="contact-action">
+											<i class="fa fa-graduation-cap" aria-hidden="true"></i>
+											-
+										</div>
+									</div>
+
+								</div>
+
+								<div class="col-md-6 col-12">
+
+									<div class="col-md-12">
+										<div class="row padd-20 padd-top-30">
+											<label>Personal Information</label>
+											<div id="save_personal_infos_text" class="text-center" style="display: none;">
+											</div>
+											<form autocomplete="on" method="post" onsubmit="event.preventDefault(); save_personal_infos(this.change_phone.value, this.change_address.value, this.change_city.value, this.change_country.value, this.change_gender.value, this.change_birth_date.value);">
+												<div class="form-group">
+													<div class="row">
+														<label for="change_phone" class="col-3 col-form-label">Telephone</label>
+														<div class="col-9">
+															<input id="change_phone" value="90" type="text" class="form-control" data-inputmask='"mask": "+99 (999) 999-9999"' data-mask>
+														</div>
+													</div>
+												</div>
+
+												<div class="form-group">
+													<div class="row">
+														<label for="change_address" class="col-3 col-form-label">Address</label>
+														<div class="col-9">
+															<input id="change_address" value="" maxlength="150" class="form-control" type="text">
+														</div>
+													</div>
+												</div>
+
+												<div class="form-group">
+													<div class="row">
+														<label for="change_city" class="col-3 col-form-label">City</label>
+														<div class="col-9">
+															<input id="change_city" value="" maxlength="20" class="form-control" type="text">
+														</div>
+													</div>
+												</div>
+
+												<div class="form-group">
+													<div class="row">
+														<label for="change_country" class="col-3 col-form-label">Country</label>
+														<div class="col-9">
+															<input id="change_country" value="" maxlength="45" class="form-control" type="text">
+														</div>
+													</div>
+												</div>
+
+												<div class="form-group">
+													<div class="row">
+														<label for="change_gender" class="col-3 col-form-label">Gender</label>
+														<div class="col-9">
+															<select id="change_gender" class="form-control">
+																<option selected value="empty"></option>
+																<option value="Man">Man</option>
+																<option value="Woman">Woman</option>
+															</select>
+														</div>
+													</div>
+												</div>
+
+												<div class="form-group">
+													<div class="row">
+														<label for="change_birth_date" class="col-3 col-form-label">Date of Birth</label>
+														<div class="col-9">
+															<input id="change_birth_date" value="" class="form-control" type="date">
+														</div>
+													</div>
+												</div>
+
+												<div class="form-group">
+													<div class="flexbox align-items-center">
+														<input type="submit" name="send" class="btn gredient-bg-login" id="save_1" value="Save"></input>
+													</div>
+												</div>
+											</form>
+										</div>
+									</div>
+
+								</div>
+
+							</div>
+
+							<div class="row">
+								<div class="col-md-6 col-12">
+									<div class="col-md-12">
+										<div class="row padd-20">
+											<label>Change Password</label>
+											<div id="change_user_password_text" class="text-center" style="display: none;">
+
+											</div>
+											<form autocomplete="on" method="post" onsubmit="event.preventDefault(); change_user_password(this.password.value);">
+												<div class="form-group help">
+													<input class="form-control" id="password" type="password" pattern="(?=.*\d)(?=.*[A-z]).{8,}" placeholder="Password" value="" required/>
+													<small class="text-muted">
+														(Your password must be at least 8 characters long and contain at least one letter and at least one digit.)
+													</small>
+												</div>
+
+												<div class="form-group help">
+													<input class="form-control" id="confirm_password" type="password" placeholder="Password (Again)" value="" required/>
+													<small class="text-muted" id="notmatched" style="display:none;">
+														Passwords do not match.
+													</small>
+												</div>
+
+												<div class="form-group">
+													<div class="flexbox align-items-center">
+														<input type="submit" name="send" class="btn gredient-bg-login" id="change_password" value="Change Password"></input>
+													</div>
+												</div>
+											</form>
+										</div>
+									</div>
+								</div>
+								<div class="col-md-6 col-12">
+
+									<div class="col-md-12">
+										<div class="row padd-20">
+											<label>Social Network Information</label>
+											<div id="save_social_media_text" class="text-center" style="display: none;">
+											</div>
+											<form autocomplete="on" method="post" onsubmit="event.preventDefault(); save_social_media(this.change_facebook.value, this.change_instagram.value, this.change_linkedin.value, this.change_twitter.value);">
+												<div class="form-group">
+													<div class="row">
+														<label for="example-email-input" class="col-3 col-form-label">Facebook</label>
+														<div class="col-9">
+															<input class="form-control" type="text" value="" id="change_facebook">
+														</div>
+													</div>
+												</div>
+
+												<div class="form-group">
+													<div class="row">
+														<label for="example-email-input" class="col-3 col-form-label">Instagram</label>
+														<div class="col-9">
+															<input class="form-control" type="text" value="" id="change_instagram">
+														</div>
+													</div>
+												</div>
+
+												<div class="form-group">
+													<div class="row">
+														<label for="example-email-input" class="col-3 col-form-label">Twitter</label>
+														<div class="col-9">
+															<input class="form-control" type="text" value="" id="change_twitter">
+														</div>
+													</div>
+												</div>
+
+												<div class="form-group">
+													<div class="row">
+														<label for="example-email-input" class="col-3 col-form-label">LinkedIn</label>
+														<div class="col-9">
+															<input class="form-control" type="text" value="" id="change_linkedin">
+														</div>
+													</div>
+												</div>
+
+												<div class="form-group">
+													<div class="flexbox align-items-center">
+														<input type="submit" name="send" class="btn gredient-bg-login" id="save_2" value="Save"></input>
+													</div>
+												</div>
+											</form>
+										</div>
+									</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+		<footer class="sticky-footer">
+		  <div class="container">
+			<div class="text-center">
+			   <small class="font-15">Copyright © <img class="img-responsive" src="diyetisyen_paneli/img/qwerty-01.png" alt="Logo Qwerty"></small>
+			</div>
+		  </div>
+		</footer>
+
+		<a class="scroll-to-top rounded cl-white gredient-bg" href="#page-top">
+		  <i class="ti-angle-double-up"></i>
+		</a>
+
+		<div class="modal modal-box-1 fade" id="modal-2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel2" aria-hidden="true">
+			<div class="modal-dialog" style="max-width: 700px;">
+				<div class="modal-content" id="myModalLabel2">
+					<div class="modal-header theme-bg">
+						Error
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+					</div>
+					<div id="modal_text" class="modal-body text-center">
+
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Bootstrap core JavaScript-->
+		<script src="diyetisyen_paneli/assets/plugins/jquery/jquery.min.js"></script>
+		<script src="diyetisyen_paneli/assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+		<!-- Core plugin JavaScript-->
+		<script src="diyetisyen_paneli/assets/plugins/jquery-easing/jquery.easing.min.js"></script>
+
+		 <!-- Slick Slider Js -->
+		<script src="diyetisyen_paneli/assets/plugins/slick-slider/slick.js"></script>
+
+		<!-- Slim Scroll -->
+		<script src="diyetisyen_paneli/assets/plugins/slim-scroll/jquery.slimscroll.min.js"></script>
+		<!-- <script src="libs/select2/js/select2.min.js"></script> -->
+		<!-- Angular Tooltip -->
+		<script src="diyetisyen_paneli/assets/plugins/angular-tooltip/angular.js"></script>
+		<script src="diyetisyen_paneli/assets/plugins/angular-tooltip/angular-tooltips.js"></script>
+		<script src="diyetisyen_paneli/assets/plugins/angular-tooltip/index.js"></script>
+		<!-- <script src="libs/antixss/javascript/Reform.js"></script> -->
+		<!-- <script src="libs/js/ajaxsender.js"></script> -->
+		<!-- Custom scripts for all pages-->
+		<script src="diyetisyen_paneli/js/glovia.js"></script>
+		<script src="diyetisyen_paneli/assets/plugins/input-mask/jquery.inputmask.js"></script>
+		<script src="diyetisyen_paneli/assets/plugins/input-mask/jquery.inputmask.date.extensions.js"></script>
+		<script src="diyetisyen_paneli/assets/plugins/input-mask/jquery.inputmask.extensions.js"></script>
+		<!-- <script src="diyetisyen_paneli/js/custom/form-element.js"></script> -->
+		<script src="diyetisyen_paneli/assets/plugins/select2/select2.full.min.js"></script>
+
+		<script>
+	  	$('.dropdown-toggle').dropdown()
+	  </script>
+
+		<script src="diyetisyen_paneli/js/custom/navbar_script.js"></script>
+
+		<script src="https://www.gstatic.com/firebasejs/5.5.1/firebase.js"></script>
+		<script>
+			// Initialize Firebase
+			var config = {
+				apiKey: "AIzaSyA24Eyjeh0HipNlMBhAJRnacsFxAySHgtY",
+				authDomain: "lifecare-55c38.firebaseapp.com",
+				databaseURL: "https://lifecare-55c38.firebaseio.com",
+				projectId: "lifecare-55c38",
+				storageBucket: "lifecare-55c38.appspot.com",
+				messagingSenderId: "340270538259"
+			};
+			firebase.initializeApp(config);
+		</script>
+
+		<script>
+			$(function(){
+				$("#nav-placeholder").load("navbar_eng.txt");
+			});
+			$(function () {
+			    "use strict";
+					//Initialize Select2 Elements
+			    $(".select2").select2();
+
+			    //Datemask dd/mm/yyyy
+			    $("#datemask").inputmask("dd/mm/yyyy", {"placeholder": "dd/mm/yyyy"});
+			    //Datemask2 mm/dd/yyyy
+			    $("#datemask2").inputmask("mm/dd/yyyy", {"placeholder": "mm/dd/yyyy"});
+			    //Money Euro
+			    $("[data-mask]").inputmask();
+				});
+		</script>
+
+		<script>
+
+			var user_infos = {};
+			var current_user = null;
+
+			var password = document.getElementById("password");
+			var confirm_password = document.getElementById("confirm_password");
+			function validatePassword()
+			{
+				password.reportValidity();
+				document.getElementById("notmatched").style.display = "none";
+				if(password.value != confirm_password.value) {
+					confirm_password.setCustomValidity("Passwords do not match.");
+					document.getElementById("notmatched").style.display = "block";
+					return false;
+				} else {
+					confirm_password.setCustomValidity("");
+					return true;
+				}
+			};
+			password.onkeyup = validatePassword;
+			confirm_password.onkeyup = validatePassword;
+
+			function upload_profile_photo(user)
+			{
+				document.getElementById("photo_upload").onchange = function(event)
+				{
+					var uploaded_file = document.getElementById("photo_upload").files[0];
+					if (uploaded_file.type == "image/jpeg" || uploaded_file.type == "image/png")
+					{
+						var metadata = {
+							contentType: 'image/jpeg'
+						};
+						var storageRef = firebase.storage().ref("WebUsers/" + user.uid);
+						storageRef.put(uploaded_file, metadata).then(function()
+						{
+							storageRef.getDownloadURL().then(function(url)
+							{
+								user.updateProfile(
+								{
+									photoURL: url
+								}).catch(function onError(err)
+								{
+									document.getElementById("modal_text").innerHTML = "We were unable to load your file at this time due to an unknown error. <br> Please try again later";
+									$('#modal-2').modal('show');
+								});
+							}).catch(function onError(err)
+							{
+								document.getElementById("modal_text").innerHTML = "We were unable to load your file at this time due to an unknown error. <br> Please try again later.";
+								$('#modal-2').modal('show');
+							});
+						}).catch(function onError(err)
+						{
+							document.getElementById("modal_text").innerHTML = "We were unable to load your file at this time due to an unknown error. <br> Please try again later.";
+							$('#modal-2').modal('show');
+						});
+					}
+					else
+					{
+						document.getElementById("modal_text").innerHTML = "You can only upload .jpeg, .jpg, and .png files.";
+						$('#modal-2').modal('show');
+					}
+				}
+			}
+
+			function replace_inner_html_in_the_card(id, value)
+			{
+				if (id != null)
+				{
+					var the_ele = document.getElementById(id);
+					var the_child = the_ele.firstElementChild;
+					while (the_ele.firstChild)
+					{
+						the_ele.removeChild(the_ele.firstChild);
+					}
+					the_ele.appendChild(the_child);
+					the_ele.innerHTML += value;
+				}
+			}
+
+			function calculate_total_address(address, city, country)
+			{
+				var total_address = "";
+				if (address != null)
+				{
+					total_address += address;
+				}
+				if (total_address != "" && city != null)
+				{
+					total_address += ", " + city;
+				}
+				else if (total_address == "" && city != null)
+				{
+					total_address += city;
+				}
+				if (total_address != "" && country != null)
+				{
+					total_address += ", " + country;
+				}
+				else if (total_address == "" && country != null)
+				{
+					total_address += country;
+				}
+				return total_address;
+			}
+
+			function save_social_media(f, i, l, t)
+			{
+				var print_string = [];
+				updates = {};
+				if (user_infos["facebook"] != f)
+				{
+					if (f != "")
+					{
+						updates["/facebook_link"] = f;
+					}
+					else
+					{
+						updates["/facebook_link"] = null;
+					}
+					print_string.push("Facebook");
+					user_infos["facebook"] = f;
+				}
+				if (user_infos["instagram"] != i)
+				{
+					if (i != "")
+					{
+						updates["/instagram_link"] = i;
+					}
+					else
+					{
+						updates["/instagram_link"] = null;
+					}
+					print_string.push("İnstagram");
+					user_infos["instagram"] = i;
+				}
+				if (user_infos["twitter"] != t)
+				{
+					if (t != "")
+					{
+						updates["/twitter_link"] = t;
+					}
+					else
+					{
+						updates["/twitter_link"] = null;
+					}
+					print_string.push("Twitter");
+					user_infos["twitter"] = t;
+				}
+				if (user_infos["linkedin"] != l)
+				{
+					if (l != "")
+					{
+						updates["/linkedin_link"] = l;
+					}
+					else
+					{
+						updates["/linkedin_link"] = null;
+					}
+					print_string.push("LinkedIn");
+					user_infos["linkedin"] = l;
+				}
+
+				if (print_string.length != 0)
+				{
+					document.getElementById("save_social_media_text").style.display = "block";
+					firebase.database().ref("WebUsers/UserInfos/" + current_user.uid).update(updates).then(function()
+					{
+						document.getElementById("save_social_media_text").style.color = "green";
+						document.getElementById("save_social_media_text").innerHTML = "<br>";
+						document.getElementById("save_social_media_text").innerHTML += print_string[0];
+						for (var i = 1; i < print_string.length; i++)
+						{
+							document.getElementById("save_social_media_text").innerHTML += ", " + print_string[i];
+						}
+						if (print_string.length == 1)
+						{
+							document.getElementById("save_social_media_text").innerHTML += " You have successfully changed your addresses.";
+						}
+						else
+						{
+							document.getElementById("save_social_media_text").innerHTML += "<br>You have successfully changed your addresses.";
+						}
+					}).catch(function()
+					{
+						document.getElementById("save_social_media_text").style.color = "red";
+						document.getElementById("save_social_media_text").innerHTML = "<br>Sorry, your changes could not be saved.<br>Please try again later.";
+					});
+				}
+			}
+
+			function put_user_infos(user)
+			{
+				if (user.photoURL != null)
+				{
+					document.getElementById("user_photo").src = user.photoURL;
+				}
+				else
+				{
+					document.getElementById("user_photo").src = "diyetisyen_paneli/img/black_user.jpg";
+				}
+				document.getElementById("user_name").innerHTML = user.displayName;
+				document.getElementById("user_mail").innerHTML = user.email;
+				/*if (user.phoneNumber != null)
+				{
+					replace_inner_html_in_the_card("telephone", user.phoneNumber);
+					user_infos["telephone"] = user.phoneNumber;
+				}
+				else
+				{
+					user_infos["telephone"] = "";
+				}*/
+				var base_ref = firebase.database().ref("WebUsers/UserInfos/" + user.uid);
+				base_ref.child("/graduated").once("value").then(function(snapshot)
+				{
+					if (snapshot.val() != null)
+					{
+						replace_inner_html_in_the_card("graduation", snapshot.val());
+					}
+				});
+				base_ref.child("/phone_num").once("value").then(function(snapshot)
+				{
+					var the_phone = snapshot.val();
+					if (the_phone != null)
+					{
+						document.getElementById("change_phone").value = the_phone;
+						replace_inner_html_in_the_card("telephone", the_phone);
+						user_infos["telephone"] = the_phone;
+					}
+					else
+					{
+						user_infos["telephone"] = "";
+					}
+				});
+				var the_address = base_ref.child("/address").once("value").then(function(snapshot)
+				{
+					return snapshot.val();
+				});
+				var the_city = base_ref.child("/city").once("value").then(function(snapshot)
+				{
+					return snapshot.val();
+				});
+				var the_country = base_ref.child("/country").once("value").then(function(snapshot)
+				{
+					return snapshot.val();
+				});
+				Promise.all([the_address, the_city, the_country]).then(function(values)
+				{
+					var address = values[0];
+					var city = values[1];
+					var country = values[2];
+					if (address != null)
+					{
+						user_infos["address"] = address;
+					}
+					else
+					{
+						user_infos["address"] = "";
+					}
+					if (city != null)
+					{
+						user_infos["city"] = city;
+					}
+					else
+					{
+						user_infos["city"] = "";
+					}
+					if (country != null)
+					{
+						user_infos["country"] = country;
+					}
+					else
+					{
+						user_infos["country"] = "";
+					}
+					var total_address = calculate_total_address(address, city, country);
+					if (total_address != "")
+					{
+						user_infos["total_address"] = total_address;
+						replace_inner_html_in_the_card("address_city_country", total_address);
+					}
+					else
+					{
+						user_infos["total_address"] = null;
+					}
+					if (address != null)
+					{
+						document.getElementById("change_address").value = address;
+					}
+					if (city != null)
+					{
+						document.getElementById("change_city").value = city;
+					}
+					if (country != null)
+					{
+						document.getElementById("change_country").value = country;
+					}
+				});
+				base_ref.child("/gender").once("value").then(function(snapshot)
+				{
+					var the_gender = snapshot.val();
+					if (the_gender != null)
+					{
+						if (the_gender == "Erkek")
+						{
+							document.getElementById("change_gender").selectedIndex = 1;
+							the_gender = "Man";
+						}
+						else if (the_gender == "Kadın")
+						{
+							document.getElementById("change_gender").selectedIndex = 2;
+							the_gender = "Woman";
+						}
+						replace_inner_html_in_the_card("gender", the_gender);
+						user_infos["gender"] = the_gender;
+					}
+					else
+					{
+						user_infos["gender"] = "empty";
+					}
+				});
+				base_ref.child("/birth_date").once("value").then(function(snapshot)
+				{
+					var the_birth_date = snapshot.val();
+					if (the_birth_date != null)
+					{
+						document.getElementById("change_birth_date").defaultValue = the_birth_date;
+						var birth_date_to_print = the_birth_date.split("-");
+						birth_date_to_print = birth_date_to_print[2] + "-" + birth_date_to_print[1] + "-" + birth_date_to_print[0];
+						replace_inner_html_in_the_card("birth_date", birth_date_to_print);
+						user_infos["birth_date"] = the_birth_date;
+					}
+					else
+					{
+						user_infos["birth_date"] = "";
+					}
+				});
+				base_ref.child("/facebook_link").once("value").then(function(snapshot)
+				{
+					var the_facebook = snapshot.val();
+					if (the_facebook != null)
+					{
+						document.getElementById("change_facebook").value = the_facebook;
+						user_infos["facebook"] = the_facebook;
+					}
+					else
+					{
+						user_infos["facebook"] = "";
+					}
+				});
+				base_ref.child("/instagram_link").once("value").then(function(snapshot)
+				{
+					var the_instagram = snapshot.val();
+					if (the_instagram != null)
+					{
+						document.getElementById("change_instagram").value = the_instagram;
+						user_infos["instagram"] = the_instagram;
+					}
+					else
+					{
+						user_infos["instagram"] = "";
+					}
+				});
+				base_ref.child("/twitter_link").once("value").then(function(snapshot)
+				{
+					var the_twitter = snapshot.val();
+					if (the_twitter != null)
+					{
+						document.getElementById("change_twitter").value = the_twitter;
+						user_infos["twitter"] = the_twitter;
+					}
+					else
+					{
+						user_infos["twitter"] = "";
+					}
+				});
+				base_ref.child("/linkedin_link").once("value").then(function(snapshot)
+				{
+					var the_linkedin = snapshot.val();
+					if (the_linkedin != null)
+					{
+						document.getElementById("change_linkedin").value = the_linkedin;
+						user_infos["linkedin"] = the_linkedin;
+					}
+					else
+					{
+						user_infos["linkedin"] = "";
+					}
+				});
+			}
+
+			function change_user_password(p)
+			{
+				current_user.updatePassword(p).then(function()
+				{
+					document.getElementById("password").value = "";
+					document.getElementById("confirm_password").value = "";
+					document.getElementById("change_user_password_text").style.color = "green";
+					document.getElementById("change_user_password_text").innerHTML = "<br>You have successfully changed your password.";
+					document.getElementById("change_user_password_text").style.display = "block";
+				}).catch(function(error)
+				{
+					document.getElementById("password").value = "";
+					document.getElementById("confirm_password").value = "";
+					document.getElementById("change_user_password_text").style.color = "red";
+					if (error.code == "auth/requires-recent-login")
+					{
+						document.getElementById("change_user_password_text").innerHTML = "Your password change operation failed.<br>LPlease log in and try again after logging out of your account.";
+					}
+					else
+					{
+						document.getElementById("change_user_password_text").innerHTML = "<br>Your password change operation failed.<br>Please try again later.";
+					}
+					document.getElementById("change_user_password_text").style.display = "block";
+				});
+			}
+
+			function save_personal_infos(phone, address, city, country, gender, birth_date)
+			{
+				var print_string = [];
+				updates = {};
+				if (user_infos["telephone"] != phone)
+				{
+					if (phone == "")
+					{
+						updates["/phone_num"] = null;
+					}
+					else
+					{
+						updates["/phone_num"] = phone;
+					}
+					print_string.push("telefon");
+					user_infos["telephone"] = phone;
+				}
+				if (user_infos["address"] != address)
+				{
+					if (address == "")
+					{
+						updates["/address"] = null;
+					}
+					else
+					{
+						updates["/address"] = address;
+					}
+					print_string.push("adres");
+					user_infos["address"] = address;
+				}
+				if (user_infos["city"] != city)
+				{
+					if (city == "")
+					{
+						updates["/city"] = null;
+					}
+					else
+					{
+						updates["/city"] = city;
+					}
+					print_string.push("şehir");
+					user_infos["city"] = city;
+				}
+				if (user_infos["country"] != country)
+				{
+					if (country == "")
+					{
+						updates["/country"] = null;
+					}
+					else
+					{
+						updates["/country"] = country;
+					}
+					print_string.push("ülke");
+					user_infos["country"] = country;
+				}
+				if (user_infos["gender"] != gender)
+				{
+					if (gender != "empty")
+					{
+						updates["/gender"] = gender;
+					}
+					else
+					{
+						updates["/gender"] = null;
+					}
+					print_string.push("cinsiyet");
+					user_infos["gender"] = gender;
+				}
+				if (user_infos["birth_date"] != birth_date)
+				{
+					if (birth_date == "")
+					{
+						updates["/birth_date"] = null;
+					}
+					else
+					{
+						updates["/birth_date"] = birth_date;
+					}
+					print_string.push("doğum tarihi");
+					user_infos["birth_date"] = birth_date;
+				}
+
+				if (print_string.length != 0)
+				{
+					document.getElementById("save_personal_infos_text").style.display = "block";
+					firebase.database().ref("WebUsers/UserInfos/" + current_user.uid).update(updates).then(function()
+					{
+						document.getElementById("save_personal_infos_text").style.color = "green";
+						document.getElementById("save_personal_infos_text").innerHTML = "<br>";
+						print_string[0] = print_string[0][0].toUpperCase() + print_string[0].slice(1);
+						document.getElementById("save_personal_infos_text").innerHTML += print_string[0];
+						for (var i = 1; i < print_string.length; i++)
+						{
+							document.getElementById("save_personal_infos_text").innerHTML += ", " + print_string[i];
+						}
+						if (print_string.length == 1)
+						{
+							document.getElementById("save_personal_infos_text").innerHTML += "You have successfully changed your information.";
+						}
+						else
+						{
+							document.getElementById("save_personal_infos_text").innerHTML += "<br>You have successfully changed your information.";
+						}
+					}).catch(function()
+					{
+						document.getElementById("save_personal_infos_text").style.color = "red";
+						document.getElementById("save_personal_infos_text").innerHTML = "<br>Sorry, your changes could not be saved.<br>Please try again later."
+					});
+				}
+			}
+
+			firebase.auth().onAuthStateChanged(function(user)
+			{
+				if (user)
+				{
+					nav_bar_part_of_the_page(user);
+					fill_message_box(user);
+					setTimeout(function(){
+            engTRK();
+          }, 2000);
+					current_user = user;
+					upload_profile_photo(user);
+					put_user_infos(user);
+					document.getElementById("page-top").style.display = "block";
+				}
+				else
+				{
+					document.location.replace("login_eng.html?to=settings_eng.html");
+				}
+			});
+		</script>
+		<script>
+	  	function engTRK(){
+	  		document.getElementById("eng").href="settings_eng.html";
+	  		document.getElementById("trk").href="settings.html";
+	  	}
+	  </script>
+	</body>
+</html>

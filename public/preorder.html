@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<link rel="shortcut icon" href="preorder/assets/img/favicon.png"/>
+
+		<!-- Page Title -->
+		<title>Ön Sipariş Sayfası</title>
+
+		<!-- Fonts and Material Icons -->
+		<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700|Material+Icons" rel="stylesheet" type="text/css"/>
+
+
+		<!-- Styles -->
+		<link href="preorder/css/slides.css" rel="stylesheet" type="text/css">
+
+		<!-- Custom Styles -->
+		<link href="preorder/css/custom.css" rel="stylesheet" type="text/css">
+
+		<!-- Scripts -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+		<script src="preorder/js/plugins.js" type="text/javascript" name="plugins"></script>
+		<script src="preorder/js/slides.js" type="text/javascript" name="main-scripts"></script>
+
+		<!-- Custom Scripts -->
+		<!--script src="js/custom.js" type="text/javascript" name="custom-scripts"></script-->
+
+		<!-- Ondestek Kod Başlangıcı -->
+		<script type="text/javascript">
+			window.$ondestek||(window.$ondestek=function(){var e=document.createElement("script");e.type="text/javascript",e.src="https://panel.ondestek.com/client/client.js?s=d3bf7c62-2514-43f4-9664-f4dd5b4b7038",e.async=!0;var t=document.getElementsByTagName("head")[0];t.insertBefore(e,t.firstChild)})()
+		</script>
+		<!-- Ondestek Kod Bitişi -->
+
+		<style media="screen">
+			.ribbon {
+			position: absolute;
+			right: -5px; top: -5px;
+			z-index: 1;
+			overflow: hidden;
+			width: 75px; height: 75px;
+			text-align: right;
+			}
+			.ribbon span {
+			font-size: 10px;
+			font-weight: bold;
+			color: #FFF;
+			text-transform: uppercase;
+			text-align: center;
+			line-height: 20px;
+			transform: rotate(45deg);
+			-webkit-transform: rotate(45deg);
+			width: 100px;
+			display: block;
+			background: #79A70A;
+			background: linear-gradient(#2D2E82 0%, #2D2E82 100%);
+			box-shadow: 0 3px 10px -5px rgba(0, 0, 0, 1);
+			position: absolute;
+			top: 19px; right: -21px;
+			}
+			.ribbon span::before {
+			content: "";
+			position: absolute; left: 0px; top: 100%;
+			z-index: -1;
+			border-left: 3px solid #2D2E82;
+			border-right: 3px solid transparent;
+			border-bottom: 3px solid transparent;
+			border-top: 3px solid #2D2E82;
+			}
+			.ribbon span::after {
+			content: "";
+			position: absolute; right: 0px; top: 100%;
+			z-index: -1;
+			border-left: 3px solid transparent;
+			border-right: 3px solid #2D2E82;
+			border-bottom: 3px solid transparent;
+			border-top: 3px solid #2D2E82;
+			}
+		</style>
+
+	</head>
+	<body class="slides scroll simplifiedMobile animated">
+
+		<svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+		  <symbol id="facebook" viewBox="0 0 24 24"><path d="M24 1.3v21.3c0 .7-.6 1.3-1.3 1.3h-6.1v-9.3h3.1l.5-3.6h-3.6v-2.2c0-1.1.3-1.8 1.8-1.8h1.9v-3.2c-.3 0-1.5-.1-2.8-.1-2.8 0-4.7 1.7-4.7 4.8v2.7h-3.1v3.6h3.1v9.2h-11.5c-.7 0-1.3-.6-1.3-1.3v-21.4c0-.7.6-1.3 1.3-1.3h21.3c.8 0 1.4.6 1.4 1.3z"/></symbol>
+
+		  <symbol id="instagram" viewBox="0 0 24 24">
+				<path d="M12 2.2c3.2 0 3.6 0 4.8.1 1.2.1 1.8.2 2.2.4.6.2 1 .5 1.4.9.4.4.7.8.9 1.4.2.4.4 1.1.4 2.2.1 1.3.1 1.6.1 4.8s0 3.6-.1 4.8c-.1 1.2-.2 1.8-.4 2.2-.2.6-.5 1-.9 1.4-.4.4-.8.7-1.4.9-.4.2-1.1.4-2.2.4-1.3.1-1.6.1-4.8.1s-3.6 0-4.8-.1c-1.2-.1-1.8-.2-2.2-.4-.6-.2-1-.5-1.4-.9-.4-.4-.7-.8-.9-1.4-.2-.4-.4-1.1-.4-2.2-.1-1.3-.1-1.6-.1-4.8s0-3.6.1-4.8c0-1.2.2-1.9.3-2.3.2-.6.5-1 .9-1.4.5-.4.9-.6 1.4-.9.4-.1 1.1-.3 2.3-.4h4.8m0-2.2c-3.3 0-3.7 0-4.9.1-1.3 0-2.2.2-3 .5-.7.3-1.4.7-2.1 1.4-.7.7-1.1 1.4-1.4 2.1-.3.8-.5 1.7-.5 3-.1 1.2-.1 1.6-.1 4.9 0 3.3 0 3.7.1 4.9.1 1.3.3 2.1.6 2.9.2.8.6 1.5 1.3 2.2.7.7 1.3 1.1 2.1 1.4.8.3 1.6.5 2.9.6h5s3.7 0 4.9-.1c1.3-.1 2.1-.3 2.9-.6.8-.3 1.5-.7 2.1-1.4.7-.7 1.1-1.3 1.4-2.1.3-.8.5-1.6.6-2.9.1-1.2.1-1.6.1-4.9s0-3.7-.1-4.9c-.1-1.3-.3-2.1-.6-2.9-.2-.8-.6-1.5-1.3-2.2-.7-.7-1.3-1.1-2.1-1.4-.8-.3-1.6-.5-2.9-.6h-5zM12 5.8c-3.4 0-6.2 2.8-6.2 6.2s2.8 6.2 6.2 6.2 6.2-2.8 6.2-6.2-2.8-6.2-6.2-6.2zm0 10.2c-2.2 0-4-1.8-4-4s1.8-4 4-4 4 1.8 4 4-1.8 4-4 4z"/>
+				<circle class="st0" cx="18.4" cy="5.6" r="1.4"/>
+			</symbol>
+
+		  <symbol id="youtube" viewBox="0 0 24 24"><path d="M23.6 6.3c-.3-1.2-1.4-2.2-2.6-2.3-3-.3-6-.3-9-.3s-6 0-9 .3c-1.2.1-2.3 1.1-2.6 2.3-.4 1.8-.4 3.8-.4 5.7 0 1.9 0 3.9.4 5.7.3 1.2 1.4 2.2 2.6 2.3 3 .3 6 .3 9 .3s6 0 9-.3c1.3-.1 2.3-1.1 2.6-2.4.4-1.7.4-3.7.4-5.6 0-1.9 0-3.9-.4-5.7zm-14.1 9v-6.6l6.5 3.3-6.5 3.3z"/></symbol>
+
+			<symbol id="linkedin" viewBox="0 0 24 24"><path d="M22.2 0h-20.4c-1 0-1.8.8-1.8 1.7v20.7c0 1 .8 1.7 1.8 1.7h20.5c1 0 1.8-.8 1.8-1.7v-20.7c-.1-.9-.9-1.7-1.9-1.7zm-14.9 20.2h-3.6v-10.9h3.6v10.9zm-1.8-12.4c-1.2 0-2-.8-2-1.9 0-1.1.8-1.9 2.1-1.9 1.2 0 2 .8 2 1.9-.1 1.1-.9 1.9-2.1 1.9zm14.8 12.4h-3.6v-5.8c0-1.5-.5-2.5-1.8-2.5-1 0-1.6.7-1.9 1.3-.1.2-.1.6-.1.9v6.1h-3.6v-10.9h3.6v1.5c.5-.7 1.3-1.8 3.3-1.8 2.4 0 4.2 1.6 4.2 4.9v6.3z"/></symbol>
+
+		</svg>
+
+		<nav class="panel top forceMobileView">
+		  <div class="sections desktop">
+		    <div class="left"><a href="index.html"><img width="200" src="preorder/assets/img/lifecarelogo.png" alt="logo"/></a></div>
+		    <div class="right">
+		      <ul class="menu">
+		        <li><a href="http://groupqwerty.com/news.php"><b>Blog</b></a></li>
+		        <li><a href="http://groupqwerty.com/contact.php"><b>İletişim</b></a></li>
+		        <li><a href=""><b>Ön Sipariş</b></a></li>
+						<li class="menu-icon-box">
+							<a href="preorder_en.html" style="font-size:0.8em;">EN |
+								<span style="color:#2D2E82">
+									<strong>TR</strong>
+								</span>
+							</a>
+							<div id="menu-handle"></div>
+						</li>
+		      </ul>
+		    </div>
+		  </div>
+		  <div class="sections compact hidden">
+		    <div class="left"><a href="index.html"><img width="200" src="preorder/assets/img/lifecarelogo.png" alt="logo"/></a></div>
+		    <div class="right"><span class="actionButton sidebarTrigger material-icons" data-sidebar-id="1"><i class="material-icons">menu</i><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#menu"></use></svg></span></div>
+		  </div>
+		</nav>
+
+		<!-- Sidebar -->
+		<nav class="sidebar white" data-sidebar-id="1">
+		  <div class="close"><svg><i class="material-icons">close</i><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#close"></use></svg></div>
+		  <div class="content">
+		    <div class="logo"><svg width="120" height="50"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#logo"></use></svg></div>
+		    <ul class="mainMenu uppercase">
+		      <li><a href="http://groupqwerty.com/news.php"><font color="black">- Blog</font></a></li>
+		      <li><a href="http://groupqwerty.com/contact.php"><font color="black">- İletİşİm</font></a></li>
+					<li><a href=""><font color="black">- Ön Sİparİş</font></a></li>
+					<li class="menu-icon-box" style="margin-top:40%;">
+						<a href="preorder_en.html" style="color:black">
+							<small>
+								EN
+								<span style="color:#2D2E82">
+									<strong>
+										| TR
+									</strong>
+								</span>
+							<small>
+						</a>
+						<div id="menu-handle"></div>
+					</li>
+		    </ul>
+		  </div>
+		</nav>
+
+		<section class="slide fade whiteSlide">
+		  <div class="content">
+		    <div class="container">
+		      <div class="wrap">
+
+		        <h1 class="ae-1">Lifecare Sizinle Buluşmayı Bekliyor</h1>
+
+		        <div class="fix-12-12">
+		          <ul class="grid later equal">
+								<li class="col-4-12 margin-top-3">
+		              <div class="fix-5-12 crop">
+		                <div class="pad shadow ae-3">
+		                  <!-- <img src="" class="ae-4 margin-bottom-2"/> -->
+		                  <h3 class="big ae-5">İstediğiniz Zaman Yanınızda <br> Paketi</h3>
+		                  <div class="ae-6"><p style="height:auto; font-size:19px;" class="tiny">Lifecare Vücut Analiz Cihazı için aylık kullanım bedeli ödeyerek istediğiniz zaman aralığında kısa süreli kullanım sağlayabilirsiniz.<br><br>
+											</p>
+											<p style="height:auto; font-size:19px;" class="left">
+											İstediğiniz zaman;<br>
+											- Lifecare Vücut Analiz Cihazı<br>
+											- Lifecare Mobil Uygulama ile Analiz Takibi<br>
+											- Diyetisyeninizle Çevrimiçi Görüşebilme İmkanı<br>
+											</p></div>
+											<!-- <div class="price-84 ae-5 margin-top-3" style="font-size:70px;"><span class="currency-84">₺</span>75</div> -->
+		                  <div class="button orange wide ae-7" style="margin-left:0px;">Ön Sipariş</div>
+		                </div>
+		              </div>
+		            </li>
+								<li class="col-4-12 margin-top-3">
+		              <div class="fix-5-12 crop">
+		                <div class="pad shadow ae-3">
+		                  <!-- <img src="" class="ae-4 margin-bottom-2"/> -->
+		                  <h3 class="big ae-5">Her Zaman Yanınızda <br> Paketi <br><br></h3>
+		                  <div class="ae-6"><p style="height:auto; font-size:19px; margin-top:16px;" class="tiny">Lifecare Vücut Analiz Cihazına sahip olarak Lifecare teknolojisini hayatınızın bir parçası haline getirebilirsiniz.<br><br>
+											</p>
+											<p style="height:auto; font-size:19px;" class="left">
+											Her zaman;<br>
+											- Lifecare Vücut Analiz Cihazı<br>
+											- Lifecare Mobil Uygulama ile Analiz Takibi<br>
+											- Diyetisyeninizle Çevrimiçi Görüşebilme İmkanı<br>
+											</p></div>
+											<!-- <div class="price-84 ae-5" style="font-size:70px;  margin-top:69px;"><span class="currency-84">₺</span>1000</div> -->
+		                  <div class="button orange wide ae-7" style="margin-left:0px;">Ön Sipariş</div>
+		                </div>
+		              </div>
+		            </li>
+								<li class="col-4-12 margin-top-3">
+		              <div class="fix-5-12 crop">
+		                <div class="pad shadow ae-3 ">
+		                  <!-- <img src="" class="ae-4 margin-bottom-2"/> -->
+		                  <h3 class="big ae-5">Diyetisyen Kontrol <br> Paketi <br><br>
+											<!-- <div class="ribbon"><span>Dİyetİsyen</span></div> -->
+											</h3>
+		                  <div class="ae-6"><p style="height:auto; font-size:19px; margin-top:16px;" class="tiny">Aylık kullanım bedeli ödeyerek Lifecare Diyetisyen Paneli ile danışanlarınızın uzaktan takibini sağlayabilirsiniz.
+											</p>
+											<p style="height:auto; font-size:19px;" class="left">
+											<br>
+											- Lifecare Diyetisyen Kontrol Paneli<br>
+											- Lifecare Mobil Uygulama ile Danışan Takibi<br>
+											- Danışanlarınızla Çevrimiçi Görüşebilme İmkanı<br>
+											</p></div>
+											<!-- <div class="price-84 ae-5 margin-top-3" style="font-size:70px;"><span class="currency-84">₺</span>250</div> -->
+		                  <div class="button orange wide ae-7" style="margin-left:0px;">Ön Sipariş</div>
+		                </div>
+		              </div>
+		            </li>
+		          </ul>
+		        </div>
+
+		      </div>
+		    </div>
+		  </div>
+		  <div class="background" style="background-image:url(preorder/assets/img/fon.png)"></div>
+		</section>
+
+<!--
+		<section class="slide fade whiteSlide">
+		  <div class="content">
+		    <div class="container">
+		      <div class="wrap">
+		        <div class="fix-10-12">
+		          <div class="fix-4-12">
+		            <div class="svgContainer svg-38">
+		              <svg class="scale ae-1">
+										<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#lifecare"></use>
+									</svg>
+		            </div>
+		          </div>
+		          <div class="ae-3">
+								<p class="hero"><b>Ön sipariş ile Lifecare kişiselliğini ve profesyonelliğini ilk siz yaşayın!</b></p>
+							</div>
+		          <p class="small margin-top-3 block ae-5">
+								<center><p id="preorder_error" style="color:red;"></p></center>
+			          <br>
+								<form autocomplete="on" method="post" onsubmit="event.preventDefault(); sendButton(this.username.value, this.email.value);" style="margin-bottom: 27%;">
+									<input id="user_name" type="text" class="ae-4 fromCenter" name="username" placeholder="Adınız-Soyadınız" val="" required/>
+									<input id="user_mail" type="email" class="ae-4 fromCenter" name="email" placeholder="E-mail Adresiniz" val="" style="margin-bottom: 5%;" required/>
+									<input type="submit" class="button orange ae-7 fromCenter" name="send" value="Gönder"/>
+								</form>
+		          </p>
+		        </div>
+		      </div>
+	      </div>
+	    </div>
+		  <div class="background" style="background-image:url(preorder/assets/img/fon.png)"></div>
+		</section> -->
+
+		<section class="slide fade whiteSlide">
+		  <div class="content">
+		    <div class="container">
+		      <div class="wrap">
+		        <div class="fix-12-12">
+		          <ul class="grid fixedSpaces">
+		            <li class="col-4-12 ae-3">
+		              <h3 class="margin-bottom-1">Ofis</h3>
+		              <p>ODTÜ Teknokent Ar-Ge ve Eğitim Merkezi No:13 Çankaya/Ankara</p>
+		            </li>
+		            <li class="col-4-12 ae-4">
+		              <h3 class="margin-bottom-1">İletişim</h3>
+		              <p>
+										<a href="mailto:iletisim@lifecare.fit">iletisim@lifecare.fit</a>
+									</p>
+		              <h3 class="margin-bottom-1">Sorumlu İletişim</h3>
+		              <p>
+										<a href="mailto:iletisim@lifecare.fit">busra@groupqwerty.com</a>
+									</p>
+		            </li>
+		            <li class="col-4-12 ae-5">
+		              <h3 class="margin-bottom-1">Sosyal Medya</h3>
+									<ul class="social-circles">
+		                <li><a class="button roundButton facebook" href="https://www.facebook.com/groupqwerty/"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#facebook"></use></svg></a></li>
+										<li><a class="button roundButton instagram" href="https://www.instagram.com/lifecarefit/"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#instagram"></use></svg></a></li>
+		                <li><a class="button roundButton linkedin" href="https://www.linkedin.com/company/group-qwerty/"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#linkedin"></use></svg></a></li>
+		                <li><a class="button roundButton googlePlus" href="https://www.youtube.com/channel/UCQXE9_9cwirzFK80dF8OCOw"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#youtube"></use></svg></a></li>
+		              </ul>
+		            </li>
+		          </ul>
+		        </div>
+		      </div>
+		    </div>
+		  </div>
+		  <div class="background" style="background-image:url(preorder/assets/img/img-57.jpg)"></div>
+		</section>
+
+		<nav class="panel bottom">
+		  <div class="sections">
+		    <div class="center">
+					<a href="index.html">
+						<img width="200" src="preorder/assets/img/lifecarelogo.png" alt="logo"/>
+					</a>
+				</div>
+		  </div>
+		</nav>
+
+		<div class="loadingIcon">
+			<svg class="loading-icon" id="loading-circle" viewBox="0 0 18 18">
+				<circle class="circle" opacity=".1" stroke="#fff" stroke-width="2" stroke-miterlimit="10" cx="9" cy="9" r="8" fill="none"></circle>
+				<circle class="dash" stroke-width="2" stroke-linecap="round" stroke-miterlimit="10" stroke-dasharray="1,100" cx="9" cy="9" r="8" fill="none"></circle>
+			</svg>
+		</div>
+
+		<script src="https://www.gstatic.com/firebasejs/5.5.1/firebase.js"></script>
+		<script>
+		  // Initialize Firebase
+		  var config = {
+		    apiKey: "AIzaSyA24Eyjeh0HipNlMBhAJRnacsFxAySHgtY",
+		    authDomain: "lifecare-55c38.firebaseapp.com",
+		    databaseURL: "https://lifecare-55c38.firebaseio.com",
+		    projectId: "lifecare-55c38",
+		    storageBucket: "lifecare-55c38.appspot.com",
+		    messagingSenderId: "340270538259"
+		  };
+		  firebase.initializeApp(config);
+		</script>
+
+		<script>
+			function sendButton(username, email)
+			{
+				var the_function = firebase.functions().httpsCallable('new_preorder');
+				the_function({new_user: {username: username, email: email}})
+				.then(function(result)
+				{
+					var returned = result.data.text;
+					if (returned == "successful")
+					{
+						var preorder_error = document.getElementById("preorder_error");
+						preorder_error.style.color = "green";
+						preorder_error.innerHTML = "Başarılı bir şekilde ön sipariş sistemimize kayıt oldunuz\nEn kısa zamanda sizinle iletişime geçilecektir.";
+						document.getElementById("user_name").value = "";
+						document.getElementById("user_mail").value = "";
+					}
+					else if (returned == "mail_error")
+					{
+						var preorder_error = document.getElementById("preorder_error");
+						preorder_error.style.color = "red";
+						preorder_error.innerHTML = "Bu email ile daha önce ön sipariş sistemimize kayıt oldunuz.";
+						document.getElementById("user_name").value = "";
+						document.getElementById("user_mail").value = "";
+					}
+					else
+					{
+						var preorder_error = document.getElementById("preorder_error");
+						preorder_error.style.color = "red";
+						preorder_error.innerHTML = "Şu an bilinmeyen bir hata oluştu.\nLütfen daha sonra tekrar deneyiniz.";
+						document.getElementById("user_name").value = "";
+						document.getElementById("user_mail").value = "";
+					}
+				})
+				.catch(function onError(err)
+				{
+					var preorder_error = document.getElementById("preorder_error");
+					preorder_error.style.color = "red";
+					preorder_error.innerHTML = "Şu an bilinmeyen bir hata oluştu.\nLütfen daha sonra tekrar deneyiniz.";
+					document.getElementById("user_name").value = "";
+					document.getElementById("user_mail").value = "";
+				});
+			}
+		</script>
+
+  </body>
+</html>

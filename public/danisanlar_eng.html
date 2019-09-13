@@ -1,0 +1,1039 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<meta name="description" content="">
+		<meta name="author" content="">
+		<link rel="shortcut icon" href="danisan/assets/img/favicon.png"/>
+		<title>Advisees Page</title>
+
+		<!-- Bootstrap core CSS -->
+		<link href="diyetisyen_paneli/assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+		<!-- Custom fonts for this template -->
+		<link href="diyetisyen_paneli/assets/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+		<!-- Custom fonts for this template -->
+		<link href="diyetisyen_paneli/assets/plugins/themify/css/themify.css" rel="stylesheet" type="text/css">
+
+		<!-- Angular Tooltip Css -->
+		<link href="diyetisyen_paneli/assets/plugins/angular-tooltip/angular-tooltips.css" rel="stylesheet">
+
+		<!-- Page level plugin CSS -->
+		<link href="diyetisyen_paneli/assets/plugins/datatables/dataTables.bootstrap4.css" rel="stylesheet">
+
+		<!-- Page level plugin CSS -->
+		<link href="diyetisyen_paneli/css/animate.css" rel="stylesheet">
+
+		<!-- Custom styles for this template -->
+		<link href="diyetisyen_paneli/css/glovia.css" rel="stylesheet">
+		<link href="diyetisyen_paneli/css/glovia-responsive.css" rel="stylesheet">
+
+		<!-- Custom styles for Color -->
+		<link href="diyetisyen_paneli/css/skins/default.css" rel="stylesheet">
+
+	</head>
+
+	<body class="fixed-nav sticky-footer" id="page-top" style="display: none;">
+
+		<div id="nav-placeholder">
+
+    </div>
+
+
+		<div class="content-wrapper">
+			<div class="container-fluid">
+
+				<!-- Title & Breadcrumbs-->
+				<div class="row page-titles">
+					<div class="col-md-5 align-self-center">
+						<h4 class="theme-cl">Advisees</h4>
+					</div>
+
+					<div class="col-md-7 text-right">
+						<div class="btn-group mr-lg-2">
+							 <a href="javascript:change_to_other_side('normal');" class="btn btn-default tooltips">
+								 <i class="ti-flix ti-layout-grid2"></i>
+							 </a>
+						</div>
+
+						<div class="btn-group mr-lg-2">
+							 <a href="javascript:change_to_other_side('list');" class="btn btn-default tooltips">
+								 <i class="ti-flix ti-view-list-alt"></i>
+							 </a>
+						</div>
+
+						<div class="btn-group mr-lg-2">
+							<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								Sort
+							</button>
+							<div class="dropdown-menu pull-right animated flipInX">
+								<a href="javascript:place_users('name1');">By Name (A-Z)</a>
+								<a href="javascript:place_users('name2');">By Name (Z-A)</a>
+								<a href="javascript:place_users('date1');">By Last Measure (Increasing)</a>
+								<a href="javascript:place_users('date2');">By Last Measure (Decreasing)</a>
+							</div>
+						</div>
+
+						<div class="btn-group mr-lg-2">
+							<a href="#modal-1" data-toggle="modal" data-target="#modal-1" class="btn cl-white gredient-bg outline-secondary bg-white-save" style="color: white !important;"><i class="fa fa-fw fa-plus"></i>
+								Add New Advisee
+							</a>
+						</div>
+					</div>
+				</div>
+				<!-- Title & Breadcrumbs-->
+
+				<!-- All Contact List -->
+				<div id="advisees_box" class="row">
+
+					<!-- Single Contact List -->
+					<!-- <div class="col-md-4 col-sm-6 mb-4">
+						<div class="contact-box">
+
+							<div class="contact-img">
+								<img src="https://sunlimetech.com/portfolio/boot4menu/assets/imgs/team/img_02.png" class="img-circle img-responsive" alt="">
+							</div>
+
+							<div class="contact-caption">
+								<h4>Daniel Duke</h4>
+								<span>danieldwike@hotmail.com</span>
+							</div>
+
+							<div class="contact-action">
+								<i class="fa fa-calendar-check-o" aria-hidden="true"></i> 07-12-2018
+							</div>
+
+							<div class="contact-action">
+								<i class="fa fa-map-marker" aria-hidden="true"></i> Ankara
+							</div>
+
+							<div class="contact-footer">
+								<a href="#" class="col-half"><span class="con-message">
+									<i class="ti-email"></i>Message</span>
+								</a>
+
+								<a href="profile-page.php" class="left-br col-half"><span class="con-profile">
+									<i class="ti-user"></i>Profile</span>
+								</a>
+							</div>
+
+						</div>
+					</div> -->
+
+					<!-- Single Contact List -->
+					<!-- <div class="col-md-4 col-sm-6 mb-4">
+						<div class="contact-box">
+
+							<div class="contact-img">
+								<img src="http://via.placeholder.com/180x180" class="img-circle img-responsive" alt="">
+							</div>
+
+							<div class="contact-caption">
+								<h4>Ashley D. Taylor</h4>
+								<span>ashleydtaylor271@gmail.com</span>
+							</div>
+
+							<div class="contact-action">
+								<i class="fa fa-map-signs" aria-hidden="true"></i> Ankara
+							</div>
+
+							<div class="contact-footer">
+								<a href="#" class="col-half"><span class="con-message">
+									<i class="ti-email"></i>Message</span>
+								</a>
+
+								<a href="profile-page.php" class="left-br col-half"><span class="con-profile">
+									<i class="ti-user"></i>Profile</span>
+								</a>
+							</div>
+
+						</div>
+					</div>
+
+					<div class="col-md-4 col-sm-6 mb-4">
+						<div class="contact-box">
+
+							<div class="contact-img">
+								<img src="http://via.placeholder.com/180x180" class="img-circle img-responsive" alt="">
+							</div>
+
+							<div class="contact-caption">
+								<h4>Michael P. Fowler</h4>
+								<span>michaelfowler@gmail.com</span>
+							</div>
+
+							<div class="contact-action">
+								<i class="fa fa-map-signs" aria-hidden="true"></i> Ankara
+							</div>
+
+							<div class="contact-footer">
+								<a href="#" class="col-half"><span class="con-message">
+									<i class="ti-email"></i>Message</span>
+								</a>
+
+								<a href="profile-page.php" class="left-br col-half"><span class="con-profile">
+									<i class="ti-user"></i>Profile</span>
+								</a>
+							</div>
+
+						</div>
+					</div>
+
+					<div class="col-md-4 col-sm-6 mb-4">
+						<div class="contact-box">
+
+							<div class="contact-img">
+								<img src="http://via.placeholder.com/180x180" class="img-circle img-responsive" alt="">
+							</div>
+
+							<div class="contact-caption">
+								<h4>Mary R. Edward</h4>
+								<span>Maryredward@yahoo.com</span>
+							</div>
+
+							<div class="contact-action">
+								<i class="fa fa-map-signs" aria-hidden="true"></i> Ankara
+							</div>
+
+							<div class="contact-footer">
+								<a href="#" class="col-half"><span class="con-message">
+									<i class="ti-email"></i>Message</span>
+								</a>
+
+								<a href="profile-page.php" class="left-br col-half"><span class="con-profile">
+									<i class="ti-user"></i>Profile</span>
+								</a>
+							</div>
+
+						</div>
+					</div>
+
+					<div class="col-md-4 col-sm-6 mb-4">
+						<div class="contact-box">
+
+							<div class="contact-img">
+								<img src="http://via.placeholder.com/180x180" class="img-circle img-responsive" alt="">
+							</div>
+
+							<div class="contact-caption">
+								<h4>Lloyd M. Otto</h4>
+								<span>lloydomtto58@hotmail.com</span>
+							</div>
+
+							<div class="contact-action">
+								<i class="fa fa-map-signs" aria-hidden="true"></i> Ankara
+							</div>
+
+							<div class="contact-footer">
+								<a href="#" class="col-half"><span class="con-message">
+									<i class="ti-email"></i>Message</span>
+								</a>
+
+								<a href="profile-page.php" class="left-br col-half"><span class="con-profile">
+									<i class="ti-user"></i>Profile</span>
+								</a>
+							</div>
+
+						</div>
+					</div>
+
+					<div class="col-md-4 col-sm-6 mb-4">
+						<div class="contact-box">
+
+							<div class="contact-img">
+								<img src="http://via.placeholder.com/180x180" class="img-circle img-responsive" alt="">
+							</div>
+
+							<div class="contact-caption">
+								<h4>Sharon C. Mason</h4>
+								<span>sharonmason587@gmail.com</span>
+							</div>
+
+							<div class="contact-action">
+								<i class="fa fa-map-signs" aria-hidden="true"></i> Ankara
+							</div>
+
+							<div class="contact-footer">
+								<a href="#" class="col-half"><span class="con-message">
+									<i class="ti-email"></i>Message</span>
+								</a>
+
+								<a href="profile-page.php" class="left-br col-half"><span class="con-profile">
+									<i class="ti-user"></i>Profile</span>
+								</a>
+							</div>
+
+						</div>
+					</div> -->
+
+
+				</div>
+				<!-- End All Contact List -->
+
+				<!-- Load More -->
+				<!-- <div class="row">
+					<div class="col-md-12">
+						<div class="text-center">
+							<div class="text-center padd-bot-20">
+								<a target="_blank" class="btn outline-secondary bg-white" href="#">Load More</a>
+							</div>
+						</div>
+					</div>
+				</div> -->
+
+				<!-- Add Contact Popup -->
+				<!-- <div class="add-popup modal fade" id="addcontact" tabindex="-1" role="dialog" aria-labelledby="addcontact">
+					<div class="modal-dialog" role="document">
+						<div class="modal-content">
+							<div class="modal-header gredient-bg">
+								<ul class="card-actions icons right-top">
+									<li>
+										<a href="javascript:void(0)" class="text-white" data-dismiss="modal" aria-label="Close">
+											<i class="ti-close"></i>
+										</a>
+									</li>
+								</ul>
+								<h4 class="modal-title">New Contact</h4>
+								<div class="user-avatar-wrapper">
+									<figure>
+										<div class="icon-upload">
+											<label for="file-input">
+												<span class="edit-avatar">
+													<span class="no-avatar app_primary_lighten_bg animated zoomIn"></span>
+												</span>
+											</label>
+											<input id="file-input" type="file">
+										</div>
+									</figure>
+								</div>
+							</div>
+							<div class="modal-body">
+								<div class="form-group">
+									<label class="control-label">Full Name</label>
+									<div class="input-group">
+										<span class="input-group-addon br br-light no-br"><i class="ti-user"></i></span>
+										<input type="text" class="form-control no-bl" id="add_name" value="">
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="control-label">Email Address</label>
+									<div class="input-group">
+										<span class="input-group-addon br br-light no-br"><i class="ti-email"></i></span>
+										<input type="email" class="form-control no-bl" id="add_email" value="">
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="control-label">Phone Number</label>
+									<div class="input-group">
+										<span class="input-group-addon br br-light no-br"><i class="ti-mobile"></i></span>
+										<input type="text" class="form-control no-bl" id="add_phone" value="">
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="control-label">Location</label>
+									<div class="input-group">
+										<span class="input-group-addon br br-light no-br"><i class="ti-location-pin"></i></span>
+										<input type="text" class="form-control no-bl" id="add_address">
+									</div>
+								</div>
+							</div>
+							<div class="modal-footer">
+								<button class="btn btn-default btn-flat pull-left">Delete</button>
+								<button class="btn btn-dark btn-flat" data-dismiss="modal" aria-label="Close">Cancel</button>
+								<button class="btn gredient-btn">Save</button>
+							</div>
+						</div>
+					</div>
+				</div> -->
+				<!-- End Add Contact Popup -->
+
+			</div>
+			<!-- /.content-wrapper-->
+
+			<!-- Footer -->
+			<footer class="sticky-footer">
+			  <div class="container">
+				<div class="text-center">
+				    <small class="font-15">Copyright © <img class="img-responsive" src="diyetisyen_paneli/img/qwerty-01.png" alt="Logo Qwerty"></small>
+				</div>
+			  </div>
+			</footer>
+
+			<!-- Scroll to Top Button-->
+			<a class="scroll-to-top rounded cl-white gredient-bg" href="#page-top">
+			  <i class="ti-angle-double-up"></i>
+			</a>
+
+			<div class="modal modal-box-1 fade" id="modal-1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel1" aria-hidden="true">
+				<div class="modal-dialog">
+					<div class="modal-content" id="myModalLabel1">
+						<div class="modal-header theme-bg">
+							Add New Advisee
+							<button type="button" onclick="closeModal();" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+						</div>
+						<div class="modal-body">
+							<div class="text-center">
+								You need to generate a special code for your advisee When your advisee adds this code to your account, your connection will be successfully established.
+							</div>
+							</br>
+							<div class="text-center padd-bot-20">
+								<a id="generate_code_button" href="" class="btn outline-secondary bg-white-save">Generate Advisee Code</a>
+							</div>
+							<div id="advisee_code" class="text-center" style="display: none;">
+								Advisee Code </br>
+								<b id="the_code" style="font-size: 19px;">adasas</b>
+								</br>
+								To send the code to your advisor, please enter the e-mail address of your advisor that is registered in our system.
+								</br>
+								<b>If your advisor' e-mail address is not registered yet in our system , the mail cannot be sent.</b>
+							</div>
+
+							<div id="info_text" class="text-center" style="display: none;"></div>
+
+							<form id="send_code_to_advisee" style="display: none;" method="post" autocomplete="on" onsubmit="">
+								<div class="row">
+									<div class="col-md-12">
+										<div class="form-group">
+											<input id="advisee_mail" type="email" class="form-control" placeholder="Advisee' E-mail Adress" required/>
+										</div>
+									</div>
+									<div class="col-lg-12 text-center">
+										<input type="submit" class="btn outline-secondary bg-white-save" value="Send"/>
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Bootstrap core JavaScript-->
+			<script src="diyetisyen_paneli/assets/plugins/jquery/jquery.min.js"></script>
+			<script src="diyetisyen_paneli/assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+			<!-- Core plugin JavaScript-->
+			<script src="diyetisyen_paneli/assets/plugins/jquery-easing/jquery.easing.min.js"></script>
+
+			 <!-- Slick Slider Js -->
+			<script src="diyetisyen_paneli/assets/plugins/slick-slider/slick.js"></script>
+
+			<!-- Slim Scroll -->
+			<script src="diyetisyen_paneli/assets/plugins/slim-scroll/jquery.slimscroll.min.js"></script>
+
+			<!-- Angular Tooltip -->
+			<script src="diyetisyen_paneli/assets/plugins/angular-tooltip/angular.js"></script>
+			<script src="diyetisyen_paneli/assets/plugins/angular-tooltip/angular-tooltips.js"></script>
+			<script src="diyetisyen_paneli/assets/plugins/angular-tooltip/index.js"></script>
+
+			<script src="diyetisyen_paneli/js/custom/navbar_script.js"></script>
+
+			<!-- Custom scripts for all pages-->
+			<script src="diyetisyen_paneli/js/glovia.js"></script>
+
+			<script src="https://www.gstatic.com/firebasejs/5.5.1/firebase.js"></script>
+			<script>
+			  // Initialize Firebase
+			  var config = {
+			    apiKey: "AIzaSyA24Eyjeh0HipNlMBhAJRnacsFxAySHgtY",
+			    authDomain: "lifecare-55c38.firebaseapp.com",
+			    databaseURL: "https://lifecare-55c38.firebaseio.com",
+			    projectId: "lifecare-55c38",
+			    storageBucket: "lifecare-55c38.appspot.com",
+			    messagingSenderId: "340270538259"
+			  };
+			  firebase.initializeApp(config);
+			</script>
+
+			<script type="text/javascript">
+			var all_advisees = [];
+			var is_list = true;
+			var generated_code = null;
+			var is_search = false;
+
+			function closeModal()
+			{
+				document.getElementById("the_code").innerHTML = "";
+				document.getElementById("advisee_code").style.display = "none";
+				document.getElementById("info_text").style.display = "none";
+				document.getElementById("send_code_to_advisee").style.display = "none";
+			}
+
+			function generateCode(id, name)
+			{
+				// var currentUser = firebase.auth().currentUser;
+				// var currentUser = dietitian_id;
+				firebase.database().ref("Chats").push(
+				{
+					dietitian_id: id,
+					advisee_id: null,
+					messages: null,
+					last_message_time: null,
+					dietitian_name: name,
+					AppUserName: null
+				}).then(function onSuccess(res)
+				{
+					document.getElementById("advisee_code").style.display = "block";
+					document.getElementById("send_code_to_advisee").style.display = "block";
+					document.getElementById("the_code").innerHTML = res.key + "<br>";
+					generated_code = res.key;
+				});
+			}
+
+			function send_mail_to_advisee(advisee_mail, dietitian_name)
+			{
+				var the_function = firebase.functions().httpsCallable('send_generated_code_to_advisee');
+				the_function({new_mail: {email: advisee_mail, code: generated_code, name: dietitian_name}})
+				.then(function(result)
+				{
+					var info_text = document.getElementById("info_text");
+					info_text.style.display = "block";
+					if (result.data == null)
+					{
+						info_text.style.color = "green";
+						info_text.innerHTML = "<br>Kodunuz danışanınıza başarıyla gönderildi.";
+					}
+					else
+					{
+						var returned = result.data.text;
+						info_text.style.color = "red";
+						if (returned == "advisee_error")
+						{
+							info_text.innerHTML = "<br>Danışanızın maili sistemde bulunmadığı için kodunuz danışanınıza gönderilemedi.";
+						}
+						else if (returned == "mail_error")
+						{
+							info_text.innerHTML = "<br>Gönderme esnasında bir sorun oluştu.</br>Lütfen yeni kod oluşturmadan yeniden göndermeyi deneyiniz.";
+						}
+					}
+				})
+				.catch(function(err)
+				{
+					var info_text = document.getElementById("info_text");
+					info_text.style.display = "block";
+					info_text.style.color = "red";
+					info_text.innerHTML = "<br>Gönderme esnasında bir sorun oluştu.</br>Lütfen yeni kod oluşturmadan yeniden göndermeyi deneyiniz.";
+				});
+			}
+
+			function change_to_other_side(side)
+			{
+				if (side == "list" && is_list == false)
+				{
+					is_list = true;
+					place_users();
+				}
+				else if (side == "normal" && is_list == true)
+				{
+					is_list = false;
+					place_users();
+				}
+			}
+
+			function put_user_to_list(user_photo, user_name, user_mail, user_city, user_country, user_id)
+			{
+				// <tr>
+				// 	<td>
+				// 		<a href="#"><img src="http://via.placeholder.com/180x180" class="avatar img-circle">
+				// 			Daniel Duke
+				// 		</a>
+				// 	</td>
+				// 	<td>danieldwike@hotmail.com</td>
+				// 	<td>Los Ange, CA 90017</td>
+				// 	<td>
+				// 		<a href="#" class="show-more" data-toggle="tooltip">
+				// 			<i class="ti-arrow-right"></i>
+				// 		</a>
+				// 	</td>
+				// </tr>
+				var ele0 = document.createElement("tr");
+				var ele1 = document.createElement("td");
+				var ele1_1 = document.createElement("a");
+				ele1_1.href = "danisan-profile_eng.html?u=" + user_id;
+				var ele1_1_1 = document.createElement("img");
+				ele1_1_1.classList.add("avatar");
+				ele1_1_1.classList.add("img-circle");
+				if (user_photo == null)
+				{
+					ele1_1_1.src = "diyetisyen_paneli/img/black_user.jpg";
+				}
+				else
+				{
+					ele1_1_1.src = user_photo;
+				}
+				ele1_1.appendChild(ele1_1_1);
+				ele1_1.innerHTML += user_name;
+				ele1.appendChild(ele1_1);
+
+				var ele2 = document.createElement("td");
+				if (user_mail != null)
+				{
+					ele2.innerHTML = user_mail;
+				}
+				else
+				{
+					ele2.innerHTML = "-";
+				}
+
+				var ele3 = document.createElement("td");
+				if (user_country != null)
+				{
+					if (user_city != null)
+					{
+						ele3.innerHTML += user_city + "/" + user_country;
+					}
+					else
+					{
+						ele3.innerHTML += user_country;
+					}
+				}
+				else
+				{
+					ele3.innerHTML = "-";
+				}
+
+				var ele4 = document.createElement("td");
+				var ele4_1 = document.createElement("a");
+				ele4_1.href = "danisan-profile_eng.html?u=" + user_id;
+				ele4_1.classList.add("show-more");
+				ele4_1.setAttribute("data-toggle", "tooltip");
+				var ele4_1_1 = document.createElement("i");
+				ele4_1_1.classList.add("ti-arrow-right");
+				ele4_1.appendChild(ele4_1_1);
+				ele4.appendChild(ele4_1);
+
+				var ele5 = document.createElement("td");
+				var ele5_1 = document.createElement("a");
+				ele5_1.href = "chatting_eng.html?u=" + user_id;
+				ele5_1.classList.add("show-more");
+				ele5_1.setAttribute("data-toggle", "tooltip");
+				var ele5_1_1 = document.createElement("i");
+				ele5_1_1.classList.add("ti-arrow-right");
+				ele5_1.appendChild(ele5_1_1);
+				ele5.appendChild(ele5_1);
+
+				ele0.appendChild(ele1);
+				ele0.appendChild(ele2);
+				ele0.appendChild(ele3);
+				ele0.appendChild(ele4);
+				ele0.appendChild(ele5);
+				return ele0;
+			}
+
+			function put_user_to_card(user_photo, user_name, user_mail, user_last_measure_time, user_city, user_country, user_id)
+			{
+				var ele1 = document.createElement("div");
+				ele1.classList.add("contact-img");
+				var ele1_2 = document.createElement("a");
+				ele1_2.href = "danisan-profile_eng.html?u=" + user_id;
+				var ele1_1 = document.createElement("img");
+				ele1_1.classList.add("img-circle");
+				ele1_1.classList.add("img-responsive");
+				if (user_photo == null)
+				{
+					ele1_1.src = "diyetisyen_paneli/img/black_user.jpg";
+				}
+				else
+				{
+					ele1_1.src = user_photo;
+				}
+				ele1_1.style.width = "76px";
+				ele1_1.style.height = "76px";
+				ele1_2.appendChild(ele1_1);
+				ele1.appendChild(ele1_2);
+
+				var ele2 = document.createElement("div");
+				ele2.classList.add("contact-caption");
+				var ele2_3 = document.createElement("a");
+				ele2_3.href = "danisan-profile_eng.html?u=" + user_id;
+				var ele2_1 = document.createElement("h4");
+				if (user_name != null)
+				{
+					ele2_1.innerHTML = user_name;
+				}
+				else
+				{
+					ele2_1.innerHTML = "-";
+				}
+				ele2_3.appendChild(ele2_1);
+				var ele2_2 = document.createElement("span");
+				if (user_mail != null)
+				{
+					ele2_2.innerHTML = user_mail;
+				}
+				else
+				{
+					ele2_2.innerHTML = "-";
+				}
+				ele2.appendChild(ele2_3);
+				ele2.appendChild(ele2_2);
+
+				var ele3 = document.createElement("div");
+				ele3.classList.add("contact-action");
+				var ele3_1 = document.createElement("i");
+				ele3_1.classList.add("fa");
+				ele3_1.classList.add("fa-calendar-check-o");
+				ele3_1.setAttribute("aria-hidden", "true");
+				ele3.appendChild(ele3_1);
+				if (user_last_measure_time != null)
+				{
+					user_last_measure_time = user_last_measure_time.split("-");
+					ele3.innerHTML += user_last_measure_time[2] + "-" + user_last_measure_time[1] + "-" + user_last_measure_time[0];
+				}
+				else
+				{
+					ele3.innerHTML += "-";
+				}
+
+				var ele4 = document.createElement("div");
+				ele4.classList.add("contact-action");
+				var ele4_1 = document.createElement("i");
+				ele4_1.classList.add("fa");
+				ele4_1.classList.add("fa-map-marker");
+				ele4_1.setAttribute("aria-hidden", "true");
+				ele4.appendChild(ele4_1);
+				if (user_country != null)
+				{
+					if (user_city != null)
+					{
+						ele4.innerHTML += user_city + "/" + user_country;
+					}
+					else
+					{
+						ele4.innerHTML += user_country;
+					}
+				}
+				else
+				{
+					ele4.innerHTML += "-";
+				}
+
+				var ele5 = document.createElement("div");
+				ele5.classList.add("contact-footer");
+				var ele5_1 = document.createElement("a");
+				ele5_1.href = "chatting_eng.html?u=" + user_id;
+				ele5_1.classList.add("col-half");
+				var ele5_1_1 = document.createElement("span");
+				ele5_1_1.classList.add("con-message");
+				var ele5_1_1_1 = document.createElement("i");
+				ele5_1_1_1.classList.add("ti-email");
+				ele5_1_1.appendChild(ele5_1_1_1);
+				ele5_1_1.innerHTML += "Messages";
+				ele5_1.appendChild(ele5_1_1);
+
+				var ele5_2 = document.createElement("a");
+				ele5_2.href = "danisan-profile_eng.html?u=" + user_id;
+				ele5_2.classList.add("left-br");
+				ele5_2.classList.add("col-half");
+				var ele5_2_1 = document.createElement("span");
+				ele5_2_1.classList.add("con-profile");
+				var ele5_2_1_1 = document.createElement("i");
+				ele5_2_1_1.classList.add("ti-user");
+				ele5_2_1.appendChild(ele5_2_1_1);
+				ele5_2_1.innerHTML += "Profile";
+				ele5_2.appendChild(ele5_2_1);
+
+				ele5.appendChild(ele5_1);
+				ele5.appendChild(ele5_2);
+
+				var ele0_1 = document.createElement("div");
+				ele0_1.classList.add("contact-box");
+				ele0_1.appendChild(ele1);
+				ele0_1.appendChild(ele2);
+				ele0_1.appendChild(ele3);
+				ele0_1.appendChild(ele4);
+				ele0_1.appendChild(ele5);
+
+				var ele0 = document.createElement("div");
+				ele0.classList.add("col-md-4");
+				ele0.classList.add("col-sm-6");
+				ele0.classList.add("mb-4");
+
+				ele0.appendChild(ele0_1);
+				return ele0;
+			}
+
+			function first_part_of_the_page(user, q)
+			{
+			  return firebase.database().ref("WebUsers/UserInfos/" + user.uid + "/ChatIDs").once("value")
+			  .then(function(snapshot)
+			  {
+					var advisees_list = [];
+			    snapshot.forEach(function(childSnapshot)
+			    {
+						var user_photo = firebase.database().ref("AppUsers/" + childSnapshot.key.toString() + "/PersonalInfo/photo_url").once("value")
+	          .then(function(snapshot1)
+	          {
+	            return snapshot1.val();
+	          });
+
+						var user_name = firebase.database().ref("Chats/" + childSnapshot.val().toString() + "/AppUserName").once("value")
+	          .then(function(snapshot2)
+	          {
+	            return snapshot2.val();
+	          });
+
+						var user_mail = firebase.database().ref("AppUsers/" + childSnapshot.key.toString() + "/PersonalInfo/email").once("value")
+	          .then(function(snapshot3)
+	          {
+	            return snapshot3.val();
+	          });
+
+						var user_last_measure_time = firebase.database().ref("AppUsers/" + childSnapshot.key.toString() + "/PersonalInfo/last_measure_date").once("value")
+	          .then(function(snapshot4)
+	          {
+	            return snapshot4.val();
+	          });
+
+						var user_city = firebase.database().ref("AppUsers/" + childSnapshot.key.toString() + "/PersonalInfo/city").once("value")
+	          .then(function(snapshot5)
+	          {
+	            return snapshot5.val();
+	          });
+
+						var user_country = firebase.database().ref("AppUsers/" + childSnapshot.key.toString() + "/PersonalInfo/country").once("value")
+	          .then(function(snapshot6)
+	          {
+	            return snapshot6.val();
+	          });
+
+						// advisees_list.push([user_photo, user_name, user_mail, user_last_measure_time, user_city, user_country]);
+						advisees_list.push(user_photo);
+						advisees_list.push(user_name);
+						advisees_list.push(user_mail);
+						advisees_list.push(user_last_measure_time);
+						advisees_list.push(user_city);
+						advisees_list.push(user_country);
+						advisees_list.push(childSnapshot.key);
+			    });
+					return Promise.all(advisees_list);
+			  })
+				.then(function(the_advisees)
+				{
+					var advisees_list = [];
+					for (var a=0; a<the_advisees.length; a+=7)
+					{
+						if (the_advisees[a+1] != null)
+						{
+							if (q != null)
+							{
+								var the_point = 0;
+								for (var i = 0; i < q.length; i++)
+								{
+									var the_name = the_advisees[a+1].toLowerCase().split(" ");
+									for (var j = 0; j < the_name.length; j++)
+									{
+										if (the_name[j] == q[i])
+										{
+											the_point += 3;
+										}
+										else
+										{
+											var s = the_name[j].search(q[i]);
+											if (s == 0)
+											{
+												the_point += 2;
+											}
+											else if (s != -1)
+											{
+												the_point += 1;
+											}
+										}
+									}
+								}
+								if (the_point != 0)
+								{
+									advisees_list.push([put_user_to_list(the_advisees[a], the_advisees[a+1], the_advisees[a+2], the_advisees[a+4], the_advisees[a+5], the_advisees[a+6]), put_user_to_card(the_advisees[a], the_advisees[a+1], the_advisees[a+2], the_advisees[a+3], the_advisees[a+4], the_advisees[a+5], the_advisees[a+6]), the_advisees[a+1], the_advisees[a+3], the_point]);
+								}
+							}
+							else
+							{
+								advisees_list.push([put_user_to_list(the_advisees[a], the_advisees[a+1], the_advisees[a+2], the_advisees[a+4], the_advisees[a+5], the_advisees[a+6]), put_user_to_card(the_advisees[a], the_advisees[a+1], the_advisees[a+2], the_advisees[a+3], the_advisees[a+4], the_advisees[a+5], the_advisees[a+6]), the_advisees[a+1], the_advisees[a+3]]);
+							}
+						}
+					}
+					all_advisees = advisees_list;
+					place_users("name1");
+					return true;
+				});
+			}
+
+			function place_users(sort_by)
+			{
+				if (sort_by == "name1")
+				{
+					all_advisees.sort(function(a,b)
+					{
+						return a[2].localeCompare(b[2]);
+					});
+				}
+				else if (sort_by == "name2")
+				{
+					all_advisees.sort(function(a,b)
+					{
+						return b[2].localeCompare(a[2]);
+					});
+				}
+				else if (sort_by == "date1")
+				{
+					all_advisees.sort(function(a,b)
+					{
+						return a[3].localeCompare(b[3]);
+					});
+				}
+				else if (sort_by == "date2")
+				{
+					all_advisees.sort(function(a,b)
+					{
+						return b[3].localeCompare(a[3]);
+					});
+				}
+				if (is_search == true)
+				{
+					for (var i = 1; i < 7; i++)
+					{
+						for (var j = all_advisees.length-1; j > -1 ; j--)
+						{
+							if (all_advisees[j][4] == i)
+							{
+								all_advisees.splice(0, 0, all_advisees.splice(j, 1)[0]);
+							}
+						}
+					}
+				}
+				var new_child = document.createElement("div");
+				new_child.id = "advisees_box";
+				if (all_advisees.length == 0)
+				{
+					new_child.classList.add("text-center");
+				}
+				else
+				{
+					new_child.classList.add("row");
+				}
+				if (is_list == true)
+				{
+					var ele1 = document.createElement("div");
+					ele1.classList.add("col-md-12");
+					ele1.classList.add("col-sm-12");
+					ele1.classList.add("mb-4");
+					var ele2 = document.createElement("div");
+					ele2.classList.add("card");
+					var ele3 = document.createElement("div");
+					ele3.classList.add("table-responsive");
+					var ele4 = document.createElement("table");
+					ele4.classList.add("table");
+					ele4.classList.add("table-2");
+					ele4.classList.add("table-hover");
+					ele4.classList.add("mb-0");
+					var ele5 = document.createElement("thead");
+					var ele6 = document.createElement("tr");
+					var ele6_1 = document.createElement("th");
+					ele6_1.innerHTML = "Name";
+					var ele6_2 = document.createElement("th");
+					ele6_2.innerHTML = "E-mail";
+					var ele6_3 = document.createElement("th");
+					ele6_3.innerHTML = "Location";
+					var ele6_4 = document.createElement("th");
+					ele6_4.innerHTML = "Go to Profile";
+					var ele6_5 = document.createElement("th");
+					ele6_5.innerHTML = "Send Message";
+					var ele6_6 = document.createElement("th");
+					ele6_6.innerHTML = "Delete";
+					var ele0 = document.createElement("tbody");
+					for (var q=0; q < all_advisees.length; q++)
+					{
+						ele0.appendChild(all_advisees[q][0]);
+					}
+					ele6.appendChild(ele6_1);
+					ele6.appendChild(ele6_2);
+					ele6.appendChild(ele6_3);
+					ele6.appendChild(ele6_4);
+					ele6.appendChild(ele6_5);
+					ele6.appendChild(ele6_6);
+					ele5.appendChild(ele6);
+					ele4.appendChild(ele5);
+					ele4.appendChild(ele0);
+					ele3.appendChild(ele4);
+					ele2.appendChild(ele3);
+					ele1.appendChild(ele2);
+					new_child.appendChild(ele1);
+				}
+				else if (is_list == false)
+				{
+					for (var q=0; q < all_advisees.length; q++)
+					{
+						new_child.appendChild(all_advisees[q][1]);
+					}
+				}
+				if (all_advisees.length == 0)
+				{
+					if (is_search == true)
+					{
+						new_child.innerHTML += "There were no people to meet your criteria.";
+					}
+					else
+					{
+						new_child.innerHTML += "You do not have any clients. You can use the 'Add New Advisee' button to add a client.";
+					}
+				}
+				var old_child = document.getElementById("advisees_box");
+				old_child.parentElement.replaceChild(new_child, old_child);
+			}
+
+			function update_generate_code_button(user)
+			{
+				document.getElementById("generate_code_button").href = "javascript:generateCode('" + user.uid.toString() + "', '" + user.displayName.toString() + "');";
+				document.getElementById("send_code_to_advisee").setAttribute("onSubmit", "event.preventDefault(); send_mail_to_advisee(this.advisee_mail.value, '" + user.displayName.toString() + "');");
+			}
+
+			firebase.auth().onAuthStateChanged(function(user)
+			{
+				if (user)
+				{
+					nav_bar_part_of_the_page(user);
+					fill_message_box(user);
+					setTimeout(function(){
+						engTRK();
+	        }, 1000);
+					var urlParams = new URLSearchParams(window.location.search);
+					var s = urlParams.get('s');
+					if (s == null)
+					{
+						first_part_of_the_page(user, null);
+					}
+					else
+					{
+						s = s.toLowerCase().split("|");
+						is_search = true;
+						first_part_of_the_page(user, s);
+					}
+					update_generate_code_button(user);
+					document.getElementById("page-top").style.display = "block";
+				}
+				else
+				{
+					document.location.replace("login_eng.html?to=danisanlar_eng.html");
+				}
+			});
+			</script>
+
+      <script>
+        $(function(){
+          $("#nav-placeholder").load("navbar_eng.txt");
+        });
+      </script>
+
+	  </div>
+		<script>
+			function engTRK(){
+				document.getElementById("eng").href="danisanlar_eng.html";
+				document.getElementById("trk").href="danisanlar.html";
+			}
+		</script>
+	  <!-- Wrapper -->
+
+	</body>
+</html>

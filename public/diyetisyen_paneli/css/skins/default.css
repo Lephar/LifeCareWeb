@@ -1,0 +1,153 @@
+/*-----Common Style---------*/
+a:hover {
+    color:#43387A;
+}
+.pr-thumb-img tooltip tip {
+    background:#c27ad3;
+    color:rgba(255,255,255,0.8);
+}
+.pr-thumb-img tooltip._top:not(._left):not(._right) tip tip-arrow {
+    border-top-color:#c27ad3;
+}
+@media (min-width: 992px) { 
+    #mainNav.navbar-light .navbar-collapse .navbar-sidenav li.active a.nav-link{
+		background: #947fee;
+		background: -moz-linear-gradient(left, #947fee 0%, #c27ad3 50%, #f45ca1 100%);
+		background: -webkit-linear-gradient(left, #947fee 0%,#c27ad3 50%,#f45ca1 100%);
+		background: linear-gradient(to right, #947fee 0%,#c27ad3 50%,#f45ca1 100%);
+		color:#ffffff;
+		opacity: 1;
+	}
+	
+	#mainNav.navbar-light .navbar-collapse .navbar-sidenav li.active a.nav-link:hover, #mainNav.navbar-light .navbar-collapse .navbar-sidenav li.active a.nav-link:focus{
+	background: #43387A;
+    background: -moz-linear-gradient(left, #43387A 0%, #D04B29 50%, #EF7C09 100%);
+    background: -webkit-linear-gradient(left, #43387A 0%,#D04B29 50%,#EF7C09 100%);
+    background: linear-gradient(to right, #43387A 0%,#D04B29 50%,#EF7C09 100%);
+	color:#ffffff;
+    opacity: 1;
+	}
+	
+	#mainNav.navbar-light .navbar-collapse .navbar-sidenav li a.nav-link:hover, #mainNav.navbar-light .navbar-collapse .navbar-sidenav li a.nav-link:focus{
+	background: #43387A;
+    background: -moz-linear-gradient(left, #43387A 0%, #D04B29 50%, #EF7C09 100%);
+    background: -webkit-linear-gradient(left, #43387A 0%,#D04B29 50%,#EF7C09 100%);
+    background: linear-gradient(to right, #43387A 0%,#D04B29 50%,#EF7C09 100%);
+	color:#ffffff;
+    opacity:1;
+	}
+}
+
+.theme-bg{
+background-color:#c27ad3;
+}
+.theme-cl{
+color: #2D2E82;
+}
+.theme-cl-pw:hover{
+color: #EF7C09;
+}
+.br-theme{
+	border-color:#c27ad3 !important
+}
+.theme-btn, .theme-btn:hover, .theme-btn:focus{
+	border:1px solid #c27ad3 !important;
+	background:#c27ad3;
+	color:#ffffff !important;
+}
+.gredient-cl{
+background: #43387A;
+background: -moz-linear-gradient(left, #43387A 0%, #D04B29 50%, #EF7C09 100%);
+background: -webkit-linear-gradient(left, #43387A 0%,#D04B29 50%,#EF7C09 100%);
+background: linear-gradient(to right, #43387A 0%,#D04B29 50%,#EF7C09 100%);
+-webkit-background-clip: text;
+background-clip: text;
+-webkit-text-fill-color: transparent;
+text-fill-color: transparent;
+}
+
+.orange-cl{
+	color: #EF7C09;
+}
+.gredient-bg-con {
+	background: #F2F6FA;
+}
+
+.gredient-bg-login{
+background: #fff !important;
+color: #202020 !important;
+border:1px solid #e9e9e9 !important;
+}
+
+.gredient-bg-login:hover{
+ color: #fff !important;
+background: #43387A !important;
+background: -moz-linear-gradient(left, #43387A 0%, #D04B29 50%, #EF7C09 100%) !important;
+background: -webkit-linear-gradient(left, #43387A 0%,#D04B29 50%,#EF7C09 100%) !important;
+background: linear-gradient(to right, #43387A 0%,#D04B29 50%,#EF7C09 100%) !important;
+}
+
+.gredient-bg{
+background: #43387A;
+background: -moz-linear-gradient(left, #43387A 0%, #D04B29 50%, #EF7C09 100%);
+background: -webkit-linear-gradient(left, #43387A 0%,#D04B29 50%,#EF7C09 100%);
+background: linear-gradient(to right, #43387A 0%,#D04B29 50%,#EF7C09 100%);
+}
+.gredient-btn, .gredient-btn:hover, .gredient-btn:focus{
+color:#ffffff;
+border:none;
+background: #947fee !important;
+background: -moz-linear-gradient(left, #947fee 0%, #c27ad3 50%, #f45ca1 100%) !important;
+background: -webkit-linear-gradient(left, #947fee 0%,#c27ad3 50%,#f45ca1 100%) !important;
+background: linear-gradient(to right, #947fee 0%,#c27ad3 50%,#f45ca1 100%) !important;
+}
+
+/*=======================================
+All Element Color
+======================================*/
+/*--------Team---------*/
+.our-team:hover, .our-team:focus {
+    border-color:#c27ad3;
+}
+
+/*-------- Pricing ---------*/
+.pricingTable:hover {
+    border: 2px solid #c27ad3;
+}
+.pricingTable .price-value i {
+    color:#c27ad3;
+}
+.pricingTable .btn-block {
+    background: #c27ad3;
+}
+.pricingTable:hover .btn-block {
+    color:#c27ad3;
+}
+
+/*-------- Accordion ---------*/
+.accordion-stylist .panel-title a:before, .accordion-stylist .panel-title a.collapsed:before {
+    background:#43387A;
+}
+.accordion-stylist .panel-title a.collapsed:before {
+    background: #f2f7fb;
+    color: #b7cde4;
+}
+
+/*-------- Tab ---------*/
+.tab .nav-tabs li a:hover,
+.tab .nav-tabs li.active a{
+    background:#c27ad3;
+}
+/*-------- Ecommerce ---------*/
+.uc_soft_product_box .uc_box_product .uc_product_col .uc_product_details .uc_view_cart a:hover {
+    color:#c27ad3;
+}
+/*------ Checkbox & Radio Button --------*/
+.custom-checkbox input[type="checkbox"]:checked + label:before {
+	border-color: #EF7C09;
+	background: #EF7C09;
+}
+.custom-radio [type="radio"]:checked + label:after,
+.custom-radio [type="radio"]:not(:checked) + label:after {
+    background:#c27ad3;
+}
