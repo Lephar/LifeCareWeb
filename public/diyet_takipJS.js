@@ -3066,10 +3066,36 @@ function deleteWrongProgram(id){
        console.log(name1);
 
        $("#accordion :input").removeAttr("disabled");
+	     $("#accordion :input[id=inpt1012]").attr("disabled", "true");
+	     $("#accordion :input[id=inpt1013]").attr("disabled", "true");
+	     $("#accordion :input[id=inpt1014]").attr("disabled", "true");
+	     $("#accordion :input[id=inpt1015]").attr("disabled", "true");
+	     $("#accordion :input[id=inpt1016]").attr("disabled", "true");
+	     $("#accordion :input[id=inpt1017]").attr("disabled", "true");
+	     $("#accordion :input[id=inpt1018]").attr("disabled", "true");
        // $( "#accordion input:disabled")=false;
        // console.log("id: ", event.target.id);
        // console.log("name1: ", name1);
   }
+
+	function dragEnd(event)
+	{
+    $("#accordion :input[id=inpt10]").attr("disabled","true");
+    $("#accordion :input[id=inpt20]").attr("disabled","true");
+    $("#accordion :input[id=inpt30]").attr("disabled","true");
+    $("#accordion :input[id=inpt40]").attr("disabled","true");
+    $("#accordion :input[id=inpt50]").attr("disabled","true");
+    $("#accordion :input[id=inpt60]").attr("disabled","true");
+    $("#accordion :input[id=inpt70]").attr("disabled","true");
+
+    $("#accordion :input[id=inpt1012]").removeAttr("disabled");
+    $("#accordion :input[id=inpt1013]").removeAttr("disabled");
+    $("#accordion :input[id=inpt1014]").removeAttr("disabled");
+    $("#accordion :input[id=inpt1015]").removeAttr("disabled");
+    $("#accordion :input[id=inpt1016]").removeAttr("disabled");
+    $("#accordion :input[id=inpt1017]").removeAttr("disabled");
+    $("#accordion :input[id=inpt1018]").removeAttr("disabled");
+	}
 //   function allowDrop(event) {
 //     console.log("asfasf");
 //   event.preventDefault();
@@ -3329,7 +3355,22 @@ function deleteWrongProgram(id){
 
     // var name = document.getElementById(event.target.id).innerText.toString();
     // console.log(name);
-    $("#accordion :input[type=text]").attr("disabled","true");
+    //$("#accordion :input[type=text]").attr("disabled","true");
+    $("#accordion :input[id=inpt10]").attr("disabled","true");
+    $("#accordion :input[id=inpt20]").attr("disabled","true");
+    $("#accordion :input[id=inpt30]").attr("disabled","true");
+    $("#accordion :input[id=inpt40]").attr("disabled","true");
+    $("#accordion :input[id=inpt50]").attr("disabled","true");
+    $("#accordion :input[id=inpt60]").attr("disabled","true");
+    $("#accordion :input[id=inpt70]").attr("disabled","true");
+
+    $("#accordion :input[id=inpt1012]").removeAttr("disabled");
+    $("#accordion :input[id=inpt1013]").removeAttr("disabled");
+    $("#accordion :input[id=inpt1014]").removeAttr("disabled");
+    $("#accordion :input[id=inpt1015]").removeAttr("disabled");
+    $("#accordion :input[id=inpt1016]").removeAttr("disabled");
+    $("#accordion :input[id=inpt1017]").removeAttr("disabled");
+    $("#accordion :input[id=inpt1018]").removeAttr("disabled");
 }
 function updateGeneralProgram(){
   swal({
@@ -6155,6 +6196,7 @@ function localStroage(){
             // li.setAttribute(" onclick","dragFood(this.id);");
             li.id="bes"+i;
             li.setAttribute("ondragstart","dragStart(event);");
+            li.setAttribute("ondragend","dragEnd(event);");
             var b = document.createElement("B");
             var span = document.createElement("span");
             span.setAttribute("draggable","true");
